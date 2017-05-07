@@ -46,10 +46,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-52, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 333);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(346, 324);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -57,7 +57,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(537, 221);
+            this.label6.Location = new System.Drawing.Point(493, 221);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 16);
             this.label6.TabIndex = 13;
@@ -67,7 +67,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(407, 221);
+            this.label5.Location = new System.Drawing.Point(364, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(131, 16);
             this.label5.TabIndex = 12;
@@ -79,11 +79,11 @@
             this.label4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(407, 155);
+            this.label4.Location = new System.Drawing.Point(366, 155);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 24);
+            this.label4.Size = new System.Drawing.Size(361, 24);
             this.label4.TabIndex = 11;
-            this.label4.Text = "CONCEPCION IMPORT";
+            this.label4.Text = "HOSPITAL CENTRAL DE LAS FF.AA.";
             // 
             // label2
             // 
@@ -91,11 +91,11 @@
             this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(407, 179);
+            this.label2.Location = new System.Drawing.Point(366, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(299, 20);
+            this.label2.Size = new System.Drawing.Size(229, 20);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Sistema de Facturacion e Inventario";
+            this.label2.Text = "Sistema de Gestión Médica";
             // 
             // label7
             // 
@@ -103,7 +103,7 @@
             this.label7.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(407, 199);
+            this.label7.Location = new System.Drawing.Point(366, 199);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 20);
             this.label7.TabIndex = 14;

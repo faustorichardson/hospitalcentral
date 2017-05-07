@@ -23,10 +23,17 @@ namespace hospitalcentral
     {
         public string UsuarioActual;        
         //public string cUsuarioActual = frmLogin.cUsuarioActual;        
-        string permiso_mantenimiento = "0";
+        string permiso_mantenimiento = "0";        
+        string permiso_mantenimiento_doctores = "0";
+        string permiso_mantenimiento_especialidades = "0";
+        string permiso_mantenimiento_usuarios = "0";
         string permiso_proceso = "0";
+        string permiso_proceso_citasmedicas = "0";
         string permiso_reporte = "0";
+        string permiso_reporte_citasmedicas = "0";
         string permiso_estadistica = "0";
+        string permiso_estadistica_citasmedicas = "0";
+        
         
         public frmMenu(string cUsuarioActual)
         {
@@ -53,11 +60,18 @@ namespace hospitalcentral
                 MySqlCommand MyCommand = MyConexion.CreateCommand();
 
                 // Step 3 - creating the commandtext
-                MyCommand.CommandText = "SELECT permiso_mantenimiento,  " +
+                MyCommand.CommandText = "SELECT " +
+                    " permiso_mantenimiento," +
+                    " permiso_mantenimiento_doctores," +
+                    " permiso_mantenimiento_especialidades," +
+                    " permiso_mantenimiento_usuario," +
                     " permiso_proceso, " +
+                    " permiso_proceso_citasmedicas," +
                     " permiso_reporte, " +
-                    " permiso_estadistica " +
-                    "FROM usuarios WHERE usuario = '" + UsuarioActual + "'";
+                    " permiso_reporte_citasmedicas," +
+                    " permiso_estadistica, " +
+                    " permiso_estadistica_citasmedicas"+
+                    " FROM usuarios WHERE usuario = '" + UsuarioActual + "'";
 
                 // Step 4 - connection open
                 MyConexion.Open();
@@ -71,9 +85,15 @@ namespace hospitalcentral
                     while (MyReader.Read())
                     {                                            
                         permiso_mantenimiento = MyReader["permiso_mantenimiento"].ToString();
+                        permiso_mantenimiento_doctores = MyReader["permiso_mantenimiento_doctores"].ToString();
+                        permiso_mantenimiento_especialidades = MyReader["permiso_mantenimiento_especialidades"].ToString();
+                        permiso_mantenimiento_usuarios = MyReader["permiso_mantenimiento_usuario"].ToString();
                         permiso_proceso = MyReader["permiso_proceso"].ToString();
+                        permiso_proceso_citasmedicas = MyReader["permiso_proceso_citasmedicas"].ToString();
                         permiso_reporte = MyReader["permiso_reporte"].ToString();
+                        permiso_reporte_citasmedicas = MyReader["permiso_reporte_citasmedicas"].ToString();
                         permiso_estadistica = MyReader["permiso_estadistica"].ToString();
+                        permiso_estadistica_citasmedicas = MyReader["permiso_estadistica_citasmedicas"].ToString();
                     }
                 }
                 else
@@ -111,6 +131,34 @@ namespace hospitalcentral
             {
                 this.menu_mantenimientos.Enabled = false;
             }
+            /////
+            if (permiso_mantenimiento_doctores == "1")
+            {
+                this.btn_mantenimiento_doctores.Enabled = true;
+            }
+            else
+            {
+                this.btn_mantenimiento_doctores.Enabled = false;
+            }
+            /////
+            if (permiso_mantenimiento_especialidades == "1")
+            {
+                this.btn_mantenimiento_especialidades.Enabled = true;
+            }
+            else
+            {
+                this.btn_mantenimiento_especialidades.Enabled = false;
+            }
+            /////
+            if (permiso_mantenimiento_usuarios == "1")
+            {
+                this.btn_mantenimiento_usuarios.Enabled = true;
+            }
+            else
+            {
+                this.btn_mantenimiento_usuarios.Enabled = false;
+            }
+            
 
             // VERIFICANDO LOS PERMISOS DE PROCESOS
             if (permiso_proceso == "1")
@@ -121,7 +169,15 @@ namespace hospitalcentral
             {
                 this.menu_procesos.Enabled = false;
             }
-
+            /////
+            if (permiso_proceso_citasmedicas == "1")
+            {
+                this.btn_procesos_citasmedicas.Enabled = true;
+            }
+            else
+            {
+                this.btn_procesos_citasmedicas.Enabled = false;
+            }
 
             // VERIFICANDO LOS PERMISOS DE REPORTES
             if (permiso_reporte == "1")
@@ -132,7 +188,15 @@ namespace hospitalcentral
             {
                 this.menu_reportes.Enabled = false;
             }
-
+            /////
+            if (permiso_reporte_citasmedicas == "1")
+            {
+                this.btn_reportes_citasmedicas.Enabled = true;
+            }
+            else
+            {
+                this.btn_reportes_citasmedicas.Enabled = false;
+            }
 
             // VERIFICANDO LOS PERMISOS DE ESTADISTICAS
             if (permiso_estadistica == "1")
@@ -143,6 +207,16 @@ namespace hospitalcentral
             {
                 this.menu_estadisticas.Enabled = false;
             }
+            /////
+            if (permiso_estadistica_citasmedicas == "1")
+            {
+                this.btn_estadisticas_citasmedicas.Enabled = true;
+            }
+            else
+            {
+                this.btn_estadisticas_citasmedicas.Enabled = false;
+            }
+
         }
 
 

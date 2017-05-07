@@ -315,7 +315,7 @@ namespace hospitalcentral
                             " @permiso_reporte,"+
                             " @permiso_reporte_citasmedicas,"+
                             // Valores permisos estadisticas
-                            " @permiso_estadistica"+
+                            " @permiso_estadistica,"+
                             " @permiso_estadistica_citasmedicas"+
                             // Fin de los valores
                             ")";
@@ -647,7 +647,8 @@ namespace hospitalcentral
                             {
                                 statusB.Checked = true;
                             }
-                            
+                            /////
+
                             // PERMISOS DE MANTENIMIENTOS
                             if (MyReader["permiso_mantenimiento"].ToString() == "1")
                             {
@@ -657,6 +658,34 @@ namespace hospitalcentral
                             {
                                 chkMantenimientos.Checked = false;
                             }
+                            /////
+                            if (MyReader["permiso_mantenimiento_doctores"].ToString() == "1")
+                            {
+                                chkMDoctores.Checked = true;
+                            }
+                            else
+                            {
+                                chkMDoctores.Checked = false;
+                            }
+                            /////
+                            if (MyReader["permiso_mantenimiento_especialidades"].ToString() == "1")
+                            {
+                                chkMEspecialidades.Checked = true;
+                            }
+                            else
+                            {
+                                chkMEspecialidades.Checked = false;
+                            }
+                            /////
+                            if (MyReader["permiso_mantenimiento_usuario"].ToString() == "1")
+                            {
+                                chkMUsuarios.Checked = true;
+                            }
+                            else
+                            {
+                                chkMUsuarios.Checked = false;
+                            }
+                            /////
 
                             // PERMISOS DE PROCESOS
                             if (MyReader["permiso_proceso"].ToString() == "1")
@@ -667,6 +696,16 @@ namespace hospitalcentral
                             {
                                 chkProcesos.Checked = false;
                             }
+                            /////
+                            if (MyReader["permiso_proceso_citasmedicas"].ToString() == "1")
+                            {
+                                chkPCitasMedicas.Checked = true;
+                            }
+                            else
+                            {
+                                chkPCitasMedicas.Checked = false;
+                            }
+                            /////
 
                             // PERMISOS REPORTES
                             if (MyReader["permiso_reporte"].ToString() == "1")
@@ -677,6 +716,16 @@ namespace hospitalcentral
                             {
                                 chkReportes.Checked = false;
                             }
+                            /////
+                            if (MyReader["permiso_reporte_citasmedicas"].ToString() == "1")
+                            {
+                                chkRCitasMedicas.Checked = true;
+                            }
+                            else
+                            {
+                                chkRCitasMedicas.Checked = false;
+                            }
+                            /////
 
                             // PERMISOS ESTADISTICAS
                             if (MyReader["permiso_estadistica"].ToString() == "1")
@@ -687,7 +736,16 @@ namespace hospitalcentral
                             {
                                 chkEstadisticas.Checked = false;
                             }
-
+                            /////
+                            if (MyReader["permiso_estadistica_citasmedicas"].ToString() == "1")
+                            {
+                                chkECitasMedicas.Checked = true;
+                            }
+                            else
+                            {
+                                chkECitasMedicas.Checked = false;
+                            }
+                            /////
 
                         }
 

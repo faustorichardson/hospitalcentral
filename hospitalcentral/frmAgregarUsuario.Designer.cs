@@ -49,14 +49,14 @@
             this.statusB = new System.Windows.Forms.RadioButton();
             this.statusA = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chkMUsuarios = new System.Windows.Forms.CheckBox();
-            this.chkMDoctores = new System.Windows.Forms.CheckBox();
             this.chkMEspecialidades = new System.Windows.Forms.CheckBox();
+            this.chkMDoctores = new System.Windows.Forms.CheckBox();
+            this.chkMUsuarios = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkPCitasMedicas = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chkRCitasMedicas = new System.Windows.Forms.CheckBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chkECitasMedicas = new System.Windows.Forms.CheckBox();
             this.chkMantenimientos = new System.Windows.Forms.CheckBox();
             this.chkProcesos = new System.Windows.Forms.CheckBox();
@@ -315,6 +315,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "MANTENIMIENTOS";
             // 
+            // chkMEspecialidades
+            // 
+            this.chkMEspecialidades.AutoSize = true;
+            this.chkMEspecialidades.Location = new System.Drawing.Point(88, 19);
+            this.chkMEspecialidades.Name = "chkMEspecialidades";
+            this.chkMEspecialidades.Size = new System.Drawing.Size(111, 17);
+            this.chkMEspecialidades.TabIndex = 2;
+            this.chkMEspecialidades.Text = "Especialidades";
+            this.chkMEspecialidades.UseVisualStyleBackColor = true;
+            // 
+            // chkMDoctores
+            // 
+            this.chkMDoctores.AutoSize = true;
+            this.chkMDoctores.Location = new System.Drawing.Point(6, 43);
+            this.chkMDoctores.Name = "chkMDoctores";
+            this.chkMDoctores.Size = new System.Drawing.Size(77, 17);
+            this.chkMDoctores.TabIndex = 1;
+            this.chkMDoctores.Text = "Doctores";
+            this.chkMDoctores.UseVisualStyleBackColor = true;
+            // 
+            // chkMUsuarios
+            // 
+            this.chkMUsuarios.AutoSize = true;
+            this.chkMUsuarios.Location = new System.Drawing.Point(7, 20);
+            this.chkMUsuarios.Name = "chkMUsuarios";
+            this.chkMUsuarios.Size = new System.Drawing.Size(75, 17);
+            this.chkMUsuarios.TabIndex = 0;
+            this.chkMUsuarios.Text = "Usuarios";
+            this.chkMUsuarios.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.chkPCitasMedicas);
@@ -325,6 +355,16 @@
             this.groupBox3.TabIndex = 76;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PROCESOS";
+            // 
+            // chkPCitasMedicas
+            // 
+            this.chkPCitasMedicas.AutoSize = true;
+            this.chkPCitasMedicas.Location = new System.Drawing.Point(7, 19);
+            this.chkPCitasMedicas.Name = "chkPCitasMedicas";
+            this.chkPCitasMedicas.Size = new System.Drawing.Size(105, 17);
+            this.chkPCitasMedicas.TabIndex = 1;
+            this.chkPCitasMedicas.Text = "Citas Medicas";
+            this.chkPCitasMedicas.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -337,6 +377,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "REPORTES";
             // 
+            // chkRCitasMedicas
+            // 
+            this.chkRCitasMedicas.AutoSize = true;
+            this.chkRCitasMedicas.Location = new System.Drawing.Point(7, 19);
+            this.chkRCitasMedicas.Name = "chkRCitasMedicas";
+            this.chkRCitasMedicas.Size = new System.Drawing.Size(105, 17);
+            this.chkRCitasMedicas.TabIndex = 1;
+            this.chkRCitasMedicas.Text = "Citas Medicas";
+            this.chkRCitasMedicas.UseVisualStyleBackColor = true;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.chkECitasMedicas);
@@ -347,56 +397,6 @@
             this.groupBox6.TabIndex = 78;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ESTADISTICAS";
-            // 
-            // chkMUsuarios
-            // 
-            this.chkMUsuarios.AutoSize = true;
-            this.chkMUsuarios.Location = new System.Drawing.Point(7, 20);
-            this.chkMUsuarios.Name = "chkMUsuarios";
-            this.chkMUsuarios.Size = new System.Drawing.Size(75, 17);
-            this.chkMUsuarios.TabIndex = 0;
-            this.chkMUsuarios.Text = "Usuarios";
-            this.chkMUsuarios.UseVisualStyleBackColor = true;
-            // 
-            // chkMDoctores
-            // 
-            this.chkMDoctores.AutoSize = true;
-            this.chkMDoctores.Location = new System.Drawing.Point(6, 43);
-            this.chkMDoctores.Name = "chkMDoctores";
-            this.chkMDoctores.Size = new System.Drawing.Size(77, 17);
-            this.chkMDoctores.TabIndex = 1;
-            this.chkMDoctores.Text = "Doctores";
-            this.chkMDoctores.UseVisualStyleBackColor = true;
-            // 
-            // chkMEspecialidades
-            // 
-            this.chkMEspecialidades.AutoSize = true;
-            this.chkMEspecialidades.Location = new System.Drawing.Point(88, 19);
-            this.chkMEspecialidades.Name = "chkMEspecialidades";
-            this.chkMEspecialidades.Size = new System.Drawing.Size(111, 17);
-            this.chkMEspecialidades.TabIndex = 2;
-            this.chkMEspecialidades.Text = "Especialidades";
-            this.chkMEspecialidades.UseVisualStyleBackColor = true;
-            // 
-            // chkPCitasMedicas
-            // 
-            this.chkPCitasMedicas.AutoSize = true;
-            this.chkPCitasMedicas.Location = new System.Drawing.Point(7, 19);
-            this.chkPCitasMedicas.Name = "chkPCitasMedicas";
-            this.chkPCitasMedicas.Size = new System.Drawing.Size(105, 17);
-            this.chkPCitasMedicas.TabIndex = 1;
-            this.chkPCitasMedicas.Text = "Citas Medicas";
-            this.chkPCitasMedicas.UseVisualStyleBackColor = true;
-            // 
-            // chkRCitasMedicas
-            // 
-            this.chkRCitasMedicas.AutoSize = true;
-            this.chkRCitasMedicas.Location = new System.Drawing.Point(7, 19);
-            this.chkRCitasMedicas.Name = "chkRCitasMedicas";
-            this.chkRCitasMedicas.Size = new System.Drawing.Size(105, 17);
-            this.chkRCitasMedicas.TabIndex = 1;
-            this.chkRCitasMedicas.Text = "Citas Medicas";
-            this.chkRCitasMedicas.UseVisualStyleBackColor = true;
             // 
             // chkECitasMedicas
             // 
@@ -474,6 +474,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgregarUsuario";
             this.Text = "frmAgregarUsuario";
             this.Load += new System.EventHandler(this.frmAgregarUsuario_Load);
