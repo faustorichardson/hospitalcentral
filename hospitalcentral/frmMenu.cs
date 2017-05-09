@@ -25,7 +25,7 @@ namespace hospitalcentral
         //public string cUsuarioActual = frmLogin.cUsuarioActual;        
         string permiso_mantenimiento = "0";        
         string permiso_mantenimiento_doctores = "0";
-        string permiso_mantenimiento_especialidades = "0";
+        string permiso_mantenimiento_pacientes = "0";
         string permiso_mantenimiento_usuarios = "0";
         string permiso_proceso = "0";
         string permiso_proceso_citasmedicas = "0";
@@ -46,8 +46,14 @@ namespace hospitalcentral
         {
             //MessageBox.Show(UsuarioActual);
             //this.accesos();
-            this.verificapermisos(); 
-        }       
+            this.verificapermisos();
+            // Obtiene las informaciones de la empresa
+            this.getEmpresa();
+        }
+
+        private void getEmpresa()
+        {
+        }
 
         private void verificapermisos()
         {
@@ -63,7 +69,7 @@ namespace hospitalcentral
                 MyCommand.CommandText = "SELECT " +
                     " permiso_mantenimiento," +
                     " permiso_mantenimiento_doctores," +
-                    " permiso_mantenimiento_especialidades," +
+                    " permiso_mantenimiento_pacientes," +
                     " permiso_mantenimiento_usuario," +
                     " permiso_proceso, " +
                     " permiso_proceso_citasmedicas," +
@@ -86,7 +92,7 @@ namespace hospitalcentral
                     {                                            
                         permiso_mantenimiento = MyReader["permiso_mantenimiento"].ToString();
                         permiso_mantenimiento_doctores = MyReader["permiso_mantenimiento_doctores"].ToString();
-                        permiso_mantenimiento_especialidades = MyReader["permiso_mantenimiento_especialidades"].ToString();
+                        permiso_mantenimiento_pacientes = MyReader["permiso_mantenimiento_pacientes"].ToString();
                         permiso_mantenimiento_usuarios = MyReader["permiso_mantenimiento_usuario"].ToString();
                         permiso_proceso = MyReader["permiso_proceso"].ToString();
                         permiso_proceso_citasmedicas = MyReader["permiso_proceso_citasmedicas"].ToString();
@@ -141,13 +147,13 @@ namespace hospitalcentral
                 this.btn_mantenimiento_doctores.Enabled = false;
             }
             /////
-            if (permiso_mantenimiento_especialidades == "1")
+            if (permiso_mantenimiento_pacientes == "1")
             {
-                this.btn_mantenimiento_especialidades.Enabled = true;
+                this.btn_mantenimiento_pacientes.Enabled = true;
             }
             else
             {
-                this.btn_mantenimiento_especialidades.Enabled = false;
+                this.btn_mantenimiento_pacientes.Enabled = false;
             }
             /////
             if (permiso_mantenimiento_usuarios == "1")
@@ -282,12 +288,14 @@ namespace hospitalcentral
 
         private void buttonItem2_Click(object sender, EventArgs e)
         {
-
+            frmDoctores ofrmDoctores = new frmDoctores();
+            ofrmDoctores.ShowDialog();
         }
 
         private void buttonItem3_Click(object sender, EventArgs e)
         {
-
+            frmPacientes ofrmPacientes = new frmPacientes();
+            ofrmPacientes.ShowDialog();
         }
 
         private void buttonItem1_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace hospitalcentral
 {
-    partial class frmBuscarSuplidor
+    partial class frmBuscarPacientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,63 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarSuplidor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscarPacientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdCatalogo = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmdAceptar = new System.Windows.Forms.Button();
             this.cmdSalir = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.REFERENCIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RECORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdCatalogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloForm
             // 
-            this.lblTituloForm.Size = new System.Drawing.Size(272, 22);
-            this.lblTituloForm.Text = "Busqueda Avanzada de Suplidor";
+            this.lblTituloForm.Size = new System.Drawing.Size(271, 22);
+            this.lblTituloForm.Text = "Busqueda Avanzada de Clientes";
             // 
             // grdCatalogo
             // 
             this.grdCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.descripcion,
-            this.REFERENCIA,
-            this.tipo});
-            this.grdCatalogo.Location = new System.Drawing.Point(85, 88);
+            this.RECORD,
+            this.nombre,
+            this.cedula});
+            this.grdCatalogo.Location = new System.Drawing.Point(92, 80);
             this.grdCatalogo.Name = "grdCatalogo";
             this.grdCatalogo.ReadOnly = true;
             this.grdCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdCatalogo.Size = new System.Drawing.Size(627, 268);
+            this.grdCatalogo.Size = new System.Drawing.Size(629, 268);
             this.grdCatalogo.TabIndex = 36;
             this.grdCatalogo.DoubleClick += new System.EventHandler(this.grdCatalogo_DoubleClick);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBuscar.Location = new System.Drawing.Point(148, 65);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(383, 20);
-            this.txtBuscar.TabIndex = 32;
-            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
-            this.txtBuscar.Validating += new System.ComponentModel.CancelEventHandler(this.txtBuscar_Validating);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(85, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Buscar:";
             // 
             // cmdAceptar
             // 
@@ -94,7 +69,7 @@
             this.cmdAceptar.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmdAceptar.Image = ((System.Drawing.Image)(resources.GetObject("cmdAceptar.Image")));
             this.cmdAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdAceptar.Location = new System.Drawing.Point(524, 361);
+            this.cmdAceptar.Location = new System.Drawing.Point(531, 353);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(95, 42);
             this.cmdAceptar.TabIndex = 34;
@@ -111,7 +86,7 @@
             this.cmdSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmdSalir.Image = ((System.Drawing.Image)(resources.GetObject("cmdSalir.Image")));
             this.cmdSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdSalir.Location = new System.Drawing.Point(619, 361);
+            this.cmdSalir.Location = new System.Drawing.Point(626, 353);
             this.cmdSalir.Name = "cmdSalir";
             this.cmdSalir.Size = new System.Drawing.Size(95, 42);
             this.cmdSalir.TabIndex = 35;
@@ -120,48 +95,65 @@
             this.cmdSalir.UseVisualStyleBackColor = true;
             this.cmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
             // 
-            // id
+            // txtBuscar
             // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 50;
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscar.Location = new System.Drawing.Point(155, 57);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(383, 20);
+            this.txtBuscar.TabIndex = 32;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.Validating += new System.ComponentModel.CancelEventHandler(this.txtBuscar_Validating);
             // 
-            // descripcion
+            // label1
             // 
-            this.descripcion.HeaderText = "SUPLIDOR";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 300;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(92, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Buscar:";
             // 
-            // REFERENCIA
+            // RECORD
             // 
-            this.REFERENCIA.HeaderText = "RNC";
-            this.REFERENCIA.Name = "REFERENCIA";
-            this.REFERENCIA.ReadOnly = true;
+            this.RECORD.HeaderText = "RECORD";
+            this.RECORD.Name = "RECORD";
+            this.RECORD.ReadOnly = true;
             // 
-            // tipo
+            // nombre
+            // 
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 350;
+            // 
+            // cedula
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle1.NullValue = null;
-            this.tipo.DefaultCellStyle = dataGridViewCellStyle1;
-            this.tipo.HeaderText = "TELEFONO";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
+            this.cedula.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cedula.HeaderText = "CEDULA";
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            this.cedula.Width = 125;
             // 
-            // frmBuscarSuplidor
+            // frmBuscarPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 468);
+            this.ClientSize = new System.Drawing.Size(812, 436);
             this.Controls.Add(this.grdCatalogo);
             this.Controls.Add(this.cmdAceptar);
             this.Controls.Add(this.cmdSalir);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Name = "frmBuscarSuplidor";
-            this.Text = "frmBuscarSuplidor";
-            this.Load += new System.EventHandler(this.frmBuscarSuplidor_Load);
+            this.Name = "frmBuscarPacientes";
+            this.Text = "frmBuscarClientes";
+            this.Load += new System.EventHandler(this.frmBuscarClientes_Load);
             this.Controls.SetChildIndex(this.lblTituloForm, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.txtBuscar, 0);
@@ -181,9 +173,8 @@
         private System.Windows.Forms.Button cmdSalir;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn REFERENCIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RECORD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
     }
 }

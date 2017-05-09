@@ -124,14 +124,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCategorias.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsClientes.cs">
-      <DependentUpon>dsClientes.xsd</DependentUpon>
+    <Compile Include="dsDoctores.cs">
+      <DependentUpon>dsDoctores.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="dsClientes.Designer.cs">
+    <Compile Include="dsDoctores.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsClientes.xsd</DependentUpon>
+      <DependentUpon>dsDoctores.xsd</DependentUpon>
     </Compile>
     <Compile Include="dsGastosAdministrativos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -142,6 +142,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPacientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPacientes.xsd</DependentUpon>
     </Compile>
     <Compile Include="dsProductos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -201,11 +206,11 @@
     <Compile Include="frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarClientes.cs">
+    <Compile Include="frmBuscarPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarClientes.Designer.cs">
-      <DependentUpon>frmBuscarClientes.cs</DependentUpon>
+    <Compile Include="frmBuscarPacientes.Designer.cs">
+      <DependentUpon>frmBuscarPacientes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBuscarProductos.cs">
       <SubType>Form</SubType>
@@ -213,11 +218,11 @@
     <Compile Include="frmBuscarProductos.designer.cs">
       <DependentUpon>frmBuscarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarSuplidor.cs">
+    <Compile Include="frmBuscarDoctores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarSuplidor.Designer.cs">
-      <DependentUpon>frmBuscarSuplidor.cs</DependentUpon>
+    <Compile Include="frmBuscarDoctores.Designer.cs">
+      <DependentUpon>frmBuscarDoctores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCategorias.cs">
       <SubType>Form</SubType>
@@ -237,6 +242,12 @@
     <Compile Include="frmCobroDespachoPedido.Designer.cs">
       <DependentUpon>frmCobroDespachoPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDoctores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctores.Designer.cs">
+      <DependentUpon>frmDoctores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEntradaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,12 +260,6 @@
     <Compile Include="frmFacturacion.Designer.cs">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGastosAdministrativos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGastosAdministrativos.Designer.cs">
-      <DependentUpon>frmGastosAdministrativos.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +271,12 @@
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacientes.Designer.cs">
+      <DependentUpon>frmPacientes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrintCobroDespacho.cs">
       <SubType>Form</SubType>
@@ -303,18 +314,6 @@
     <Compile Include="frmPrintFacturacionEst.Designer.cs">
       <DependentUpon>frmPrintFacturacionEst.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrintGastosAdministrativos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrintGastosAdministrativos.Designer.cs">
-      <DependentUpon>frmPrintGastosAdministrativos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrintGastosAdministrativosSumatoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrintGastosAdministrativosSumatoria.Designer.cs">
-      <DependentUpon>frmPrintGastosAdministrativosSumatoria.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrintReimpresiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,10 +346,10 @@
       <DependentUpon>rptCategorias.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptClientes.cs">
+    <Compile Include="rptDoctores.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptClientes.rpt</DependentUpon>
+      <DependentUpon>rptDoctores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptEntradaInventario.cs">
@@ -401,16 +400,10 @@
       <DependentUpon>rptFacturaDetalle.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptGastosAdministrativos.cs">
+    <Compile Include="rptPacientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptGastosAdministrativos.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="rptGastosAdministrativos_Sumatoria.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptGastosAdministrativos_Sumatoria.rpt</DependentUpon>
+      <DependentUpon>rptPacientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptProductos.cs">
@@ -452,14 +445,14 @@
     <EmbeddedResource Include="frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarClientes.resx">
-      <DependentUpon>frmBuscarClientes.cs</DependentUpon>
+    <EmbeddedResource Include="frmBuscarPacientes.resx">
+      <DependentUpon>frmBuscarPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarProductos.resx">
       <DependentUpon>frmBuscarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarSuplidor.resx">
-      <DependentUpon>frmBuscarSuplidor.cs</DependentUpon>
+    <EmbeddedResource Include="frmBuscarDoctores.resx">
+      <DependentUpon>frmBuscarDoctores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
@@ -470,20 +463,23 @@
     <EmbeddedResource Include="frmCobroDespachoPedido.resx">
       <DependentUpon>frmCobroDespachoPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctores.resx">
+      <DependentUpon>frmDoctores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEntradaInventario.resx">
       <DependentUpon>frmEntradaInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGastosAdministrativos.resx">
-      <DependentUpon>frmGastosAdministrativos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacientes.resx">
+      <DependentUpon>frmPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintCobroDespacho.resx">
       <DependentUpon>frmPrintCobroDespacho.cs</DependentUpon>
@@ -502,12 +498,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintFacturacionEst.resx">
       <DependentUpon>frmPrintFacturacionEst.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintGastosAdministrativos.resx">
-      <DependentUpon>frmPrintGastosAdministrativos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintGastosAdministrativosSumatoria.resx">
-      <DependentUpon>frmPrintGastosAdministrativosSumatoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintReimpresiones.resx">
       <DependentUpon>frmPrintReimpresiones.cs</DependentUpon>
@@ -535,9 +525,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCategorias.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptClientes.rpt">
+    <EmbeddedResource Include="rptDoctores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptClientes.cs</LastGenOutput>
+      <LastGenOutput>rptDoctores.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptEntradaInventario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -571,13 +561,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptFacturaDetalle.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptGastosAdministrativos.rpt">
+    <EmbeddedResource Include="rptPacientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptGastosAdministrativos.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rptGastosAdministrativos_Sumatoria.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptGastosAdministrativos_Sumatoria.cs</LastGenOutput>
+      <LastGenOutput>rptPacientes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -609,16 +595,16 @@
     <None Include="dsCategorias.xss">
       <DependentUpon>dsCategorias.xsd</DependentUpon>
     </None>
-    <None Include="dsClientes.xsc">
-      <DependentUpon>dsClientes.xsd</DependentUpon>
+    <None Include="dsDoctores.xsc">
+      <DependentUpon>dsDoctores.xsd</DependentUpon>
     </None>
-    <None Include="dsClientes.xsd">
+    <None Include="dsDoctores.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsClientes.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsDoctores.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dsClientes.xss">
-      <DependentUpon>dsClientes.xsd</DependentUpon>
+    <None Include="dsDoctores.xss">
+      <DependentUpon>dsDoctores.xsd</DependentUpon>
     </None>
     <None Include="dsGastosAdministrativos.xsc">
       <DependentUpon>dsGastosAdministrativos.xsd</DependentUpon>
@@ -641,6 +627,17 @@
     </None>
     <None Include="dsInventario.xss">
       <DependentUpon>dsInventario.xsd</DependentUpon>
+    </None>
+    <None Include="dsPacientes.xsc">
+      <DependentUpon>dsPacientes.xsd</DependentUpon>
+    </None>
+    <None Include="dsPacientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPacientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPacientes.xss">
+      <DependentUpon>dsPacientes.xsd</DependentUpon>
     </None>
     <None Include="dsProductos.xsc">
       <DependentUpon>dsProductos.xsd</DependentUpon>

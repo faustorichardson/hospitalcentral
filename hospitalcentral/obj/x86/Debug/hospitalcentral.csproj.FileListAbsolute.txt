@@ -36,15 +36,12 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmAnularEntradaInventario.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmAnularFacturacion.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBase.resources
-C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarClientes.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarProductos.resources
-C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarSuplidor.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmCategorias.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmClientes.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmCobroDespachoPedido.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmEntradaInventario.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmFacturacion.resources
-C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmGastosAdministrativos.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmLogin.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmMenu.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintCobroDespacho.resources
@@ -53,8 +50,6 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrinter.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintFacturacion.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintFacturacionEst.resources
-C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintGastosAdministrativos.resources
-C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintGastosAdministrativosSumatoria.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintReimpresiones.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmProductos.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmResetPass.resources
@@ -63,3 +58,7 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.csproj.GenerateResource.Cache
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.exe
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.pdb
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmDoctores.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarDoctores.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPacientes.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarPacientes.resources

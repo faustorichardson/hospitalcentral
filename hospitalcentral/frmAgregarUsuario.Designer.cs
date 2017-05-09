@@ -49,7 +49,7 @@
             this.statusB = new System.Windows.Forms.RadioButton();
             this.statusA = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkMEspecialidades = new System.Windows.Forms.CheckBox();
+            this.chkMPacientes = new System.Windows.Forms.CheckBox();
             this.chkMDoctores = new System.Windows.Forms.CheckBox();
             this.chkMUsuarios = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -304,7 +304,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.chkMEspecialidades);
+            this.groupBox2.Controls.Add(this.chkMPacientes);
             this.groupBox2.Controls.Add(this.chkMDoctores);
             this.groupBox2.Controls.Add(this.chkMUsuarios);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,15 +315,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "MANTENIMIENTOS";
             // 
-            // chkMEspecialidades
+            // chkMPacientes
             // 
-            this.chkMEspecialidades.AutoSize = true;
-            this.chkMEspecialidades.Location = new System.Drawing.Point(88, 19);
-            this.chkMEspecialidades.Name = "chkMEspecialidades";
-            this.chkMEspecialidades.Size = new System.Drawing.Size(111, 17);
-            this.chkMEspecialidades.TabIndex = 2;
-            this.chkMEspecialidades.Text = "Especialidades";
-            this.chkMEspecialidades.UseVisualStyleBackColor = true;
+            this.chkMPacientes.AutoSize = true;
+            this.chkMPacientes.Location = new System.Drawing.Point(88, 19);
+            this.chkMPacientes.Name = "chkMPacientes";
+            this.chkMPacientes.Size = new System.Drawing.Size(82, 17);
+            this.chkMPacientes.TabIndex = 2;
+            this.chkMPacientes.Text = "Pacientes";
+            this.chkMPacientes.UseVisualStyleBackColor = true;
             // 
             // chkMDoctores
             // 
@@ -539,7 +539,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox chkMDoctores;
         private System.Windows.Forms.CheckBox chkMUsuarios;
-        private System.Windows.Forms.CheckBox chkMEspecialidades;
+        private System.Windows.Forms.CheckBox chkMPacientes;
         private System.Windows.Forms.CheckBox chkPCitasMedicas;
         private System.Windows.Forms.CheckBox chkRCitasMedicas;
         private System.Windows.Forms.CheckBox chkECitasMedicas;

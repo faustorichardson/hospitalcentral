@@ -41,16 +41,16 @@
             this.mantenimiento_usuarios = new DevComponents.DotNetBar.RibbonBar();
             this.btn_mantenimiento_usuarios = new DevComponents.DotNetBar.ButtonItem();
             this.btn_mantenimiento_doctores = new DevComponents.DotNetBar.ButtonItem();
-            this.btn_mantenimiento_especialidades = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_mantenimiento_pacientes = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.procesos_gestionrequerimientos = new DevComponents.DotNetBar.RibbonBar();
             this.btn_procesos_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
-            this.reportes_listados = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_reportes_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_estadisticas_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
+            this.reportes_listados = new DevComponents.DotNetBar.RibbonBar();
+            this.btn_reportes_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -77,8 +77,8 @@
             this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel5.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
-            this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
+            this.ribbonPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,10 +96,10 @@
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.office2007StartButton1,
@@ -256,7 +256,7 @@
             this.mantenimiento_usuarios.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btn_mantenimiento_usuarios,
             this.btn_mantenimiento_doctores,
-            this.btn_mantenimiento_especialidades});
+            this.btn_mantenimiento_pacientes});
             this.mantenimiento_usuarios.Location = new System.Drawing.Point(3, 0);
             this.mantenimiento_usuarios.Name = "mantenimiento_usuarios";
             this.mantenimiento_usuarios.Size = new System.Drawing.Size(826, 96);
@@ -291,14 +291,14 @@
             this.btn_mantenimiento_doctores.Text = "DOCTORES";
             this.btn_mantenimiento_doctores.Click += new System.EventHandler(this.buttonItem2_Click);
             // 
-            // btn_mantenimiento_especialidades
+            // btn_mantenimiento_pacientes
             // 
-            this.btn_mantenimiento_especialidades.Image = ((System.Drawing.Image)(resources.GetObject("btn_mantenimiento_especialidades.Image")));
-            this.btn_mantenimiento_especialidades.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_mantenimiento_especialidades.Name = "btn_mantenimiento_especialidades";
-            this.btn_mantenimiento_especialidades.SubItemsExpandWidth = 14;
-            this.btn_mantenimiento_especialidades.Text = "ESPECIALIDADES MEDICAS";
-            this.btn_mantenimiento_especialidades.Click += new System.EventHandler(this.buttonItem3_Click);
+            this.btn_mantenimiento_pacientes.Image = ((System.Drawing.Image)(resources.GetObject("btn_mantenimiento_pacientes.Image")));
+            this.btn_mantenimiento_pacientes.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_mantenimiento_pacientes.Name = "btn_mantenimiento_pacientes";
+            this.btn_mantenimiento_pacientes.SubItemsExpandWidth = 14;
+            this.btn_mantenimiento_pacientes.Text = "PACIENTES";
+            this.btn_mantenimiento_pacientes.Click += new System.EventHandler(this.buttonItem3_Click);
             // 
             // ribbonPanel2
             // 
@@ -370,76 +370,6 @@
             this.btn_procesos_citasmedicas.Text = "CITAS MEDICAS";
             this.btn_procesos_citasmedicas.Click += new System.EventHandler(this.buttonItem1_Click);
             // 
-            // ribbonPanel3
-            // 
-            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.reportes_listados);
-            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 53);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(1027, 99);
-            // 
-            // 
-            // 
-            this.ribbonPanel3.Style.Class = "";
-            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseDown.Class = "";
-            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseOver.Class = "";
-            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel3.TabIndex = 3;
-            this.ribbonPanel3.Visible = false;
-            // 
-            // reportes_listados
-            // 
-            this.reportes_listados.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.reportes_listados.BackgroundMouseOverStyle.Class = "";
-            this.reportes_listados.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.reportes_listados.BackgroundStyle.Class = "";
-            this.reportes_listados.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.reportes_listados.ContainerControlProcessDialogKey = true;
-            this.reportes_listados.Dock = System.Windows.Forms.DockStyle.Left;
-            this.reportes_listados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportes_listados.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btn_reportes_citasmedicas});
-            this.reportes_listados.Location = new System.Drawing.Point(3, 0);
-            this.reportes_listados.Name = "reportes_listados";
-            this.reportes_listados.Size = new System.Drawing.Size(635, 96);
-            this.reportes_listados.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.reportes_listados.TabIndex = 0;
-            // 
-            // 
-            // 
-            this.reportes_listados.TitleStyle.Class = "";
-            this.reportes_listados.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.reportes_listados.TitleStyleMouseOver.Class = "";
-            this.reportes_listados.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btn_reportes_citasmedicas
-            // 
-            this.btn_reportes_citasmedicas.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_citasmedicas.Image")));
-            this.btn_reportes_citasmedicas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_reportes_citasmedicas.Name = "btn_reportes_citasmedicas";
-            this.btn_reportes_citasmedicas.SubItemsExpandWidth = 14;
-            this.btn_reportes_citasmedicas.Text = "CITAS MEDICAS";
-            this.btn_reportes_citasmedicas.Click += new System.EventHandler(this.buttonItem4_Click);
-            // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -509,6 +439,76 @@
             this.btn_estadisticas_citasmedicas.SubItemsExpandWidth = 14;
             this.btn_estadisticas_citasmedicas.Text = "CITAS MEDICAS";
             this.btn_estadisticas_citasmedicas.Click += new System.EventHandler(this.buttonItem5_Click);
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel3.Controls.Add(this.reportes_listados);
+            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1027, 99);
+            // 
+            // 
+            // 
+            this.ribbonPanel3.Style.Class = "";
+            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseDown.Class = "";
+            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseOver.Class = "";
+            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel3.TabIndex = 3;
+            this.ribbonPanel3.Visible = false;
+            // 
+            // reportes_listados
+            // 
+            this.reportes_listados.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.reportes_listados.BackgroundMouseOverStyle.Class = "";
+            this.reportes_listados.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.reportes_listados.BackgroundStyle.Class = "";
+            this.reportes_listados.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.reportes_listados.ContainerControlProcessDialogKey = true;
+            this.reportes_listados.Dock = System.Windows.Forms.DockStyle.Left;
+            this.reportes_listados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportes_listados.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btn_reportes_citasmedicas});
+            this.reportes_listados.Location = new System.Drawing.Point(3, 0);
+            this.reportes_listados.Name = "reportes_listados";
+            this.reportes_listados.Size = new System.Drawing.Size(635, 96);
+            this.reportes_listados.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.reportes_listados.TabIndex = 0;
+            // 
+            // 
+            // 
+            this.reportes_listados.TitleStyle.Class = "";
+            this.reportes_listados.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.reportes_listados.TitleStyleMouseOver.Class = "";
+            this.reportes_listados.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btn_reportes_citasmedicas
+            // 
+            this.btn_reportes_citasmedicas.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_citasmedicas.Image")));
+            this.btn_reportes_citasmedicas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_reportes_citasmedicas.Name = "btn_reportes_citasmedicas";
+            this.btn_reportes_citasmedicas.SubItemsExpandWidth = 14;
+            this.btn_reportes_citasmedicas.Text = "CITAS MEDICAS";
+            this.btn_reportes_citasmedicas.Click += new System.EventHandler(this.buttonItem4_Click);
             // 
             // office2007StartButton1
             // 
@@ -740,8 +740,8 @@
             this.ribbonPanel1.ResumeLayout(false);
             this.ribbonPanel5.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
-            this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
+            this.ribbonPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -790,7 +790,7 @@
         //private mdeg_combustibleDataSetTableAdapters.ticketsTableAdapter ticketsTableAdapter1;
         private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_usuarios;
         private DevComponents.DotNetBar.ButtonItem btn_procesos_citasmedicas;
-        private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_especialidades;
+        private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_pacientes;
         private DevComponents.DotNetBar.ButtonItem btn_reportes_citasmedicas;
         private DevComponents.DotNetBar.ButtonItem btn_estadisticas_citasmedicas;
         private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_doctores;

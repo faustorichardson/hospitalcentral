@@ -42,7 +42,7 @@ namespace hospitalcentral
             this.txtPassword.Clear();
             this.chkMantenimientos.Checked = false;
             this.chkMDoctores.Checked = false;
-            this.chkMEspecialidades.Checked = false;
+            this.chkMPacientes.Checked = false;
             this.chkMUsuarios.Checked = false;
             this.chkProcesos.Checked = false;
             this.chkPCitasMedicas.Checked = false;
@@ -75,7 +75,7 @@ namespace hospitalcentral
                     this.chkReportes.Enabled = false;
                     this.chkEstadisticas.Enabled = false;
                     this.chkMDoctores.Enabled = false;
-                    this.chkMEspecialidades.Enabled = false;
+                    this.chkMPacientes.Enabled = false;
                     this.chkMUsuarios.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
@@ -101,7 +101,7 @@ namespace hospitalcentral
                     this.chkReportes.Enabled = true;
                     this.chkEstadisticas.Enabled = true;
                     this.chkMDoctores.Enabled = true;
-                    this.chkMEspecialidades.Enabled = true;
+                    this.chkMPacientes.Enabled = true;
                     this.chkMUsuarios.Enabled = true;
                     this.chkPCitasMedicas.Enabled = true;
                     this.chkRCitasMedicas.Enabled = true;
@@ -127,7 +127,7 @@ namespace hospitalcentral
                     this.chkReportes.Enabled = false;
                     this.chkEstadisticas.Enabled = false;
                     this.chkMDoctores.Enabled = false;
-                    this.chkMEspecialidades.Enabled = false;
+                    this.chkMPacientes.Enabled = false;
                     this.chkMUsuarios.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
@@ -153,7 +153,7 @@ namespace hospitalcentral
                     this.chkReportes.Enabled = true;
                     this.chkEstadisticas.Enabled = true;
                     this.chkMDoctores.Enabled = true;
-                    this.chkMEspecialidades.Enabled = true;
+                    this.chkMPacientes.Enabled = true;
                     this.chkMUsuarios.Enabled = true;
                     this.chkPCitasMedicas.Enabled = true;
                     this.chkRCitasMedicas.Enabled = true;
@@ -179,7 +179,7 @@ namespace hospitalcentral
                     this.chkReportes.Enabled = false;
                     this.chkEstadisticas.Enabled = false;
                     this.chkMDoctores.Enabled = false;
-                    this.chkMEspecialidades.Enabled = false;
+                    this.chkMPacientes.Enabled = false;
                     this.chkMUsuarios.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
@@ -208,7 +208,7 @@ namespace hospitalcentral
                     this.chkReportes.Enabled = false;
                     this.chkEstadisticas.Enabled = false;
                     this.chkMDoctores.Enabled = false;
-                    this.chkMEspecialidades.Enabled = false;
+                    this.chkMPacientes.Enabled = false;
                     this.chkMUsuarios.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
@@ -290,7 +290,7 @@ namespace hospitalcentral
                             // Permisos Mantenimientos
                             " permiso_mantenimiento," +
                             " permiso_mantenimiento_doctores,"+
-                            " permiso_mantenimiento_especialidades,"+
+                            " permiso_mantenimiento_pacientes,"+
                             " permiso_mantenimiento_usuario,"+
                             // Permisos Procesos
                             " permiso_proceso," +
@@ -306,7 +306,7 @@ namespace hospitalcentral
                             // Valores permisos mantenimientos
                             " @permiso_mantenimiento," +
                             " @permiso_mantenimiento_doctores,"+
-                            " @permiso_mantenimiento_especialidades,"+
+                            " @permiso_mantenimiento_pacientes,"+
                             " @permiso_mantenimiento_usuario,"+
                             // Valores permisos procesos
                             " @permiso_proceso,"+
@@ -346,13 +346,13 @@ namespace hospitalcentral
                             myCommand.Parameters.AddWithValue("@permiso_mantenimiento_doctores", 0);
                         }
 
-                        if (chkMEspecialidades.Checked == true)
+                        if (chkMPacientes.Checked == true)
                         {
-                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_especialidades", 1);
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_pacientes", 1);
                         }
                         else
                         {
-                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_especialidades", 0);
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_pacientes", 0);
                         }
 
                         if (chkMUsuarios.Checked == true)
@@ -453,7 +453,7 @@ namespace hospitalcentral
                             // Permisos Mantenimientos
                             " permiso_mantenimiento = @permiso_mantenimiento," +
                             " permiso_mantenimiento_doctores = @permiso_mantenimiento_doctores," +
-                            " permiso_mantenimiento_especialidades = @permiso_mantenimiento_especialidades," +
+                            " permiso_mantenimiento_pacientes = @permiso_mantenimiento_pacientes," +
                             " permiso_mantenimiento_usuario = @permiso_mantenimiento_usuario," +
                             // Permisos Procesos
                             " permiso_proceso = @permiso_proceso," +
@@ -499,13 +499,13 @@ namespace hospitalcentral
                             myCommand.Parameters.AddWithValue("@permiso_mantenimiento_doctores", 0);
                         }
 
-                        if (chkMEspecialidades.Checked == true)
+                        if (chkMPacientes.Checked == true)
                         {
-                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_especialidades", 1);
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_pacientes", 1);
                         }
                         else
                         {
-                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_especialidades", 0);
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_pacientes", 0);
                         }
 
                         if (chkMUsuarios.Checked == true)
@@ -668,13 +668,13 @@ namespace hospitalcentral
                                 chkMDoctores.Checked = false;
                             }
                             /////
-                            if (MyReader["permiso_mantenimiento_especialidades"].ToString() == "1")
+                            if (MyReader["permiso_mantenimiento_pacientes"].ToString() == "1")
                             {
-                                chkMEspecialidades.Checked = true;
+                                chkMPacientes.Checked = true;
                             }
                             else
                             {
-                                chkMEspecialidades.Checked = false;
+                                chkMPacientes.Checked = false;
                             }
                             /////
                             if (MyReader["permiso_mantenimiento_usuario"].ToString() == "1")
@@ -776,116 +776,116 @@ namespace hospitalcentral
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            ////Conexion a la base de datos
-            //MySqlConnection myConexion = new MySqlConnection(clsConexion.ConectionString);
-            //// Creando el command que ejecutare
-            //MySqlCommand myCommand = new MySqlCommand();
-            //// Creando el Data Adapter
-            //MySqlDataAdapter myAdapter = new MySqlDataAdapter();
-            //// Creando el String Builder
-            //StringBuilder sbQuery = new StringBuilder();
-            //// Otras variables del entorno
-            //string cWhere = " WHERE 1 = 1";
-            //string cUsuario = "";
-            //string cTitulo = "";
+            //Conexion a la base de datos
+            MySqlConnection myConexion = new MySqlConnection(clsConexion.ConectionString);
+            // Creando el command que ejecutare
+            MySqlCommand myCommand = new MySqlCommand();
+            // Creando el Data Adapter
+            MySqlDataAdapter myAdapter = new MySqlDataAdapter();
+            // Creando el String Builder
+            StringBuilder sbQuery = new StringBuilder();
+            // Otras variables del entorno
+            string cWhere = " WHERE 1 = 1";
+            string cUsuario = "";
+            string cTitulo = "";
 
-            //try
-            //{
-            //    // Abro conexion
-            //    myConexion.Open();
-            //    // Creo comando
-            //    myCommand = myConexion.CreateCommand();
-            //    // Adhiero el comando a la conexion
-            //    myCommand.Connection = myConexion;
-            //    // Filtros de la busqueda                
-            //    //string fechadesde = fechaDesde.Value.ToString("yyyy-MM-dd");
-            //    //string fechahasta = fechaHasta.Value.ToString("yyyy-MM-dd");
-            //    //string varEspecialidad = (cmbEspecialidad.SelectedValue).ToString();
-            //    //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
-            //    //cWhere = cWhere + " AND referimiento = " + varEspecialidad + "";
-            //    sbQuery.Clear();
-            //    sbQuery.Append("SELECT idusuarios, usuario, clave, status, nivelpermiso");
-            //    sbQuery.Append(" FROM usuarios ");
-            //    sbQuery.Append(cWhere);
-                
-            //    // Paso los valores de sbQuery al CommandText
-            //    myCommand.CommandText = sbQuery.ToString();
-            //    // Creo el objeto Data Adapter y ejecuto el command en el
-            //    myAdapter = new MySqlDataAdapter(myCommand);
-            //    // Creo el objeto Data Table
-            //    DataTable dtUsuarios = new DataTable();
-            //    // Lleno el data adapter
-            //    myAdapter.Fill(dtUsuarios);
-            //    // Cierro el objeto conexion
-            //    myConexion.Close();
+            try
+            {
+                // Abro conexion
+                myConexion.Open();
+                // Creo comando
+                myCommand = myConexion.CreateCommand();
+                // Adhiero el comando a la conexion
+                myCommand.Connection = myConexion;
+                // Filtros de la busqueda                
+                //string fechadesde = fechaDesde.Value.ToString("yyyy-MM-dd");
+                //string fechahasta = fechaHasta.Value.ToString("yyyy-MM-dd");
+                //string varEspecialidad = (cmbEspecialidad.SelectedValue).ToString();
+                //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
+                //cWhere = cWhere + " AND referimiento = " + varEspecialidad + "";
+                sbQuery.Clear();
+                sbQuery.Append("SELECT idusuarios, usuario, clave, status");
+                sbQuery.Append(" FROM usuarios ");
+                sbQuery.Append(cWhere);
 
-            //    // Verifico cantidad de datos encontrados
-            //    int nRegistro = dtUsuarios.Rows.Count;
-            //    if (nRegistro == 0)
-            //    {
-            //        MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion de Combustibles", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        //1ero.HACEMOS LA COLECCION DE PARAMETROS
-            //        //los campos de parametros contiene un objeto para cada campo de parametro en el informe
-            //        ParameterFields oParametrosCR = new ParameterFields();
-            //        //Proporciona propiedades para la recuperacion y configuracion del tipo de los parametros
-            //        ParameterValues oParametrosValuesCR = new ParameterValues();
+                // Paso los valores de sbQuery al CommandText
+                myCommand.CommandText = sbQuery.ToString();
+                // Creo el objeto Data Adapter y ejecuto el command en el
+                myAdapter = new MySqlDataAdapter(myCommand);
+                // Creo el objeto Data Table
+                DataTable dtUsuarios = new DataTable();
+                // Lleno el data adapter
+                myAdapter.Fill(dtUsuarios);
+                // Cierro el objeto conexion
+                myConexion.Close();
 
-            //        //2do.CREAMOS LOS PARAMETROS
-            //        ParameterField oUsuario = new ParameterField();
-            //        //parametervaluetype especifica el TIPO de valor de parametro
-            //        //ParameterValueKind especifica el tipo de valor de parametro en la PARAMETERVALUETYPE de la Clase PARAMETERFIELD
-            //        oUsuario.ParameterValueType = ParameterValueKind.StringParameter;
+                // Verifico cantidad de datos encontrados
+                int nRegistro = dtUsuarios.Rows.Count;
+                if (nRegistro == 0)
+                {
+                    MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion de Combustibles", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    //1ero.HACEMOS LA COLECCION DE PARAMETROS
+                    //los campos de parametros contiene un objeto para cada campo de parametro en el informe
+                    ParameterFields oParametrosCR = new ParameterFields();
+                    //Proporciona propiedades para la recuperacion y configuracion del tipo de los parametros
+                    ParameterValues oParametrosValuesCR = new ParameterValues();
 
-            //        //3ero.VALORES PARA LOS PARAMETROS
-            //        //ParameterDiscreteValue proporciona propiedades para la recuperacion y configuracion de 
-            //        //parametros de valores discretos
-            //        ParameterDiscreteValue oUsuarioDValue = new ParameterDiscreteValue();
-            //        oUsuarioDValue.Value = cUsuario;
+                    //2do.CREAMOS LOS PARAMETROS
+                    ParameterField oUsuario = new ParameterField();
+                    //parametervaluetype especifica el TIPO de valor de parametro
+                    //ParameterValueKind especifica el tipo de valor de parametro en la PARAMETERVALUETYPE de la Clase PARAMETERFIELD
+                    oUsuario.ParameterValueType = ParameterValueKind.StringParameter;
 
-            //        //4to. AGREGAMOS LOS VALORES A LOS PARAMETROS
-            //        oUsuario.CurrentValues.Add(oUsuarioDValue);
+                    //3ero.VALORES PARA LOS PARAMETROS
+                    //ParameterDiscreteValue proporciona propiedades para la recuperacion y configuracion de 
+                    //parametros de valores discretos
+                    ParameterDiscreteValue oUsuarioDValue = new ParameterDiscreteValue();
+                    oUsuarioDValue.Value = cUsuario;
 
-
-            //        //5to. AGREGAMOS LOS PARAMETROS A LA COLECCION 
-            //        oParametrosCR.Add(oUsuario);
-
-            //        //nombre del parametro en CR (Crystal Reports)
-            //        oParametrosCR[0].Name = "cUsuario";
-
-            //        //nombre del TITULO DEL INFORME
-            //        cTitulo = "LISTADO DE USUARIOS DEL SISTEMA";
-
-            //        //6to Instanciamos nuestro REPORTE
-            //        //Reportes.ListadoDoctores oListado = new Reportes.ListadoDoctores();
-            //        rptUsuarios orptUsuarios = new rptUsuarios();
-
-            //        //pasamos el nombre del TITULO del Listado
-            //        //SumaryInfo es un objeto que se utiliza para leer,crear y actualizar las propiedades del reporte
-            //        // oListado.SummaryInfo.ReportTitle = cTitulo;
-
-            //        orptUsuarios.SummaryInfo.ReportTitle = cTitulo;
-
-            //        //7mo. instanciamos nuestro el FORMULARIO donde esta nuestro ReportViewer
-            //        frmPrinter ofrmPrinter = new frmPrinter(dtUsuarios, orptUsuarios, cTitulo);
-
-            //        //ParameterFieldInfo Obtiene o establece la colección de campos de parámetros.
-            //        ofrmPrinter.CrystalReportViewer1.ParameterFieldInfo = oParametrosCR;
-            //        ofrmPrinter.ShowDialog();
-            //    }
+                    //4to. AGREGAMOS LOS VALORES A LOS PARAMETROS
+                    oUsuario.CurrentValues.Add(oUsuarioDValue);
 
 
-            //}
-            //catch (Exception myEx)
-            //{
-            //    MessageBox.Show("Error : " + myEx.Message, "Mostrando Reporte", MessageBoxButtons.OK,
-            //                        MessageBoxIcon.Information);
-            //    //ExceptionLog.LogError(myEx, false);
-            //    return;
-            //}
+                    //5to. AGREGAMOS LOS PARAMETROS A LA COLECCION 
+                    oParametrosCR.Add(oUsuario);
+
+                    //nombre del parametro en CR (Crystal Reports)
+                    oParametrosCR[0].Name = "cUsuario";
+
+                    //nombre del TITULO DEL INFORME
+                    cTitulo = "LISTADO DE USUARIOS DEL SISTEMA";
+
+                    //6to Instanciamos nuestro REPORTE
+                    //Reportes.ListadoDoctores oListado = new Reportes.ListadoDoctores();
+                    rptUsuarios orptUsuarios = new rptUsuarios();
+
+                    //pasamos el nombre del TITULO del Listado
+                    //SumaryInfo es un objeto que se utiliza para leer,crear y actualizar las propiedades del reporte
+                    // oListado.SummaryInfo.ReportTitle = cTitulo;
+
+                    orptUsuarios.SummaryInfo.ReportTitle = cTitulo;
+
+                    //7mo. instanciamos nuestro el FORMULARIO donde esta nuestro ReportViewer
+                    frmPrinter ofrmPrinter = new frmPrinter(dtUsuarios, orptUsuarios, cTitulo);
+
+                    //ParameterFieldInfo Obtiene o establece la colección de campos de parámetros.
+                    ofrmPrinter.CrystalReportViewer1.ParameterFieldInfo = oParametrosCR;
+                    ofrmPrinter.ShowDialog();
+                }
+
+
+            }
+            catch (Exception myEx)
+            {
+                MessageBox.Show("Error : " + myEx.Message, "Mostrando Reporte", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                //ExceptionLog.LogError(myEx, false);
+                return;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -898,7 +898,7 @@ namespace hospitalcentral
             if (txtUsuario.Text != "")
             {
                 DialogResult Result =
-                MessageBox.Show("Se perderan Los cambios Realizados" + System.Environment.NewLine + "Desea Guardar los Cambios", "Sistema de Gestion de Combustibles v1.0", MessageBoxButtons.YesNo,
+                MessageBox.Show("Se perderan Los cambios Realizados" + System.Environment.NewLine + "Desea Guardar los Cambios", "Sistema de Gestion Medica", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
                 switch (Result)
                 {

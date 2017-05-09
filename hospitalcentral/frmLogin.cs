@@ -79,7 +79,7 @@ namespace hospitalcentral
                     
                     // llamo el form menu
                     myreader.Read();
-
+                    // Paso el usuario a la variable cUsuarioActual
                     cUsuarioActual = myreader["usuario"].ToString();
                     frmMenu ofrmMenu = new frmMenu(cUsuarioActual);
                     ofrmMenu.Show();

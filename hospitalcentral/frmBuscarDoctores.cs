@@ -9,18 +9,67 @@ using System.Windows.Forms;
 
 namespace hospitalcentral
 {
-    public partial class frmBuscarClientes : frmBase
+    public partial class frmBuscarDoctores : frmBase
     {
         public string cCodigo = "";
 
-        public frmBuscarClientes()
+        public frmBuscarDoctores()
         {
             InitializeComponent();
         }
 
-        private void frmBuscarClientes_Load(object sender, EventArgs e)
+        private void frmBuscarSuplidor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtBuscar_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                if (this.txtBuscar.Text != "")
+                {
+                    // Version Consulta sin Store Procedure, solo string de consulta
+                    // Version Consulta con Store Procedure parametrizado
+                    string cBuscar = "'%" + this.txtBuscar.Text.Trim().ToUpper() + "%'";
+                    DataTable dsCatalogo = clsProcesos.DatosGeneral("doctores", " where upper(nombre)  like " + cBuscar + " order by nombre ");
+
+                    if (dsCatalogo.Rows.Count > 0)
+                    {
+                        // borro las lineas del grid y datatable
+                        this.grdCatalogo.Rows.Clear();
+                        // Mostrar los datos del datatable en el grid
+                        foreach (DataRow registro in dsCatalogo.Rows)
+                        {
+                            //this.grdCatalogo.Rows.Add(registro["idproducto"], registro["producto"].ToString().Trim() + " " + registro["referencia"], registro["tipo"]);
+                            this.grdCatalogo.Rows.Add(registro["iddoctores"], registro["nombre"].ToString().Trim(), registro["cedula"], registro["exequatur"]);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hubo coincidencia, favor intente de nuevo!!", "Sistema de Gestion Medica",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error : " + ex.Message, "Sistema de Gestion Medica", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                clsExceptionLog.LogError(ex, false);
+                //    oTransaccion.Connection.State =  ConnectionState.                                 
+                return;
+            }
         }
 
         private void cmdAceptar_Click(object sender, EventArgs e)
@@ -44,54 +93,6 @@ namespace hospitalcentral
         {
             this.cCodigo = "";
             this.Close();
-        }
-
-        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
-        private void txtBuscar_Validating(object sender, CancelEventArgs e)
-        {
-            try
-            {
-                if (this.txtBuscar.Text != "")
-                {
-                    // Version Consulta sin Store Procedure, solo string de consulta
-                    // Version Consulta con Store Procedure parametrizado
-                    string cBuscar = "'%" + this.txtBuscar.Text.Trim().ToUpper() + "%'";
-                    DataTable dsCatalogo = clsProcesos.DatosGeneral("clientes", " where upper(nombre)  like " + cBuscar + " AND status = 'A' order by nombre ");
-
-                    if (dsCatalogo.Rows.Count > 0)
-                    {
-                        // borro las lineas del grid y datatable
-                        this.grdCatalogo.Rows.Clear();
-                        // Mostrar los datos del datatable en el grid
-                        foreach (DataRow registro in dsCatalogo.Rows)
-                        {
-                            this.grdCatalogo.Rows.Add(registro["idcliente"], registro["nombre"].ToString().Trim(), registro["rnc"]);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No hubo coincidencia, favor intente de nuevo!!", "Sistema de Gestion de Facturacion e Inventario",
-                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error : " + ex.Message, "Sistema de Gestion de Facturacion e Inventario", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                clsExceptionLog.LogError(ex, false);
-                //    oTransaccion.Connection.State =  ConnectionState.                                 
-                return;
-            }
         }
 
         private void grdCatalogo_DoubleClick(object sender, EventArgs e)

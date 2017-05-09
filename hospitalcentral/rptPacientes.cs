@@ -16,14 +16,14 @@ namespace hospitalcentral {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptGastosAdministrativos : ReportClass {
+    public class rptPacientes : ReportClass {
         
-        public rptGastosAdministrativos() {
+        public rptPacientes() {
         }
         
         public override string ResourceName {
             get {
-                return "rptGastosAdministrativos.rpt";
+                return "rptPacientes.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace hospitalcentral {
         
         public override string FullResourceName {
             get {
-                return "hospitalcentral.rptGastosAdministrativos.rpt";
+                return "hospitalcentral.rptPacientes.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -111,28 +95,12 @@ namespace hospitalcentral {
                 return this.DataDefinition.ParameterFields[0];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_cFechaInicial {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_cFechaFinal {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptGastosAdministrativos : Component, ICachedReport {
+    public class CachedrptPacientes : Component, ICachedReport {
         
-        public CachedrptGastosAdministrativos() {
+        public CachedrptPacientes() {
         }
         
         [Browsable(false)]
@@ -169,7 +137,7 @@ namespace hospitalcentral {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptGastosAdministrativos rpt = new rptGastosAdministrativos();
+            rptPacientes rpt = new rptPacientes();
             rpt.Site = this.Site;
             return rpt;
         }

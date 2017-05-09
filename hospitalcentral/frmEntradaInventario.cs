@@ -1098,7 +1098,7 @@ namespace hospitalcentral
 
         private void btnBuscarSuplidor_Click(object sender, EventArgs e)
         {
-            frmBuscarSuplidor ofrmBuscarSuplidor = new frmBuscarSuplidor();
+            frmBuscarDoctores ofrmBuscarSuplidor = new frmBuscarDoctores();
             ofrmBuscarSuplidor.ShowDialog();
             string cCodigo = ofrmBuscarSuplidor.cCodigo;
 
