@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCitasMedicas" targetNamespace="http://tempuri.org/dsCitasMedicas.xsd" xmlns:mstns="http://tempuri.org/dsCitasMedicas.xsd" xmlns="http://tempuri.org/dsCitasMedicas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCitasMedicas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCitasMedicas" msprop:Generator_UserDSName="dsCitasMedicas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtCitasMedicas" msprop:Generator_TableClassName="dtCitasMedicasDataTable" msprop:Generator_TableVarName="tabledtCitasMedicas" msprop:Generator_TablePropName="dtCitasMedicas" msprop:Generator_RowDeletingName="dtCitasMedicasRowDeleting" msprop:Generator_RowChangingName="dtCitasMedicasRowChanging" msprop:Generator_RowEvHandlerName="dtCitasMedicasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCitasMedicasRowDeleted" msprop:Generator_UserTableName="dtCitasMedicas" msprop:Generator_RowChangedName="dtCitasMedicasRowChanged" msprop:Generator_RowEvArgName="dtCitasMedicasRowChangeEvent" msprop:Generator_RowClassName="dtCitasMedicasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idcitasmedicas" msprop:Generator_ColumnVarNameInTable="columnidcitasmedicas" msprop:Generator_ColumnPropNameInRow="idcitasmedicas" msprop:Generator_ColumnPropNameInTable="idcitasmedicasColumn" msprop:Generator_UserColumnName="idcitasmedicas" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="record" msprop:Generator_ColumnVarNameInTable="columnrecord" msprop:Generator_ColumnPropNameInRow="record" msprop:Generator_ColumnPropNameInTable="recordColumn" msprop:Generator_UserColumnName="record" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="cedula" msprop:Generator_ColumnVarNameInTable="columncedula" msprop:Generator_ColumnPropNameInRow="cedula" msprop:Generator_ColumnPropNameInTable="cedulaColumn" msprop:Generator_UserColumnName="cedula" type="xs:string" minOccurs="0" />
+              <xs:element name="rango" msprop:Generator_ColumnVarNameInTable="columnrango" msprop:Generator_ColumnPropNameInRow="rango" msprop:Generator_ColumnPropNameInTable="rangoColumn" msprop:Generator_UserColumnName="rango" type="xs:string" minOccurs="0" />
+              <xs:element name="especialidad" msprop:Generator_ColumnVarNameInTable="columnespecialidad" msprop:Generator_ColumnPropNameInRow="especialidad" msprop:Generator_ColumnPropNameInTable="especialidadColumn" msprop:Generator_UserColumnName="especialidad" type="xs:string" minOccurs="0" />
+              <xs:element name="fecharegistro" msprop:Generator_ColumnVarNameInTable="columnfecharegistro" msprop:Generator_ColumnPropNameInRow="fecharegistro" msprop:Generator_ColumnPropNameInTable="fecharegistroColumn" msprop:Generator_UserColumnName="fecharegistro" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

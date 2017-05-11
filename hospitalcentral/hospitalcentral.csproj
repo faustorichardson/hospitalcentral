@@ -124,6 +124,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCategorias.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsCitasMedicas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCitasMedicas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsDoctores.cs">
       <DependentUpon>dsDoctores.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -230,6 +235,12 @@
     <Compile Include="frmCategorias.Designer.cs">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmcitasmedicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmcitasmedicas.Designer.cs">
+      <DependentUpon>frmcitasmedicas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +288,12 @@
     </Compile>
     <Compile Include="frmPacientes.Designer.cs">
       <DependentUpon>frmPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintCitasMedicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintCitasMedicas.Designer.cs">
+      <DependentUpon>frmPrintCitasMedicas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrintCobroDespacho.cs">
       <SubType>Form</SubType>
@@ -344,6 +361,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptCategorias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCitasMedicasPorEspecialidad.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCitasMedicasPorEspecialidad.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCitasMedicasPorRecord.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCitasMedicasPorRecord.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCitasMedicasTodas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCitasMedicasTodas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptDoctores.cs">
@@ -457,6 +492,9 @@
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmcitasmedicas.resx">
+      <DependentUpon>frmcitasmedicas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +518,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPacientes.resx">
       <DependentUpon>frmPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintCitasMedicas.resx">
+      <DependentUpon>frmPrintCitasMedicas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintCobroDespacho.resx">
       <DependentUpon>frmPrintCobroDespacho.cs</DependentUpon>
@@ -524,6 +565,18 @@
     <EmbeddedResource Include="rptCategorias.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCategorias.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCitasMedicasPorEspecialidad.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCitasMedicasPorEspecialidad.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCitasMedicasPorRecord.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCitasMedicasPorRecord.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCitasMedicasTodas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCitasMedicasTodas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptDoctores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -594,6 +647,17 @@
     </None>
     <None Include="dsCategorias.xss">
       <DependentUpon>dsCategorias.xsd</DependentUpon>
+    </None>
+    <None Include="dsCitasMedicas.xsc">
+      <DependentUpon>dsCitasMedicas.xsd</DependentUpon>
+    </None>
+    <None Include="dsCitasMedicas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCitasMedicas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCitasMedicas.xss">
+      <DependentUpon>dsCitasMedicas.xsd</DependentUpon>
     </None>
     <None Include="dsDoctores.xsc">
       <DependentUpon>dsDoctores.xsd</DependentUpon>

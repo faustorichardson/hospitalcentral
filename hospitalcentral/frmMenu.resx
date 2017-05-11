@@ -335,6 +335,31 @@
         dQ5+R/a34fNtI0bE7H700VAtqa/6qq/6qq/+zAoJ+RcvlxTmY1q0GwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btn_procesos_citasmedicas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAASVSURBVGhD7Zm7b1p3FMdddejotkuGpEWdkiX1VlVqmitVGTpUitR06xAp6t6pQ6VIV+nSfyBj
+        qwxV22yVY8zLmEd42Ni8bDDm6QcYMGAD5uEXtk/POdxLAVsBG9oa6R7pI2yD+H0/v8vv/PDvjg1S+Sdf
+        fZ//9ssJ+tn7zgfj0Sfvq/iJUanc1w982c8+FcNv3xoPf3jDF//uvcfSU9enjCbThMlseTw5pRbbeaWe
+        FnOPHkDs8y98q+/eMa99cgOMvz9/odZoRWJaq2M0Or2o1RtEHaI3zIiGGaM4Y5wVjSazOGu2iCaLVbRY
+        X4tWm1202R2iwzknOuddfFUHKgw5jpgRuAjjy9+ABKIffQzxt27CxqPbMDWtAQzPYHgGBQAFAAUABQAF
+        AAUABQAFAAUABQAFAAUABWDR7SlJMa5eODiHpzA0IA1iczhhbt4FrkU3BDR/sUDq5m0W2PzxG1haDsBy
+        IPhGAsGVFsGVELMSWmVCq2FYDUcgHImCFONq5Xa7afYBPyY8ezgj4PX5wb+0jAMHIRgKQWLyj6bArTss
+        kH75E0RjMSQuPUpEm0QkOp7j18YhFicSEEfo94EFMLxAAm6vF46OjpjDw0Pm4OCA2dP+2SFQtf0KtVqN
+        qVarLSqVCrO3t8eUy2WmVCq1KBaLzO7uLhQKBYgn1oYjQJ/J/1pAltjZ2bn6QpYFiLW19Q6BbDYLyWQS
+        Mi4LZH95DulnP0Pyh2ewE7TSoByIAg8iQO+DlK4s0S5A0JVIJlMcSL4CxP7+PlOv15lhXQFJgK5ECbm8
+        hCxAbZEWcruMDP29HXrtsNood7qFRW4eHq8PfP4l6nAPpXi9y+FwtgQogA4HJgw4MD3SoNbXtn8GdC3A
+        ArbWDnBwgkLIuD1ehkIR1NkICkhQl2tvxe1tFturKMXrXdhGBbPF0iFAs0YzZpGCO+fmeZYokLc5Qx39
+        /iLa94DuvaB7P5D3BHlfwBZ8OQGPxwMulwvMONsjK+D3+yGIG1c4jG+IbxyORCCGG00ikYD19XXY3NyE
+        VCoF6XQaMtidstvbsJ3LQS6fhzy2wkKhuRh5cdJC5UXbXMTlcnNRy4u8Ii98qREQcnNosj+YAIWmwFtb
+        W5DJZLid5jBsHsPKIamjUDgKRmHkENSpqGtRG5b3lePjY2g0GnBycsKcnp4yZ2dnLbpKEVAEFIF+SxFQ
+        BK6JQF2rhdrYGOwiWWQDyT99qgj0LEVglAUa9+4xJ8jR3bvnBBIqFcTv34cIEkWqbvf1EgAMKdNAugUi
+        SADxSZRnZxWBc6UISIykgNJGFQGsayogSPF6lyIgCdTwtSyh00FVr4eKwQD1SOTfFzCZLcMRGO7/A/0L
+        TE6pBZdrYbQF7A7HaAvQcfhIC9Dxut3uGFkBFQnQ8TrdnLA7nOD1+roOdzdQKNn34S7fhUHB7sNdkuwl
+        UCyW6HS6fwEqFDD3e39AuoNy4ZF6OwMer19O4JV6egIFSiMrQKXWaFUo8AIFSv+zAH7zHrBQQEABAQUE
+        FBBQQEABAQUEFBBQQMCQbwQDnwODt8DwDIZnMDyDAuNSjK4aG/sb7pY0abRzAGgAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btn_mantenimiento_usuarios.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -511,31 +536,6 @@
         Xb0Vknk4dfmX64PJxLo8Y2zKH48tBZYEz+rejoMn4L47B5QRBPQue2TYKDF9oWXuK3Hq6vt9exK/bLCs
         BpIB1nG2FfK7Wyare1Y67HfFpa9myA2oYVOeBbbk87GjQITdUnuuZSpq/pU3MIzU+z9AT71aNf//+FW8
         9to/AVENaaTHPS5lAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btn_procesos_citasmedicas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAASVSURBVGhD7Zm7b1p3FMdddejotkuGpEWdkiX1VlVqmitVGTpUitR06xAp6t6pQ6VIV+nSfyBj
-        qwxV22yVY8zLmEd42Ni8bDDm6QcYMGAD5uEXtk/POdxLAVsBG9oa6R7pI2yD+H0/v8vv/PDvjg1S+Sdf
-        fZ//9ssJ+tn7zgfj0Sfvq/iJUanc1w982c8+FcNv3xoPf3jDF//uvcfSU9enjCbThMlseTw5pRbbeaWe
-        FnOPHkDs8y98q+/eMa99cgOMvz9/odZoRWJaq2M0Or2o1RtEHaI3zIiGGaM4Y5wVjSazOGu2iCaLVbRY
-        X4tWm1202R2iwzknOuddfFUHKgw5jpgRuAjjy9+ABKIffQzxt27CxqPbMDWtAQzPYHgGBQAFAAUABQAF
-        AAUABQAFAAUABQAFAAUABWDR7SlJMa5eODiHpzA0IA1iczhhbt4FrkU3BDR/sUDq5m0W2PzxG1haDsBy
-        IPhGAsGVFsGVELMSWmVCq2FYDUcgHImCFONq5Xa7afYBPyY8ezgj4PX5wb+0jAMHIRgKQWLyj6bArTss
-        kH75E0RjMSQuPUpEm0QkOp7j18YhFicSEEfo94EFMLxAAm6vF46OjpjDw0Pm4OCA2dP+2SFQtf0KtVqN
-        qVarLSqVCrO3t8eUy2WmVCq1KBaLzO7uLhQKBYgn1oYjQJ/J/1pAltjZ2bn6QpYFiLW19Q6BbDYLyWQS
-        Mi4LZH95DulnP0Pyh2ewE7TSoByIAg8iQO+DlK4s0S5A0JVIJlMcSL4CxP7+PlOv15lhXQFJgK5ECbm8
-        hCxAbZEWcruMDP29HXrtsNood7qFRW4eHq8PfP4l6nAPpXi9y+FwtgQogA4HJgw4MD3SoNbXtn8GdC3A
-        ArbWDnBwgkLIuD1ehkIR1NkICkhQl2tvxe1tFturKMXrXdhGBbPF0iFAs0YzZpGCO+fmeZYokLc5Qx39
-        /iLa94DuvaB7P5D3BHlfwBZ8OQGPxwMulwvMONsjK+D3+yGIG1c4jG+IbxyORCCGG00ikYD19XXY3NyE
-        VCoF6XQaMtidstvbsJ3LQS6fhzy2wkKhuRh5cdJC5UXbXMTlcnNRy4u8Ii98qREQcnNosj+YAIWmwFtb
-        W5DJZLid5jBsHsPKIamjUDgKRmHkENSpqGtRG5b3lePjY2g0GnBycsKcnp4yZ2dnLbpKEVAEFIF+SxFQ
-        BK6JQF2rhdrYGOwiWWQDyT99qgj0LEVglAUa9+4xJ8jR3bvnBBIqFcTv34cIEkWqbvf1EgAMKdNAugUi
-        SADxSZRnZxWBc6UISIykgNJGFQGsayogSPF6lyIgCdTwtSyh00FVr4eKwQD1SOTfFzCZLcMRGO7/A/0L
-        TE6pBZdrYbQF7A7HaAvQcfhIC9Dxut3uGFkBFQnQ8TrdnLA7nOD1+roOdzdQKNn34S7fhUHB7sNdkuwl
-        UCyW6HS6fwEqFDD3e39AuoNy4ZF6OwMer19O4JV6egIFSiMrQKXWaFUo8AIFSv+zAH7zHrBQQEABAQUE
-        FBBQQEABAQUEFBBQQMCQbwQDnwODt8DwDIZnMDyDAuNSjK4aG/sb7pY0abRzAGgAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btn_estadisticas_citasmedicas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
