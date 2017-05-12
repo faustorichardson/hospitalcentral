@@ -306,7 +306,8 @@ namespace hospitalcentral
 
         private void buttonItem4_Click(object sender, EventArgs e)
         {
-
+            frmPrintCitasMedicas ofrmPrintCitasMedicas = new frmPrintCitasMedicas();
+            ofrmPrintCitasMedicas.ShowDialog();
         }
 
         private void buttonItem5_Click(object sender, EventArgs e)
