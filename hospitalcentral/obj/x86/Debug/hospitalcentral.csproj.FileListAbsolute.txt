@@ -64,3 +64,4 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarPacientes.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmcitasmedicas.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintCitasMedicas.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmEstadisticasCitasMedicas.resources

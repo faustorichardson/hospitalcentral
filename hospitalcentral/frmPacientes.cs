@@ -80,6 +80,8 @@ namespace hospitalcentral
             this.txtRecord.Clear();
             this.txtCedula.Clear();
             this.txtNombre.Clear();
+            this.txtNSS.Clear();
+            this.txtAntecedentes.Clear();
             this.cmbRango.Refresh();
         }
 
@@ -102,6 +104,8 @@ namespace hospitalcentral
                     this.txtCedula.Enabled = false;
                     this.txtNombre.Enabled = false;
                     this.cmbRango.Enabled = false;
+                    this.txtNSS.Enabled = false;
+                    this.txtAntecedentes.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -119,6 +123,8 @@ namespace hospitalcentral
                     this.txtCedula.Enabled = true;
                     this.txtNombre.Enabled = true;
                     this.cmbRango.Enabled = true;
+                    this.txtNSS.Enabled = true;
+                    this.txtAntecedentes.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -136,6 +142,8 @@ namespace hospitalcentral
                     this.txtCedula.Enabled = false;
                     this.txtNombre.Enabled = false;
                     this.cmbRango.Enabled = false;
+                    this.txtNSS.Enabled = false;
+                    this.txtAntecedentes.Enabled = false;
                     break;
 
                 case "Editar":
@@ -147,13 +155,14 @@ namespace hospitalcentral
                     this.btnEliminar.Enabled = true;
                     this.btnCancelar.Enabled = true;
                     this.btnSalir.Enabled = true;
-                    //
-                    //
+                    //                    
                     this.txtID.Enabled = false;
                     this.txtRecord.Enabled = true;
                     this.txtCedula.Enabled = true;
                     this.txtNombre.Enabled = true;
                     this.cmbRango.Enabled = true;
+                    this.txtNSS.Enabled = true;
+                    this.txtAntecedentes.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -166,12 +175,13 @@ namespace hospitalcentral
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;
                     //
-                    //
                     this.txtID.Enabled = false;
                     this.txtRecord.Enabled = false;
                     this.txtCedula.Enabled = false;
                     this.txtNombre.Enabled = false;
                     this.cmbRango.Enabled = false;
+                    this.txtNSS.Enabled = false;
+                    this.txtAntecedentes.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -254,12 +264,14 @@ namespace hospitalcentral
                         MySqlCommand myCommand = MyConexion.CreateCommand();
 
                         // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "INSERT INTO pacientes(record, cedula, nombre, rango)" +
-                            " values(@record, @cedula, @nombre, @rango)";
+                        myCommand.CommandText = "INSERT INTO pacientes(record, cedula, nombre, rango, nss, antecedentes)" +
+                            " values(@record, @cedula, @nombre, @rango, @nss, @antecedentes)";
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
                         myCommand.Parameters.AddWithValue("@cedula", txtCedula.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtNombre.Text);
                         myCommand.Parameters.AddWithValue("@rango", cmbRango.SelectedValue);
+                        myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
+                        myCommand.Parameters.AddWithValue("@antecedentes", txtAntecedentes.Text);
 
                         // Step 4 - Opening the connection
                         MyConexion.Open();
@@ -296,11 +308,14 @@ namespace hospitalcentral
 
                         // Step 3 - Comando a ejecutar
                         myCommand.CommandText = "UPDATE pacientes SET record = @record, cedula = @cedula, " +
-                            "nombre = @nombre, rango = @rango WHERE idpacientes = " + txtID.Text + "";
+                            "nombre = @nombre, rango = @rango, nss = @nss, antecedentes = @antecedentes "+ 
+                            " WHERE idpacientes = " + txtID.Text + "";
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
                         myCommand.Parameters.AddWithValue("@cedula", txtCedula.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtNombre.Text);
                         myCommand.Parameters.AddWithValue("@rango", cmbRango.SelectedValue);
+                        myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
+                        myCommand.Parameters.AddWithValue("@antecedentes", txtAntecedentes.Text);
 
                         // Step 4 - Opening the connection
                         MyConexion.Open();
@@ -349,7 +364,7 @@ namespace hospitalcentral
             if (cCodigo != "" && cCodigo != null)
             {
                 // Mostrar el codigo                      
-                txtRecord.Text = Convert.ToString(cCodigo).Trim();
+                txtID.Text = Convert.ToString(cCodigo).Trim();
                 try
                 {
                     // Step 1 - clsConexion
@@ -360,7 +375,7 @@ namespace hospitalcentral
 
                     // Step 3 - creating the commandtext
                     //MyCommand.CommandText = "SELECT *  FROM paciente WHERE cedula = ' " + txtCedula.Text.Trim() + "'  " ;
-                    MyCommand.CommandText = "SELECT * from pacientes WHERE record = '" + txtRecord.Text.Trim() + "'";
+                    MyCommand.CommandText = "SELECT * from pacientes WHERE idpacientes = '" + txtID.Text.Trim() + "'";
 
                     // Step 4 - connection open
                     MyclsConexion.Open();
@@ -377,13 +392,16 @@ namespace hospitalcentral
                             txtCedula.Text = MyReader["cedula"].ToString();
                             txtNombre.Text = MyReader["nombre"].ToString();
                             cmbRango.SelectedValue = MyReader["rango"].ToString();
+                            txtRecord.Text = MyReader["record"].ToString();
+                            txtNSS.Text = MyReader["nss"].ToString();
+                            txtAntecedentes.Text = MyReader["antecedentes"].ToString();
                         }
                         this.cModo = "Buscar";
                         this.Botones();
                     }
                     else
                     {
-                        MessageBox.Show("No se encontraron registros con esta cedula...", "SisGesOfiEjecutivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No se encontraron registros ...", "Sistema de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //this.txtCedula.Focus();
                         //this.cModo = "Inicio";
                         //this.Botones();
@@ -433,11 +451,11 @@ namespace hospitalcentral
                 sbQuery.Clear();
                 sbQuery.Append("SELECT ");
                 sbQuery.Append(" pacientes.idpacientes, pacientes.record, pacientes.cedula,");
-                sbQuery.Append(" pacientes.nombre, rango.rango");
+                sbQuery.Append(" pacientes.nombre, rango.rango, pacientes.nss, pacientes.antecedentes");
                 sbQuery.Append(" FROM pacientes ");
                 sbQuery.Append(" INNER JOIN rango ON rango.idrango = pacientes.rango");
                 sbQuery.Append(cWhere);
-                sbQuery.Append(" ORDER BY pacientes.record ASC");
+                sbQuery.Append(" ORDER BY pacientes.nombre ASC");
 
                 // Paso los valores de sbQuery al CommandText
                 myCommand.CommandText = sbQuery.ToString();

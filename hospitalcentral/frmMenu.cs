@@ -312,7 +312,19 @@ namespace hospitalcentral
 
         private void buttonItem5_Click(object sender, EventArgs e)
         {
+            frmEstadisticasCitasMedicas ofrmEstadisticasCitasMedicas = new frmEstadisticasCitasMedicas();
+            ofrmEstadisticasCitasMedicas.ShowDialog();
+        }
 
+        private void buttonItem19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem1_Click_1(object sender, EventArgs e)
+        {
+            frmcitasmedicas ofrmCitasMedicas = new frmcitasmedicas();
+            ofrmCitasMedicas.ShowDialog();
         }
 
        

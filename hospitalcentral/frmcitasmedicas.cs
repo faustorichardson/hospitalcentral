@@ -119,6 +119,8 @@ namespace hospitalcentral
             this.txtID.Clear();
             this.txtNombre.Clear();
             this.txtRecord.Clear();
+            this.txtNSS.Clear();
+            this.rbSenasa.Checked = true;
             this.dtCitaMedica.Refresh();
         }
 
@@ -172,6 +174,9 @@ namespace hospitalcentral
                     this.cmbEspecialidad.Enabled = false;
                     this.txtRecord.Enabled = false;
                     this.btnBuscarPaciente.Enabled = false;
+                    this.txtNSS.Enabled = false;
+                    this.rbAccionCivica.Enabled = false;
+                    this.rbSenasa.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -189,6 +194,9 @@ namespace hospitalcentral
                     this.cmbEspecialidad.Enabled = true;
                     this.txtRecord.Enabled = true;
                     this.btnBuscarPaciente.Enabled = true;
+                    this.txtNSS.Enabled = true;
+                    this.rbAccionCivica.Enabled = true;
+                    this.rbSenasa.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -206,6 +214,9 @@ namespace hospitalcentral
                     this.cmbEspecialidad.Enabled = false;
                     this.txtRecord.Enabled = false;
                     this.btnBuscarPaciente.Enabled = false;
+                    this.txtNSS.Enabled = false;
+                    this.rbAccionCivica.Enabled = false;
+                    this.rbSenasa.Enabled = false;
                     break;
 
                 case "Editar":
@@ -223,6 +234,9 @@ namespace hospitalcentral
                     this.cmbEspecialidad.Enabled = true;
                     this.txtRecord.Enabled = true;
                     this.btnBuscarPaciente.Enabled = true;
+                    this.txtNSS.Enabled = true;
+                    this.rbAccionCivica.Enabled = true;
+                    this.rbSenasa.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -240,6 +254,9 @@ namespace hospitalcentral
                     this.cmbEspecialidad.Enabled = false;
                     this.txtRecord.Enabled = false;
                     this.btnBuscarPaciente.Enabled = false;
+                    this.txtNSS.Enabled = false;
+                    this.rbAccionCivica.Enabled = false;
+                    this.rbSenasa.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -273,7 +290,7 @@ namespace hospitalcentral
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "" || txtRecord.Text == "" || txtNombre.Text == "")
+            if (txtID.Text == "" || txtNSS.Text == "" || txtNombre.Text == "")
             {
                 MessageBox.Show("No se permiten campos vacios...");
                 txtRecord.Focus();
@@ -291,12 +308,21 @@ namespace hospitalcentral
                         MySqlCommand myCommand = MyConexion.CreateCommand();
 
                         // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "INSERT INTO citasmedicas(fecha, record, especialidad, fecharegistro)" +
-                            " values(@fecha, @record, @especialidad, NOW())";
+                        myCommand.CommandText = "INSERT INTO citasmedicas(fecha, record, especialidad, fecharegistro, nss, tipoaccion)" +
+                            " values(@fecha, @record, @especialidad, NOW(), @nss, @tipoaccion)";
                         myCommand.Parameters.AddWithValue("@fecha", dtCitaMedica.Value);
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
-                        myCommand.Parameters.AddWithValue("@especialidad", cmbEspecialidad.SelectedValue);                        
-                        
+                        myCommand.Parameters.AddWithValue("@especialidad", cmbEspecialidad.SelectedValue);
+                        myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
+                        if (rbSenasa.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@tipoaccion", "S");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@tipoaccion", "A");
+                        }
+
                         // Step 4 - Opening the connection
                         MyConexion.Open();
 
@@ -331,11 +357,20 @@ namespace hospitalcentral
                         MySqlCommand myCommand = MyConexion.CreateCommand();
 
                         // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "UPDATE citasmedicas SET fecha = @fecha, record = @record," +
+                        myCommand.CommandText = "UPDATE citasmedicas SET fecha = @fecha, record = @record, nss = @nss, tipoaccion = @tipoaccion," +
                             "especialidad = @especialidad, fecharegistro = NOW() WHERE idcitasmedicas = " + txtID.Text + "";
                         myCommand.Parameters.AddWithValue("@fecha", dtCitaMedica.Value);
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
                         myCommand.Parameters.AddWithValue("@especialidad", cmbEspecialidad.SelectedValue);
+                        myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
+                        if (rbSenasa.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@tipoaccion", "S");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@tipoaccion", "A");
+                        }
                         
                         // Step 4 - Opening the connection
                         MyConexion.Open();
@@ -393,7 +428,7 @@ namespace hospitalcentral
                     MySqlCommand MyCommand = MyConexion.CreateCommand();
 
                     // Step 3 - creating the commandtext
-                    MyCommand.CommandText = "SELECT fecha, record, especialidad " +
+                    MyCommand.CommandText = "SELECT fecha, record, especialidad, nss, tipoaccion " +
                         "FROM citasmedicas WHERE idcitasmedicas = " + txtID.Text + "";
 
                     // Step 4 - connection open
@@ -410,6 +445,15 @@ namespace hospitalcentral
                             dtCitaMedica.Value = Convert.ToDateTime(MyReader["fecha"].ToString());
                             cmbEspecialidad.SelectedValue = MyReader["especialidad"].ToString();
                             txtRecord.Text = MyReader["record"].ToString();
+                            txtNSS.Text = MyReader["nss"].ToString();
+                            if (MyReader["tipoaccion"].ToString() == "S")
+                            {
+                                rbSenasa.Checked = true;
+                            }
+                            else
+                            {
+                                rbAccionCivica.Checked = true;
+                            }
                         }
 
                         // LLamo funcion que me busca los valores del paciente
@@ -443,9 +487,9 @@ namespace hospitalcentral
 
         private void buscaPaciente()
         {
-            if (txtRecord.Text == "")
+            if (txtNSS.Text == "")
             {
-                MessageBox.Show("Sin un numero de record no se permite busqueda...");                
+                MessageBox.Show("Sin un numero de seguro social no se permite busqueda...");                
             }
             else
             {
@@ -458,8 +502,8 @@ namespace hospitalcentral
                     MySqlCommand MyCommand = MyConexion.CreateCommand();
 
                     // Step 3 - creating the commandtext
-                    MyCommand.CommandText = "SELECT cedula, nombre, rango " +
-                        "FROM pacientes WHERE record = " + txtRecord.Text + "";
+                    MyCommand.CommandText = "SELECT cedula, nombre, rango, record " +
+                        "FROM pacientes WHERE nss = " + txtNSS.Text + "";
 
                     // Step 4 - connection open
                     MyConexion.Open();
@@ -474,6 +518,7 @@ namespace hospitalcentral
                         {
                             txtCedula.Text = MyReader["cedula"].ToString();
                             txtNombre.Text = MyReader["nombre"].ToString();
+                            txtRecord.Text = MyReader["record"].ToString();
                             cmbRango.SelectedValue = MyReader["rango"].ToString();                            
                         }
 

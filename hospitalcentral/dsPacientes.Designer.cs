@@ -289,6 +289,10 @@ namespace hospitalcentral {
             
             private global::System.Data.DataColumn columnrango;
             
+            private global::System.Data.DataColumn columnnss;
+            
+            private global::System.Data.DataColumn columnantecedentes;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtPacientesDataTable() {
@@ -364,6 +368,22 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nssColumn {
+                get {
+                    return this.columnnss;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn antecedentesColumn {
+                get {
+                    return this.columnantecedentes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +419,16 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtPacientesRow AdddtPacientesRow(int idpacientes, string record, string cedula, string nombre, string rango) {
+            public dtPacientesRow AdddtPacientesRow(int idpacientes, string record, string cedula, string nombre, string rango, string nss, string antecedentes) {
                 dtPacientesRow rowdtPacientesRow = ((dtPacientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idpacientes,
                         record,
                         cedula,
                         nombre,
-                        rango};
+                        rango,
+                        nss,
+                        antecedentes};
                 rowdtPacientesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtPacientesRow);
                 return rowdtPacientesRow;
@@ -434,6 +456,8 @@ namespace hospitalcentral {
                 this.columncedula = base.Columns["cedula"];
                 this.columnnombre = base.Columns["nombre"];
                 this.columnrango = base.Columns["rango"];
+                this.columnnss = base.Columns["nss"];
+                this.columnantecedentes = base.Columns["antecedentes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,6 +473,10 @@ namespace hospitalcentral {
                 base.Columns.Add(this.columnnombre);
                 this.columnrango = new global::System.Data.DataColumn("rango", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrango);
+                this.columnnss = new global::System.Data.DataColumn("nss", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnss);
+                this.columnantecedentes = new global::System.Data.DataColumn("antecedentes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnantecedentes);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -671,6 +699,38 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nss {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtPacientes.nssColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nss\' de la tabla \'dtPacientes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtPacientes.nssColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string antecedentes {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtPacientes.antecedentesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'antecedentes\' de la tabla \'dtPacientes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtPacientes.antecedentesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidpacientesNull() {
                 return this.IsNull(this.tabledtPacientes.idpacientesColumn);
             }
@@ -727,6 +787,30 @@ namespace hospitalcentral {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetrangoNull() {
                 this[this.tabledtPacientes.rangoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnssNull() {
+                return this.IsNull(this.tabledtPacientes.nssColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnssNull() {
+                this[this.tabledtPacientes.nssColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsantecedentesNull() {
+                return this.IsNull(this.tabledtPacientes.antecedentesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetantecedentesNull() {
+                this[this.tabledtPacientes.antecedentesColumn] = global::System.Convert.DBNull;
             }
         }
         

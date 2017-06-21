@@ -265,6 +265,12 @@
     <Compile Include="frmEntradaInventario.Designer.cs">
       <DependentUpon>frmEntradaInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEstadisticasCitasMedicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadisticasCitasMedicas.Designer.cs">
+      <DependentUpon>frmEstadisticasCitasMedicas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +411,12 @@
       <DependentUpon>rptEntradaInventario_porProducto.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptEstadisticasCitasMedicasPorEspecialidad.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEstadisticasCitasMedicasPorEspecialidad.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptExistenciaInventario.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -507,6 +519,9 @@
     <EmbeddedResource Include="frmEntradaInventario.resx">
       <DependentUpon>frmEntradaInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadisticasCitasMedicas.resx">
+      <DependentUpon>frmEstadisticasCitasMedicas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -593,6 +608,10 @@
     <EmbeddedResource Include="rptEntradaInventario_porProducto.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptEntradaInventario_porProducto.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptEstadisticasCitasMedicasPorEspecialidad.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEstadisticasCitasMedicasPorEspecialidad.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptExistenciaInventario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

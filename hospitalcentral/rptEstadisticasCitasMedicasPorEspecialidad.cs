@@ -16,14 +16,14 @@ namespace hospitalcentral {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptCitasMedicasPorEspecialidad : ReportClass {
+    public class rptEstadisticasCitasMedicasPorEspecialidad : ReportClass {
         
-        public rptCitasMedicasPorEspecialidad() {
+        public rptEstadisticasCitasMedicasPorEspecialidad() {
         }
         
         public override string ResourceName {
             get {
-                return "rptCitasMedicasPorEspecialidad.rpt";
+                return "rptEstadisticasCitasMedicasPorEspecialidad.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace hospitalcentral {
         
         public override string FullResourceName {
             get {
-                return "hospitalcentral.rptCitasMedicasPorEspecialidad.rpt";
+                return "hospitalcentral.rptEstadisticasCitasMedicasPorEspecialidad.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -114,7 +98,7 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_cFechaDesde {
+        public CrystalDecisions.Shared.IParameterField Parameter_cFechaInicial {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -122,7 +106,7 @@ namespace hospitalcentral {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_cFechaHasta {
+        public CrystalDecisions.Shared.IParameterField Parameter_cFechaFinal {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -130,9 +114,9 @@ namespace hospitalcentral {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptCitasMedicasPorEspecialidad : Component, ICachedReport {
+    public class CachedrptEstadisticasCitasMedicasPorEspecialidad : Component, ICachedReport {
         
-        public CachedrptCitasMedicasPorEspecialidad() {
+        public CachedrptEstadisticasCitasMedicasPorEspecialidad() {
         }
         
         [Browsable(false)]
@@ -169,7 +153,7 @@ namespace hospitalcentral {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptCitasMedicasPorEspecialidad rpt = new rptCitasMedicasPorEspecialidad();
+            rptEstadisticasCitasMedicasPorEspecialidad rpt = new rptEstadisticasCitasMedicasPorEspecialidad();
             rpt.Site = this.Site;
             return rpt;
         }

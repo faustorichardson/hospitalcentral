@@ -35,6 +35,7 @@
             this.cmdSalir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RECORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,14 +51,15 @@
             // 
             this.grdCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.RECORD,
             this.nombre,
             this.cedula});
-            this.grdCatalogo.Location = new System.Drawing.Point(92, 80);
+            this.grdCatalogo.Location = new System.Drawing.Point(68, 80);
             this.grdCatalogo.Name = "grdCatalogo";
             this.grdCatalogo.ReadOnly = true;
             this.grdCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdCatalogo.Size = new System.Drawing.Size(629, 268);
+            this.grdCatalogo.Size = new System.Drawing.Size(680, 268);
             this.grdCatalogo.TabIndex = 36;
             this.grdCatalogo.DoubleClick += new System.EventHandler(this.grdCatalogo_DoubleClick);
             // 
@@ -69,7 +71,7 @@
             this.cmdAceptar.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmdAceptar.Image = ((System.Drawing.Image)(resources.GetObject("cmdAceptar.Image")));
             this.cmdAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdAceptar.Location = new System.Drawing.Point(531, 353);
+            this.cmdAceptar.Location = new System.Drawing.Point(558, 354);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(95, 42);
             this.cmdAceptar.TabIndex = 34;
@@ -86,7 +88,7 @@
             this.cmdSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmdSalir.Image = ((System.Drawing.Image)(resources.GetObject("cmdSalir.Image")));
             this.cmdSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdSalir.Location = new System.Drawing.Point(626, 353);
+            this.cmdSalir.Location = new System.Drawing.Point(653, 354);
             this.cmdSalir.Name = "cmdSalir";
             this.cmdSalir.Size = new System.Drawing.Size(95, 42);
             this.cmdSalir.TabIndex = 35;
@@ -99,7 +101,7 @@
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBuscar.Location = new System.Drawing.Point(155, 57);
+            this.txtBuscar.Location = new System.Drawing.Point(134, 57);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(383, 20);
             this.txtBuscar.TabIndex = 32;
@@ -112,11 +114,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(92, 59);
+            this.label1.Location = new System.Drawing.Point(71, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 33;
             this.label1.Text = "Buscar:";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
             // 
             // RECORD
             // 
@@ -173,6 +182,7 @@
         private System.Windows.Forms.Button cmdSalir;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn RECORD;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedula;

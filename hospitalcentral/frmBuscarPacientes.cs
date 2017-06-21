@@ -73,7 +73,7 @@ namespace hospitalcentral
                         // Mostrar los datos del datatable en el grid
                         foreach (DataRow registro in dsCatalogo.Rows)
                         {
-                            this.grdCatalogo.Rows.Add(registro["record"].ToString().Trim(), registro["nombre"].ToString().Trim(), registro["cedula"]);
+                            this.grdCatalogo.Rows.Add(registro["idpacientes"].ToString().Trim(), registro["record"].ToString().Trim(), registro["nombre"].ToString().Trim(), registro["cedula"]);
                         }
                     }
                     else

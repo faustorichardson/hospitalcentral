@@ -39,11 +39,11 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNSS = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnBuscarPaciente = new System.Windows.Forms.Button();
             this.cmbRango = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRecord = new System.Windows.Forms.TextBox();
@@ -55,6 +55,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.rbSenasa = new System.Windows.Forms.RadioButton();
+            this.rbAccionCivica = new System.Windows.Forms.RadioButton();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,7 +79,7 @@
             this.groupBox4.Controls.Add(this.btnEditar);
             this.groupBox4.Controls.Add(this.btnGrabar);
             this.groupBox4.Controls.Add(this.btnNuevo);
-            this.groupBox4.Location = new System.Drawing.Point(10, 265);
+            this.groupBox4.Location = new System.Drawing.Point(10, 309);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(795, 65);
             this.groupBox4.TabIndex = 65;
@@ -195,11 +199,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtNSS);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnBuscarPaciente);
             this.groupBox1.Controls.Add(this.cmbRango);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRecord);
@@ -207,10 +213,29 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(341, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 183);
+            this.groupBox1.Size = new System.Drawing.Size(452, 220);
             this.groupBox1.TabIndex = 66;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PACIENTE";
+            // 
+            // txtNSS
+            // 
+            this.txtNSS.Enabled = false;
+            this.txtNSS.Location = new System.Drawing.Point(88, 36);
+            this.txtNSS.MaxLength = 25;
+            this.txtNSS.Name = "txtNSS";
+            this.txtNSS.Size = new System.Drawing.Size(144, 22);
+            this.txtNSS.TabIndex = 166;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(42, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 15);
+            this.label8.TabIndex = 167;
+            this.label8.Text = "NSS:";
             // 
             // btnBuscarPaciente
             // 
@@ -226,7 +251,7 @@
             // 
             this.cmbRango.Enabled = false;
             this.cmbRango.FormattingEnabled = true;
-            this.cmbRango.Location = new System.Drawing.Point(88, 101);
+            this.cmbRango.Location = new System.Drawing.Point(88, 185);
             this.cmbRango.Name = "cmbRango";
             this.cmbRango.Size = new System.Drawing.Size(216, 24);
             this.cmbRango.TabIndex = 161;
@@ -235,35 +260,16 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 105);
+            this.label4.Location = new System.Drawing.Point(22, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 15);
             this.label4.TabIndex = 164;
             this.label4.Text = "RANGO:";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(89, 141);
-            this.txtNombre.MaxLength = 150;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(348, 22);
-            this.txtNombre.TabIndex = 163;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
-            this.label3.TabIndex = 162;
-            this.label3.Text = "NOMBRE:";
-            // 
             // txtCedula
             // 
             this.txtCedula.Enabled = false;
-            this.txtCedula.Location = new System.Drawing.Point(89, 65);
+            this.txtCedula.Location = new System.Drawing.Point(89, 149);
             this.txtCedula.Mask = "999-9999999-9";
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(111, 22);
@@ -273,7 +279,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 68);
+            this.label2.Location = new System.Drawing.Point(16, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 159;
@@ -282,17 +288,17 @@
             // txtRecord
             // 
             this.txtRecord.Enabled = false;
-            this.txtRecord.Location = new System.Drawing.Point(89, 28);
+            this.txtRecord.Location = new System.Drawing.Point(89, 74);
             this.txtRecord.MaxLength = 11;
             this.txtRecord.Name = "txtRecord";
-            this.txtRecord.Size = new System.Drawing.Size(144, 22);
+            this.txtRecord.Size = new System.Drawing.Size(111, 22);
             this.txtRecord.TabIndex = 157;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(12, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 158;
@@ -300,6 +306,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rbAccionCivica);
+            this.groupBox2.Controls.Add(this.rbSenasa);
             this.groupBox2.Controls.Add(this.cmbEspecialidad);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.dtCitaMedica);
@@ -309,7 +317,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(14, 60);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(321, 183);
+            this.groupBox2.Size = new System.Drawing.Size(321, 220);
             this.groupBox2.TabIndex = 67;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CITA MEDICA";
@@ -372,11 +380,53 @@
             this.label5.TabIndex = 171;
             this.label5.Text = "NO. DE CITA:";
             // 
+            // rbSenasa
+            // 
+            this.rbSenasa.AutoSize = true;
+            this.rbSenasa.Checked = true;
+            this.rbSenasa.Location = new System.Drawing.Point(15, 187);
+            this.rbSenasa.Name = "rbSenasa";
+            this.rbSenasa.Size = new System.Drawing.Size(87, 20);
+            this.rbSenasa.TabIndex = 176;
+            this.rbSenasa.TabStop = true;
+            this.rbSenasa.Text = "SENASA";
+            this.rbSenasa.UseVisualStyleBackColor = true;
+            // 
+            // rbAccionCivica
+            // 
+            this.rbAccionCivica.AutoSize = true;
+            this.rbAccionCivica.Location = new System.Drawing.Point(127, 187);
+            this.rbAccionCivica.Name = "rbAccionCivica";
+            this.rbAccionCivica.Size = new System.Drawing.Size(134, 20);
+            this.rbAccionCivica.TabIndex = 177;
+            this.rbAccionCivica.TabStop = true;
+            this.rbAccionCivica.Text = "ACCION CIVICA";
+            this.rbAccionCivica.UseVisualStyleBackColor = true;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Location = new System.Drawing.Point(90, 110);
+            this.txtNombre.MaxLength = 150;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(348, 22);
+            this.txtNombre.TabIndex = 169;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.TabIndex = 168;
+            this.label3.Text = "NOMBRE:";
+            // 
             // frmcitasmedicas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 346);
+            this.ClientSize = new System.Drawing.Size(818, 389);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
@@ -411,8 +461,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbRango;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox txtCedula;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRecord;
@@ -425,5 +473,11 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBuscarPaciente;
+        private System.Windows.Forms.TextBox txtNSS;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton rbAccionCivica;
+        private System.Windows.Forms.RadioButton rbSenasa;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label3;
     }
 }

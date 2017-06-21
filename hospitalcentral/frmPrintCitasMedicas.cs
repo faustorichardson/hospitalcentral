@@ -102,8 +102,8 @@ namespace hospitalcentral
                         // Adhiero el comando a la conexion
                         myCommand.Connection = myConexion;
                         // Filtros de la busqueda
-                        //string fecha = dtCitaMedica.Value.ToString("yyyy-MM-dd");
-                        //string fechahasta = fechaHasta.Value.ToString("yyyy-MM-dd");
+                        //string fechadesde = dtCitaMedicaDesde.Value.ToString("yyyy-MM-dd");
+                        //string fechahasta = dtCitaMedicaHasta.Value.ToString("yyyy-MM-dd");
                         //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
                         cWhere = cWhere + " AND citasmedicas.record = " + txtRecord.Text + "";
                         sbQuery.Clear();
@@ -222,17 +222,17 @@ namespace hospitalcentral
                     // Adhiero el comando a la conexion
                     myCommand.Connection = myConexion;
                     // Filtros de la busqueda
-                    string fecha = dtCitaMedica.Value.ToString("yyyy-MM-dd");
-                    //string fechahasta = fechaHasta.Value.ToString("yyyy-MM-dd");
-                    //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
-                    cWhere = cWhere + " AND citasmedicas.fecha = "+ "'" + fecha + "'" + "";
+                    string fechadesde = dtCitaMedicaDesde.Value.ToString("yyyy-MM-dd");
+                    string fechahasta = dtCitaMedicaHasta.Value.ToString("yyyy-MM-dd");
+                    cWhere = cWhere + " AND citasmedicas.fecha >= " + "'" + fechadesde + "'" + " AND citasmedicas.fecha <= " + "'" + fechahasta + "'" + "";
+                    //cWhere = cWhere + " AND citasmedicas.fecha = "+ "'" + fecha + "'" + "";
                     cWhere = cWhere + " AND citasmedicas.especialidad = " + cmbEspecialidad.SelectedValue +"";
                     //cWhere = cWhere + " AND citasmedicas.record = " + txtRecord.Text + "";
                     sbQuery.Clear();
                     sbQuery.Append("SELECT ");
                     sbQuery.Append(" citasmedicas.idcitasmedicas, citasmedicas.fecha, citasmedicas.fecharegistro,");
                     sbQuery.Append(" pacientes.cedula, pacientes.record, pacientes.nombre, rango.rango,");
-                    sbQuery.Append(" especialidad.especialidad");
+                    sbQuery.Append(" especialidad.especialidad, citasmedicas.record ");
                     sbQuery.Append(" FROM citasmedicas ");
                     sbQuery.Append(" INNER JOIN pacientes ON pacientes.record = citasmedicas.record");
                     sbQuery.Append(" INNER JOIN especialidad ON especialidad.idespecialidad = citasmedicas.especialidad");
@@ -268,11 +268,13 @@ namespace hospitalcentral
 
                         //2do.CREAMOS LOS PARAMETROS
                         ParameterField oUsuario = new ParameterField();
-                        ParameterField oFecha = new ParameterField();
+                        ParameterField oFechaInicial = new ParameterField();
+                        ParameterField oFechaFinal = new ParameterField();
                         //parametervaluetype especifica el TIPO de valor de parametro
                         //ParameterValueKind especifica el tipo de valor de parametro en la PARAMETERVALUETYPE de la Clase PARAMETERFIELD
                         oUsuario.ParameterValueType = ParameterValueKind.StringParameter;
-                        oFecha.ParameterValueType = ParameterValueKind.DateTimeParameter;
+                        oFechaInicial.ParameterValueType = ParameterValueKind.DateTimeParameter;
+                        oFechaFinal.ParameterValueType = ParameterValueKind.DateTimeParameter;
 
                         //3ero.VALORES PARA LOS PARAMETROS
                         //ParameterDiscreteValue proporciona propiedades para la recuperacion y configuracion de 
@@ -280,19 +282,24 @@ namespace hospitalcentral
                         ParameterDiscreteValue oUsuarioDValue = new ParameterDiscreteValue();
                         oUsuarioDValue.Value = cUsuario;
                         ParameterDiscreteValue oFechaDValue = new ParameterDiscreteValue();
-                        oFechaDValue.Value = fecha;
+                        oFechaDValue.Value = fechadesde;
+                        ParameterDiscreteValue oFechaFinDValue = new ParameterDiscreteValue();
+                        oFechaFinDValue.Value = fechahasta;
 
                         //4to. AGREGAMOS LOS VALORES A LOS PARAMETROS
                         oUsuario.CurrentValues.Add(oUsuarioDValue);
-                        oFecha.CurrentValues.Add(oFechaDValue);
+                        oFechaInicial.CurrentValues.Add(oFechaDValue);
+                        oFechaFinal.CurrentValues.Add(oFechaFinDValue);
 
                         //5to. AGREGAMOS LOS PARAMETROS A LA COLECCION 
                         oParametrosCR.Add(oUsuario);
-                        oParametrosCR.Add(oFecha);
-
+                        oParametrosCR.Add(oFechaInicial);
+                        oParametrosCR.Add(oFechaFinal);
                         //nombre del parametro en CR (Crystal Reports)
                         oParametrosCR[0].Name = "cUsuario";
-                        oParametrosCR[1].Name = "cFecha";
+                        oParametrosCR[1].Name = "cFechaDesde";
+                        oParametrosCR[2].Name = "cFechaHasta";
+
 
                         //nombre del TITULO DEL INFORME
                         cTitulo = "LISTADO DE CITAS MEDICAS POR ESPECIALIDAD";
@@ -349,10 +356,11 @@ namespace hospitalcentral
                     // Adhiero el comando a la conexion
                     myCommand.Connection = myConexion;
                     // Filtros de la busqueda
-                    string fecha = dtCitaMedica.Value.ToString("yyyy-MM-dd");
+                    string fechadesde = dtCitaMedicaDesde.Value.ToString("yyyy-MM-dd");
+                    string fechahasta = dtCitaMedicaHasta.Value.ToString("yyyy-MM-dd");
                     //string fechahasta = fechaHasta.Value.ToString("yyyy-MM-dd");
-                    //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
-                    cWhere = cWhere + " AND citasmedicas.fecha = " + "'" + fecha + "'" + "";
+                    cWhere = cWhere + " AND fecha >= " + "'" + fechadesde + "'" + " AND fecha <= " + "'" + fechahasta + "'" + "";
+                    //cWhere = cWhere + " AND citasmedicas.fecha = " + "'" + fecha + "'" + "";
                     //cWhere = cWhere + " AND citasmedicas.especialidad = " + cmbEspecialidad.SelectedValue + "";
                     //cWhere = cWhere + " AND citasmedicas.record = " + txtRecord.Text + "";
                     sbQuery.Clear();
@@ -395,11 +403,13 @@ namespace hospitalcentral
 
                         //2do.CREAMOS LOS PARAMETROS
                         ParameterField oUsuario = new ParameterField();
-                        ParameterField oFecha = new ParameterField();
+                        ParameterField oFechaInicial = new ParameterField();
+                        ParameterField oFechaFinal = new ParameterField();
                         //parametervaluetype especifica el TIPO de valor de parametro
                         //ParameterValueKind especifica el tipo de valor de parametro en la PARAMETERVALUETYPE de la Clase PARAMETERFIELD
                         oUsuario.ParameterValueType = ParameterValueKind.StringParameter;
-                        oFecha.ParameterValueType = ParameterValueKind.DateTimeParameter;
+                        oFechaInicial.ParameterValueType = ParameterValueKind.DateTimeParameter;
+                        oFechaFinal.ParameterValueType = ParameterValueKind.DateTimeParameter;
 
                         //3ero.VALORES PARA LOS PARAMETROS
                         //ParameterDiscreteValue proporciona propiedades para la recuperacion y configuracion de 
@@ -407,19 +417,24 @@ namespace hospitalcentral
                         ParameterDiscreteValue oUsuarioDValue = new ParameterDiscreteValue();
                         oUsuarioDValue.Value = cUsuario;
                         ParameterDiscreteValue oFechaDValue = new ParameterDiscreteValue();
-                        oFechaDValue.Value = fecha;
+                        oFechaDValue.Value = fechadesde;
+                        ParameterDiscreteValue oFechaFinDValue = new ParameterDiscreteValue();
+                        oFechaFinDValue.Value = fechahasta;
 
                         //4to. AGREGAMOS LOS VALORES A LOS PARAMETROS
                         oUsuario.CurrentValues.Add(oUsuarioDValue);
-                        oFecha.CurrentValues.Add(oFechaDValue);
+                        oFechaInicial.CurrentValues.Add(oFechaDValue);
+                        oFechaFinal.CurrentValues.Add(oFechaFinDValue);
 
                         //5to. AGREGAMOS LOS PARAMETROS A LA COLECCION 
                         oParametrosCR.Add(oUsuario);
-                        oParametrosCR.Add(oFecha);
-
+                        oParametrosCR.Add(oFechaInicial);
+                        oParametrosCR.Add(oFechaFinal);
                         //nombre del parametro en CR (Crystal Reports)
                         oParametrosCR[0].Name = "cUsuario";
-                        oParametrosCR[1].Name = "cFecha";
+                        oParametrosCR[1].Name = "cFechaInicial";
+                        oParametrosCR[2].Name = "cFechaFinal";
+
 
                         //nombre del TITULO DEL INFORME
                         cTitulo = "LISTADO GENERAL DE CITAS MEDICAS";
