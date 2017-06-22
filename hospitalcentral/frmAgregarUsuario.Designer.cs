@@ -49,10 +49,13 @@
             this.statusB = new System.Windows.Forms.RadioButton();
             this.statusA = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkMCategoriasProductos = new System.Windows.Forms.CheckBox();
+            this.chkMProductos = new System.Windows.Forms.CheckBox();
             this.chkMPacientes = new System.Windows.Forms.CheckBox();
             this.chkMDoctores = new System.Windows.Forms.CheckBox();
             this.chkMUsuarios = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkPEntradaInventario = new System.Windows.Forms.CheckBox();
             this.chkPCitasMedicas = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chkRCitasMedicas = new System.Windows.Forms.CheckBox();
@@ -62,6 +65,7 @@
             this.chkProcesos = new System.Windows.Forms.CheckBox();
             this.chkReportes = new System.Windows.Forms.CheckBox();
             this.chkEstadisticas = new System.Windows.Forms.CheckBox();
+            this.chkMSuplidores = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -304,6 +308,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkMSuplidores);
+            this.groupBox2.Controls.Add(this.chkMCategoriasProductos);
+            this.groupBox2.Controls.Add(this.chkMProductos);
             this.groupBox2.Controls.Add(this.chkMPacientes);
             this.groupBox2.Controls.Add(this.chkMDoctores);
             this.groupBox2.Controls.Add(this.chkMUsuarios);
@@ -314,6 +321,26 @@
             this.groupBox2.TabIndex = 73;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "MANTENIMIENTOS";
+            // 
+            // chkMCategoriasProductos
+            // 
+            this.chkMCategoriasProductos.AutoSize = true;
+            this.chkMCategoriasProductos.Location = new System.Drawing.Point(176, 19);
+            this.chkMCategoriasProductos.Name = "chkMCategoriasProductos";
+            this.chkMCategoriasProductos.Size = new System.Drawing.Size(147, 17);
+            this.chkMCategoriasProductos.TabIndex = 4;
+            this.chkMCategoriasProductos.Text = "Categorias Productos";
+            this.chkMCategoriasProductos.UseVisualStyleBackColor = true;
+            // 
+            // chkMProductos
+            // 
+            this.chkMProductos.AutoSize = true;
+            this.chkMProductos.Location = new System.Drawing.Point(88, 43);
+            this.chkMProductos.Name = "chkMProductos";
+            this.chkMProductos.Size = new System.Drawing.Size(83, 17);
+            this.chkMProductos.TabIndex = 3;
+            this.chkMProductos.Text = "Productos";
+            this.chkMProductos.UseVisualStyleBackColor = true;
             // 
             // chkMPacientes
             // 
@@ -347,6 +374,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkPEntradaInventario);
             this.groupBox3.Controls.Add(this.chkPCitasMedicas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(280, 153);
@@ -355,6 +383,16 @@
             this.groupBox3.TabIndex = 76;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PROCESOS";
+            // 
+            // chkPEntradaInventario
+            // 
+            this.chkPEntradaInventario.AutoSize = true;
+            this.chkPEntradaInventario.Location = new System.Drawing.Point(6, 42);
+            this.chkPEntradaInventario.Name = "chkPEntradaInventario";
+            this.chkPEntradaInventario.Size = new System.Drawing.Size(131, 17);
+            this.chkPEntradaInventario.TabIndex = 2;
+            this.chkPEntradaInventario.Text = "Entrada Inventario";
+            this.chkPEntradaInventario.UseVisualStyleBackColor = true;
             // 
             // chkPCitasMedicas
             // 
@@ -452,6 +490,16 @@
             this.chkEstadisticas.Text = "Estadisticas";
             this.chkEstadisticas.UseVisualStyleBackColor = true;
             // 
+            // chkMSuplidores
+            // 
+            this.chkMSuplidores.AutoSize = true;
+            this.chkMSuplidores.Location = new System.Drawing.Point(177, 42);
+            this.chkMSuplidores.Name = "chkMSuplidores";
+            this.chkMSuplidores.Size = new System.Drawing.Size(85, 17);
+            this.chkMSuplidores.TabIndex = 5;
+            this.chkMSuplidores.Text = "Suplidores";
+            this.chkMSuplidores.UseVisualStyleBackColor = true;
+            // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,5 +595,9 @@
         private System.Windows.Forms.CheckBox chkProcesos;
         private System.Windows.Forms.CheckBox chkReportes;
         private System.Windows.Forms.CheckBox chkEstadisticas;
+        private System.Windows.Forms.CheckBox chkMProductos;
+        private System.Windows.Forms.CheckBox chkMCategoriasProductos;
+        private System.Windows.Forms.CheckBox chkPEntradaInventario;
+        private System.Windows.Forms.CheckBox chkMSuplidores;
     }
 }

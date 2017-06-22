@@ -192,7 +192,7 @@ namespace hospitalcentral
                     this.txtID.Enabled = false;
                     this.dtCitaMedica.Enabled = true;
                     this.cmbEspecialidad.Enabled = true;
-                    this.txtRecord.Enabled = true;
+                    this.txtRecord.Enabled = false;
                     this.btnBuscarPaciente.Enabled = true;
                     this.txtNSS.Enabled = true;
                     this.rbAccionCivica.Enabled = true;
@@ -232,7 +232,7 @@ namespace hospitalcentral
                     this.txtID.Enabled = false;
                     this.dtCitaMedica.Enabled = true;
                     this.cmbEspecialidad.Enabled = true;
-                    this.txtRecord.Enabled = true;
+                    this.txtRecord.Enabled = false;
                     this.btnBuscarPaciente.Enabled = true;
                     this.txtNSS.Enabled = true;
                     this.rbAccionCivica.Enabled = true;

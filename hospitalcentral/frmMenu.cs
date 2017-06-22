@@ -26,9 +26,13 @@ namespace hospitalcentral
         string permiso_mantenimiento = "0";        
         string permiso_mantenimiento_doctores = "0";
         string permiso_mantenimiento_pacientes = "0";
+        string permiso_mantenimiento_productos = "0";
+        string permiso_mantenimiento_productoscategorias = "0";
         string permiso_mantenimiento_usuarios = "0";
+        string permiso_mantenimiento_suplidores = "0";
         string permiso_proceso = "0";
         string permiso_proceso_citasmedicas = "0";
+        string permiso_proceso_entradainventario = "0";
         string permiso_reporte = "0";
         string permiso_reporte_citasmedicas = "0";
         string permiso_estadistica = "0";
@@ -71,8 +75,12 @@ namespace hospitalcentral
                     " permiso_mantenimiento_doctores," +
                     " permiso_mantenimiento_pacientes," +
                     " permiso_mantenimiento_usuario," +
+                    " permiso_mantenimiento_productos,"+
+                    " permiso_mantenimiento_productoscategorias,"+
+                    " permiso_mantenimiento_suplidores,"+
                     " permiso_proceso, " +
                     " permiso_proceso_citasmedicas," +
+                    " permiso_proceso_entradainventario,"+
                     " permiso_reporte, " +
                     " permiso_reporte_citasmedicas," +
                     " permiso_estadistica, " +
@@ -93,9 +101,13 @@ namespace hospitalcentral
                         permiso_mantenimiento = MyReader["permiso_mantenimiento"].ToString();
                         permiso_mantenimiento_doctores = MyReader["permiso_mantenimiento_doctores"].ToString();
                         permiso_mantenimiento_pacientes = MyReader["permiso_mantenimiento_pacientes"].ToString();
+                        permiso_mantenimiento_productos = MyReader["permiso_mantenimiento_productos"].ToString();
+                        permiso_mantenimiento_productoscategorias = MyReader["permiso_mantenimiento_productoscategorias"].ToString();
                         permiso_mantenimiento_usuarios = MyReader["permiso_mantenimiento_usuario"].ToString();
+                        permiso_mantenimiento_suplidores = MyReader["permiso_mantenimiento_suplidores"].ToString();
                         permiso_proceso = MyReader["permiso_proceso"].ToString();
                         permiso_proceso_citasmedicas = MyReader["permiso_proceso_citasmedicas"].ToString();
+                        permiso_proceso_entradainventario = MyReader["permiso_proceso_entradainventario"].ToString();
                         permiso_reporte = MyReader["permiso_reporte"].ToString();
                         permiso_reporte_citasmedicas = MyReader["permiso_reporte_citasmedicas"].ToString();
                         permiso_estadistica = MyReader["permiso_estadistica"].ToString();
@@ -164,7 +176,33 @@ namespace hospitalcentral
             {
                 this.btn_mantenimiento_usuarios.Enabled = false;
             }
-            
+            /////
+            if (permiso_mantenimiento_productos == "1")
+            {
+                this.btn_mantenimiento_productos.Enabled = true;
+            }
+            else
+            {
+                this.btn_mantenimiento_productos.Enabled = false;
+            }
+            /////
+            if (permiso_mantenimiento_productoscategorias == "1")
+            {
+                this.btn_mantenimiento_productoscategorias.Enabled = true;
+            }
+            else
+            {
+                this.btn_mantenimiento_productoscategorias.Enabled = false;
+            }
+            if (permiso_mantenimiento_suplidores == "1")
+            {
+                this.btn_mantenimiento_suplidores.Enabled = true;
+            }
+            else
+            {
+                this.btn_mantenimiento_suplidores.Enabled = false;
+            }
+            /////
 
             // VERIFICANDO LOS PERMISOS DE PROCESOS
             if (permiso_proceso == "1")
@@ -178,11 +216,20 @@ namespace hospitalcentral
             /////
             if (permiso_proceso_citasmedicas == "1")
             {
-                this.btn_procesos_citasmedicas.Enabled = true;
+                this.btn_procesos_citamedica.Enabled = true;
             }
             else
             {
-                this.btn_procesos_citasmedicas.Enabled = false;
+                this.btn_procesos_citamedica.Enabled = false;
+            }
+            /////
+            if (permiso_proceso_entradainventario == "1")
+            {
+                this.btn_proceso_entradainventario.Enabled = true;
+            }
+            else
+            {
+                this.btn_proceso_entradainventario.Enabled = false;
             }
 
             // VERIFICANDO LOS PERMISOS DE REPORTES
@@ -325,6 +372,35 @@ namespace hospitalcentral
         {
             frmcitasmedicas ofrmCitasMedicas = new frmcitasmedicas();
             ofrmCitasMedicas.ShowDialog();
+        }
+
+        private void buttonItem2_Click_1(object sender, EventArgs e)
+        {
+            frmProductos ofrmProductos = new frmProductos();
+            ofrmProductos.ShowDialog();
+        }
+
+        private void buttonItem3_Click_1(object sender, EventArgs e)
+        {
+            frmCategorias ofrmCategorias = new frmCategorias();
+            ofrmCategorias.ShowDialog();
+        }
+
+        private void buttonItem2_Click_2(object sender, EventArgs e)
+        {
+            frmEntradaInventario ofrmEntradaInventario = new frmEntradaInventario();
+            ofrmEntradaInventario.ShowDialog();
+        }
+
+        private void buttonItem3_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem4_Click_1(object sender, EventArgs e)
+        {
+            frmSuplidores ofrmSuplidores = new frmSuplidores();
+            ofrmSuplidores.ShowDialog();
         }
 
        

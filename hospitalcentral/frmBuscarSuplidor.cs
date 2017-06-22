@@ -9,14 +9,18 @@ using System.Windows.Forms;
 
 namespace hospitalcentral
 {
-    public partial class frmBuscarProductos : frmBase
+    public partial class frmBuscarSuplidor : frmBase
     {
-
         public string cCodigo = "";
 
-        public frmBuscarProductos()
+        public frmBuscarSuplidor()
         {
             InitializeComponent();
+        }
+
+        private void frmBuscarSuplidor_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -37,7 +41,7 @@ namespace hospitalcentral
                     // Version Consulta sin Store Procedure, solo string de consulta
                     // Version Consulta con Store Procedure parametrizado
                     string cBuscar = "'%" + this.txtBuscar.Text.Trim().ToUpper() + "%'";
-                    DataTable dsCatalogo = clsProcesos.DatosGeneral("productos", " where upper(producto)  like " + cBuscar + " order by producto ");
+                    DataTable dsCatalogo = clsProcesos.DatosGeneral("suplidores", " where upper(nombre)  like " + cBuscar + " order by nombre ");
 
                     if (dsCatalogo.Rows.Count > 0)
                     {
@@ -47,7 +51,7 @@ namespace hospitalcentral
                         foreach (DataRow registro in dsCatalogo.Rows)
                         {
                             //this.grdCatalogo.Rows.Add(registro["idproducto"], registro["producto"].ToString().Trim() + " " + registro["referencia"], registro["tipo"]);
-                            this.grdCatalogo.Rows.Add(registro["idproducto"], registro["producto"].ToString().Trim(), registro["referencia"]);
+                            this.grdCatalogo.Rows.Add(registro["idsuplidor"], registro["nombre"].ToString().Trim(), registro["rnc"], registro["telefono"]);
                         }
                     }
                     else
@@ -85,6 +89,12 @@ namespace hospitalcentral
             this.Close();
         }
 
+        private void cmdSalir_Click(object sender, EventArgs e)
+        {
+            this.cCodigo = "";
+            this.Close();
+        }
+
         private void grdCatalogo_DoubleClick(object sender, EventArgs e)
         {
             int nPos = 0;
@@ -100,17 +110,6 @@ namespace hospitalcentral
             }
             this.grdCatalogo.Visible = true;
             this.Close();
-        }
-
-        private void cmdSalir_Click(object sender, EventArgs e)
-        {
-            this.cCodigo = "";
-            this.Close();
-        }
-
-        private void frmBuscarMilitar_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1389,4 +1389,14 @@
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
    at SisGesFactInv.frmFacturacion.GenerarReporte() in C:\Users\daemon\Desktop\PROJECTS\Sistema de Fact Inv Productos\sisgesfactinv\frmFacturacion.cs:line 441</StackTrace>
   </Exception>
+  <Exception>
+    <DateTime>6/21/2017 7:44:02 PM</DateTime>
+    <Application>Sistema SysHospitalARD v1.0</Application>
+    <Message>Column 'tipo' does not belong to table .</Message>
+    <Source>System.Data</Source>
+    <TargetSite>System.Data.DataColumn GetDataColumn(System.String)</TargetSite>
+    <StackTrace>   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at hospitalcentral.frmBuscarProductos.txtBuscar_Validating(Object sender, CancelEventArgs e) in C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\frmBuscarProductos.cs:line 50</StackTrace>
+  </Exception>
 </EventLog>

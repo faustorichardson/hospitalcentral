@@ -105,12 +105,12 @@ namespace hospitalcentral
                         //string fechadesde = dtCitaMedicaDesde.Value.ToString("yyyy-MM-dd");
                         //string fechahasta = dtCitaMedicaHasta.Value.ToString("yyyy-MM-dd");
                         //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
-                        cWhere = cWhere + " AND citasmedicas.record = " + txtRecord.Text + "";
+                        cWhere = cWhere + " AND citasmedicas.nss = " + txtRecord.Text + "";
                         sbQuery.Clear();
                         sbQuery.Append("SELECT ");
                         sbQuery.Append(" citasmedicas.idcitasmedicas, citasmedicas.fecha, citasmedicas.fecharegistro,");
                         sbQuery.Append(" pacientes.cedula, pacientes.record, pacientes.nombre, rango.rango,");
-                        sbQuery.Append(" especialidad.especialidad");
+                        sbQuery.Append(" especialidad.especialidad, citasmedicas.nss");
                         sbQuery.Append(" FROM citasmedicas ");
                         sbQuery.Append(" INNER JOIN pacientes ON pacientes.record = citasmedicas.record");
                         sbQuery.Append(" INNER JOIN especialidad ON especialidad.idespecialidad = citasmedicas.especialidad");
@@ -232,7 +232,7 @@ namespace hospitalcentral
                     sbQuery.Append("SELECT ");
                     sbQuery.Append(" citasmedicas.idcitasmedicas, citasmedicas.fecha, citasmedicas.fecharegistro,");
                     sbQuery.Append(" pacientes.cedula, pacientes.record, pacientes.nombre, rango.rango,");
-                    sbQuery.Append(" especialidad.especialidad, citasmedicas.record ");
+                    sbQuery.Append(" especialidad.especialidad, citasmedicas.record, citasmedicas.nss ");
                     sbQuery.Append(" FROM citasmedicas ");
                     sbQuery.Append(" INNER JOIN pacientes ON pacientes.record = citasmedicas.record");
                     sbQuery.Append(" INNER JOIN especialidad ON especialidad.idespecialidad = citasmedicas.especialidad");
@@ -367,7 +367,7 @@ namespace hospitalcentral
                     sbQuery.Append("SELECT ");
                     sbQuery.Append(" citasmedicas.idcitasmedicas, citasmedicas.fecha, citasmedicas.fecharegistro,");
                     sbQuery.Append(" pacientes.cedula, pacientes.record, pacientes.nombre, rango.rango,");
-                    sbQuery.Append(" especialidad.especialidad");
+                    sbQuery.Append(" especialidad.especialidad, citasmedicas.nss");
                     sbQuery.Append(" FROM citasmedicas ");
                     sbQuery.Append(" INNER JOIN pacientes ON pacientes.record = citasmedicas.record");
                     sbQuery.Append(" INNER JOIN especialidad ON especialidad.idespecialidad = citasmedicas.especialidad");

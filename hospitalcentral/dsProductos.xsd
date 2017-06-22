@@ -12,7 +12,7 @@
   <xs:element name="dsProductos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsProductos" msprop:Generator_UserDSName="dsProductos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dtProductos" msprop:Generator_TableClassName="dtProductosDataTable" msprop:Generator_TableVarName="tabledtProductos" msprop:Generator_RowChangedName="dtProductosRowChanged" msprop:Generator_TablePropName="dtProductos" msprop:Generator_RowDeletingName="dtProductosRowDeleting" msprop:Generator_RowChangingName="dtProductosRowChanging" msprop:Generator_RowEvHandlerName="dtProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtProductosRowDeleted" msprop:Generator_RowClassName="dtProductosRow" msprop:Generator_UserTableName="dtProductos" msprop:Generator_RowEvArgName="dtProductosRowChangeEvent">
+        <xs:element name="dtProductos" msprop:Generator_TableClassName="dtProductosDataTable" msprop:Generator_TableVarName="tabledtProductos" msprop:Generator_TablePropName="dtProductos" msprop:Generator_RowDeletingName="dtProductosRowDeleting" msprop:Generator_RowChangingName="dtProductosRowChanging" msprop:Generator_RowEvHandlerName="dtProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtProductosRowDeleted" msprop:Generator_UserTableName="dtProductos" msprop:Generator_RowChangedName="dtProductosRowChanged" msprop:Generator_RowEvArgName="dtProductosRowChangeEvent" msprop:Generator_RowClassName="dtProductosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idproducto" msprop:Generator_ColumnVarNameInTable="columnidproducto" msprop:Generator_ColumnPropNameInRow="idproducto" msprop:Generator_ColumnPropNameInTable="idproductoColumn" msprop:Generator_UserColumnName="idproducto" type="xs:string" minOccurs="0" />
@@ -24,6 +24,7 @@
               <xs:element name="precio_b" msprop:Generator_ColumnVarNameInTable="columnprecio_b" msprop:Generator_ColumnPropNameInRow="precio_b" msprop:Generator_ColumnPropNameInTable="precio_bColumn" msprop:Generator_UserColumnName="precio_b" type="xs:decimal" minOccurs="0" />
               <xs:element name="tipo" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" type="xs:string" minOccurs="0" />
               <xs:element name="reorden" msprop:Generator_ColumnVarNameInTable="columnreorden" msprop:Generator_ColumnPropNameInRow="reorden" msprop:Generator_ColumnPropNameInTable="reordenColumn" msprop:Generator_UserColumnName="reorden" type="xs:int" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

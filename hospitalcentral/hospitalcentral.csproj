@@ -229,6 +229,12 @@
     <Compile Include="frmBuscarDoctores.Designer.cs">
       <DependentUpon>frmBuscarDoctores.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarSuplidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarSuplidor.designer.cs">
+      <DependentUpon>frmBuscarSuplidor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -500,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarDoctores.resx">
       <DependentUpon>frmBuscarDoctores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarSuplidor.resx">
+      <DependentUpon>frmBuscarSuplidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>

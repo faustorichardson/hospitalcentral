@@ -79,7 +79,7 @@
             // 
             // txtRecord
             // 
-            this.txtRecord.Location = new System.Drawing.Point(121, 306);
+            this.txtRecord.Location = new System.Drawing.Point(77, 308);
             this.txtRecord.MaxLength = 11;
             this.txtRecord.Name = "txtRecord";
             this.txtRecord.Size = new System.Drawing.Size(144, 20);
@@ -89,11 +89,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 309);
+            this.label1.Location = new System.Drawing.Point(36, 311);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 15);
+            this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 160;
-            this.label1.Text = "RECORD #:";
+            this.label1.Text = "NSS:";
             // 
             // chkPorRecord
             // 

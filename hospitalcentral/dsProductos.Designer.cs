@@ -277,7 +277,7 @@ namespace hospitalcentral {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtProductosDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class dtProductosDataTable : global::System.Data.TypedTableBase<dtProductosRow> {
             
             private global::System.Data.DataColumn columnidproducto;
             
@@ -296,6 +296,8 @@ namespace hospitalcentral {
             private global::System.Data.DataColumn columntipo;
             
             private global::System.Data.DataColumn columnreorden;
+            
+            private global::System.Data.DataColumn columncantidad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -404,6 +406,14 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,7 +449,7 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtProductosRow AdddtProductosRow(string idproducto, string producto, string referencia, string descripcion, string categoria, decimal precio_a, decimal precio_b, string tipo, int reorden) {
+            public dtProductosRow AdddtProductosRow(string idproducto, string producto, string referencia, string descripcion, string categoria, decimal precio_a, decimal precio_b, string tipo, int reorden, int cantidad) {
                 dtProductosRow rowdtProductosRow = ((dtProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idproducto,
@@ -450,16 +460,11 @@ namespace hospitalcentral {
                         precio_a,
                         precio_b,
                         tipo,
-                        reorden};
+                        reorden,
+                        cantidad};
                 rowdtProductosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtProductosRow);
                 return rowdtProductosRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -488,6 +493,7 @@ namespace hospitalcentral {
                 this.columnprecio_b = base.Columns["precio_b"];
                 this.columntipo = base.Columns["tipo"];
                 this.columnreorden = base.Columns["reorden"];
+                this.columncantidad = base.Columns["cantidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -511,6 +517,8 @@ namespace hospitalcentral {
                 base.Columns.Add(this.columntipo);
                 this.columnreorden = new global::System.Data.DataColumn("reorden", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnreorden);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -797,6 +805,22 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtProductos.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'dtProductos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtProductos.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidproductoNull() {
                 return this.IsNull(this.tabledtProductos.idproductoColumn);
             }
@@ -901,6 +925,18 @@ namespace hospitalcentral {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetreordenNull() {
                 this[this.tabledtProductos.reordenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tabledtProductos.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tabledtProductos.cantidadColumn] = global::System.Convert.DBNull;
             }
         }
         

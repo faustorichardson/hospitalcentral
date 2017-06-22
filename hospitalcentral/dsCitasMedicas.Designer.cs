@@ -297,6 +297,8 @@ namespace hospitalcentral {
             
             private global::System.Data.DataColumn columncantidad;
             
+            private global::System.Data.DataColumn columnnss;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtCitasMedicasDataTable() {
@@ -404,6 +406,14 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nssColumn {
+                get {
+                    return this.columnnss;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,7 +449,7 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtCitasMedicasRow AdddtCitasMedicasRow(int idcitasmedicas, System.DateTime fecha, string record, string nombre, string cedula, string rango, string especialidad, System.DateTime fecharegistro, long cantidad) {
+            public dtCitasMedicasRow AdddtCitasMedicasRow(int idcitasmedicas, System.DateTime fecha, string record, string nombre, string cedula, string rango, string especialidad, System.DateTime fecharegistro, long cantidad, string nss) {
                 dtCitasMedicasRow rowdtCitasMedicasRow = ((dtCitasMedicasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idcitasmedicas,
@@ -450,7 +460,8 @@ namespace hospitalcentral {
                         rango,
                         especialidad,
                         fecharegistro,
-                        cantidad};
+                        cantidad,
+                        nss};
                 rowdtCitasMedicasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtCitasMedicasRow);
                 return rowdtCitasMedicasRow;
@@ -482,6 +493,7 @@ namespace hospitalcentral {
                 this.columnespecialidad = base.Columns["especialidad"];
                 this.columnfecharegistro = base.Columns["fecharegistro"];
                 this.columncantidad = base.Columns["cantidad"];
+                this.columnnss = base.Columns["nss"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -505,6 +517,8 @@ namespace hospitalcentral {
                 base.Columns.Add(this.columnfecharegistro);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad);
+                this.columnnss = new global::System.Data.DataColumn("nss", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnss);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -791,6 +805,22 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nss {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtCitasMedicas.nssColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nss\' de la tabla \'dtCitasMedicas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtCitasMedicas.nssColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidcitasmedicasNull() {
                 return this.IsNull(this.tabledtCitasMedicas.idcitasmedicasColumn);
             }
@@ -895,6 +925,18 @@ namespace hospitalcentral {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcantidadNull() {
                 this[this.tabledtCitasMedicas.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnssNull() {
+                return this.IsNull(this.tabledtCitasMedicas.nssColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnssNull() {
+                this[this.tabledtCitasMedicas.nssColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -66,13 +66,8 @@ namespace hospitalcentral
                     this.txtDescripcion.Enabled = false;
                     this.txtProducto.Enabled = false;
                     this.txtReferencia.Enabled = false;
-                    this.txtPrecioA.Enabled = false;
-                    this.txtPrecioB.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
-                    this.rbTipo1.Enabled = false;
-                    this.rbTipo2.Enabled = false;
-                    this.rbTipo3.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -89,13 +84,8 @@ namespace hospitalcentral
                     this.txtDescripcion.Enabled = true;
                     this.txtProducto.Enabled = true;
                     this.txtReferencia.Enabled = true;
-                    this.txtPrecioA.Enabled = true;
-                    this.txtPrecioB.Enabled = true;
                     this.txtReorden.Enabled = true;
                     this.cmbCategoria.Enabled = true;
-                    this.rbTipo1.Enabled = true;
-                    this.rbTipo2.Enabled = true;
-                    this.rbTipo3.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -112,13 +102,8 @@ namespace hospitalcentral
                     this.txtDescripcion.Enabled = false;
                     this.txtProducto.Enabled = false;
                     this.txtReferencia.Enabled = false;
-                    this.txtPrecioA.Enabled = false;
-                    this.txtPrecioB.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
-                    this.rbTipo1.Enabled = false;
-                    this.rbTipo2.Enabled = false;
-                    this.rbTipo3.Enabled = false;
                     break;
 
                 case "Editar":
@@ -135,13 +120,8 @@ namespace hospitalcentral
                     this.txtDescripcion.Enabled = true;
                     this.txtProducto.Enabled = true;
                     this.txtReferencia.Enabled = true;
-                    this.txtPrecioA.Enabled = true;
-                    this.txtPrecioB.Enabled = true;
                     this.txtReorden.Enabled = true;
                     this.cmbCategoria.Enabled = true;
-                    this.rbTipo1.Enabled = true;
-                    this.rbTipo2.Enabled = true;
-                    this.rbTipo3.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -158,13 +138,8 @@ namespace hospitalcentral
                     this.txtDescripcion.Enabled = false;
                     this.txtProducto.Enabled = false;
                     this.txtReferencia.Enabled = false;
-                    this.txtPrecioA.Enabled = false;
-                    this.txtPrecioB.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
-                    this.rbTipo1.Enabled = false;
-                    this.rbTipo2.Enabled = false;
-                    this.rbTipo3.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -184,13 +159,8 @@ namespace hospitalcentral
                     this.txtDescripcion.Enabled = false;
                     this.txtProducto.Enabled = false;
                     this.txtReferencia.Enabled = false;
-                    this.txtPrecioA.Enabled = false;
-                    this.txtPrecioB.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
-                    this.rbTipo1.Enabled = false;
-                    this.rbTipo2.Enabled = false;
-                    this.rbTipo3.Enabled = false;
                     break;
 
                 default:
@@ -234,14 +204,11 @@ namespace hospitalcentral
         {
             this.txtID.Clear();
             this.txtDescripcion.Clear();
-            this.txtPrecioA.Clear();
-            this.txtPrecioB.Clear();
             this.txtProducto.Clear();
             this.txtReferencia.Clear();
-            this.rbTipo1.Checked = true;
             this.picBox.Image = null;
             this.picBox.Image = Properties.Resources.Image_capture_128x128;
-            this.txtPicture.Text = "C:\\SisGesFactInv\\productos\\Image_capture_128x128.png";
+            this.txtPicture.Text = "C:\\hospitalcentral\\productos\\Image_capture_128x128.png";
             this.txtReorden.Clear();
         }
 
@@ -308,7 +275,7 @@ namespace hospitalcentral
             }
             else
             {
-                this.txtPicture.Text = "C:\\SisGesFactInv\\productos\\Image_capture_128x128.png";
+                this.txtPicture.Text = "C:\\hospitalcentral\\productos\\Image_capture_128x128.png";
             }
             
             if (txtID.Text == "" || txtProducto.Text == "" || txtPicture.Text == "" || picBox.Image == null)
@@ -331,37 +298,14 @@ namespace hospitalcentral
 
                         // Step 3 - Comando a ejecutar
                         myCommand.CommandText = "INSERT INTO productos(referencia, producto, descripcion, idcategoria," +
-                            " precio_a, precio_b, tipo, imagen, rutafoto, reorden) values(@referencia, @nombre, @descripcion, @idcategoria, "+
-                            " @precio_a, @precio_b, @tipo, @imagen, @rutafoto, @reorden)";
+                            " imagen, rutafoto, reorden) values(@referencia, @nombre, @descripcion, @idcategoria, "+
+                            " @imagen, @rutafoto, @reorden)";
                         myCommand.Parameters.AddWithValue("@referencia", txtReferencia.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtProducto.Text);
                         myCommand.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
                         myCommand.Parameters.AddWithValue("@idcategoria", cmbCategoria.SelectedValue);
                         myCommand.Parameters.AddWithValue("@imagen", imageBT);
-                        myCommand.Parameters.AddWithValue("@rutafoto", txtPicture.Text);
-                        // Cambio el valor del textbox a decimal
-                        // Monto A
-                        string myValue_A = Convert.ToString(txtPrecioA.Text);
-                        decimal myValueMonto_A = clsFunctions.ParseCurrencyFormat(myValue_A);
-                        myCommand.Parameters.AddWithValue("@precio_a", myValueMonto_A);
-                        // Monto B
-                        string myValue_B = Convert.ToString(txtPrecioB.Text);
-                        decimal myValueMonto_B = clsFunctions.ParseCurrencyFormat(myValue_B);                        
-                        myCommand.Parameters.AddWithValue("@precio_b", myValueMonto_B);
-                        // TIPO
-                        if (rbTipo1.Checked == true)
-                        {
-                            myCommand.Parameters.AddWithValue("@tipo", "1");
-                        }
-                        else if (rbTipo2.Checked == true)
-                        {
-                            myCommand.Parameters.AddWithValue("@tipo", "2");
-                        }
-                        else if (rbTipo3.Checked == true)
-                        {
-                            myCommand.Parameters.AddWithValue("@tipo", "3");
-                        }
-
+                        myCommand.Parameters.AddWithValue("@rutafoto", txtPicture.Text);                        
                         myCommand.Parameters.AddWithValue("@reorden", txtReorden.Text);
 
                         // Step 4 - Opening the connection
@@ -372,6 +316,8 @@ namespace hospitalcentral
                         if (nFilas > 0)
                         {
                             MessageBox.Show("Informacion guardada satisfactoriamente...");
+                            // AGREGO EL PRODUCTO A LA TABLA DE INVENTARIO
+                            this.insertarInventario();
                         }
                         else
                         {
@@ -384,11 +330,7 @@ namespace hospitalcentral
                     catch (Exception MyEx)
                     {
                         MessageBox.Show(MyEx.Message);
-                    }
-
-                    // AGREGO EL PRODUCTO A LA TABLA DE INVENTARIO
-                    this.insertarInventario();
-
+                    }                    
                 }
                 else
                 {
@@ -402,37 +344,14 @@ namespace hospitalcentral
 
                         // Step 3 - Comando a ejecutar
                         myCommand.CommandText = "UPDATE productos SET referencia = @referencia, producto = @nombre, "+
-                            " descripcion = @descripcion, idcategoria = @idcategoria, precio_a = @precio_a, reorden = @reorden, "+
-                            "precio_b = @precio_b, tipo = @tipo, imagen = @imagen, rutafoto = @rutafoto WHERE idproducto ="+ txtID.Text +"";
+                            " descripcion = @descripcion, idcategoria = @idcategoria, reorden = @reorden, "+
+                            " imagen = @imagen, rutafoto = @rutafoto WHERE idproducto ="+ txtID.Text +"";
                         myCommand.Parameters.AddWithValue("@referencia", txtReferencia.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtProducto.Text);
                         myCommand.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
                         myCommand.Parameters.AddWithValue("@idcategoria", cmbCategoria.SelectedValue);
                         myCommand.Parameters.AddWithValue("@imagen", imageBT);
-                        myCommand.Parameters.AddWithValue("@rutafoto", txtPicture.Text);
-                        // Cambio el valor del textbox a decimal
-                        // Monto A
-                        string myValue_A = Convert.ToString(txtPrecioA.Text);
-                        decimal myValueMonto_A = clsFunctions.ParseCurrencyFormat(myValue_A);
-                        myCommand.Parameters.AddWithValue("@precio_a", myValueMonto_A);
-                        // Monto B
-                        string myValue_B = Convert.ToString(txtPrecioB.Text);
-                        decimal myValueMonto_B = clsFunctions.ParseCurrencyFormat(myValue_B);
-                        myCommand.Parameters.AddWithValue("@precio_b", myValueMonto_B);
-                        // TIPO
-                        if (rbTipo1.Checked == true)
-                        {
-                            myCommand.Parameters.AddWithValue("@tipo", "1");
-                        }
-                        else if (rbTipo2.Checked == true)
-                        {
-                            myCommand.Parameters.AddWithValue("@tipo", "2");
-                        }
-                        else if (rbTipo3.Checked == true)
-                        {
-                            myCommand.Parameters.AddWithValue("@tipo", "3");
-                        }
-
+                        myCommand.Parameters.AddWithValue("@rutafoto", txtPicture.Text);                        
                         myCommand.Parameters.AddWithValue("@reorden", txtReorden.Text);
 
                         // Step 4 - Opening the connection
@@ -442,7 +361,7 @@ namespace hospitalcentral
                         int nFilas = myCommand.ExecuteNonQuery();
                         if (nFilas > 0)
                         {
-                            MessageBox.Show("Informacion actualiada satisfactoriamente...");
+                            MessageBox.Show("Informacion actualiada satisfactoriamente...");                            
                         }
                         else
                         {
@@ -529,8 +448,8 @@ namespace hospitalcentral
                     MySqlCommand MyCommand = MyConexion.CreateCommand();
 
                     // Step 3 - creating the commandtext
-                    MyCommand.CommandText = "SELECT referencia, producto, descripcion, idcategoria, precio_a, "+
-                        "precio_b, tipo, imagen, rutafoto, reorden" +
+                    MyCommand.CommandText = "SELECT referencia, producto, descripcion, idcategoria, "+
+                        " imagen, rutafoto, reorden" +
                         " FROM productos WHERE idproducto = " + txtID.Text + "";
 
                     // Step 4 - connection open
@@ -548,23 +467,9 @@ namespace hospitalcentral
                             txtProducto.Text = MyReader["producto"].ToString();
                             txtDescripcion.Text = MyReader["descripcion"].ToString();
                             cmbCategoria.SelectedValue = MyReader["idcategoria"].ToString();
-                            txtPrecioA.Text = MyReader["precio_a"].ToString();
-                            txtPrecioB.Text = MyReader["precio_b"].ToString();
                             txtPicture.Text = MyReader["rutafoto"].ToString();
                             txtReorden.Text = MyReader["reorden"].ToString();
-                            if (MyReader["tipo"].ToString() == "1")
-                            {
-                                rbTipo1.Checked = true;
-                            }
-                            else if (MyReader["tipo"].ToString() == "2")
-                            {
-                                rbTipo2.Checked = true;
-                            }
-                            else
-                            {
-                                rbTipo3.Checked = true;
-                            }
-
+                            
                             // Leyendo la imagen
                             byte[] img = (byte[])(MyReader["imagen"]);
 
@@ -579,14 +484,7 @@ namespace hospitalcentral
                             }
                         }
 
-                        // Llamo la funcion para formatear el campo.-
-                        decimal montoA = Convert.ToDecimal(txtPrecioA.Text);
-                        txtPrecioA.Text = clsFunctions.GetCurrencyFormat(montoA);
-
-                        // Llamo la funcion para formatear el campo.-
-                        decimal montoB = Convert.ToDecimal(txtPrecioB.Text);
-                        txtPrecioB.Text = clsFunctions.GetCurrencyFormat(montoB);
-
+                        
                         // Cambio los modos de los botones
                         this.cModo = "Buscar";
                         this.Botones();
@@ -643,10 +541,11 @@ namespace hospitalcentral
                 sbQuery.Clear();
                 sbQuery.Append("SELECT ");
                 sbQuery.Append(" productos.idproducto, productos.producto, productos.referencia,");
-                sbQuery.Append(" productos.descripcion, productos.precio_a, productos.precio_b,");
-                sbQuery.Append(" productos.reorden, categorias.categoria");
+                sbQuery.Append(" productos.descripcion, ");
+                sbQuery.Append(" productos.reorden, categorias.categoria, inventario.cantidad");
                 sbQuery.Append(" FROM productos ");
                 sbQuery.Append(" INNER JOIN categorias ON categorias.idcategoria = productos.idcategoria ");
+                sbQuery.Append(" INNER JOIN inventario ON inventario.idproducto = productos.idproducto ");
                 sbQuery.Append(cWhere);
                 sbQuery.Append(" ORDER BY productos.producto ASC ");
 
@@ -665,7 +564,7 @@ namespace hospitalcentral
                 int nRegistro = dtProductos.Rows.Count;
                 if (nRegistro == 0)
                 {
-                    MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion de Facturacion e Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 else
@@ -761,19 +660,19 @@ namespace hospitalcentral
             this.Close();
         }
 
-        private void txtPrecioA_Leave(object sender, EventArgs e)
-        {
-            //Llamo la funcion para formatear el campo.-
-            decimal monto = Convert.ToDecimal(txtPrecioA.Text);
-            txtPrecioA.Text = clsFunctions.GetCurrencyFormat(monto);
-        }
+        //private void txtPrecioA_Leave(object sender, EventArgs e)
+        //{
+        //    //Llamo la funcion para formatear el campo.-
+        //    decimal monto = Convert.ToDecimal(txtPrecioA.Text);
+        //    txtPrecioA.Text = clsFunctions.GetCurrencyFormat(monto);
+        //}
 
-        private void txtPrecioB_Leave(object sender, EventArgs e)
-        {
-            //Llamo la funcion para formatear el campo.-
-            decimal monto = Convert.ToDecimal(txtPrecioB.Text);
-            txtPrecioB.Text = clsFunctions.GetCurrencyFormat(monto);
-        }
+        //private void txtPrecioB_Leave(object sender, EventArgs e)
+        //{
+        //    //Llamo la funcion para formatear el campo.-
+        //    decimal monto = Convert.ToDecimal(txtPrecioB.Text);
+        //    txtPrecioB.Text = clsFunctions.GetCurrencyFormat(monto);
+        //}
 
         private void btnImagen_Click(object sender, EventArgs e)
         {

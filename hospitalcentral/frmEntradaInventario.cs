@@ -46,6 +46,46 @@ namespace hospitalcentral
             this.LimpiarTxtGrid();
             this.cModo = "Inicio";
             this.Botones();
+            this.fillCmbCategoria();
+        }
+
+        private void fillCmbCategoria()
+        {
+            try
+            {
+                // Step 1 
+                MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+
+                // Step 2
+                MyConexion.Open();
+
+                // Step 3
+                MySqlCommand MyCommand = new MySqlCommand("SELECT idcategoria, categoria FROM categorias ORDER BY categoria ASC", MyConexion);
+
+                // Step 4
+                MySqlDataReader MyReader;
+                MyReader = MyCommand.ExecuteReader();
+
+                // Step 5
+                DataTable MyDataTable = new DataTable();
+                MyDataTable.Columns.Add("idcategoria", typeof(int));
+                MyDataTable.Columns.Add("categoria", typeof(string));
+                MyDataTable.Load(MyReader);
+
+                // Step 6
+                cmbCategoria.ValueMember = "idcategoria";
+                cmbCategoria.DisplayMember = "categoria";
+                cmbCategoria.DataSource = MyDataTable;
+
+                // Step 7
+                MyConexion.Close();
+
+            }
+            catch (Exception myEx)
+            {
+                MessageBox.Show(myEx.Message);
+                throw;
+            }
         }
 
         private void ProximoCodigo()
@@ -105,11 +145,11 @@ namespace hospitalcentral
                     btnBuscarSuplidor.Enabled = false;
                     btnAddGrid.Enabled = false;
                     btnDeleteGrid.Enabled = false;
-                    txtTipo.Enabled = false;
-                    txtPrecioProducto.Enabled = false;
+                    //txtTipo.Enabled = false;
+                    //txtPrecioProducto.Enabled = false;
                     txtCantidad.Enabled = false;
                     dtgEntradaInventario.Enabled = false;
-                    chkITBI.Enabled = false;
+                    //chkITBI.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -132,10 +172,10 @@ namespace hospitalcentral
                     btnAddGrid.Enabled = true;
                     btnDeleteGrid.Enabled = true;
                     //txtTipo.Enabled = true;
-                    txtPrecioProducto.Enabled = true;
+                    //txtPrecioProducto.Enabled = true;
                     txtCantidad.Enabled = true;
                     dtgEntradaInventario.Enabled = true;
-                    chkITBI.Enabled = true;
+                    //chkITBI.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -157,11 +197,11 @@ namespace hospitalcentral
                     btnBuscarSuplidor.Enabled = false;
                     btnAddGrid.Enabled = false;
                     btnDeleteGrid.Enabled = false;
-                    txtTipo.Enabled = false;
-                    txtPrecioProducto.Enabled = false;
+                    //txtTipo.Enabled = false;
+                    //txtPrecioProducto.Enabled = false;
                     txtCantidad.Enabled = false;
                     dtgEntradaInventario.Enabled = false;
-                    chkITBI.Enabled = false;
+                    //chkITBI.Enabled = false;
                     break;
 
                 case "Editar":
@@ -239,14 +279,14 @@ namespace hospitalcentral
             txtIDSuplidor.Clear();
             txtSuplidor.Clear();
             dtgEntradaInventario.Rows.Clear();
-            lblSumaTotal.Text = "0.00";
-            lblTotal.Text = "0.00";
+            //lblSumaTotal.Text = "0.00";
+            //lblTotal.Text = "0.00";
             cantExistencia = 0;
             sumaTotal = 0;
             subTotal = 0;
             monto = 0;
             countFilas = 0;
-            chkITBI.Checked = false;
+            //chkITBI.Checked = false;
         }
 
         // Funcion que convierte un valor decimal a texto para graficarlo en un textbox
@@ -302,8 +342,7 @@ namespace hospitalcentral
                         {
                             while (MyReader.Read())
                             {
-                                txtProducto.Text = MyReader["producto"].ToString();
-                                txtTipo.Text = MyReader["tipo"].ToString();
+                                txtProducto.Text = MyReader["producto"].ToString();                                
 
                                 // Leyendo la imagen
                                 byte[] img = (byte[])(MyReader["imagen"]);
@@ -318,13 +357,13 @@ namespace hospitalcentral
                                     picBox.Image = System.Drawing.Image.FromStream(mstream);
                                 }
                             }
-                            //this.cModo = "Buscar";
-                            //this.Botones();
-                            this.txtPrecioProducto.Focus();
+
+                            // Pongo el foco en el campo cantidad
+                            this.txtCantidad.Focus();                            
                         }
                         else
                         {
-                            MessageBox.Show("No se encontraron registros con este ID de Producto...", "SisGesFactInv", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No se encontraron registros con este ID de Producto...", "Sistema de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         // Step 6 - Closing all
                         MyReader.Close();
@@ -376,18 +415,18 @@ namespace hospitalcentral
                 // ACTUALIZANDO LA VARIABLE Y EL LABEL DEL SUBTOTAL
                 try
                 {
-                    // Creo la variable del tipo double "SUBTOTAL" para calcular el resultado de cantidad por precio
-                    subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                    //// Creo la variable del tipo double "SUBTOTAL" para calcular el resultado de cantidad por precio
+                    //subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
 
                     // Registro la entrada al GRID
-                    dtgEntradaInventario.Rows.Add(txtIDProducto.Text, txtProducto.Text, txtTipo.Text, txtPrecioProducto.Text, txtCantidad.Text, subTotal);
+                    dtgEntradaInventario.Rows.Add(txtIDProducto.Text, txtProducto.Text, txtCantidad.Text);
 
-                    // Realizo la operacion de sumar el subtotal mas la variable acumuladora sumatotal
-                    sumaTotal = sumaTotal + subTotal;
-
-                    // Llamo la funcion para formatear el campo.-
-                    monto = Convert.ToDecimal(sumaTotal);
-                    lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(monto);
+                    //// Realizo la operacion de sumar el subtotal mas la variable acumuladora sumatotal
+                    //sumaTotal = sumaTotal + subTotal;
+                    
+                    //// Llamo la funcion para formatear el campo.-
+                    //monto = Convert.ToDecimal(sumaTotal);
+                    //lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(monto);
 
                     // Agrego una fila al contador
                     countFilas = countFilas + 1;
@@ -400,31 +439,32 @@ namespace hospitalcentral
                 }
 
                 // ACTUALIZANDO LA VARIABLE Y EL LABEL DEL TOTAL + ITBIs
-                if (chkITBI.Checked == true)
-                {
-                    total = sumaTotal;
+                //if (chkITBI.Checked == true)
+                //{
+                //    total = sumaTotal;
 
-                    lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                }
-                else
-                {
-                    try
-                    {
-                        // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
-                        total = sumaTotal * Convert.ToDecimal(itbi);
+                //    lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                //}
+                //else
+                //{
+                //    try
+                //    {
+                //        // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
+                //        total = sumaTotal * Convert.ToDecimal(itbi);
 
-                        // Formateo la variable TOTAL para llevarlo al label
-                        lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        throw;
-                    }
-                }
+                //        // Formateo la variable TOTAL para llevarlo al label
+                //        lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show(ex.Message);
+                //        throw;
+                //    }
+                //}
 
             }
 
+            // Limpiando los valores de los campos que llenan el grid
             this.LimpiarTxtGrid();
    
         }
@@ -513,8 +553,8 @@ namespace hospitalcentral
         {            
             txtIDProducto.Clear();
             txtProducto.Clear();
-            txtPrecioProducto.Clear();
-            txtTipo.Clear();
+            //txtPrecioProducto.Clear();
+            //txtTipo.Clear();
             txtCantidad.Clear();
         }
 
@@ -581,8 +621,8 @@ namespace hospitalcentral
                     try
                     {
 
-                        // Creo la variable del tipo double "SUBTOTAL" para calcular el resultado de cantidad por precio
-                        subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                        //// Creo la variable del tipo double "SUBTOTAL" para calcular el resultado de cantidad por precio
+                        //subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
 
                         // selecciono el indice del registro en el grid
                         selectedRow = dtgEntradaInventario.CurrentCell.RowIndex;
@@ -593,11 +633,11 @@ namespace hospitalcentral
                         // Actualizo la variable de las filas
                         countFilas = countFilas - 1;
 
-                        // Actualizo el monto
-                        sumaTotal = sumaTotal - subTotal;
+                        //// Actualizo el monto
+                        //sumaTotal = sumaTotal - subTotal;
 
-                        // Formateo la cifra
-                        lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(sumaTotal);
+                        //// Formateo la cifra
+                        //lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(sumaTotal);
                     }
                     catch (Exception ex)
                     {
@@ -606,28 +646,30 @@ namespace hospitalcentral
                     }
 
                     // ACTUALIZANDO LA VARIABLE Y EL LABEL DEL SUBTOTAL + ITBIs
-                    if (chkITBI.Checked == true)
-                    {
-                        total = sumaTotal;
+                    //if (chkITBI.Checked == true)
+                    //{
+                    //    total = sumaTotal;
 
-                        lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                    }
-                    else
-                    {
-                        try
-                        {
-                            // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
-                            total = sumaTotal * Convert.ToDecimal(itbi);
+                    //    lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                    //}
+                    //else
+                    //{
+                    //    try
+                    //    {
+                    //        // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
+                    //        total = sumaTotal * Convert.ToDecimal(itbi);
 
-                            // Formateo la variable TOTAL para llevarlo al label
-                            lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                            throw;
-                        }
-                    }
+                    //        // Formateo la variable TOTAL para llevarlo al label
+                    //        lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        MessageBox.Show(ex.Message);
+                    //        throw;
+                    //    }
+                    //}
+
+                    // Limpiando los valores de los campos que llenan el grid
                     this.LimpiarTxtGrid();
                 }
                 else
@@ -653,7 +695,7 @@ namespace hospitalcentral
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "" || txtIDSuplidor.Text == "")
+            if (txtID.Text == "" || txtIDSuplidor.Text == "" || countFilas == 0)
             {
                 MessageBox.Show("No se permiten campos vacios...");
                 txtCantidad.Focus();
@@ -674,25 +716,25 @@ namespace hospitalcentral
                         MySqlCommand myCommand = MyConexion.CreateCommand();
 
                         // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "INSERT INTO entrada_inventario(idsuplidor, suplidor, fecha, monto_total, total)" +
-                            " values(@idsuplidor, @suplidor, @fecha, @monto_total, @total)";
+                        myCommand.CommandText = "INSERT INTO entrada_inventario(idsuplidor, suplidor, fecha)" +
+                            " values(@idsuplidor, @suplidor, @fecha)";
                         myCommand.Parameters.AddWithValue("@idsuplidor", txtIDSuplidor.Text);
                         myCommand.Parameters.AddWithValue("@suplidor", txtCantidad.Text);
                         myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
 
-                        // Convierto el campo monto en texto
-                        lblSumaTotal.Text = Convert.ToString(lblSumaTotal.Text);
-                        // Cambio el valor del textbox a decimal
-                        string myValue = Convert.ToString(lblSumaTotal.Text);
-                        decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);                        
-                        myCommand.Parameters.AddWithValue("@monto_total", myValueMonto);
+                        //// Convierto el campo monto en texto
+                        //lblSumaTotal.Text = Convert.ToString(lblSumaTotal.Text);
+                        //// Cambio el valor del textbox a decimal
+                        //string myValue = Convert.ToString(lblSumaTotal.Text);
+                        //decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);                        
+                        //myCommand.Parameters.AddWithValue("@monto_total", myValueMonto);
 
-                        // Convierto el campo monto en texto
-                        lblTotal.Text = Convert.ToString(lblTotal.Text);
-                        // Cambio el valor del textbox a decimal
-                        string myValueTotal = Convert.ToString(lblTotal.Text);
-                        decimal myValueMontoTotal = clsFunctions.ParseCurrencyFormat(myValueTotal);                                                
-                        myCommand.Parameters.AddWithValue("@total", myValueMontoTotal);
+                        //// Convierto el campo monto en texto
+                        //lblTotal.Text = Convert.ToString(lblTotal.Text);
+                        //// Cambio el valor del textbox a decimal
+                        //string myValueTotal = Convert.ToString(lblTotal.Text);
+                        //decimal myValueMontoTotal = clsFunctions.ParseCurrencyFormat(myValueTotal);                                                
+                        //myCommand.Parameters.AddWithValue("@total", myValueMontoTotal);
 
                         // Step 4 - Opening the connection
                         MyConexion.Open();
@@ -745,24 +787,13 @@ namespace hospitalcentral
                 // Creo bucle de guardar informacion del grid
                 for (int row = 0; row < countFilas; row++)
                 {
-                    MySqlCommand myCommand = new MySqlCommand("INSERT INTO entrada_inventario_detalle(id, idproducto, producto, tipo, precio, cantidad, subtotal)"+ 
-                        " values (@id, @idproducto, @producto, @tipo, @precio, @cantidad, @subtotal)", MyConexion);
+                    MySqlCommand myCommand = new MySqlCommand("INSERT INTO entrada_inventario_detalle(id, idproducto, producto, cantidad)"+ 
+                        " values (@id, @idproducto, @producto, @cantidad)", MyConexion);
                     myCommand.Parameters.AddWithValue("@id", gCodigo);
                     myCommand.Parameters.AddWithValue("@idproducto", dtgEntradaInventario.Rows[row].Cells[0].Value);
                     myCommand.Parameters.AddWithValue("@producto", dtgEntradaInventario.Rows[row].Cells[1].Value);
-                    myCommand.Parameters.AddWithValue("@tipo", dtgEntradaInventario.Rows[row].Cells[2].Value);
+                    myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[2].Value);
                     
-                    // Cambio el valor del grid a decimal
-                    string myValue_precio = Convert.ToString(dtgEntradaInventario.Rows[row].Cells[3].Value);
-                    decimal myValueMonto_precio = clsFunctions.ParseCurrencyFormat(myValue_precio);
-                    myCommand.Parameters.AddWithValue("@precio", myValueMonto_precio);
-                    //myCommand.Parameters.AddWithValue("@precio", dtgEntradaInventario.Rows[row].Cells[3].Value);
-                    myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[4].Value);
-
-                    string myValue_subtotal = Convert.ToString(dtgEntradaInventario.Rows[row].Cells[5].Value);
-                    decimal myValueMonto_subtotal = clsFunctions.ParseCurrencyFormat(myValue_subtotal);                    
-                    myCommand.Parameters.AddWithValue("@subtotal", myValueMonto_subtotal);
-
                     // EJECUTO EL COMANDO
                     myCommand.ExecuteNonQuery();
                 }
@@ -958,11 +989,11 @@ namespace hospitalcentral
                     cWhere = cWhere + " AND entrada_inventario.id =" + cCodigo + "";
                     sbQuery.Clear();
                     sbQuery.Append("SELECT ");
-                    sbQuery.Append(" entrada_inventario.id, entrada_inventario.fecha, entrada_inventario.monto_total,");
-                    sbQuery.Append(" entrada_inventario.total, entrada_inventario.anulada, entrada_inventario_detalle.idproducto,");
-                    sbQuery.Append(" entrada_inventario_detalle.producto, entrada_inventario_detalle.tipo,");
-                    sbQuery.Append(" entrada_inventario_detalle.precio, entrada_inventario_detalle.cantidad, ");
-                    sbQuery.Append(" entrada_inventario_detalle.subtotal, suplidores.nombre as suplidor, entrada_inventario.total, ");
+                    sbQuery.Append(" entrada_inventario.id, entrada_inventario.fecha, ");
+                    sbQuery.Append(" entrada_inventario.anulada, entrada_inventario_detalle.idproducto,");
+                    sbQuery.Append(" entrada_inventario_detalle.producto,");
+                    sbQuery.Append(" entrada_inventario_detalle.cantidad, ");
+                    sbQuery.Append(" suplidores.nombre as suplidor, ");
                     sbQuery.Append(" suplidores.rnc, suplidores.direccion, suplidores.telefono, provincias.nombre as provincia,");
                     sbQuery.Append(" suplidores.idsuplidor");
                     sbQuery.Append(" FROM entrada_inventario");
@@ -986,7 +1017,7 @@ namespace hospitalcentral
                     int nRegistro = dtMovimientoInventario.Rows.Count;
                     if (nRegistro == 0)
                     {
-                        MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion de Facturacion e Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else
@@ -1076,11 +1107,10 @@ namespace hospitalcentral
             {
                 this.cModo = "Inicio";
                 this.Botones();
+                this.Limpiar();
+                this.LimpiarTxtGrid();
             }
-
-            this.Limpiar();
-            this.LimpiarTxtGrid();
-
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -1098,7 +1128,7 @@ namespace hospitalcentral
 
         private void btnBuscarSuplidor_Click(object sender, EventArgs e)
         {
-            frmBuscarDoctores ofrmBuscarSuplidor = new frmBuscarDoctores();
+            frmBuscarSuplidor ofrmBuscarSuplidor = new frmBuscarSuplidor();
             ofrmBuscarSuplidor.ShowDialog();
             string cCodigo = ofrmBuscarSuplidor.cCodigo;
 
@@ -1117,7 +1147,7 @@ namespace hospitalcentral
 
                     // Step 3 - creating the commandtext
                     //MyCommand.CommandText = "SELECT *  FROM paciente WHERE cedula = ' " + txtCedula.Text.Trim() + "'  " ;
-                    MyCommand.CommandText = "SELECT idsuplidor, nombre from suplidores WHERE idsuplidor = '" + cCodigo + "'";
+                    MyCommand.CommandText = "SELECT idsuplidor, nombre from suplidores WHERE idsuplidor = '" + txtIDSuplidor.Text + "'";
 
                     // Step 4 - connection open
                     MyclsConexion.Open();
@@ -1133,7 +1163,7 @@ namespace hospitalcentral
                             txtSuplidor.Text = MyReader["nombre"].ToString(); 
                            
                             //Verifica si lleva ITBIs o no
-                            this.verificaITBI();
+                           // this.verificaITBI();
                         }
                         //this.cModo = "Buscar";
                         //this.Botones();
@@ -1165,7 +1195,7 @@ namespace hospitalcentral
                 switch (Result)
                 {
                     case DialogResult.No:
-                        this.chkITBI.Checked = true;
+                        //this.chkITBI.Checked = true;
                         break;
                 }
             }
@@ -1174,17 +1204,17 @@ namespace hospitalcentral
 
         private void txtPrecioProducto_Leave(object sender, EventArgs e)
         {
-            if (txtPrecioProducto.Text == "")
-            {
-                MessageBox.Show("No puede dejar la cantidad sin valor...");
-                txtPrecioProducto.Focus();
-            }
-            else
-            {
-                // Llamo la funcion para formatear el campo.-
-                decimal monto = Convert.ToDecimal(txtPrecioProducto.Text);
-                txtPrecioProducto.Text = clsFunctions.GetCurrencyFormat(monto);
-            }
+            //if (txtPrecioProducto.Text == "")
+            //{
+            //    MessageBox.Show("No puede dejar la cantidad sin valor...");
+            //    txtPrecioProducto.Focus();
+            //}
+            //else
+            //{
+            //    // Llamo la funcion para formatear el campo.-
+            //    decimal monto = Convert.ToDecimal(txtPrecioProducto.Text);
+            //    txtPrecioProducto.Text = clsFunctions.GetCurrencyFormat(monto);
+            //}
         }
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -1206,28 +1236,40 @@ namespace hospitalcentral
             // Lleno los campos
             txtIDProducto.Text = row.Cells[0].Value.ToString();
             txtProducto.Text = row.Cells[1].Value.ToString();
-            txtTipo.Text = row.Cells[2].Value.ToString();
-            txtPrecioProducto.Text = row.Cells[3].Value.ToString();
-            txtCantidad.Text = row.Cells[4].Value.ToString();
+            //txtTipo.Text = row.Cells[2].Value.ToString();
+            //txtPrecioProducto.Text = row.Cells[3].Value.ToString();
+            txtCantidad.Text = row.Cells[2].Value.ToString();
         }
 
         private void chkITBI_Click(object sender, EventArgs e)
         {
-            if (chkITBI.Checked == true)
+            //if (chkITBI.Checked == true)
+            //{
+            //    if (countFilas > 0)
+            //    {
+            //        MessageBox.Show("Para alterar la factura debe borrar los productos...");                    
+            //    }
+            //}
+            //else
+            //{
+            //    if (countFilas > 0)
+            //    {
+            //        MessageBox.Show("Para alterar la factura debe borrar los productos...");
+            //        chkITBI.Checked = false;
+
+            //    }
+            //}
+        }
+
+        private void txtCantidad_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9')
             {
-                if (countFilas > 0)
-                {
-                    MessageBox.Show("Para alterar la factura debe borrar los productos...");                    
-                }
+                e.Handled = false;
             }
             else
             {
-                if (countFilas > 0)
-                {
-                    MessageBox.Show("Para alterar la factura debe borrar los productos...");
-                    chkITBI.Checked = false;
-
-                }
+                e.Handled = true;
             }
         }
         

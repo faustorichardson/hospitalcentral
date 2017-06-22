@@ -43,9 +43,13 @@ namespace hospitalcentral
             this.chkMantenimientos.Checked = false;
             this.chkMDoctores.Checked = false;
             this.chkMPacientes.Checked = false;
+            this.chkMCategoriasProductos.Checked = false;
+            this.chkMProductos.Checked = false;
             this.chkMUsuarios.Checked = false;
+            this.chkMSuplidores.Checked = false;
             this.chkProcesos.Checked = false;
             this.chkPCitasMedicas.Checked = false;
+            this.chkPEntradaInventario.Checked = false;
             this.chkReportes.Checked = false;
             this.chkRCitasMedicas.Checked = false;
             this.chkEstadisticas.Checked = false;
@@ -76,7 +80,11 @@ namespace hospitalcentral
                     this.chkEstadisticas.Enabled = false;
                     this.chkMDoctores.Enabled = false;
                     this.chkMPacientes.Enabled = false;
-                    this.chkMUsuarios.Enabled = false;
+                    this.chkPEntradaInventario.Enabled = false;
+                    this.chkMUsuarios.Enabled = false;                    
+                    this.chkMProductos.Enabled = false;
+                    this.chkMCategoriasProductos.Enabled = false;
+                    this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
@@ -101,9 +109,13 @@ namespace hospitalcentral
                     this.chkReportes.Enabled = true;
                     this.chkEstadisticas.Enabled = true;
                     this.chkMDoctores.Enabled = true;
-                    this.chkMPacientes.Enabled = true;
+                    this.chkMPacientes.Enabled = true;                    
                     this.chkMUsuarios.Enabled = true;
+                    this.chkMProductos.Enabled = true;
+                    this.chkMCategoriasProductos.Enabled = true;
+                    this.chkMSuplidores.Enabled = true;
                     this.chkPCitasMedicas.Enabled = true;
+                    this.chkPEntradaInventario.Enabled = true;
                     this.chkRCitasMedicas.Enabled = true;
                     this.chkECitasMedicas.Enabled = true;
                     break;
@@ -129,7 +141,11 @@ namespace hospitalcentral
                     this.chkMDoctores.Enabled = false;
                     this.chkMPacientes.Enabled = false;
                     this.chkMUsuarios.Enabled = false;
+                    this.chkMProductos.Enabled = false;
+                    this.chkMCategoriasProductos.Enabled = false;
+                    this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
+                    this.chkPEntradaInventario.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
                     break;
@@ -155,7 +171,11 @@ namespace hospitalcentral
                     this.chkMDoctores.Enabled = true;
                     this.chkMPacientes.Enabled = true;
                     this.chkMUsuarios.Enabled = true;
+                    this.chkMProductos.Enabled = true;
+                    this.chkMCategoriasProductos.Enabled = true;
+                    this.chkMSuplidores.Enabled = true;
                     this.chkPCitasMedicas.Enabled = true;
+                    this.chkPEntradaInventario.Enabled = true;
                     this.chkRCitasMedicas.Enabled = true;
                     this.chkECitasMedicas.Enabled = true;
                     break;
@@ -181,7 +201,11 @@ namespace hospitalcentral
                     this.chkMDoctores.Enabled = false;
                     this.chkMPacientes.Enabled = false;
                     this.chkMUsuarios.Enabled = false;
+                    this.chkMProductos.Enabled = false;
+                    this.chkMCategoriasProductos.Enabled = false;
+                    this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
+                    this.chkPEntradaInventario.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
                     break;
@@ -210,7 +234,11 @@ namespace hospitalcentral
                     this.chkMDoctores.Enabled = false;
                     this.chkMPacientes.Enabled = false;
                     this.chkMUsuarios.Enabled = false;
+                    this.chkMProductos.Enabled = false;
+                    this.chkMCategoriasProductos.Enabled = false;
+                    this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
+                    this.chkPEntradaInventario.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
                     break;
@@ -292,9 +320,13 @@ namespace hospitalcentral
                             " permiso_mantenimiento_doctores,"+
                             " permiso_mantenimiento_pacientes,"+
                             " permiso_mantenimiento_usuario,"+
+                            " permiso_mantenimiento_productos,"+
+                            " permiso_mantenimiento_productoscategorias,"+
+                            " permiso_mantenimiento_suplidores,"+
                             // Permisos Procesos
                             " permiso_proceso," +
                             " permiso_proceso_citasmedicas,"+
+                            " permiso_proceso_entradainventario," +
                             // Permisos Reportes
                             " permiso_reporte," +
                             " permiso_reporte_citasmedicas,"+
@@ -308,9 +340,13 @@ namespace hospitalcentral
                             " @permiso_mantenimiento_doctores,"+
                             " @permiso_mantenimiento_pacientes,"+
                             " @permiso_mantenimiento_usuario,"+
+                            " @permiso_mantenimiento_productos,"+
+                            " @permiso_mantenimiento_productoscategorias,"+
+                            " @permiso_mantenimiento_suplidores,"+
                             // Valores permisos procesos
                             " @permiso_proceso,"+
                             " @permiso_proceso_citasmedicas,"+
+                            " @permiso_proceso_entradainventario,"+
                             // Valores permisos reportes
                             " @permiso_reporte,"+
                             " @permiso_reporte_citasmedicas,"+
@@ -363,6 +399,31 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@permiso_mantenimiento_usuario", 0);
                         }
+                        if (chkMProductos.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productos", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productos", 0);
+                        }
+                        if (chkMCategoriasProductos.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productoscategorias", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productoscategorias", 0);
+                        }
+                        if (chkMSuplidores.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_suplidores", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_suplidores", 0);
+                        }
+
                         // Verificando el estatus de los permisos PROCESOS
                         if (chkProcesos.Checked == true)
                         {
@@ -380,6 +441,15 @@ namespace hospitalcentral
                         else
                         {
                             myCommand.Parameters.AddWithValue("@permiso_proceso_citasmedicas", 0);
+                        }
+
+                        if (chkPEntradaInventario.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_entradainventario", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_entradainventario", 0);
                         }
                         // Verificando el estatus de los permisos REPORTES
                         if (chkReportes.Checked == true)
@@ -455,9 +525,13 @@ namespace hospitalcentral
                             " permiso_mantenimiento_doctores = @permiso_mantenimiento_doctores," +
                             " permiso_mantenimiento_pacientes = @permiso_mantenimiento_pacientes," +
                             " permiso_mantenimiento_usuario = @permiso_mantenimiento_usuario," +
+                            " permiso_mantenimiento_productos = @permiso_mantenimiento_productos,"+
+                            " permiso_mantenimiento_productoscategorias = @permiso_mantenimiento_productoscategorias,"+
+                            " permiso_mantenimiento_suplidores = @permiso_mantenimiento_suplidores,"+
                             // Permisos Procesos
                             " permiso_proceso = @permiso_proceso," +
                             " permiso_proceso_citasmedicas = @permiso_proceso_citasmedicas," +
+                            " permiso_proceso_entradainventario = @permiso_proceso_entradainventario,"+
                             // Permisos Reportes
                             " permiso_reporte = @permiso_reporte," +
                             " permiso_reporte_citasmedicas = @permiso_reporte_citasmedicas," +
@@ -516,6 +590,31 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@permiso_mantenimiento_usuario", 0);
                         }
+                        if (chkMProductos.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productos", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productos", 0);
+                        }
+                        if (chkMCategoriasProductos.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productoscategorias", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_productoscategorias", 0);
+                        }
+                        if (chkMSuplidores.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_suplidores", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_suplidores", 0);
+                        }
+
                         // Verificando el estatus de los permisos PROCESOS
                         if (chkProcesos.Checked == true)
                         {
@@ -533,6 +632,15 @@ namespace hospitalcentral
                         else
                         {
                             myCommand.Parameters.AddWithValue("@permiso_proceso_citasmedicas", 0);
+                        }
+
+                        if (chkPEntradaInventario.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_entradainventario", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_entradainventario", 0);
                         }
                         // Verificando el estatus de los permisos REPORTES
                         if (chkReportes.Checked == true)
@@ -623,7 +731,7 @@ namespace hospitalcentral
 
                     // Step 3 - creating the commandtext
                     MyCommand.CommandText = "SELECT * " +
-                        "FROM usuarios WHERE idusuarios = " + txtID.Text + "";
+                        " FROM usuarios WHERE idusuarios = " + txtID.Text + "";
 
                     // Step 4 - connection open
                     MyConexion.Open();
@@ -686,6 +794,33 @@ namespace hospitalcentral
                                 chkMUsuarios.Checked = false;
                             }
                             /////
+                            if (MyReader["permiso_mantenimiento_productos"].ToString() == "1")
+                            {
+                                chkMProductos.Checked = true;
+                            }
+                            else
+                            {
+                                chkMProductos.Checked = false;
+                            }
+                            /////
+                            if (MyReader["permiso_mantenimiento_productoscategorias"].ToString() == "1")
+                            {
+                                chkMCategoriasProductos.Checked = true;
+                            }
+                            else
+                            {
+                                chkMCategoriasProductos.Checked = false;
+                            }
+                            /////
+                            if (MyReader["permiso_mantenimiento_suplidores"].ToString() == "1")
+                            {
+                                chkMSuplidores.Checked = true;
+                            }
+                            else
+                            {
+                                chkMSuplidores.Checked = false;
+                            }
+                            /////
 
                             // PERMISOS DE PROCESOS
                             if (MyReader["permiso_proceso"].ToString() == "1")
@@ -704,6 +839,15 @@ namespace hospitalcentral
                             else
                             {
                                 chkPCitasMedicas.Checked = false;
+                            }
+                            /////
+                            if (MyReader["permiso_proceso_entradainventario"].ToString() == "1")
+                            {
+                                chkPEntradaInventario.Checked = true;
+                            }
+                            else
+                            {
+                                chkPEntradaInventario.Checked = false;
                             }
                             /////
 
