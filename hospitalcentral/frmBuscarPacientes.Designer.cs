@@ -36,7 +36,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RECORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdCatalogo)).BeginInit();
@@ -52,7 +52,7 @@
             this.grdCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.RECORD,
+            this.NSS,
             this.nombre,
             this.cedula});
             this.grdCatalogo.Location = new System.Drawing.Point(68, 80);
@@ -127,18 +127,19 @@
             this.ID.ReadOnly = true;
             this.ID.Width = 50;
             // 
-            // RECORD
+            // NSS
             // 
-            this.RECORD.HeaderText = "RECORD";
-            this.RECORD.Name = "RECORD";
-            this.RECORD.ReadOnly = true;
+            this.NSS.HeaderText = "NSS";
+            this.NSS.Name = "NSS";
+            this.NSS.ReadOnly = true;
+            this.NSS.Width = 125;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "NOMBRE";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            this.nombre.Width = 350;
+            this.nombre.Width = 325;
             // 
             // cedula
             // 
@@ -183,7 +184,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RECORD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NSS;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
     }

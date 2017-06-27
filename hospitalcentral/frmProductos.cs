@@ -68,6 +68,7 @@ namespace hospitalcentral
                     this.txtReferencia.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
+                    this.txtMedida.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -86,6 +87,7 @@ namespace hospitalcentral
                     this.txtReferencia.Enabled = true;
                     this.txtReorden.Enabled = true;
                     this.cmbCategoria.Enabled = true;
+                    this.txtMedida.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -104,6 +106,7 @@ namespace hospitalcentral
                     this.txtReferencia.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
+                    this.txtMedida.Enabled = false;
                     break;
 
                 case "Editar":
@@ -122,6 +125,7 @@ namespace hospitalcentral
                     this.txtReferencia.Enabled = true;
                     this.txtReorden.Enabled = true;
                     this.cmbCategoria.Enabled = true;
+                    this.txtMedida.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -140,6 +144,7 @@ namespace hospitalcentral
                     this.txtReferencia.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
+                    this.txtMedida.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -161,6 +166,7 @@ namespace hospitalcentral
                     this.txtReferencia.Enabled = false;
                     this.txtReorden.Enabled = false;
                     this.cmbCategoria.Enabled = false;
+                    this.txtMedida.Enabled = false;
                     break;
 
                 default:
@@ -210,6 +216,7 @@ namespace hospitalcentral
             this.picBox.Image = Properties.Resources.Image_capture_128x128;
             this.txtPicture.Text = "C:\\hospitalcentral\\productos\\Image_capture_128x128.png";
             this.txtReorden.Clear();
+            this.txtMedida.Clear();
         }
 
         private void fillCmbCategoria()
@@ -298,8 +305,8 @@ namespace hospitalcentral
 
                         // Step 3 - Comando a ejecutar
                         myCommand.CommandText = "INSERT INTO productos(referencia, producto, descripcion, idcategoria," +
-                            " imagen, rutafoto, reorden) values(@referencia, @nombre, @descripcion, @idcategoria, "+
-                            " @imagen, @rutafoto, @reorden)";
+                            " imagen, rutafoto, reorden, medida) values(@referencia, @nombre, @descripcion, @idcategoria, "+
+                            " @imagen, @rutafoto, @reorden, @medida)";
                         myCommand.Parameters.AddWithValue("@referencia", txtReferencia.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtProducto.Text);
                         myCommand.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
@@ -307,6 +314,7 @@ namespace hospitalcentral
                         myCommand.Parameters.AddWithValue("@imagen", imageBT);
                         myCommand.Parameters.AddWithValue("@rutafoto", txtPicture.Text);                        
                         myCommand.Parameters.AddWithValue("@reorden", txtReorden.Text);
+                        myCommand.Parameters.AddWithValue("@medida", txtReorden.Text);
 
                         // Step 4 - Opening the connection
                         MyConexion.Open();
@@ -345,7 +353,7 @@ namespace hospitalcentral
                         // Step 3 - Comando a ejecutar
                         myCommand.CommandText = "UPDATE productos SET referencia = @referencia, producto = @nombre, "+
                             " descripcion = @descripcion, idcategoria = @idcategoria, reorden = @reorden, "+
-                            " imagen = @imagen, rutafoto = @rutafoto WHERE idproducto ="+ txtID.Text +"";
+                            " imagen = @imagen, rutafoto = @rutafoto, medida = @medida WHERE idproducto ="+ txtID.Text +"";
                         myCommand.Parameters.AddWithValue("@referencia", txtReferencia.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtProducto.Text);
                         myCommand.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
@@ -353,6 +361,7 @@ namespace hospitalcentral
                         myCommand.Parameters.AddWithValue("@imagen", imageBT);
                         myCommand.Parameters.AddWithValue("@rutafoto", txtPicture.Text);                        
                         myCommand.Parameters.AddWithValue("@reorden", txtReorden.Text);
+                        myCommand.Parameters.AddWithValue("@medida", txtReorden.Text);
 
                         // Step 4 - Opening the connection
                         MyConexion.Open();
@@ -449,7 +458,7 @@ namespace hospitalcentral
 
                     // Step 3 - creating the commandtext
                     MyCommand.CommandText = "SELECT referencia, producto, descripcion, idcategoria, "+
-                        " imagen, rutafoto, reorden" +
+                        " imagen, rutafoto, reorden, medida" +
                         " FROM productos WHERE idproducto = " + txtID.Text + "";
 
                     // Step 4 - connection open
@@ -469,7 +478,8 @@ namespace hospitalcentral
                             cmbCategoria.SelectedValue = MyReader["idcategoria"].ToString();
                             txtPicture.Text = MyReader["rutafoto"].ToString();
                             txtReorden.Text = MyReader["reorden"].ToString();
-                            
+                            txtMedida.Text = MyReader["medida"].ToString();
+
                             // Leyendo la imagen
                             byte[] img = (byte[])(MyReader["imagen"]);
 

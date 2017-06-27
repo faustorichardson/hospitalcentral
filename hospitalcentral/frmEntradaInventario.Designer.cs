@@ -39,6 +39,9 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dtgEntradaInventario = new System.Windows.Forms.DataGridView();
+            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIDProducto = new System.Windows.Forms.TextBox();
@@ -58,9 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.IDPRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradaInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -68,8 +68,8 @@
             // 
             // lblTituloForm
             // 
-            this.lblTituloForm.Size = new System.Drawing.Size(331, 22);
-            this.lblTituloForm.Text = "FORMULARIO ENTRADA INVENTARIO";
+            this.lblTituloForm.Size = new System.Drawing.Size(488, 22);
+            this.lblTituloForm.Text = "ENTRADA INVENTARIO DE MATERIALES LABORATORIO";
             // 
             // groupBox4
             // 
@@ -214,6 +214,27 @@
             this.dtgEntradaInventario.Size = new System.Drawing.Size(779, 212);
             this.dtgEntradaInventario.TabIndex = 67;
             this.dtgEntradaInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEntradaInventario_CellClick);
+            this.dtgEntradaInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEntradaInventario_CellContentClick);
+            // 
+            // IDPRODUCTO
+            // 
+            this.IDPRODUCTO.HeaderText = "ID";
+            this.IDPRODUCTO.Name = "IDPRODUCTO";
+            this.IDPRODUCTO.ReadOnly = true;
+            // 
+            // PRODUCTO
+            // 
+            this.PRODUCTO.HeaderText = "PRODUCTO";
+            this.PRODUCTO.Name = "PRODUCTO";
+            this.PRODUCTO.ReadOnly = true;
+            this.PRODUCTO.Width = 425;
+            // 
+            // CANTIDAD
+            // 
+            this.CANTIDAD.HeaderText = "CANTIDAD";
+            this.CANTIDAD.Name = "CANTIDAD";
+            this.CANTIDAD.ReadOnly = true;
+            this.CANTIDAD.Width = 200;
             // 
             // txtProducto
             // 
@@ -223,6 +244,7 @@
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(390, 20);
             this.txtProducto.TabIndex = 105;
+            this.txtProducto.TextChanged += new System.EventHandler(this.txtProducto_TextChanged);
             // 
             // label1
             // 
@@ -233,6 +255,7 @@
             this.label1.Size = new System.Drawing.Size(87, 15);
             this.label1.TabIndex = 106;
             this.label1.Text = "PRODUCTO:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtIDProducto
             // 
@@ -242,6 +265,7 @@
             this.txtIDProducto.Name = "txtIDProducto";
             this.txtIDProducto.Size = new System.Drawing.Size(59, 20);
             this.txtIDProducto.TabIndex = 103;
+            this.txtIDProducto.TextChanged += new System.EventHandler(this.txtIDProducto_TextChanged);
             // 
             // label5
             // 
@@ -252,6 +276,7 @@
             this.label5.Size = new System.Drawing.Size(25, 15);
             this.label5.TabIndex = 104;
             this.label5.Text = "ID:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dtFecha
             // 
@@ -379,6 +404,7 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(283, 21);
             this.cmbCategoria.TabIndex = 132;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -389,6 +415,7 @@
             this.label2.Size = new System.Drawing.Size(87, 15);
             this.label2.TabIndex = 131;
             this.label2.Text = "CATEGORIA:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtCantidad
             // 
@@ -397,6 +424,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(124, 20);
             this.txtCantidad.TabIndex = 134;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress_1);
             // 
             // label3
@@ -408,26 +436,7 @@
             this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 133;
             this.label3.Text = "CANTIDAD:";
-            // 
-            // IDPRODUCTO
-            // 
-            this.IDPRODUCTO.HeaderText = "ID";
-            this.IDPRODUCTO.Name = "IDPRODUCTO";
-            this.IDPRODUCTO.ReadOnly = true;
-            // 
-            // PRODUCTO
-            // 
-            this.PRODUCTO.HeaderText = "PRODUCTO";
-            this.PRODUCTO.Name = "PRODUCTO";
-            this.PRODUCTO.ReadOnly = true;
-            this.PRODUCTO.Width = 425;
-            // 
-            // CANTIDAD
-            // 
-            this.CANTIDAD.HeaderText = "CANTIDAD";
-            this.CANTIDAD.Name = "CANTIDAD";
-            this.CANTIDAD.ReadOnly = true;
-            this.CANTIDAD.Width = 200;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // frmEntradaInventario
             // 

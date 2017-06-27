@@ -143,6 +143,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsGastosAdministrativos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsInventario.cs">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dsInventario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -277,11 +281,23 @@
     <Compile Include="frmEstadisticasCitasMedicas.Designer.cs">
       <DependentUpon>frmEstadisticasCitasMedicas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFacturacion.cs">
+    <Compile Include="frmPrintInventarioEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFacturacion.Designer.cs">
-      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    <Compile Include="frmPrintInventarioEstadisticas.Designer.cs">
+      <DependentUpon>frmPrintInventarioEstadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintMaterialLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintMaterialLaboratorio.Designer.cs">
+      <DependentUpon>frmPrintMaterialLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalidaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalidaInventario.Designer.cs">
+      <DependentUpon>frmSalidaInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -423,6 +439,12 @@
       <DependentUpon>rptEstadisticasCitasMedicasPorEspecialidad.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptEstadisticasInventario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEstadisticasInventario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptExistenciaInventario.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -457,6 +479,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptPacientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPrintEntradaMaterialLaboratorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintEntradaMaterialLaboratorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPrintSalidaMaterialLaboratorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintSalidaMaterialLaboratorio.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptProductos.cs">
@@ -531,8 +565,14 @@
     <EmbeddedResource Include="frmEstadisticasCitasMedicas.resx">
       <DependentUpon>frmEstadisticasCitasMedicas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFacturacion.resx">
-      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    <EmbeddedResource Include="frmPrintInventarioEstadisticas.resx">
+      <DependentUpon>frmPrintInventarioEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintMaterialLaboratorio.resx">
+      <DependentUpon>frmPrintMaterialLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalidaInventario.resx">
+      <DependentUpon>frmSalidaInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -622,6 +662,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptEstadisticasCitasMedicasPorEspecialidad.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptEstadisticasInventario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEstadisticasInventario.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptExistenciaInventario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptExistenciaInventario.cs</LastGenOutput>
@@ -645,6 +689,14 @@
     <EmbeddedResource Include="rptPacientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPacientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPrintEntradaMaterialLaboratorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintEntradaMaterialLaboratorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPrintSalidaMaterialLaboratorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintSalidaMaterialLaboratorio.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

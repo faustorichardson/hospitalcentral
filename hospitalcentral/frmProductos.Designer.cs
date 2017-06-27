@@ -53,6 +53,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtMedida = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
@@ -192,7 +194,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(131, 79);
+            this.txtID.Location = new System.Drawing.Point(145, 71);
             this.txtID.MaxLength = 25;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(59, 20);
@@ -202,7 +204,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(98, 80);
+            this.label5.Location = new System.Drawing.Point(112, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 15);
             this.label5.TabIndex = 79;
@@ -210,7 +212,7 @@
             // 
             // txtProducto
             // 
-            this.txtProducto.Location = new System.Drawing.Point(131, 115);
+            this.txtProducto.Location = new System.Drawing.Point(145, 107);
             this.txtProducto.MaxLength = 150;
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(387, 20);
@@ -220,7 +222,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 118);
+            this.label1.Location = new System.Drawing.Point(50, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 15);
             this.label1.TabIndex = 81;
@@ -228,7 +230,7 @@
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(131, 201);
+            this.txtReferencia.Location = new System.Drawing.Point(145, 193);
             this.txtReferencia.MaxLength = 25;
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(190, 20);
@@ -238,7 +240,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 203);
+            this.label2.Location = new System.Drawing.Point(40, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 83;
@@ -248,7 +250,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 238);
+            this.label3.Location = new System.Drawing.Point(35, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 15);
             this.label3.TabIndex = 85;
@@ -256,7 +258,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(131, 238);
+            this.txtDescripcion.Location = new System.Drawing.Point(145, 230);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(387, 62);
             this.txtDescripcion.TabIndex = 86;
@@ -287,7 +289,7 @@
             // txtPicture
             // 
             this.txtPicture.Enabled = false;
-            this.txtPicture.Location = new System.Drawing.Point(309, 312);
+            this.txtPicture.Location = new System.Drawing.Point(323, 304);
             this.txtPicture.Name = "txtPicture";
             this.txtPicture.Size = new System.Drawing.Size(209, 20);
             this.txtPicture.TabIndex = 102;
@@ -295,7 +297,7 @@
             // 
             // txtReorden
             // 
-            this.txtReorden.Location = new System.Drawing.Point(131, 314);
+            this.txtReorden.Location = new System.Drawing.Point(145, 306);
             this.txtReorden.MaxLength = 25;
             this.txtReorden.Name = "txtReorden";
             this.txtReorden.Size = new System.Drawing.Size(95, 20);
@@ -307,7 +309,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 317);
+            this.label4.Location = new System.Drawing.Point(60, 309);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 15);
             this.label4.TabIndex = 104;
@@ -316,7 +318,7 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(131, 157);
+            this.cmbCategoria.Location = new System.Drawing.Point(145, 149);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(227, 21);
             this.cmbCategoria.TabIndex = 106;
@@ -325,17 +327,37 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 161);
+            this.label6.Location = new System.Drawing.Point(52, 153);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 15);
             this.label6.TabIndex = 105;
             this.label6.Text = "CATEGORIA:";
+            // 
+            // txtMedida
+            // 
+            this.txtMedida.Location = new System.Drawing.Point(145, 337);
+            this.txtMedida.MaxLength = 25;
+            this.txtMedida.Name = "txtMedida";
+            this.txtMedida.Size = new System.Drawing.Size(83, 20);
+            this.txtMedida.TabIndex = 107;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(17, 340);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 15);
+            this.label7.TabIndex = 108;
+            this.label7.Text = "UNIDAD MEDIDA:";
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 464);
+            this.Controls.Add(this.txtMedida);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtReorden);
@@ -372,6 +394,8 @@
             this.Controls.SetChildIndex(this.txtReorden, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.cmbCategoria, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.txtMedida, 0);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
@@ -405,5 +429,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMedida;
+        private System.Windows.Forms.Label label7;
     }
 }

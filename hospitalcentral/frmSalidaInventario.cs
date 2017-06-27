@@ -19,7 +19,7 @@ using System.IO;
 
 namespace hospitalcentral
 {
-    public partial class frmFacturacion : frmBase
+    public partial class frmSalidaInventario : frmBase
     {
 
         int gCodigo = 0;
@@ -36,7 +36,7 @@ namespace hospitalcentral
         int cantExistencia;
 
 
-        public frmFacturacion()
+        public frmSalidaInventario()
         {
             InitializeComponent();
         }
@@ -48,6 +48,46 @@ namespace hospitalcentral
             this.LimpiarTxtGrid();
             this.cModo = "Inicio";
             this.Botones();
+            this.fillCmbCategoria();
+        }
+
+        private void fillCmbCategoria()
+        {
+            try
+            {
+                // Step 1 
+                MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+
+                // Step 2
+                MyConexion.Open();
+
+                // Step 3
+                MySqlCommand MyCommand = new MySqlCommand("SELECT idcategoria, categoria FROM categorias ORDER BY categoria ASC", MyConexion);
+
+                // Step 4
+                MySqlDataReader MyReader;
+                MyReader = MyCommand.ExecuteReader();
+
+                // Step 5
+                DataTable MyDataTable = new DataTable();
+                MyDataTable.Columns.Add("idcategoria", typeof(int));
+                MyDataTable.Columns.Add("categoria", typeof(string));
+                MyDataTable.Load(MyReader);
+
+                // Step 6
+                cmbCategoria.ValueMember = "idcategoria";
+                cmbCategoria.DisplayMember = "categoria";
+                cmbCategoria.DataSource = MyDataTable;
+
+                // Step 7
+                MyConexion.Close();
+
+            }
+            catch (Exception myEx)
+            {
+                MessageBox.Show(myEx.Message);
+                throw;
+            }
         }
 
         private void ProximoCodigo()
@@ -61,7 +101,7 @@ namespace hospitalcentral
                 MySqlCommand MyCommand = MyConexion.CreateCommand();
 
                 // Step 3 - Set the commanndtext property
-                MyCommand.CommandText = "SELECT count(*) FROM facturacion";
+                MyCommand.CommandText = "SELECT count(*) FROM salida_inventario";
 
                 // Step 4 - Open connection
                 MyConexion.Open();
@@ -107,10 +147,12 @@ namespace hospitalcentral
                     btnBuscarSuplidor.Enabled = false;
                     btnAddGrid.Enabled = false;
                     btnDeleteGrid.Enabled = false;
-                    txtTipo.Enabled = false;
-                    txtPrecioProducto.Enabled = false;
+                    //txtTipo.Enabled = false;
+                    //txtPrecioProducto.Enabled = false;
                     txtCantidad.Enabled = false;
                     dtgEntradaInventario.Enabled = false;
+                    rbAccionCivica.Enabled = false;
+                    rbSenasa.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -133,9 +175,11 @@ namespace hospitalcentral
                     btnAddGrid.Enabled = true;
                     btnDeleteGrid.Enabled = true;
                     //txtTipo.Enabled = true;
-                    txtPrecioProducto.Enabled = true;
+                    //txtPrecioProducto.Enabled = true;
                     txtCantidad.Enabled = true;
                     dtgEntradaInventario.Enabled = true;
+                    rbAccionCivica.Enabled = true;
+                    rbSenasa.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -157,10 +201,12 @@ namespace hospitalcentral
                     btnBuscarSuplidor.Enabled = false;
                     btnAddGrid.Enabled = false;
                     btnDeleteGrid.Enabled = false;
-                    txtTipo.Enabled = false;
-                    txtPrecioProducto.Enabled = false;
+                    //txtTipo.Enabled = false;
+                    //txtPrecioProducto.Enabled = false;
                     txtCantidad.Enabled = false;
                     dtgEntradaInventario.Enabled = false;
+                    rbAccionCivica.Enabled = false;
+                    rbSenasa.Enabled = false;
                     break;
 
                 case "Editar":
@@ -238,8 +284,8 @@ namespace hospitalcentral
             txtIDCliente.Clear();
             txtCliente.Clear();
             dtgEntradaInventario.Rows.Clear();
-            lblSumaTotal.Text = "0.00";
-            lblTotal.Text = "0.00";
+            //lblSumaTotal.Text = "0.00";
+            //lblTotal.Text = "0.00";
             cantExistencia = 0;
             sumaTotal = 0;
             subTotal = 0;
@@ -278,74 +324,92 @@ namespace hospitalcentral
             }
             else
             {
-                if (cModo == "Nuevo")
+                if (countFilas > 0)
                 {
-                    // Verifico nuevamente el siguiente codigo antes de guardar
-                    this.ProximoCodigo();
-
-                    try
+                    if (cModo == "Nuevo")
                     {
-                        // Step 1 - Stablishing the connection
-                        MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+                        // Verifico nuevamente el siguiente codigo antes de guardar
+                        this.ProximoCodigo();
 
-                        // Step 2 - Crear el comando de ejecucion
-                        MySqlCommand myCommand = MyConexion.CreateCommand();
-
-                        // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "INSERT INTO facturacion(idcliente, fecha, monto_b, monto_n)" +
-                            " values(@idcliente, @fecha, @monto_b, @monto_n)";                        
-                        myCommand.Parameters.AddWithValue("@idcliente", txtIDCliente.Text);                        
-                        myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
-
-                        // Convierto el campo monto en texto
-                        lblSumaTotal.Text = Convert.ToString(lblSumaTotal.Text);
-                        // Cambio el valor del textbox a decimal
-                        string myValue = Convert.ToString(lblSumaTotal.Text);
-                        decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);
-                        myCommand.Parameters.AddWithValue("@monto_b", myValueMonto);
-
-                        // Convierto el campo monto en texto
-                        lblTotal.Text = Convert.ToString(lblTotal.Text);
-                        // Cambio el valor del textbox a decimal
-                        string myValueTotal = Convert.ToString(lblTotal.Text);
-                        decimal myValueMontoTotal = clsFunctions.ParseCurrencyFormat(myValueTotal);
-                        myCommand.Parameters.AddWithValue("@monto_n", myValueMontoTotal);
-
-                        // Step 4 - Opening the connection
-                        MyConexion.Open();
-
-                        // Step 5 - Executing the query
-                        int nFilas = myCommand.ExecuteNonQuery();
-                        if (nFilas > 0)
+                        try
                         {
-                            MessageBox.Show("Informacion guardada satisfactoriamente...");
+                            // Step 1 - Stablishing the connection
+                            MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+
+                            // Step 2 - Crear el comando de ejecucion
+                            MySqlCommand myCommand = MyConexion.CreateCommand();
+
+                            // Step 3 - Comando a ejecutar
+                            myCommand.CommandText = "INSERT INTO salida_inventario(idpaciente, fecha, nss, tipoaccion, fecharegistrada)" +
+                                " values(@idpaciente, @fecha, @nss, @tipoaccion, NOW())";
+                            myCommand.Parameters.AddWithValue("@idpaciente", txtIDCliente.Text);
+                            myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                            myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
+
+                            if (rbSenasa.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@tipoaccion", "S");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@tipoaccion", "A");
+                            }
+
+                            //// Convierto el campo monto en texto
+                            //lblSumaTotal.Text = Convert.ToString(lblSumaTotal.Text);
+                            //// Cambio el valor del textbox a decimal
+                            //string myValue = Convert.ToString(lblSumaTotal.Text);
+                            //decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);
+                            //myCommand.Parameters.AddWithValue("@monto_b", myValueMonto);
+
+                            //// Convierto el campo monto en texto
+                            //lblTotal.Text = Convert.ToString(lblTotal.Text);
+                            //// Cambio el valor del textbox a decimal
+                            //string myValueTotal = Convert.ToString(lblTotal.Text);
+                            //decimal myValueMontoTotal = clsFunctions.ParseCurrencyFormat(myValueTotal);
+                            //myCommand.Parameters.AddWithValue("@monto_n", myValueMontoTotal);
+
+                            // Step 4 - Opening the connection
+                            MyConexion.Open();
+
+                            // Step 5 - Executing the query
+                            int nFilas = myCommand.ExecuteNonQuery();
+                            if (nFilas > 0)
+                            {
+                                MessageBox.Show("Informacion guardada satisfactoriamente...");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No fueron guardadas las informaciones...");
+                            }
+
+                            // Step 6 - Closing the connection
+                            MyConexion.Close();
                         }
-                        else
+                        catch (Exception MyEx)
                         {
-                            MessageBox.Show("No fueron guardadas las informaciones...");
+                            MessageBox.Show(MyEx.Message);
                         }
 
-                        // Step 6 - Closing the connection
-                        MyConexion.Close();
-                    }
-                    catch (Exception MyEx)
-                    {
-                        MessageBox.Show(MyEx.Message);
+                        // Llamo funcion que guarda data del grid
+                        this.saveGrid();
+
                     }
 
-                    // Llamo funcion que guarda data del grid
-                    this.saveGrid();
+                    // llamo la funcion para imprimir entrada.-
+                    //this.ImprimeSolicitud();
 
+                    // cuando termino de imprimir
+                    this.Limpiar();
+                    this.LimpiarTxtGrid();
+                    this.cModo = "Inicio";
+                    this.Botones();
                 }
-
-                // llamo la funcion para imprimir entrada.-
-                this.ImprimeSolicitud();
-
-                // cuando termino de imprimir
-                this.Limpiar();
-                this.LimpiarTxtGrid();
-                this.cModo = "Inicio";
-                this.Botones();
+                else
+                {
+                    MessageBox.Show("No se puede grabar si no ha agregado algun producto...");
+                    this.btnBuscarProducto.Focus();
+                }
             }
         }
 
@@ -363,7 +427,7 @@ namespace hospitalcentral
                     // private void ImprimeSolicitud()
                     {
                         DialogResult Result =
-                        MessageBox.Show("Imprima la Facturacion" + System.Environment.NewLine + "Desea Imprimir la Facturacion", "Sistema de Gestion de Facturacion e Inventario", MessageBoxButtons.YesNo,
+                        MessageBox.Show("Imprima la Facturacion" + System.Environment.NewLine + "Desea Imprimir el despacho de materiales", "Sistema de Gestion Medica", MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Question);
                         switch (Result)
                         {
@@ -419,16 +483,16 @@ namespace hospitalcentral
                     cWhere = cWhere + " AND facturacion.idfacturacion =" + cCodigo + "";
                     sbQuery.Clear();
                     sbQuery.Append("SELECT ");
-                    sbQuery.Append(" facturacion.idfacturacion as id, facturacion_detalle.idproducto,");
-                    sbQuery.Append(" facturacion_detalle.producto, facturacion_detalle.tipo,");
-                    sbQuery.Append(" facturacion_detalle.precio, facturacion_detalle.cantidad, facturacion.fecha, ");
-                    sbQuery.Append(" facturacion_detalle.subtotal, clientes.idcliente, clientes.nombre as cliente,");
-                    sbQuery.Append(" clientes.rnc, provincias.nombre as provincia, clientes.direccion, clientes.telefono,");
-                    sbQuery.Append(" facturacion.monto_n as total");
-                    sbQuery.Append(" FROM facturacion");
-                    sbQuery.Append(" INNER JOIN facturacion_detalle ON facturacion_detalle.idfacturacion = facturacion.idfacturacion");
-                    sbQuery.Append(" INNER JOIN clientes ON clientes.idcliente = facturacion.idcliente");
-                    sbQuery.Append(" INNER JOIN provincias ON provincias.provincia_id = clientes.provincia");
+                    sbQuery.Append(" salida_inventario.id, salida_inventario_detalle.idproducto,");
+                    sbQuery.Append(" salida_inventario_detalle.producto, salida_inventario_detalle.tipo,");
+                    sbQuery.Append(" salida_inventario_detalle.cantidad, salida_inventario.fecha, ");
+                    sbQuery.Append(" pacientes.idpacientes, pacientes.nombre,");
+                    sbQuery.Append(" pacientes.nss, pacientes.record, pacientes.cedula, pacientes.rango");
+                    //sbQuery.Append(" ");
+                    sbQuery.Append(" FROM salida_inventario");
+                    sbQuery.Append(" INNER JOIN salida_inventario_detalle ON salida_inventario_detalle.id = salida_inventario.id");
+                    sbQuery.Append(" INNER JOIN pacientes ON pacientes.idpacientes = salida_inventario.idpaciente");
+                    //sbQuery.Append(" INNER JOIN provincias ON provincias.provincia_id = clientes.provincia");
                     sbQuery.Append(cWhere);
 
                     // Paso los valores de sbQuery al CommandText
@@ -446,7 +510,7 @@ namespace hospitalcentral
                     int nRegistro = dtMovimientoInventario.Rows.Count;
                     if (nRegistro == 0)
                     {
-                        MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion de Facturacion e Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else
@@ -522,26 +586,27 @@ namespace hospitalcentral
                 // Creo bucle de guardar informacion del grid
                 for (int row = 0; row < countFilas; row++)
                 {
-                    MySqlCommand myCommand = new MySqlCommand("INSERT INTO facturacion_detalle(idfacturacion, idproducto, producto, tipo, precio, cantidad, subtotal)" +
-                        " values (@id, @idproducto, @producto, @tipo, @precio, @cantidad, @subtotal)", MyConexion);
+                    MySqlCommand myCommand = new MySqlCommand("INSERT INTO salida_inventario_detalle(id, idproducto, producto, cantidad)" +
+                        " values (@id, @idproducto, @producto, @cantidad)", MyConexion);
                     myCommand.Parameters.AddWithValue("@id", gCodigo);
                     myCommand.Parameters.AddWithValue("@idproducto", dtgEntradaInventario.Rows[row].Cells[0].Value);
                     myCommand.Parameters.AddWithValue("@producto", dtgEntradaInventario.Rows[row].Cells[1].Value);
-                    myCommand.Parameters.AddWithValue("@tipo", dtgEntradaInventario.Rows[row].Cells[2].Value);
+                    myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[2].Value);
+                    //myCommand.Parameters.AddWithValue("@tipo", dtgEntradaInventario.Rows[row].Cells[2].Value);
                     //myCommand.Parameters.AddWithValue("@precio", dtgEntradaInventario.Rows[row].Cells[3].Value);
                     //myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[4].Value);
                     //myCommand.Parameters.AddWithValue("@subtotal", dtgEntradaInventario.Rows[row].Cells[5].Value);
 
-                    // Cambio el valor del grid a decimal
-                    string myValue_precio = Convert.ToString(dtgEntradaInventario.Rows[row].Cells[3].Value);
-                    decimal myValueMonto_precio = clsFunctions.ParseCurrencyFormat(myValue_precio);
-                    myCommand.Parameters.AddWithValue("@precio", myValueMonto_precio);
-                    //myCommand.Parameters.AddWithValue("@precio", dtgEntradaInventario.Rows[row].Cells[3].Value);
-                    myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[4].Value);
+                    //// Cambio el valor del grid a decimal
+                    //string myValue_precio = Convert.ToString(dtgEntradaInventario.Rows[row].Cells[3].Value);
+                    //decimal myValueMonto_precio = clsFunctions.ParseCurrencyFormat(myValue_precio);
+                    //myCommand.Parameters.AddWithValue("@precio", myValueMonto_precio);
+                    ////myCommand.Parameters.AddWithValue("@precio", dtgEntradaInventario.Rows[row].Cells[3].Value);
+                    //myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[4].Value);
 
-                    string myValue_subtotal = Convert.ToString(dtgEntradaInventario.Rows[row].Cells[5].Value);
-                    decimal myValueMonto_subtotal = clsFunctions.ParseCurrencyFormat(myValue_subtotal);
-                    myCommand.Parameters.AddWithValue("@subtotal", myValueMonto_subtotal);
+                    //string myValue_subtotal = Convert.ToString(dtgEntradaInventario.Rows[row].Cells[5].Value);
+                    //decimal myValueMonto_subtotal = clsFunctions.ParseCurrencyFormat(myValue_subtotal);
+                    //myCommand.Parameters.AddWithValue("@subtotal", myValueMonto_subtotal);
                     
                     // EJECUTO EL COMANDO
                     myCommand.ExecuteNonQuery();
@@ -572,7 +637,8 @@ namespace hospitalcentral
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            frmPrintMaterialLaboratorio ofrmPrintMaterialLaboratorio = new frmPrintMaterialLaboratorio();
+            ofrmPrintMaterialLaboratorio.ShowDialog();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -582,7 +648,7 @@ namespace hospitalcentral
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (dtgEntradaInventario.Rows.Count > 1)
+            if (dtgEntradaInventario.Rows.Count > 0)
             {                
                 MessageBox.Show("Debe eliminar primero los productos agregados...");             
             }
@@ -590,10 +656,10 @@ namespace hospitalcentral
             {
                 this.cModo = "Inicio";
                 this.Botones();
+                this.Limpiar();
+                this.LimpiarTxtGrid();
             }
-
-            this.Limpiar();
-            this.LimpiarTxtGrid();
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -611,9 +677,9 @@ namespace hospitalcentral
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            if (txtIDCliente.Text == "" && txtTipoCliente.Text == "")
+            if (txtIDCliente.Text == "" && txtNSS.Text == "" && txtCliente.Text == "")
             {
-                MessageBox.Show("No se puede buscar un producto sin antes buscar un suplidor...");
+                MessageBox.Show("No se puede agregar material gastable de laboratorio sin antes buscar un paciente...");
                 btnBuscarSuplidor.Focus();
             }
             else
@@ -638,14 +704,15 @@ namespace hospitalcentral
                         // Step 3 - creating the commandtext
                         //MyCommand.CommandText = "SELECT *  FROM paciente WHERE cedula = ' " + txtCedula.Text.Trim() + "'  " ;                                                
                         // verifico el tipo para filtrar en la base de datos
-                        if (txtTipoCliente.Text == "A")
-                        {
-                            MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_a as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
-                        }
-                        else
-                        {
-                            MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_b as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
-                        }
+                        //if (txtTipoCliente.Text == "A")
+                        //{
+                        //    MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_a as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
+                        //}
+                        //else
+                        //{
+                        //    MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_b as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
+                        //}
+                        MyCommand.CommandText = "SELECT idproducto, producto, idcategoria, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
 
                         // Step 4 - connection open
                         MyclsConexion.Open();
@@ -660,9 +727,8 @@ namespace hospitalcentral
                             {
                                 txtIDProducto.Text = MyReader["idproducto"].ToString();
                                 txtProducto.Text = MyReader["producto"].ToString();
-                                txtTipo.Text = MyReader["tipo"].ToString();
-                                txtPrecioProducto.Text = MyReader["precio"].ToString();
-
+                                cmbCategoria.SelectedValue = MyReader["idcategoria"].ToString();
+                                
                                 // Leyendo la imagen
                                 byte[] img = (byte[])(MyReader["imagen"]);
 
@@ -678,11 +744,11 @@ namespace hospitalcentral
                             }
                             //this.cModo = "Buscar";
                             //this.Botones();
-                            this.txtPrecioProducto.Focus();
+                            this.txtCantidad.Focus();
                         }
                         else
                         {
-                            MessageBox.Show("No se encontraron registros con este ID de Producto...", "SisGesFactInv", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No se encontraron registros con este ID de Producto...", "Sistea de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         // Step 6 - Closing all
                         MyReader.Close();
@@ -700,9 +766,9 @@ namespace hospitalcentral
         private void btnAddGrid_Click(object sender, EventArgs e)
         {
             // VERIFICO QUE PRIMERO SE SELECCIONE UN SUPLIDOR
-            if (txtIDCliente.Text == "")
+            if (txtIDCliente.Text == "" && txtNSS.Text == "")
             {
-                MessageBox.Show("Antes de agregar productos debe de seleccionar el suplidor...");
+                MessageBox.Show("Antes de agregar productos debe de seleccionar el paciente...");
                 this.btnBuscarSuplidor.Focus();
             }
             else if (txtIDProducto.Text == "")
@@ -733,17 +799,17 @@ namespace hospitalcentral
                         try
                         {
                             // Creo la variable del tipo double "SUBTOTAL" para calcular el resultado de cantidad por precio
-                            subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                            //subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
 
                             // Registro la entrada al GRID
-                            dtgEntradaInventario.Rows.Add(txtIDProducto.Text, txtProducto.Text, txtTipo.Text, txtPrecioProducto.Text, txtCantidad.Text, subTotal);
+                            dtgEntradaInventario.Rows.Add(txtIDProducto.Text, txtProducto.Text, txtCantidad.Text);
 
                             // Realizo la operacion de sumar el subtotal mas la variable acumuladora sumatotal
-                            sumaTotal = sumaTotal + subTotal;
+                            //sumaTotal = sumaTotal + subTotal;
 
                             // Llamo la funcion para formatear el campo.-
-                            monto = Convert.ToDecimal(sumaTotal);
-                            lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(monto);
+                            //monto = Convert.ToDecimal(sumaTotal);
+                            //lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(monto);
 
                             // Agrego una fila al contador
                             countFilas = countFilas + 1;
@@ -756,35 +822,36 @@ namespace hospitalcentral
                         }
 
                         // ACTUALIZANDO LA VARIABLE Y EL LABEL DEL TOTAL + ITBIs
-                        if (chkITBI.Checked == true)
-                        {
-                            total = sumaTotal;
+                        //if (chkITBI.Checked == true)
+                        //{
+                        //    total = sumaTotal;
 
-                            lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                        }
-                        else
-                        {
-                            try
-                            {
-                                // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
-                                total = sumaTotal * Convert.ToDecimal(itbi);
+                        //    lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                        //}
+                        //else
+                        //{
+                        //    try
+                        //    {
+                        //        // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
+                        //        total = sumaTotal * Convert.ToDecimal(itbi);
 
-                                // Formateo la variable TOTAL para llevarlo al label
-                                lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
-                                throw;
-                            }
-                        }
+                        //        // Formateo la variable TOTAL para llevarlo al label
+                        //        lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                        //    }
+                        //    catch (Exception ex)
+                        //    {
+                        //        MessageBox.Show(ex.Message);
+                        //        throw;
+                        //    }
+                        //}
+
                         // DESPUES QUE AGREGO AL GRID Y ACTUALIZO EL INVENTARIO LIMPIO LOS CAMPOS
                         this.LimpiarTxtGrid();
 
                     }
                     else
                     {
-                        MessageBox.Show("La cantidad a facturar es mayor que la cantidad en existencia...");
+                        MessageBox.Show("La cantidad a agregar es mayor que la cantidad en existencia...");
                         this.txtCantidad.Focus();
                     }                    
 
@@ -827,8 +894,8 @@ namespace hospitalcentral
                     try
                     {
 
-                        // Creo la variable del tipo double "SUBTOTAL" para calcular el resultado de cantidad por precio
-                        subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                        //// Creo la variable del tipo double "SUBTOTAL" para calcular el resultado de cantidad por precio
+                        //subTotal = Convert.ToDecimal(txtCantidad.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
 
                         // selecciono el indice del registro en el grid
                         selectedRow = dtgEntradaInventario.CurrentCell.RowIndex;
@@ -839,11 +906,11 @@ namespace hospitalcentral
                         // Actualizo la variable de las filas
                         countFilas = countFilas - 1;
 
-                        // Actualizo el monto
-                        sumaTotal = sumaTotal - subTotal;
+                        //// Actualizo el monto
+                        //sumaTotal = sumaTotal - subTotal;
 
-                        // Formateo la cifra
-                        lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(sumaTotal);
+                        //// Formateo la cifra
+                        //lblSumaTotal.Text = clsFunctions.GetCurrencyFormat(sumaTotal);
                     }
                     catch (Exception ex)
                     {
@@ -852,40 +919,42 @@ namespace hospitalcentral
                     }
 
                     // ACTUALIZANDO LA VARIABLE Y EL LABEL DEL SUBTOTAL + ITBIs
-                    if (chkITBI.Checked == true)
-                    {
-                        total = sumaTotal;
+                    //if (chkITBI.Checked == true)
+                    //{
+                    //    total = sumaTotal;
 
-                        lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                    }
-                    else
-                    {
-                        try
-                        {
-                            // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
-                            total = sumaTotal * Convert.ToDecimal(itbi);
+                    //    lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                    //}
+                    //else
+                    //{
+                    //    try
+                    //    {
+                    //        // Creo la variable del tipo double "TOTAL" para calcular el resultado de sumatotal por itbi
+                    //        total = sumaTotal * Convert.ToDecimal(itbi);
 
-                            // Formateo la variable TOTAL para llevarlo al label
-                            lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                            throw;
-                        }
-                    }
+                    //        // Formateo la variable TOTAL para llevarlo al label
+                    //        lblTotal.Text = clsFunctions.GetCurrencyFormat(total);
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        MessageBox.Show(ex.Message);
+                    //        throw;
+                    //    }
+                    //}
+
+                    // Limpiando los valores de los campos que llenan el grid
                     this.LimpiarTxtGrid();
                 }
                 else
                 {
                     MessageBox.Show("Debe seleccionar el producto que desea remover...");
                     this.dtgEntradaInventario.Focus();
-                }
+                }                
             }
             else
             {
                 MessageBox.Show("No hay datos para eliminar o debe de seleccionar el producto...");
-            }
+            }        
         }
 
         private void searchExistencia()
@@ -951,11 +1020,11 @@ namespace hospitalcentral
                 int nFilas = myCommand.ExecuteNonQuery();
                 if (nFilas > 0)
                 {
-                    MessageBox.Show("Existencia actualizada satisfactoriamente...");
+                    //MessageBox.Show("Existencia actualizada satisfactoriamente...");
                 }
                 else
                 {
-                    MessageBox.Show("No fue actualizada la existencia...");
+                    //MessageBox.Show("No fue actualizada la existencia...");
                 }
 
                 // Step 6 - Closing the connection
@@ -971,17 +1040,15 @@ namespace hospitalcentral
         private void LimpiarTxtGrid()
         {
             txtIDProducto.Clear();
-            txtProducto.Clear();
-            txtPrecioProducto.Clear();
-            txtTipo.Clear();
+            txtProducto.Clear();            
             txtCantidad.Clear();
         }
 
         private void btnBuscarSuplidor_Click(object sender, EventArgs e)
         {
-            frmBuscarPacientes ofrmBuscarClientes = new frmBuscarPacientes();
-            ofrmBuscarClientes.ShowDialog();            
-            string cCodigo = ofrmBuscarClientes.cCodigo;
+            frmBuscarPacientes ofrmBuscarPacientes = new frmBuscarPacientes();
+            ofrmBuscarPacientes.ShowDialog();            
+            string cCodigo = ofrmBuscarPacientes.cCodigo;
 
             // Si selecciono un registro
             if (cCodigo != "" && cCodigo != null)
@@ -998,7 +1065,7 @@ namespace hospitalcentral
 
                     // Step 3 - creating the commandtext
                     //MyCommand.CommandText = "SELECT *  FROM paciente WHERE cedula = ' " + txtCedula.Text.Trim() + "'  " ;
-                    MyCommand.CommandText = "SELECT nombre, tipo from clientes WHERE idcliente = '" + cCodigo + "'";
+                    MyCommand.CommandText = "SELECT nombre, nss from pacientes WHERE idpacientes = '" + txtIDCliente.Text + "'";
 
                     // Step 4 - connection open
                     MyclsConexion.Open();
@@ -1013,15 +1080,15 @@ namespace hospitalcentral
                         {
 
                             txtCliente.Text = MyReader["nombre"].ToString();
-                            txtTipoCliente.Text = MyReader["tipo"].ToString();
+                            txtNSS.Text = MyReader["nss"].ToString();
                             
                             // Verifica Forma de Facturacion
-                            this.verificaITBI();
+                            //this.verificaITBI();
                         }                        
                     }
                     else
                     {
-                        MessageBox.Show("No se encontraron registros con este ID de Suplidor...", "SisGesFactInv", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No se encontraron registros con este ID de Suplidor...", "Sistema de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     // Step 6 - Closing all
                     MyReader.Close();
@@ -1035,37 +1102,37 @@ namespace hospitalcentral
             }
         }
 
-        private void verificaITBI()
-        {
-            if (txtID.Text != "" && txtIDCliente.Text != "")
-            {
-                DialogResult Result =
-                MessageBox.Show("Tipo de facturacion..." + System.Environment.NewLine + "Desea Facturar con ITBIs incluido", "Sistema de Facturacion e Inventario", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
-                switch (Result)
-                {
-                    case DialogResult.No:
-                        this.chkITBI.Checked = true;
-                        break;
-                }
-            }
+        //private void verificaITBI()
+        //{
+        //    if (txtID.Text != "" && txtIDCliente.Text != "")
+        //    {
+        //        DialogResult Result =
+        //        MessageBox.Show("Tipo de facturacion..." + System.Environment.NewLine + "Desea Facturar con ITBIs incluido", "Sistema de Facturacion e Inventario", MessageBoxButtons.YesNo,
+        //                MessageBoxIcon.Question);
+        //        switch (Result)
+        //        {
+        //            case DialogResult.No:
+        //                this.chkITBI.Checked = true;
+        //                break;
+        //        }
+        //    }
 
-        }
+        //}
 
-        private void txtPrecioProducto_Leave(object sender, EventArgs e)
-        {
-            if (txtPrecioProducto.Text == "")
-            {
-                MessageBox.Show("No puede dejar la cantidad sin valor...");
-                txtPrecioProducto.Focus();
-            }
-            else
-            {
-                // Llamo la funcion para formatear el campo.-
-                decimal monto = Convert.ToDecimal(txtPrecioProducto.Text);
-                txtPrecioProducto.Text = clsFunctions.GetCurrencyFormat(monto);
-            }
-        }
+        //private void txtPrecioProducto_Leave(object sender, EventArgs e)
+        //{
+        //    if (txtPrecioProducto.Text == "")
+        //    {
+        //        MessageBox.Show("No puede dejar la cantidad sin valor...");
+        //        txtPrecioProducto.Focus();
+        //    }
+        //    else
+        //    {
+        //        // Llamo la funcion para formatear el campo.-
+        //        decimal monto = Convert.ToDecimal(txtPrecioProducto.Text);
+        //        txtPrecioProducto.Text = clsFunctions.GetCurrencyFormat(monto);
+        //    }
+        //}
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1088,9 +1155,9 @@ namespace hospitalcentral
                 // Lleno los campos
                 txtIDProducto.Text = row.Cells[0].Value.ToString();
                 txtProducto.Text = row.Cells[1].Value.ToString();
-                txtTipo.Text = row.Cells[2].Value.ToString();
-                txtPrecioProducto.Text = row.Cells[3].Value.ToString();
-                txtCantidad.Text = row.Cells[4].Value.ToString();
+                //txtTipo.Text = row.Cells[2].Value.ToString();
+                //txtPrecioProducto.Text = row.Cells[3].Value.ToString();
+                txtCantidad.Text = row.Cells[2].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -1099,25 +1166,25 @@ namespace hospitalcentral
             }
         }
 
-        private void chkITBI_Click(object sender, EventArgs e)
-        {
-            if (chkITBI.Checked == true)
-            {
-                if (countFilas > 0)
-                {
-                    MessageBox.Show("Para alterar la factura debe borrar los productos...");
-                }
-            }
-            else
-            {
-                if (countFilas > 0)
-                {
-                    MessageBox.Show("Para alterar la factura debe borrar los productos...");
-                    chkITBI.Checked = false;
+        //private void chkITBI_Click(object sender, EventArgs e)
+        //{
+        //    if (chkITBI.Checked == true)
+        //    {
+        //        if (countFilas > 0)
+        //        {
+        //            MessageBox.Show("Para alterar la factura debe borrar los productos...");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (countFilas > 0)
+        //        {
+        //            MessageBox.Show("Para alterar la factura debe borrar los productos...");
+        //            chkITBI.Checked = false;
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
     }
 }

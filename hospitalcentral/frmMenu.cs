@@ -394,13 +394,46 @@ namespace hospitalcentral
 
         private void buttonItem3_Click_2(object sender, EventArgs e)
         {
-
+            frmSalidaInventario ofrmSalidaInventario = new frmSalidaInventario();
+            ofrmSalidaInventario.ShowDialog();
         }
 
         private void buttonItem4_Click_1(object sender, EventArgs e)
         {
             frmSuplidores ofrmSuplidores = new frmSuplidores();
             ofrmSuplidores.ShowDialog();
+        }
+
+        private void ribbonBar2_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem4_Click_2(object sender, EventArgs e)
+        {
+            frmPrintInventarioEstadisticas ofrmPrintInventarioEstadisticas = new frmPrintInventarioEstadisticas();
+            ofrmPrintInventarioEstadisticas.ShowDialog();
+        }
+
+        private void buttonItem1_Click_2(object sender, EventArgs e)
+        {
+            frmPrintMaterialLaboratorio ofrmPrintMaterialLaboratorio = new frmPrintMaterialLaboratorio();
+            ofrmPrintMaterialLaboratorio.ShowDialog();
+        }
+
+        private void buttonItem2_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem2_Click_4(object sender, EventArgs e)
+        {
+
         }
 
        

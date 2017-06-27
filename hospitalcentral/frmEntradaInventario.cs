@@ -269,7 +269,6 @@ namespace hospitalcentral
                 default:
                     break;
             }
-
         }
 
         private void Limpiar()
@@ -532,11 +531,11 @@ namespace hospitalcentral
                 int nFilas = myCommand.ExecuteNonQuery();
                 if (nFilas > 0)
                 {
-                    MessageBox.Show("Existencia actualizada satisfactoriamente...");
+                    //MessageBox.Show("Existencia actualizada satisfactoriamente...");
                 }
                 else
                 {
-                    MessageBox.Show("No fue actualizada la existencia...");
+                    //MessageBox.Show("No fue actualizada la existencia...");
                 }
 
                 // Step 6 - Closing the connection
@@ -702,75 +701,83 @@ namespace hospitalcentral
             }
             else
             {
-                if (cModo == "Nuevo")
+                if (countFilas > 0)
                 {
-                    // Verifico nuevamente el siguiente codigo antes de guardar
-                    this.ProximoCodigo();
-
-                    try
+                    if (cModo == "Nuevo")
                     {
-                        // Step 1 - Stablishing the connection
-                        MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+                        // Verifico nuevamente el siguiente codigo antes de guardar
+                        this.ProximoCodigo();
 
-                        // Step 2 - Crear el comando de ejecucion
-                        MySqlCommand myCommand = MyConexion.CreateCommand();
-
-                        // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "INSERT INTO entrada_inventario(idsuplidor, suplidor, fecha)" +
-                            " values(@idsuplidor, @suplidor, @fecha)";
-                        myCommand.Parameters.AddWithValue("@idsuplidor", txtIDSuplidor.Text);
-                        myCommand.Parameters.AddWithValue("@suplidor", txtCantidad.Text);
-                        myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
-
-                        //// Convierto el campo monto en texto
-                        //lblSumaTotal.Text = Convert.ToString(lblSumaTotal.Text);
-                        //// Cambio el valor del textbox a decimal
-                        //string myValue = Convert.ToString(lblSumaTotal.Text);
-                        //decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);                        
-                        //myCommand.Parameters.AddWithValue("@monto_total", myValueMonto);
-
-                        //// Convierto el campo monto en texto
-                        //lblTotal.Text = Convert.ToString(lblTotal.Text);
-                        //// Cambio el valor del textbox a decimal
-                        //string myValueTotal = Convert.ToString(lblTotal.Text);
-                        //decimal myValueMontoTotal = clsFunctions.ParseCurrencyFormat(myValueTotal);                                                
-                        //myCommand.Parameters.AddWithValue("@total", myValueMontoTotal);
-
-                        // Step 4 - Opening the connection
-                        MyConexion.Open();
-
-                        // Step 5 - Executing the query
-                        int nFilas = myCommand.ExecuteNonQuery();
-                        if (nFilas > 0)
+                        try
                         {
-                            MessageBox.Show("Informacion guardada satisfactoriamente...");
+                            // Step 1 - Stablishing the connection
+                            MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+
+                            // Step 2 - Crear el comando de ejecucion
+                            MySqlCommand myCommand = MyConexion.CreateCommand();
+
+                            // Step 3 - Comando a ejecutar
+                            myCommand.CommandText = "INSERT INTO entrada_inventario(idsuplidor, suplidor, fecha, fecharegistrada)" +
+                                " values(@idsuplidor, @suplidor, @fecha, NOW())";
+                            myCommand.Parameters.AddWithValue("@idsuplidor", txtIDSuplidor.Text);
+                            myCommand.Parameters.AddWithValue("@suplidor", txtSuplidor.Text);
+                            myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
+
+                            //// Convierto el campo monto en texto
+                            //lblSumaTotal.Text = Convert.ToString(lblSumaTotal.Text);
+                            //// Cambio el valor del textbox a decimal
+                            //string myValue = Convert.ToString(lblSumaTotal.Text);
+                            //decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);                        
+                            //myCommand.Parameters.AddWithValue("@monto_total", myValueMonto);
+
+                            //// Convierto el campo monto en texto
+                            //lblTotal.Text = Convert.ToString(lblTotal.Text);
+                            //// Cambio el valor del textbox a decimal
+                            //string myValueTotal = Convert.ToString(lblTotal.Text);
+                            //decimal myValueMontoTotal = clsFunctions.ParseCurrencyFormat(myValueTotal);                                                
+                            //myCommand.Parameters.AddWithValue("@total", myValueMontoTotal);
+
+                            // Step 4 - Opening the connection
+                            MyConexion.Open();
+
+                            // Step 5 - Executing the query
+                            int nFilas = myCommand.ExecuteNonQuery();
+                            if (nFilas > 0)
+                            {
+                                //MessageBox.Show("Informacion guardada satisfactoriamente...");
+                            }
+                            else
+                            {
+                                //MessageBox.Show("No fueron guardadas las informaciones...");
+                            }
+
+                            // Step 6 - Closing the connection
+                            MyConexion.Close();
                         }
-                        else
+                        catch (Exception MyEx)
                         {
-                            MessageBox.Show("No fueron guardadas las informaciones...");
+                            MessageBox.Show(MyEx.Message);
                         }
 
-                        // Step 6 - Closing the connection
-                        MyConexion.Close();
-                    }
-                    catch (Exception MyEx)
-                    {
-                        MessageBox.Show(MyEx.Message);
+                        // Llamo funcion que guarda data del grid
+                        this.saveGrid();
+
                     }
 
-                    // Llamo funcion que guarda data del grid
-                    this.saveGrid();
+                    // llamo la funcion para imprimir entrada.-
+                    //this.ImprimeSolicitud();
 
+                    // cuando termino de imprimir
+                    this.Limpiar();
+                    this.LimpiarTxtGrid();
+                    this.cModo = "Inicio";
+                    this.Botones();
                 }
-                                
-                // llamo la funcion para imprimir entrada.-
-                this.ImprimeSolicitud();
-
-                // cuando termino de imprimir
-                this.Limpiar();
-                this.LimpiarTxtGrid();
-                this.cModo = "Inicio";
-                this.Botones();
+                else
+                {
+                    MessageBox.Show("No se puede grabar si no ha agregado algun producto...");
+                    this.btnBuscarProducto.Focus();
+                }
             }
         }
 
@@ -915,8 +922,8 @@ namespace hospitalcentral
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            frmPrintEntradaInventario ofrmPrintEntradaInventario = new frmPrintEntradaInventario();
-            ofrmPrintEntradaInventario.ShowDialog();
+            frmPrintMaterialLaboratorio ofrmPrintMaterialLaboratorio = new frmPrintMaterialLaboratorio();
+            ofrmPrintMaterialLaboratorio.ShowDialog();
         }
 
         private void ImprimeSolicitud()
@@ -1088,7 +1095,7 @@ namespace hospitalcentral
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (dtgEntradaInventario.Rows.Count > 1)
+            if (dtgEntradaInventario.Rows.Count > 0)
             {
                 //DialogResult Result =
                 //MessageBox.Show("Se perderan Los cambios Realizados" + System.Environment.NewLine + "Desea Guardar los Cambios", "Sistema de Facturacion e Inventario", MessageBoxButtons.YesNo,
@@ -1271,6 +1278,51 @@ namespace hospitalcentral
             {
                 e.Handled = true;
             }
+        }
+
+        private void dtgEntradaInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIDProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
         
        

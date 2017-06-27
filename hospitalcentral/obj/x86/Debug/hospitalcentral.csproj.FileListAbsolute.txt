@@ -30,7 +30,6 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\Inte
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.csproj.ResolveComReference.cache
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\bin\Debug\hospitalcentral.exe
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\bin\Debug\hospitalcentral.pdb
-C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.csprojResolveAssemblyReference.cache
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmAgregarUsuario.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmAbout.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmAnularEntradaInventario.resources
@@ -41,7 +40,6 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmClientes.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmCobroDespachoPedido.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmEntradaInventario.resources
-C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmFacturacion.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmLogin.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmMenu.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintCobroDespacho.resources
@@ -66,3 +64,7 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintCitasMedicas.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmEstadisticasCitasMedicas.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarSuplidor.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmSalidaInventario.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintMaterialLaboratorio.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.csprojResolveAssemblyReference.cache
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintInventarioEstadisticas.resources
