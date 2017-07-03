@@ -176,12 +176,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsUsuarios.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ejemplko.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ejemplko.Designer.cs">
-      <DependentUpon>ejemplko.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

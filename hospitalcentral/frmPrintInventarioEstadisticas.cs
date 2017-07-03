@@ -61,6 +61,22 @@ namespace hospitalcentral
                 cWhere = cWhere + " AND salida_inventario.fecha >= " + "'" + fechadesde + "'" + " AND salida_inventario.fecha <= " + "'" + fechahasta + "'" + "";
             }
 
+            if (rbSalida.Checked == true)
+            {
+                if (chkSenasa.Checked == true)
+                {
+                    cWhere = cWhere + " AND salida_inventario.tipoaccion = 'S'";
+                }
+                else if (chkAccionCivica.Checked == true)
+                {
+                    cWhere = cWhere + " AND salida_inventario.tipoaccion = 'A'";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Estas opciones solo aplican a salidas del inventario...");                
+            }
+
             try
             {
                 // Abro conexion

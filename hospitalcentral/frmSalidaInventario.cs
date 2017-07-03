@@ -49,6 +49,44 @@ namespace hospitalcentral
             this.cModo = "Inicio";
             this.Botones();
             this.fillCmbCategoria();
+            this.chkHemograma.Checked = false;
+            this.chkGlicemia.Checked = false;
+            this.chkUrea.Checked = false;
+            this.chkCreatinina.Checked = false;
+            this.chkTgo.Checked = false;
+            this.chkTg.Checked = false;
+            this.chkVdrl.Checked = false;
+            this.chkHiv.Checked = false;
+            this.chkHbsAg.Checked = false;
+            this.chkHcv.Checked = false;
+            this.chkTipificacion.Checked = false;
+            this.chkPsa.Checked = false;
+            this.chkFalcemia.Checked = false;
+            this.chkElectrolitos.Checked = false;
+            this.chkProteinasTotales.Checked = false;
+            this.chkAlbumina.Checked = false;
+            this.chkPt.Checked = false;
+            this.chkPtt.Checked = false;
+            this.chkExOrina.Checked = false;
+            this.chkColesterol.Checked = false;
+            this.chkTrigliceridos.Checked = false;
+            this.chkColesterolHdl.Checked = false;
+            this.chkAcidoUrico.Checked = false;
+            this.chkAmilasa.Checked = false;
+            this.chkBilirrubina.Checked = false;
+            this.chkChiamycia.Checked = false;
+            this.chkSemen.Checked = false;
+            this.chkSecresionUretral.Checked = false;
+            this.chkUrocultivo.Checked = false;
+            this.chkFalcalina.Checked = false;
+            this.chkAso.Checked = false;
+            this.chkPcr.Checked = false;
+            this.chkFr.Checked = false;
+            this.chkHcg.Checked = false;
+            this.chkTestCoombDirect.Checked = false;
+            this.chkTestCoombIndirect.Checked = false;
+            this.chkVarianteDu.Checked = false;
+            this.chkEritroSedimentacion.Checked = false;
         }
 
         private void fillCmbCategoria()
@@ -153,6 +191,45 @@ namespace hospitalcentral
                     dtgEntradaInventario.Enabled = false;
                     rbAccionCivica.Enabled = false;
                     rbSenasa.Enabled = false;
+                    // Examen Medico
+                    this.chkHemograma.Enabled = false;
+                    this.chkGlicemia.Enabled = false;
+                    this.chkUrea.Enabled = false;
+                    this.chkCreatinina.Enabled = false;
+                    this.chkTgo.Enabled = false;
+                    this.chkTg.Enabled = false;
+                    this.chkVdrl.Enabled = false;
+                    this.chkHiv.Enabled = false;
+                    this.chkHbsAg.Enabled = false;
+                    this.chkHcv.Enabled = false;
+                    this.chkTipificacion.Enabled = false;
+                    this.chkPsa.Enabled = false;
+                    this.chkFalcemia.Enabled = false;
+                    this.chkElectrolitos.Enabled = false;
+                    this.chkProteinasTotales.Enabled = false;
+                    this.chkAlbumina.Enabled = false;
+                    this.chkPt.Enabled = false;
+                    this.chkPtt.Enabled = false;
+                    this.chkExOrina.Enabled = false;
+                    this.chkColesterol.Enabled = false;
+                    this.chkTrigliceridos.Enabled = false;
+                    this.chkColesterolHdl.Enabled = false;
+                    this.chkAcidoUrico.Enabled = false;
+                    this.chkAmilasa.Enabled = false;
+                    this.chkBilirrubina.Enabled = false;
+                    this.chkChiamycia.Enabled = false;
+                    this.chkSemen.Enabled = false;
+                    this.chkSecresionUretral.Enabled = false;
+                    this.chkUrocultivo.Enabled = false;
+                    this.chkFalcalina.Enabled = false;
+                    this.chkAso.Enabled = false;
+                    this.chkPcr.Enabled = false;
+                    this.chkFr.Enabled = false;
+                    this.chkHcg.Enabled = false;
+                    this.chkTestCoombDirect.Enabled = false;
+                    this.chkTestCoombIndirect.Enabled = false;
+                    this.chkVarianteDu.Enabled = false;
+                    this.chkEritroSedimentacion.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -180,6 +257,45 @@ namespace hospitalcentral
                     dtgEntradaInventario.Enabled = true;
                     rbAccionCivica.Enabled = true;
                     rbSenasa.Enabled = true;
+                    // Examen Medico
+                    this.chkHemograma.Enabled = true;
+                    this.chkGlicemia.Enabled = true;
+                    this.chkUrea.Enabled = true;
+                    this.chkCreatinina.Enabled = true;
+                    this.chkTgo.Enabled = true;
+                    this.chkTg.Enabled = true;
+                    this.chkVdrl.Enabled = true;
+                    this.chkHiv.Enabled = true;
+                    this.chkHbsAg.Enabled = true;
+                    this.chkHcv.Enabled = true;
+                    this.chkTipificacion.Enabled = true;
+                    this.chkPsa.Enabled = true;
+                    this.chkFalcemia.Enabled = true;
+                    this.chkElectrolitos.Enabled = true;
+                    this.chkProteinasTotales.Enabled = true;
+                    this.chkAlbumina.Enabled = true;
+                    this.chkPt.Enabled = true;
+                    this.chkPtt.Enabled = true;
+                    this.chkExOrina.Enabled = true;
+                    this.chkColesterol.Enabled = true;
+                    this.chkTrigliceridos.Enabled = true;
+                    this.chkColesterolHdl.Enabled = true;
+                    this.chkAcidoUrico.Enabled = true;
+                    this.chkAmilasa.Enabled = true;
+                    this.chkBilirrubina.Enabled = true;
+                    this.chkChiamycia.Enabled = true;
+                    this.chkSemen.Enabled = true;
+                    this.chkSecresionUretral.Enabled = true;
+                    this.chkUrocultivo.Enabled = true;
+                    this.chkFalcalina.Enabled = true;
+                    this.chkAso.Enabled = true;
+                    this.chkPcr.Enabled = true;
+                    this.chkFr.Enabled = true;
+                    this.chkHcg.Enabled = true;
+                    this.chkTestCoombDirect.Enabled = true;
+                    this.chkTestCoombIndirect.Enabled = true;
+                    this.chkVarianteDu.Enabled = true;
+                    this.chkEritroSedimentacion.Enabled = true;                    
                     break;
 
                 case "Grabar":
@@ -207,6 +323,45 @@ namespace hospitalcentral
                     dtgEntradaInventario.Enabled = false;
                     rbAccionCivica.Enabled = false;
                     rbSenasa.Enabled = false;
+                    // Examen Medico
+                    this.chkHemograma.Enabled = false;
+                    this.chkGlicemia.Enabled = false;
+                    this.chkUrea.Enabled = false;
+                    this.chkCreatinina.Enabled = false;
+                    this.chkTgo.Enabled = false;
+                    this.chkTg.Enabled = false;
+                    this.chkVdrl.Enabled = false;
+                    this.chkHiv.Enabled = false;
+                    this.chkHbsAg.Enabled = false;
+                    this.chkHcv.Enabled = false;
+                    this.chkTipificacion.Enabled = false;
+                    this.chkPsa.Enabled = false;
+                    this.chkFalcemia.Enabled = false;
+                    this.chkElectrolitos.Enabled = false;
+                    this.chkProteinasTotales.Enabled = false;
+                    this.chkAlbumina.Enabled = false;
+                    this.chkPt.Enabled = false;
+                    this.chkPtt.Enabled = false;
+                    this.chkExOrina.Enabled = false;
+                    this.chkColesterol.Enabled = false;
+                    this.chkTrigliceridos.Enabled = false;
+                    this.chkColesterolHdl.Enabled = false;
+                    this.chkAcidoUrico.Enabled = false;
+                    this.chkAmilasa.Enabled = false;
+                    this.chkBilirrubina.Enabled = false;
+                    this.chkChiamycia.Enabled = false;
+                    this.chkSemen.Enabled = false;
+                    this.chkSecresionUretral.Enabled = false;
+                    this.chkUrocultivo.Enabled = false;
+                    this.chkFalcalina.Enabled = false;
+                    this.chkAso.Enabled = false;
+                    this.chkPcr.Enabled = false;
+                    this.chkFr.Enabled = false;
+                    this.chkHcg.Enabled = false;
+                    this.chkTestCoombDirect.Enabled = false;
+                    this.chkTestCoombIndirect.Enabled = false;
+                    this.chkVarianteDu.Enabled = false;
+                    this.chkEritroSedimentacion.Enabled = false;                    
                     break;
 
                 case "Editar":
@@ -291,6 +446,7 @@ namespace hospitalcentral
             subTotal = 0;
             monto = 0;
             countFilas = 0;
+            this.txtOtros.Clear();
         }
 
         // Funcion que convierte un valor decimal a texto para graficarlo en un textbox
@@ -340,8 +496,17 @@ namespace hospitalcentral
                             MySqlCommand myCommand = MyConexion.CreateCommand();
 
                             // Step 3 - Comando a ejecutar
-                            myCommand.CommandText = "INSERT INTO salida_inventario(idpaciente, fecha, nss, tipoaccion, fecharegistrada)" +
-                                " values(@idpaciente, @fecha, @nss, @tipoaccion, NOW())";
+                            myCommand.CommandText = "INSERT INTO salida_inventario(idpaciente, fecha, nss, tipoaccion, "+
+                            " hemograma, glicemia, urea, creatinina, tgo, tg, vdrl, hiv, hbsag, hcv, tipificacion, psa, falcemia,"+
+                            " electrolitos_sericos, proteinas_totales, albumina, pt, ptt, exorina, colesterol, trigliceridos, "+
+                            " colesterolhdl, acidourico, amilasa, bilirrubina, chiamycia, cultivosemen, cultivosecrecionuretral, "+
+                            " urocultivo, falcalina, aso, pcr, fr, hcg, coombdirect, coombindirect, variantedu, eritrosedimentacion, otros, fecharegistrada)" +
+                                " values(@idpaciente, @fecha, @nss, @tipoaccion, "+
+                            " @hemograma, @glicemia, @urea, @creatinina, @tgo, @tg, @vdrl, @hiv, @hbsag, @hcv, @tipificacion, @psa, @falcemia,"+
+                            " @electrolitos_sericos, @proteinas_totales, @albumina, @pt, @ptt, @exorina, @colesterol, @trigliceridos, "+
+                            " @colesterolhdl, @acidourico, @amilasa, @bilirrubina, @chiamycia, @cultivosemen, @cultivosecrecionuretral,"+
+                            " @urocultivo, @falcalina, @aso, @pcr, @fr, @hcg, @coombdirect, @coombindirect, @variantedu, @eritrosedimentacion, @otros, NOW())";
+                            
                             myCommand.Parameters.AddWithValue("@idpaciente", txtIDCliente.Text);
                             myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
                             myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
@@ -353,21 +518,349 @@ namespace hospitalcentral
                             else
                             {
                                 myCommand.Parameters.AddWithValue("@tipoaccion", "A");
+                            }                            
+
+                            if(chkHemograma.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@hemograma", "1");
+                            } else{
+                                myCommand.Parameters.AddWithValue("@hemograma", "0");
                             }
 
-                            //// Convierto el campo monto en texto
-                            //lblSumaTotal.Text = Convert.ToString(lblSumaTotal.Text);
-                            //// Cambio el valor del textbox a decimal
-                            //string myValue = Convert.ToString(lblSumaTotal.Text);
-                            //decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);
-                            //myCommand.Parameters.AddWithValue("@monto_b", myValueMonto);
+                            if (chkGlicemia.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@glicemia", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@glicemia", "0");
+                            }
 
-                            //// Convierto el campo monto en texto
-                            //lblTotal.Text = Convert.ToString(lblTotal.Text);
-                            //// Cambio el valor del textbox a decimal
-                            //string myValueTotal = Convert.ToString(lblTotal.Text);
-                            //decimal myValueMontoTotal = clsFunctions.ParseCurrencyFormat(myValueTotal);
-                            //myCommand.Parameters.AddWithValue("@monto_n", myValueMontoTotal);
+                            if (chkUrea.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@urea", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@urea", "0");
+                            }
+
+                            if (chkCreatinina.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@creatinina", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@creatinina", "0");
+                            }
+
+                            if (chkTgo.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@tgo", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@tgo", "0");
+                            }
+
+                            if (chkTg.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@tg", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@tg", "0");
+                            }
+
+                            if (chkVdrl.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@vdrl", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@vdrl", "0");
+                            }
+
+                            if (chkHiv.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@hiv", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@hiv", "0");
+                            }
+
+                            if (chkHbsAg.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@hbsag", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@hbsag", "0");
+                            }
+
+                            if (chkHcv.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@hcv", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@hcv", "0");
+                            }
+
+                            if (chkTipificacion.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@tipificacion", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@tipificacion", "0");
+                            }
+
+                            if (chkPsa.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@psa", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@psa", "0");
+                            }
+
+                            if (chkFalcemia.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@falcemia", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@falcemia", "0");
+                            }
+
+                            if (chkElectrolitos.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@electrolitos_sericos", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@electrolitos_sericos", "0");
+                            }
+
+                            if (chkProteinasTotales.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@proteinas_totales", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@proteinas_totales", "0");
+                            }
+
+                            if (chkAlbumina.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@albumina", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@albumina", "0");
+                            }
+
+                            if (chkPt.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@pt", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@pt", "0");
+                            }
+
+                            if (chkPtt.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@ptt", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@ptt", "0");
+                            }
+
+                            if (chkExOrina.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@exorina", "1");
+                            }
+                            else 
+                            {
+                                myCommand.Parameters.AddWithValue("@exorina", "0");
+                            }
+
+                            if (chkColesterol.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@colesterol", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@colesterol", "0");
+                            }
+
+                            if (chkTrigliceridos.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@trigliceridos", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@trigliceridos", "0");
+                            }
+
+                            if (chkColesterolHdl.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@colesterolhdl", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@colesterolhdl", "0");
+                            }
+
+                            if (chkAcidoUrico.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@acidourico", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@acidourico", "0");
+                            }
+
+                            if (chkAmilasa.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@amilasa", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@amilasa", "0");
+                            }
+
+                            if (chkBilirrubina.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@bilirrubina", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@bilirrubina", "0");
+                            }
+
+                            if (chkChiamycia.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@chiamycia", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@chiamycia", "0");
+                            }
+
+                            if (chkSemen.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@cultivosemen", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@cultivosemen", "0");
+                            }
+
+                            if (chkSecresionUretral.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@cultivosecrecionuretral", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@cultivosecrecionuretral", "0");
+                            }
+
+                            if (chkUrocultivo.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@urocultivo", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@urocultivo", "0");
+                            }
+
+                            if (chkFalcalina.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@falcalina", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@falcalina", "0");
+                            }
+
+                            if (chkAso.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@aso", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@aso", "0");
+                            }
+
+                            if (chkPcr.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@pcr", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@pcr", "0");
+                            }
+
+                            if (chkFr.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@fr", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@fr", "0");
+                            }
+
+                            if (chkHcg.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@hcg", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@hcg", "0");
+                            }
+
+                            if (chkTestCoombDirect.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@coombdirect", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@coombdirect", "0");
+                            }
+
+                            if (chkTestCoombIndirect.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@coombindirect", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@coombindirect", "0");
+                            }
+
+                            if (chkVarianteDu.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@variantedu", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@variantedu", "0");
+                            }
+
+                            if (chkEritroSedimentacion.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@eritrosedimentacion", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@eritrosedimentacion", "0");
+                            }
+
+                            myCommand.Parameters.AddWithValue("@otros", txtOtros.Text);
 
                             // Step 4 - Opening the connection
                             MyConexion.Open();
@@ -684,82 +1177,101 @@ namespace hospitalcentral
             }
             else
             {
-                frmBuscarProductos ofrmBuscarProductos = new frmBuscarProductos();
-                ofrmBuscarProductos.ShowDialog();
-                string cCodigo = ofrmBuscarProductos.cCodigo;
+                //if (chkAcidoUrico.Checked == false || chkAlbumina.Checked == false || chkAmilasa.Checked == false ||
+                //    chkAso.Checked == false || chkBilirrubina.Checked == false || chkChiamycia.Checked == false ||
+                //    chkColesterol.Checked == false || chkColesterolHdl.Checked == false || chkCreatinina.Checked == false ||
+                //    chkElectrolitos.Checked == false || chkEritroSedimentacion.Checked == false || chkExOrina.Checked == false ||
+                //    chkFalcalina.Checked == false || chkFalcemia.Checked == false || chkFr.Checked == false || chkGlicemia.Checked == false ||
+                //    chkHbsAg.Checked == false || chkHcg.Checked == false || chkHcv.Checked == false || chkHemograma.Checked == false ||
+                //    chkHiv.Checked == false || chkPcr.Checked == false || chkProteinasTotales.Checked == false || chkPsa.Checked == false ||
+                //    chkPt.Checked == false || chkPtt.Checked == false || chkSecresionUretral.Checked == false || chkSemen.Checked == false ||
+                //    chkTestCoombDirect.Checked == false || chkTestCoombIndirect.Checked == false || chkTg.Checked == false ||
+                //    chkTgo.Checked == false || chkTipificacion.Checked == false || chkTrigliceridos.Checked == false ||
+                //    chkUrea.Checked == false || chkUrocultivo.Checked == false || chkVarianteDu.Checked == false ||
+                //    chkVdrl.Checked == false)
+                //{
+                //    MessageBox.Show("No puede agregar un producto de laboratorio sin verificar el examen a realizar...");
+                //    btnBuscarProducto.Focus();
+                //}
+                //else
+                //{
+                    frmBuscarProductos ofrmBuscarProductos = new frmBuscarProductos();
+                    ofrmBuscarProductos.ShowDialog();
+                    string cCodigo = ofrmBuscarProductos.cCodigo;
 
-                // Si selecciono un registro
-                if (cCodigo != "" && cCodigo != null)
-                {
-                    // Mostrar el codigo                      
-                    txtIDProducto.Text = Convert.ToString(cCodigo).Trim();
-                    try
+                    // Si selecciono un registro
+                    if (cCodigo != "" && cCodigo != null)
                     {
-                        // Step 1 - clsConexion
-                        MySqlConnection MyclsConexion = new MySqlConnection(clsConexion.ConectionString);
-
-                        // Step 2 - creating the command object
-                        MySqlCommand MyCommand = MyclsConexion.CreateCommand();
-
-                        // Step 3 - creating the commandtext
-                        //MyCommand.CommandText = "SELECT *  FROM paciente WHERE cedula = ' " + txtCedula.Text.Trim() + "'  " ;                                                
-                        // verifico el tipo para filtrar en la base de datos
-                        //if (txtTipoCliente.Text == "A")
-                        //{
-                        //    MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_a as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
-                        //}
-                        //else
-                        //{
-                        //    MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_b as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
-                        //}
-                        MyCommand.CommandText = "SELECT idproducto, producto, idcategoria, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
-
-                        // Step 4 - connection open
-                        MyclsConexion.Open();
-
-                        // Step 5 - Creating the DataReader                    
-                        MySqlDataReader MyReader = MyCommand.ExecuteReader();
-
-                        // Step 6 - Verifying if Reader has rows
-                        if (MyReader.HasRows)
+                        // Mostrar el codigo                      
+                        txtIDProducto.Text = Convert.ToString(cCodigo).Trim();
+                        try
                         {
-                            while (MyReader.Read())
+                            // Step 1 - clsConexion
+                            MySqlConnection MyclsConexion = new MySqlConnection(clsConexion.ConectionString);
+
+                            // Step 2 - creating the command object
+                            MySqlCommand MyCommand = MyclsConexion.CreateCommand();
+
+                            // Step 3 - creating the commandtext
+                            //MyCommand.CommandText = "SELECT *  FROM paciente WHERE cedula = ' " + txtCedula.Text.Trim() + "'  " ;                                                
+                            // verifico el tipo para filtrar en la base de datos
+                            //if (txtTipoCliente.Text == "A")
+                            //{
+                            //    MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_a as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
+                            //}
+                            //else
+                            //{
+                            //    MyCommand.CommandText = "SELECT idproducto, producto, tipo, precio_b as precio, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
+                            //}
+                            MyCommand.CommandText = "SELECT idproducto, producto, idcategoria, imagen from productos WHERE idproducto = '" + txtIDProducto.Text.Trim() + "'";
+
+                            // Step 4 - connection open
+                            MyclsConexion.Open();
+
+                            // Step 5 - Creating the DataReader                    
+                            MySqlDataReader MyReader = MyCommand.ExecuteReader();
+
+                            // Step 6 - Verifying if Reader has rows
+                            if (MyReader.HasRows)
                             {
-                                txtIDProducto.Text = MyReader["idproducto"].ToString();
-                                txtProducto.Text = MyReader["producto"].ToString();
-                                cmbCategoria.SelectedValue = MyReader["idcategoria"].ToString();
-                                
-                                // Leyendo la imagen
-                                byte[] img = (byte[])(MyReader["imagen"]);
+                                while (MyReader.Read())
+                                {
+                                    txtIDProducto.Text = MyReader["idproducto"].ToString();
+                                    txtProducto.Text = MyReader["producto"].ToString();
+                                    cmbCategoria.SelectedValue = MyReader["idcategoria"].ToString();
 
-                                if (img == null)
-                                {
-                                    picBox.Image = null;
+                                    // Leyendo la imagen
+                                    byte[] img = (byte[])(MyReader["imagen"]);
+
+                                    if (img == null)
+                                    {
+                                        picBox.Image = null;
+                                    }
+                                    else
+                                    {
+                                        MemoryStream mstream = new MemoryStream(img);
+                                        picBox.Image = System.Drawing.Image.FromStream(mstream);
+                                    }
                                 }
-                                else
-                                {
-                                    MemoryStream mstream = new MemoryStream(img);
-                                    picBox.Image = System.Drawing.Image.FromStream(mstream);
-                                }
+                                //this.cModo = "Buscar";
+                                //this.Botones();
+                                this.txtCantidad.Focus();
                             }
-                            //this.cModo = "Buscar";
-                            //this.Botones();
-                            this.txtCantidad.Focus();
+                            else
+                            {
+                                MessageBox.Show("No se encontraron registros con este ID de Producto...", "Sistea de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            // Step 6 - Closing all
+                            MyReader.Close();
+                            MyCommand.Dispose();
+                            MyclsConexion.Close();
                         }
-                        else
+                        catch (Exception MyEx)
                         {
-                            MessageBox.Show("No se encontraron registros con este ID de Producto...", "Sistea de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(MyEx.Message);
                         }
-                        // Step 6 - Closing all
-                        MyReader.Close();
-                        MyCommand.Dispose();
-                        MyclsConexion.Close();
                     }
-                    catch (Exception MyEx)
-                    {
-                        MessageBox.Show(MyEx.Message);
-                    }
-                }
+                //}
             }
         }
 
@@ -1164,6 +1676,11 @@ namespace hospitalcentral
                 MessageBox.Show(ex.Message);
                 throw;
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         //private void chkITBI_Click(object sender, EventArgs e)

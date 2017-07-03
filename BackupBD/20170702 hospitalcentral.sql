@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50715
 File Encoding         : 65001
 
-Date: 2017-06-27 16:02:31
+Date: 2017-07-02 20:57:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -94,7 +94,7 @@ CREATE TABLE `entrada_inventario` (
   `anulada` varchar(1) NOT NULL DEFAULT '0',
   `anulada_comentario` mediumtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of entrada_inventario
@@ -105,6 +105,7 @@ INSERT INTO `entrada_inventario` VALUES ('3', '1', 'FR & ASOCS.', '2017-06-26', 
 INSERT INTO `entrada_inventario` VALUES ('4', '1', 'FR & ASOCS.', '2017-06-26', '0000-00-00 00:00:00', '0', null);
 INSERT INTO `entrada_inventario` VALUES ('5', '1', 'FR & ASOCS.', '2017-06-27', '0000-00-00 00:00:00', '0', null);
 INSERT INTO `entrada_inventario` VALUES ('6', '1', 'FR & ASOCS.', '2017-06-26', '2017-06-26 22:03:35', '0', null);
+INSERT INTO `entrada_inventario` VALUES ('7', '1', 'FR & ASOCS.', '2017-06-28', '2017-06-28 08:36:43', '0', null);
 
 -- ----------------------------
 -- Table structure for `entrada_inventario_detalle`
@@ -127,6 +128,7 @@ INSERT INTO `entrada_inventario_detalle` VALUES ('3', '2', 'PRODUCTO 2', '150', 
 INSERT INTO `entrada_inventario_detalle` VALUES ('4', '1', 'PRODUCTO 1', '75', '0');
 INSERT INTO `entrada_inventario_detalle` VALUES ('5', '1', 'PRODUCTO 1', '1500', '0');
 INSERT INTO `entrada_inventario_detalle` VALUES ('6', '1', 'PRODUCTO 1', '25', '0');
+INSERT INTO `entrada_inventario_detalle` VALUES ('7', '1', 'PRODUCTO 1', '250', '0');
 
 -- ----------------------------
 -- Table structure for `especialidad`
@@ -165,8 +167,8 @@ CREATE TABLE `inventario` (
 -- ----------------------------
 -- Records of inventario
 -- ----------------------------
-INSERT INTO `inventario` VALUES ('1', '2067');
-INSERT INTO `inventario` VALUES ('2', '120');
+INSERT INTO `inventario` VALUES ('1', '1955');
+INSERT INTO `inventario` VALUES ('2', '110');
 
 -- ----------------------------
 -- Table structure for `pacientes`
@@ -335,16 +337,57 @@ CREATE TABLE `salida_inventario` (
   `fecharegistrada` datetime DEFAULT NULL,
   `anulada` varchar(1) NOT NULL DEFAULT '0',
   `anulada_comentario` mediumtext,
+  `hemograma` varchar(1) DEFAULT NULL,
+  `glicemia` varchar(1) DEFAULT NULL,
+  `urea` varchar(1) DEFAULT NULL,
+  `creatinina` varchar(1) DEFAULT NULL,
+  `tgo` varchar(1) DEFAULT NULL,
+  `tg` varchar(1) DEFAULT NULL,
+  `vdrl` varchar(1) DEFAULT NULL,
+  `hiv` varchar(1) DEFAULT NULL,
+  `hbsag` varchar(1) DEFAULT NULL,
+  `hcv` varchar(1) DEFAULT NULL,
+  `tipificacion` varchar(1) DEFAULT NULL,
+  `psa` varchar(1) DEFAULT NULL,
+  `falcemia` varchar(1) DEFAULT NULL,
+  `electrolitos_sericos` varchar(1) DEFAULT NULL,
+  `proteinas_totales` varchar(1) DEFAULT NULL,
+  `albumina` varchar(1) DEFAULT NULL,
+  `pt` varchar(1) DEFAULT NULL,
+  `ptt` varchar(1) DEFAULT NULL,
+  `exorina` varchar(1) DEFAULT NULL,
+  `colesterol` varchar(1) DEFAULT NULL,
+  `trigliceridos` varchar(1) DEFAULT NULL,
+  `colesterolhdl` varchar(1) DEFAULT NULL,
+  `acidourico` varchar(1) DEFAULT NULL,
+  `amilasa` varchar(1) DEFAULT NULL,
+  `bilirrubina` varchar(1) DEFAULT NULL,
+  `chiamycia` varchar(1) DEFAULT NULL,
+  `cultivosemen` varchar(1) DEFAULT NULL,
+  `cultivosecrecionuretral` varchar(1) DEFAULT NULL,
+  `urocultivo` varchar(1) DEFAULT NULL,
+  `falcalina` varchar(1) DEFAULT NULL,
+  `aso` varchar(1) DEFAULT NULL,
+  `pcr` varchar(1) DEFAULT NULL,
+  `fr` varchar(1) DEFAULT NULL,
+  `hcg` varchar(1) DEFAULT NULL,
+  `coombdirect` varchar(1) DEFAULT NULL,
+  `coombindirect` varchar(1) DEFAULT NULL,
+  `variantedu` varchar(1) DEFAULT NULL,
+  `eritrosedimentacion` varchar(1) DEFAULT NULL,
+  `otros` mediumtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of salida_inventario
 -- ----------------------------
-INSERT INTO `salida_inventario` VALUES ('1', '2', '123456789', 'S', '2017-06-23', '2017-06-23 00:00:00', '0', null);
-INSERT INTO `salida_inventario` VALUES ('2', '2', '123456789', 'S', '2017-06-23', '2017-06-23 17:09:58', '0', null);
-INSERT INTO `salida_inventario` VALUES ('3', '1', '987654321', 'S', '2017-06-26', '2017-06-26 18:25:40', '0', null);
-INSERT INTO `salida_inventario` VALUES ('4', '2', '123456789', 'S', '2017-06-26', '2017-06-26 18:32:37', '0', null);
+INSERT INTO `salida_inventario` VALUES ('1', '2', '123456789', 'S', '2017-06-23', '2017-06-23 00:00:00', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `salida_inventario` VALUES ('2', '2', '123456789', 'S', '2017-06-23', '2017-06-23 17:09:58', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `salida_inventario` VALUES ('3', '1', '987654321', 'S', '2017-06-26', '2017-06-26 18:25:40', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `salida_inventario` VALUES ('4', '2', '123456789', 'S', '2017-06-26', '2017-06-26 18:32:37', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `salida_inventario` VALUES ('5', '2', '123456789', 'S', '2017-07-02', '2017-07-02 20:20:25', '0', null, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'Prueba');
+INSERT INTO `salida_inventario` VALUES ('6', '2', '123456789', 'S', '2017-07-02', '2017-07-02 20:25:21', '0', null, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'ningunos');
 
 -- ----------------------------
 -- Table structure for `salida_inventario_detalle`
@@ -368,6 +411,11 @@ INSERT INTO `salida_inventario_detalle` VALUES ('3', '1', 'PRODUCTO 1', '25', '0
 INSERT INTO `salida_inventario_detalle` VALUES ('3', '2', 'PRODUCTO 2', '25', '0');
 INSERT INTO `salida_inventario_detalle` VALUES ('4', '1', 'PRODUCTO 1', '25', '0');
 INSERT INTO `salida_inventario_detalle` VALUES ('4', '2', 'PRODUCTO 2', '50', '0');
+INSERT INTO `salida_inventario_detalle` VALUES ('5', '1', 'PRODUCTO 1', '25', '0');
+INSERT INTO `salida_inventario_detalle` VALUES ('5', '2', 'PRODUCTO 2', '10', '0');
+INSERT INTO `salida_inventario_detalle` VALUES ('5', '1', 'PRODUCTO 1', '292', '0');
+INSERT INTO `salida_inventario_detalle` VALUES ('5', '1', 'PRODUCTO 1', '10', '0');
+INSERT INTO `salida_inventario_detalle` VALUES ('6', '1', 'PRODUCTO 1', '25', '0');
 
 -- ----------------------------
 -- Table structure for `suplidores`
