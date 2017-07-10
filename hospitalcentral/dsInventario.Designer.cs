@@ -1085,6 +1085,8 @@ namespace hospitalcentral {
             
             private global::System.Data.DataColumn columnotros;
             
+            private global::System.Data.DataColumn columnotrosdetalles;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtMovimientoInventarioDataTable() {
@@ -1528,6 +1530,14 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn otrosdetallesColumn {
+                get {
+                    return this.columnotrosdetalles;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1576,45 +1586,46 @@ namespace hospitalcentral {
                         string suplidor, 
                         string nombrepaciente, 
                         string categoria, 
-                        string hemograma, 
-                        string glicemia, 
-                        string urea, 
-                        string creatinina, 
-                        string tgo, 
-                        string tg, 
-                        string vdrl, 
-                        string hiv, 
-                        string hbsag, 
-                        string hcv, 
-                        string tipificacion, 
-                        string psa, 
-                        string falcemia, 
-                        string electrolitos_sericos, 
-                        string proteinas_totales, 
-                        string albumina, 
-                        string pt, 
-                        string ptt, 
-                        string exorina, 
-                        string colesterol, 
-                        string trigliceridos, 
-                        string colesterolhdl, 
-                        string acidourico, 
-                        string amilasa, 
-                        string bilirrubina, 
-                        string chiamycia, 
-                        string cultivosemen, 
-                        string cultivosecrecionuretral, 
-                        string urocultivo, 
-                        string falcalina, 
-                        string aso, 
-                        string pcr, 
-                        string fr, 
-                        string hcg, 
-                        string coombdirect, 
-                        string coomindirect, 
-                        string variantedu, 
-                        string eritrosedimentacion, 
-                        string otros) {
+                        int hemograma, 
+                        int glicemia, 
+                        int urea, 
+                        int creatinina, 
+                        int tgo, 
+                        int tg, 
+                        int vdrl, 
+                        int hiv, 
+                        int hbsag, 
+                        int hcv, 
+                        int tipificacion, 
+                        int psa, 
+                        int falcemia, 
+                        int electrolitos_sericos, 
+                        int proteinas_totales, 
+                        int albumina, 
+                        int pt, 
+                        int ptt, 
+                        int exorina, 
+                        int colesterol, 
+                        int trigliceridos, 
+                        int colesterolhdl, 
+                        int acidourico, 
+                        int amilasa, 
+                        int bilirrubina, 
+                        int chiamycia, 
+                        int cultivosemen, 
+                        int cultivosecrecionuretral, 
+                        int urocultivo, 
+                        int falcalina, 
+                        int aso, 
+                        int pcr, 
+                        int fr, 
+                        int hcg, 
+                        int coombdirect, 
+                        int coomindirect, 
+                        int variantedu, 
+                        int eritrosedimentacion, 
+                        int otros, 
+                        string otrosdetalles) {
                 dtMovimientoInventarioRow rowdtMovimientoInventarioRow = ((dtMovimientoInventarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1667,7 +1678,8 @@ namespace hospitalcentral {
                         coomindirect,
                         variantedu,
                         eritrosedimentacion,
-                        otros};
+                        otros,
+                        otrosdetalles};
                 rowdtMovimientoInventarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtMovimientoInventarioRow);
                 return rowdtMovimientoInventarioRow;
@@ -1741,6 +1753,7 @@ namespace hospitalcentral {
                 this.columnvariantedu = base.Columns["variantedu"];
                 this.columneritrosedimentacion = base.Columns["eritrosedimentacion"];
                 this.columnotros = base.Columns["otros"];
+                this.columnotrosdetalles = base.Columns["otrosdetalles"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1770,84 +1783,86 @@ namespace hospitalcentral {
                 base.Columns.Add(this.columnnombrepaciente);
                 this.columncategoria = new global::System.Data.DataColumn("categoria", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncategoria);
-                this.columnhemograma = new global::System.Data.DataColumn("hemograma", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnhemograma = new global::System.Data.DataColumn("hemograma", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhemograma);
-                this.columnglicemia = new global::System.Data.DataColumn("glicemia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnglicemia = new global::System.Data.DataColumn("glicemia", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnglicemia);
-                this.columnurea = new global::System.Data.DataColumn("urea", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnurea = new global::System.Data.DataColumn("urea", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnurea);
-                this.columncreatinina = new global::System.Data.DataColumn("creatinina", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncreatinina = new global::System.Data.DataColumn("creatinina", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreatinina);
-                this.columntgo = new global::System.Data.DataColumn("tgo", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntgo = new global::System.Data.DataColumn("tgo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntgo);
-                this.columntg = new global::System.Data.DataColumn("tg", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntg = new global::System.Data.DataColumn("tg", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntg);
-                this.columnvdrl = new global::System.Data.DataColumn("vdrl", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnvdrl = new global::System.Data.DataColumn("vdrl", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvdrl);
-                this.columnhiv = new global::System.Data.DataColumn("hiv", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnhiv = new global::System.Data.DataColumn("hiv", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhiv);
-                this.columnhbsag = new global::System.Data.DataColumn("hbsag", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnhbsag = new global::System.Data.DataColumn("hbsag", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhbsag);
-                this.columnhcv = new global::System.Data.DataColumn("hcv", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnhcv = new global::System.Data.DataColumn("hcv", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhcv);
-                this.columntipificacion = new global::System.Data.DataColumn("tipificacion", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntipificacion = new global::System.Data.DataColumn("tipificacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipificacion);
-                this.columnpsa = new global::System.Data.DataColumn("psa", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnpsa = new global::System.Data.DataColumn("psa", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpsa);
-                this.columnfalcemia = new global::System.Data.DataColumn("falcemia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfalcemia = new global::System.Data.DataColumn("falcemia", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfalcemia);
-                this.columnelectrolitos_sericos = new global::System.Data.DataColumn("electrolitos_sericos", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnelectrolitos_sericos = new global::System.Data.DataColumn("electrolitos_sericos", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnelectrolitos_sericos);
-                this.columnproteinas_totales = new global::System.Data.DataColumn("proteinas_totales", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnproteinas_totales = new global::System.Data.DataColumn("proteinas_totales", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproteinas_totales);
-                this.columnalbumina = new global::System.Data.DataColumn("albumina", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnalbumina = new global::System.Data.DataColumn("albumina", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnalbumina);
-                this.columnpt = new global::System.Data.DataColumn("pt", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnpt = new global::System.Data.DataColumn("pt", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpt);
-                this.columnptt = new global::System.Data.DataColumn("ptt", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnptt = new global::System.Data.DataColumn("ptt", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnptt);
-                this.columnexorina = new global::System.Data.DataColumn("exorina", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnexorina = new global::System.Data.DataColumn("exorina", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnexorina);
-                this.columncolesterol = new global::System.Data.DataColumn("colesterol", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncolesterol = new global::System.Data.DataColumn("colesterol", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncolesterol);
-                this.columntrigliceridos = new global::System.Data.DataColumn("trigliceridos", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntrigliceridos = new global::System.Data.DataColumn("trigliceridos", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntrigliceridos);
-                this.columncolesterolhdl = new global::System.Data.DataColumn("colesterolhdl", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncolesterolhdl = new global::System.Data.DataColumn("colesterolhdl", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncolesterolhdl);
-                this.columnacidourico = new global::System.Data.DataColumn("acidourico", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnacidourico = new global::System.Data.DataColumn("acidourico", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnacidourico);
-                this.columnamilasa = new global::System.Data.DataColumn("amilasa", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnamilasa = new global::System.Data.DataColumn("amilasa", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnamilasa);
-                this.columnbilirrubina = new global::System.Data.DataColumn("bilirrubina", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnbilirrubina = new global::System.Data.DataColumn("bilirrubina", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbilirrubina);
-                this.columnchiamycia = new global::System.Data.DataColumn("chiamycia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnchiamycia = new global::System.Data.DataColumn("chiamycia", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnchiamycia);
-                this.columncultivosemen = new global::System.Data.DataColumn("cultivosemen", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncultivosemen = new global::System.Data.DataColumn("cultivosemen", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncultivosemen);
-                this.columncultivosecrecionuretral = new global::System.Data.DataColumn("cultivosecrecionuretral", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncultivosecrecionuretral = new global::System.Data.DataColumn("cultivosecrecionuretral", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncultivosecrecionuretral);
-                this.columnurocultivo = new global::System.Data.DataColumn("urocultivo", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnurocultivo = new global::System.Data.DataColumn("urocultivo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnurocultivo);
-                this.columnfalcalina = new global::System.Data.DataColumn("falcalina", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfalcalina = new global::System.Data.DataColumn("falcalina", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfalcalina);
-                this.columnaso = new global::System.Data.DataColumn("aso", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnaso = new global::System.Data.DataColumn("aso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnaso);
-                this.columnpcr = new global::System.Data.DataColumn("pcr", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnpcr = new global::System.Data.DataColumn("pcr", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpcr);
-                this.columnfr = new global::System.Data.DataColumn("fr", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfr = new global::System.Data.DataColumn("fr", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfr);
-                this.columnhcg = new global::System.Data.DataColumn("hcg", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnhcg = new global::System.Data.DataColumn("hcg", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhcg);
-                this.columncoombdirect = new global::System.Data.DataColumn("coombdirect", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncoombdirect = new global::System.Data.DataColumn("coombdirect", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncoombdirect);
-                this.columncoomindirect = new global::System.Data.DataColumn("coomindirect", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncoomindirect = new global::System.Data.DataColumn("coomindirect", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncoomindirect);
-                this.columnvariantedu = new global::System.Data.DataColumn("variantedu", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnvariantedu = new global::System.Data.DataColumn("variantedu", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvariantedu);
-                this.columneritrosedimentacion = new global::System.Data.DataColumn("eritrosedimentacion", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columneritrosedimentacion = new global::System.Data.DataColumn("eritrosedimentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columneritrosedimentacion);
-                this.columnotros = new global::System.Data.DataColumn("otros", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnotros = new global::System.Data.DataColumn("otros", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnotros);
+                this.columnotrosdetalles = new global::System.Data.DataColumn("otrosdetalles", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnotrosdetalles);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2557,10 +2572,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string hemograma {
+            public int hemograma {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.hemogramaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.hemogramaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'hemograma\' de la tabla \'dtMovimientoInventario\' es DBNull" +
@@ -2574,10 +2589,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string glicemia {
+            public int glicemia {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.glicemiaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.glicemiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'glicemia\' de la tabla \'dtMovimientoInventario\' es DBNull." +
@@ -2591,10 +2606,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string urea {
+            public int urea {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.ureaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.ureaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'urea\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2607,10 +2622,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string creatinina {
+            public int creatinina {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.creatininaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.creatininaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'creatinina\' de la tabla \'dtMovimientoInventario\' es DBNul" +
@@ -2624,10 +2639,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string tgo {
+            public int tgo {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.tgoColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.tgoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'tgo\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2640,10 +2655,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string tg {
+            public int tg {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.tgColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.tgColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'tg\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2656,10 +2671,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string vdrl {
+            public int vdrl {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.vdrlColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.vdrlColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'vdrl\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2672,10 +2687,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string hiv {
+            public int hiv {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.hivColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.hivColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'hiv\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2688,10 +2703,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string hbsag {
+            public int hbsag {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.hbsagColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.hbsagColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'hbsag\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2704,10 +2719,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string hcv {
+            public int hcv {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.hcvColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.hcvColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'hcv\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2720,10 +2735,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string tipificacion {
+            public int tipificacion {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.tipificacionColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.tipificacionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'tipificacion\' de la tabla \'dtMovimientoInventario\' es DBN" +
@@ -2737,10 +2752,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string psa {
+            public int psa {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.psaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.psaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'psa\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2753,10 +2768,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string falcemia {
+            public int falcemia {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.falcemiaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.falcemiaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'falcemia\' de la tabla \'dtMovimientoInventario\' es DBNull." +
@@ -2770,10 +2785,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string electrolitos_sericos {
+            public int electrolitos_sericos {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.electrolitos_sericosColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.electrolitos_sericosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'electrolitos_sericos\' de la tabla \'dtMovimientoInventario" +
@@ -2787,10 +2802,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string proteinas_totales {
+            public int proteinas_totales {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.proteinas_totalesColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.proteinas_totalesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'proteinas_totales\' de la tabla \'dtMovimientoInventario\' e" +
@@ -2804,10 +2819,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string albumina {
+            public int albumina {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.albuminaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.albuminaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'albumina\' de la tabla \'dtMovimientoInventario\' es DBNull." +
@@ -2821,10 +2836,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string pt {
+            public int pt {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.ptColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.ptColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'pt\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2837,10 +2852,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ptt {
+            public int ptt {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.pttColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.pttColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'ptt\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2853,10 +2868,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string exorina {
+            public int exorina {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.exorinaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.exorinaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'exorina\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2869,10 +2884,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string colesterol {
+            public int colesterol {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.colesterolColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.colesterolColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'colesterol\' de la tabla \'dtMovimientoInventario\' es DBNul" +
@@ -2886,10 +2901,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string trigliceridos {
+            public int trigliceridos {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.trigliceridosColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.trigliceridosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'trigliceridos\' de la tabla \'dtMovimientoInventario\' es DB" +
@@ -2903,10 +2918,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string colesterolhdl {
+            public int colesterolhdl {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.colesterolhdlColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.colesterolhdlColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'colesterolhdl\' de la tabla \'dtMovimientoInventario\' es DB" +
@@ -2920,10 +2935,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string acidourico {
+            public int acidourico {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.acidouricoColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.acidouricoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'acidourico\' de la tabla \'dtMovimientoInventario\' es DBNul" +
@@ -2937,10 +2952,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string amilasa {
+            public int amilasa {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.amilasaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.amilasaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'amilasa\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -2953,10 +2968,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string bilirrubina {
+            public int bilirrubina {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.bilirrubinaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.bilirrubinaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'bilirrubina\' de la tabla \'dtMovimientoInventario\' es DBNu" +
@@ -2970,10 +2985,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string chiamycia {
+            public int chiamycia {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.chiamyciaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.chiamyciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'chiamycia\' de la tabla \'dtMovimientoInventario\' es DBNull" +
@@ -2987,10 +3002,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cultivosemen {
+            public int cultivosemen {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.cultivosemenColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.cultivosemenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'cultivosemen\' de la tabla \'dtMovimientoInventario\' es DBN" +
@@ -3004,10 +3019,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cultivosecrecionuretral {
+            public int cultivosecrecionuretral {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.cultivosecrecionuretralColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.cultivosecrecionuretralColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'cultivosecrecionuretral\' de la tabla \'dtMovimientoInventa" +
@@ -3021,10 +3036,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string urocultivo {
+            public int urocultivo {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.urocultivoColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.urocultivoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'urocultivo\' de la tabla \'dtMovimientoInventario\' es DBNul" +
@@ -3038,10 +3053,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string falcalina {
+            public int falcalina {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.falcalinaColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.falcalinaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'falcalina\' de la tabla \'dtMovimientoInventario\' es DBNull" +
@@ -3055,10 +3070,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string aso {
+            public int aso {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.asoColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.asoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'aso\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -3071,10 +3086,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string pcr {
+            public int pcr {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.pcrColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.pcrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'pcr\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -3087,10 +3102,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string fr {
+            public int fr {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.frColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.frColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'fr\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -3103,10 +3118,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string hcg {
+            public int hcg {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.hcgColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.hcgColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'hcg\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -3119,10 +3134,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string coombdirect {
+            public int coombdirect {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.coombdirectColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.coombdirectColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'coombdirect\' de la tabla \'dtMovimientoInventario\' es DBNu" +
@@ -3136,10 +3151,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string coomindirect {
+            public int coomindirect {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.coomindirectColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.coomindirectColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'coomindirect\' de la tabla \'dtMovimientoInventario\' es DBN" +
@@ -3153,10 +3168,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string variantedu {
+            public int variantedu {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.varianteduColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.varianteduColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'variantedu\' de la tabla \'dtMovimientoInventario\' es DBNul" +
@@ -3170,10 +3185,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string eritrosedimentacion {
+            public int eritrosedimentacion {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.eritrosedimentacionColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.eritrosedimentacionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'eritrosedimentacion\' de la tabla \'dtMovimientoInventario\'" +
@@ -3187,10 +3202,10 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string otros {
+            public int otros {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMovimientoInventario.otrosColumn]));
+                        return ((int)(this[this.tabledtMovimientoInventario.otrosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'otros\' de la tabla \'dtMovimientoInventario\' es DBNull.", e);
@@ -3198,6 +3213,23 @@ namespace hospitalcentral {
                 }
                 set {
                     this[this.tabledtMovimientoInventario.otrosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string otrosdetalles {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMovimientoInventario.otrosdetallesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'otrosdetalles\' de la tabla \'dtMovimientoInventario\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMovimientoInventario.otrosdetallesColumn] = value;
                 }
             }
             
@@ -3811,6 +3843,18 @@ namespace hospitalcentral {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetotrosNull() {
                 this[this.tabledtMovimientoInventario.otrosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsotrosdetallesNull() {
+                return this.IsNull(this.tabledtMovimientoInventario.otrosdetallesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetotrosdetallesNull() {
+                this[this.tabledtMovimientoInventario.otrosdetallesColumn] = global::System.Convert.DBNull;
             }
         }
         

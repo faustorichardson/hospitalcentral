@@ -83,6 +83,7 @@ namespace hospitalcentral
             this.txtNSS.Clear();
             this.txtAntecedentes.Clear();
             this.cmbRango.Refresh();
+            this.rbHombre.Checked = true;
         }
 
         private void Botones()
@@ -106,6 +107,9 @@ namespace hospitalcentral
                     this.cmbRango.Enabled = false;
                     this.txtNSS.Enabled = false;
                     this.txtAntecedentes.Enabled = false;
+                    this.dtFecha.Enabled = false;
+                    this.rbHombre.Enabled = false;
+                    this.rbMujer.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -125,6 +129,9 @@ namespace hospitalcentral
                     this.cmbRango.Enabled = true;
                     this.txtNSS.Enabled = true;
                     this.txtAntecedentes.Enabled = true;
+                    this.dtFecha.Enabled = true;
+                    this.rbHombre.Enabled = true;
+                    this.rbMujer.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -144,6 +151,9 @@ namespace hospitalcentral
                     this.cmbRango.Enabled = false;
                     this.txtNSS.Enabled = false;
                     this.txtAntecedentes.Enabled = false;
+                    this.dtFecha.Enabled = false;
+                    this.rbHombre.Enabled = false;
+                    this.rbMujer.Enabled = false;
                     break;
 
                 case "Editar":
@@ -163,6 +173,9 @@ namespace hospitalcentral
                     this.cmbRango.Enabled = true;
                     this.txtNSS.Enabled = true;
                     this.txtAntecedentes.Enabled = true;
+                    this.dtFecha.Enabled = true;
+                    this.rbHombre.Enabled = true;
+                    this.rbMujer.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -182,6 +195,9 @@ namespace hospitalcentral
                     this.cmbRango.Enabled = false;
                     this.txtNSS.Enabled = false;
                     this.txtAntecedentes.Enabled = false;
+                    this.dtFecha.Enabled = false;
+                    this.rbHombre.Enabled = false;
+                    this.rbMujer.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -264,14 +280,23 @@ namespace hospitalcentral
                         MySqlCommand myCommand = MyConexion.CreateCommand();
 
                         // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "INSERT INTO pacientes(record, cedula, nombre, rango, nss, antecedentes)" +
-                            " values(@record, @cedula, @nombre, @rango, @nss, @antecedentes)";
+                        myCommand.CommandText = "INSERT INTO pacientes(record, cedula, nombre, rango, nss, antecedentes, fecha_nacimiento, sexo)" +
+                            " values(@record, @cedula, @nombre, @rango, @nss, @antecedentes, @fecha, @sexo)";
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
                         myCommand.Parameters.AddWithValue("@cedula", txtCedula.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtNombre.Text);
                         myCommand.Parameters.AddWithValue("@rango", cmbRango.SelectedValue);
                         myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
                         myCommand.Parameters.AddWithValue("@antecedentes", txtAntecedentes.Text);
+                        myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                        if (rbHombre.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@sexo", "M");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@sexo", "F");
+                        }
 
                         // Step 4 - Opening the connection
                         MyConexion.Open();
@@ -308,7 +333,8 @@ namespace hospitalcentral
 
                         // Step 3 - Comando a ejecutar
                         myCommand.CommandText = "UPDATE pacientes SET record = @record, cedula = @cedula, " +
-                            "nombre = @nombre, rango = @rango, nss = @nss, antecedentes = @antecedentes "+ 
+                            "nombre = @nombre, rango = @rango, nss = @nss, antecedentes = @antecedentes, fecha = @fecha, " +
+                            " sexo = @sexo "+
                             " WHERE idpacientes = " + txtID.Text + "";
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
                         myCommand.Parameters.AddWithValue("@cedula", txtCedula.Text);
@@ -316,7 +342,15 @@ namespace hospitalcentral
                         myCommand.Parameters.AddWithValue("@rango", cmbRango.SelectedValue);
                         myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
                         myCommand.Parameters.AddWithValue("@antecedentes", txtAntecedentes.Text);
-
+                        myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                        if (rbHombre.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@sexo", "M");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@sexo", "F");
+                        }
                         // Step 4 - Opening the connection
                         MyConexion.Open();
 
@@ -395,6 +429,16 @@ namespace hospitalcentral
                             txtRecord.Text = MyReader["record"].ToString();
                             txtNSS.Text = MyReader["nss"].ToString();
                             txtAntecedentes.Text = MyReader["antecedentes"].ToString();
+                            dtFecha.Value = Convert.ToDateTime(MyReader["fecha"].ToString());
+                            string sexo = MyReader["sexo"].ToString();
+                            if (sexo == "M")
+                            {
+                                rbHombre.Checked = true;
+                            }
+                            else
+                            {
+                                rbHombre.Checked = true;
+                            }
                         }
                         this.cModo = "Buscar";
                         this.Botones();
@@ -451,7 +495,7 @@ namespace hospitalcentral
                 sbQuery.Clear();
                 sbQuery.Append("SELECT ");
                 sbQuery.Append(" pacientes.idpacientes, pacientes.record, pacientes.cedula,");
-                sbQuery.Append(" pacientes.nombre, rango.rango, pacientes.nss, pacientes.antecedentes");
+                sbQuery.Append(" pacientes.nombre, rango.rango, pacientes.nss, pacientes.antecedentes, pacientes.fecha_nacimiento ");
                 sbQuery.Append(" FROM pacientes ");
                 sbQuery.Append(" INNER JOIN rango ON rango.idrango = pacientes.rango");
                 sbQuery.Append(cWhere);

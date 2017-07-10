@@ -433,7 +433,131 @@ namespace hospitalcentral
 
         private void buttonItem2_Click_4(object sender, EventArgs e)
         {
+            //Conexion a la base de datos
+            MySqlConnection myConexion = new MySqlConnection(clsConexion.ConectionString);
+            // Creando el command que ejecutare
+            MySqlCommand myCommand = new MySqlCommand();
+            // Creando el Data Adapter
+            MySqlDataAdapter myAdapter = new MySqlDataAdapter();
+            // Creando el String Builder
+            StringBuilder sbQuery = new StringBuilder();
+            // Otras variables del entorno
+            string cWhere = " WHERE 1 = 1";
+            string cUsuario = "";
+            string cTitulo = "";
 
+            try
+            {
+                // Abro conexion
+                myConexion.Open();
+                // Creo comando
+                myCommand = myConexion.CreateCommand();
+                // Adhiero el comando a la conexion
+                myCommand.Connection = myConexion;
+                // Filtros de la busqueda
+                //string fechadesde = fechaDesde.Value.ToString("yyyy-MM-dd");
+                //string fechahasta = fechaHasta.Value.ToString("yyyy-MM-dd");
+                //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
+                sbQuery.Clear();
+                sbQuery.Append("SELECT ");
+                sbQuery.Append(" productos.idproducto, productos.producto, productos.referencia,");
+                sbQuery.Append(" productos.descripcion, ");
+                sbQuery.Append(" productos.reorden, categorias.categoria, inventario.cantidad");
+                sbQuery.Append(" FROM productos ");
+                sbQuery.Append(" INNER JOIN categorias ON categorias.idcategoria = productos.idcategoria ");
+                sbQuery.Append(" INNER JOIN inventario ON inventario.idproducto = productos.idproducto ");
+                sbQuery.Append(cWhere);
+                sbQuery.Append(" ORDER BY productos.producto ASC ");
+
+                // Paso los valores de sbQuery al CommandText
+                myCommand.CommandText = sbQuery.ToString();
+                // Creo el objeto Data Adapter y ejecuto el command en el
+                myAdapter = new MySqlDataAdapter(myCommand);
+                // Creo el objeto Data Table
+                DataTable dtProductos = new DataTable();
+                // Lleno el data adapter
+                myAdapter.Fill(dtProductos);
+                // Cierro el objeto conexion
+                myConexion.Close();
+
+                // Verifico cantidad de datos encontrados
+                int nRegistro = dtProductos.Rows.Count;
+                if (nRegistro == 0)
+                {
+                    MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion Medica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    //1ero.HACEMOS LA COLECCION DE PARAMETROS
+                    //los campos de parametros contiene un objeto para cada campo de parametro en el informe
+                    ParameterFields oParametrosCR = new ParameterFields();
+                    //Proporciona propiedades para la recuperacion y configuracion del tipo de los parametros
+                    ParameterValues oParametrosValuesCR = new ParameterValues();
+
+                    //2do.CREAMOS LOS PARAMETROS
+                    ParameterField oUsuario = new ParameterField();
+                    //parametervaluetype especifica el TIPO de valor de parametro
+                    //ParameterValueKind especifica el tipo de valor de parametro en la PARAMETERVALUETYPE de la Clase PARAMETERFIELD
+                    oUsuario.ParameterValueType = ParameterValueKind.StringParameter;
+
+                    //3ero.VALORES PARA LOS PARAMETROS
+                    //ParameterDiscreteValue proporciona propiedades para la recuperacion y configuracion de 
+                    //parametros de valores discretos
+                    ParameterDiscreteValue oUsuarioDValue = new ParameterDiscreteValue();
+                    oUsuarioDValue.Value = cUsuario;
+
+                    //4to. AGREGAMOS LOS VALORES A LOS PARAMETROS
+                    oUsuario.CurrentValues.Add(oUsuarioDValue);
+
+
+                    //5to. AGREGAMOS LOS PARAMETROS A LA COLECCION 
+                    oParametrosCR.Add(oUsuario);
+
+                    //nombre del parametro en CR (Crystal Reports)
+                    oParametrosCR[0].Name = "cUsuario";
+
+                    //nombre del TITULO DEL INFORME
+                    cTitulo = "LISTADO DE EXISTENCIA DE PRODUCTOS LABORATORIO";
+
+                    //6to Instanciamos nuestro REPORTE
+                    //Reportes.ListadoDoctores oListado = new Reportes.ListadoDoctores();
+                    rptProductos orptProductos = new rptProductos();
+
+                    //pasamos el nombre del TITULO del Listado
+                    //SumaryInfo es un objeto que se utiliza para leer,crear y actualizar las propiedades del reporte
+                    // oListado.SummaryInfo.ReportTitle = cTitulo;
+                    orptProductos.SummaryInfo.ReportTitle = cTitulo;
+
+                    //7mo. instanciamos nuestro el FORMULARIO donde esta nuestro ReportViewer
+                    frmPrinter ofrmPrinter = new frmPrinter(dtProductos, orptProductos, cTitulo);
+
+                    //ParameterFieldInfo Obtiene o establece la colección de campos de parámetros.
+                    ofrmPrinter.CrystalReportViewer1.ParameterFieldInfo = oParametrosCR;
+                    ofrmPrinter.ShowDialog();
+                }
+
+
+            }
+            catch (Exception myEx)
+            {
+                MessageBox.Show("Error : " + myEx.Message, "Mostrando Reporte", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                //ExceptionLog.LogError(myEx, false);
+                return;
+            }
+        }
+
+        private void buttonItem5_Click_2(object sender, EventArgs e)
+        {
+            frmPrintExamenesMedicos ofrmPrintExamenesMedicos = new frmPrintExamenesMedicos();
+            ofrmPrintExamenesMedicos.ShowDialog();
+        }
+
+        private void buttonItem6_Click(object sender, EventArgs e)
+        {
+            frmHistoriaClinica ofrmHistoriaClinica = new frmHistoriaClinica();
+            ofrmHistoriaClinica.ShowDialog();
         }
 
        

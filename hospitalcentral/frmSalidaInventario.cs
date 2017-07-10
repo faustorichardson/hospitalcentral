@@ -230,6 +230,7 @@ namespace hospitalcentral
                     this.chkTestCoombIndirect.Enabled = false;
                     this.chkVarianteDu.Enabled = false;
                     this.chkEritroSedimentacion.Enabled = false;
+                    this.chkOtros.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -295,7 +296,8 @@ namespace hospitalcentral
                     this.chkTestCoombDirect.Enabled = true;
                     this.chkTestCoombIndirect.Enabled = true;
                     this.chkVarianteDu.Enabled = true;
-                    this.chkEritroSedimentacion.Enabled = true;                    
+                    this.chkEritroSedimentacion.Enabled = true;
+                    this.chkOtros.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -361,7 +363,8 @@ namespace hospitalcentral
                     this.chkTestCoombDirect.Enabled = false;
                     this.chkTestCoombIndirect.Enabled = false;
                     this.chkVarianteDu.Enabled = false;
-                    this.chkEritroSedimentacion.Enabled = false;                    
+                    this.chkEritroSedimentacion.Enabled = false;
+                    this.chkOtros.Enabled = false;
                     break;
 
                 case "Editar":
@@ -447,6 +450,47 @@ namespace hospitalcentral
             monto = 0;
             countFilas = 0;
             this.txtOtros.Clear();
+            this.txtOtros.Enabled = false;
+            this.txtNSS.Clear();
+            //
+            this.chkHemograma.Checked = false;
+            this.chkGlicemia.Checked = false;
+            this.chkUrea.Checked = false;
+            this.chkCreatinina.Checked = false;
+            this.chkTgo.Checked = false;
+            this.chkTg.Checked = false;
+            this.chkVdrl.Checked = false;
+            this.chkHiv.Checked = false;
+            this.chkHbsAg.Checked = false;
+            this.chkHcv.Checked = false;
+            this.chkTipificacion.Checked = false;
+            this.chkPsa.Checked = false;
+            this.chkFalcemia.Checked = false;
+            this.chkElectrolitos.Checked = false;
+            this.chkProteinasTotales.Checked = false;
+            this.chkAlbumina.Checked = false;
+            this.chkPt.Checked = false;
+            this.chkPtt.Checked = false;
+            this.chkExOrina.Checked = false;
+            this.chkColesterol.Checked = false;
+            this.chkTrigliceridos.Checked = false;
+            this.chkColesterolHdl.Checked = false;
+            this.chkAcidoUrico.Checked = false;
+            this.chkAmilasa.Checked = false;
+            this.chkBilirrubina.Checked = false;
+            this.chkChiamycia.Checked = false;
+            this.chkSemen.Checked = false;
+            this.chkSecresionUretral.Checked = false;
+            this.chkUrocultivo.Checked = false;
+            this.chkFalcalina.Checked = false;
+            this.chkAso.Checked = false;
+            this.chkPcr.Checked = false;
+            this.chkFr.Checked = false;
+            this.chkHcg.Checked = false;
+            this.chkTestCoombDirect.Checked = false;
+            this.chkTestCoombIndirect.Checked = false;
+            this.chkVarianteDu.Checked = false;
+            this.chkEritroSedimentacion.Checked = false;
         }
 
         // Funcion que convierte un valor decimal a texto para graficarlo en un textbox
@@ -500,12 +544,12 @@ namespace hospitalcentral
                             " hemograma, glicemia, urea, creatinina, tgo, tg, vdrl, hiv, hbsag, hcv, tipificacion, psa, falcemia,"+
                             " electrolitos_sericos, proteinas_totales, albumina, pt, ptt, exorina, colesterol, trigliceridos, "+
                             " colesterolhdl, acidourico, amilasa, bilirrubina, chiamycia, cultivosemen, cultivosecrecionuretral, "+
-                            " urocultivo, falcalina, aso, pcr, fr, hcg, coombdirect, coombindirect, variantedu, eritrosedimentacion, otros, fecharegistrada)" +
+                            " urocultivo, falcalina, aso, pcr, fr, hcg, coombdirect, coombindirect, variantedu, eritrosedimentacion, otros, otrosdetalles, fecharegistrada)" +
                                 " values(@idpaciente, @fecha, @nss, @tipoaccion, "+
                             " @hemograma, @glicemia, @urea, @creatinina, @tgo, @tg, @vdrl, @hiv, @hbsag, @hcv, @tipificacion, @psa, @falcemia,"+
                             " @electrolitos_sericos, @proteinas_totales, @albumina, @pt, @ptt, @exorina, @colesterol, @trigliceridos, "+
                             " @colesterolhdl, @acidourico, @amilasa, @bilirrubina, @chiamycia, @cultivosemen, @cultivosecrecionuretral,"+
-                            " @urocultivo, @falcalina, @aso, @pcr, @fr, @hcg, @coombdirect, @coombindirect, @variantedu, @eritrosedimentacion, @otros, NOW())";
+                            " @urocultivo, @falcalina, @aso, @pcr, @fr, @hcg, @coombdirect, @coombindirect, @variantedu, @eritrosedimentacion, @otros, @otrosdetalles, NOW())";
                             
                             myCommand.Parameters.AddWithValue("@idpaciente", txtIDCliente.Text);
                             myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
@@ -860,7 +904,16 @@ namespace hospitalcentral
                                 myCommand.Parameters.AddWithValue("@eritrosedimentacion", "0");
                             }
 
-                            myCommand.Parameters.AddWithValue("@otros", txtOtros.Text);
+                            if (chkOtros.Checked == true)
+                            {
+                                myCommand.Parameters.AddWithValue("@otros", "1");
+                            }
+                            else
+                            {
+                                myCommand.Parameters.AddWithValue("@otros", "0");
+                            }
+
+                            myCommand.Parameters.AddWithValue("@otrosdetalles", txtOtros.Text);
 
                             // Step 4 - Opening the connection
                             MyConexion.Open();
@@ -1681,6 +1734,18 @@ namespace hospitalcentral
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkOtros_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (chkOtros.Checked == true)
+            {
+                txtOtros.Enabled = true;
+            }
+            else
+            {
+                txtOtros.Enabled = false;
+            }
         }
 
         //private void chkITBI_Click(object sender, EventArgs e)

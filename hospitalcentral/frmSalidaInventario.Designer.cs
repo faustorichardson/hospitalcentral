@@ -66,6 +66,8 @@
             this.rbSenasa = new System.Windows.Forms.RadioButton();
             this.rbAccionCivica = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtOtros = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.chkEritroSedimentacion = new System.Windows.Forms.CheckBox();
             this.chkTestCoombIndirect = new System.Windows.Forms.CheckBox();
             this.chkTestCoombDirect = new System.Windows.Forms.CheckBox();
@@ -104,8 +106,7 @@
             this.chkUrea = new System.Windows.Forms.CheckBox();
             this.chkGlicemia = new System.Windows.Forms.CheckBox();
             this.chkHemograma = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtOtros = new System.Windows.Forms.RichTextBox();
+            this.chkOtros = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradaInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -519,6 +520,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkOtros);
             this.groupBox1.Controls.Add(this.txtOtros);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.chkEritroSedimentacion);
@@ -568,10 +570,28 @@
             this.groupBox1.Text = "Examen Medico";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtOtros
+            // 
+            this.txtOtros.Location = new System.Drawing.Point(71, 211);
+            this.txtOtros.Name = "txtOtros";
+            this.txtOtros.Size = new System.Drawing.Size(684, 43);
+            this.txtOtros.TabIndex = 133;
+            this.txtOtros.Text = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 211);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 15);
+            this.label8.TabIndex = 132;
+            this.label8.Text = "OTROS:";
+            // 
             // chkEritroSedimentacion
             // 
             this.chkEritroSedimentacion.AutoSize = true;
-            this.chkEritroSedimentacion.Location = new System.Drawing.Point(319, 183);
+            this.chkEritroSedimentacion.Location = new System.Drawing.Point(496, 183);
             this.chkEritroSedimentacion.Name = "chkEritroSedimentacion";
             this.chkEritroSedimentacion.Size = new System.Drawing.Size(143, 17);
             this.chkEritroSedimentacion.TabIndex = 37;
@@ -581,7 +601,7 @@
             // chkTestCoombIndirect
             // 
             this.chkTestCoombIndirect.AutoSize = true;
-            this.chkTestCoombIndirect.Location = new System.Drawing.Point(160, 183);
+            this.chkTestCoombIndirect.Location = new System.Drawing.Point(288, 183);
             this.chkTestCoombIndirect.Name = "chkTestCoombIndirect";
             this.chkTestCoombIndirect.Size = new System.Drawing.Size(158, 17);
             this.chkTestCoombIndirect.TabIndex = 36;
@@ -591,7 +611,7 @@
             // chkTestCoombDirect
             // 
             this.chkTestCoombDirect.AutoSize = true;
-            this.chkTestCoombDirect.Location = new System.Drawing.Point(7, 183);
+            this.chkTestCoombDirect.Location = new System.Drawing.Point(95, 183);
             this.chkTestCoombDirect.Name = "chkTestCoombDirect";
             this.chkTestCoombDirect.Size = new System.Drawing.Size(149, 17);
             this.chkTestCoombDirect.TabIndex = 35;
@@ -948,23 +968,16 @@
             this.chkHemograma.Text = "Hemograma";
             this.chkHemograma.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // chkOtros
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 211);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 15);
-            this.label8.TabIndex = 132;
-            this.label8.Text = "OTROS:";
-            // 
-            // txtOtros
-            // 
-            this.txtOtros.Location = new System.Drawing.Point(71, 211);
-            this.txtOtros.Name = "txtOtros";
-            this.txtOtros.Size = new System.Drawing.Size(684, 43);
-            this.txtOtros.TabIndex = 133;
-            this.txtOtros.Text = "";
+            this.chkOtros.AutoSize = true;
+            this.chkOtros.Location = new System.Drawing.Point(7, 183);
+            this.chkOtros.Name = "chkOtros";
+            this.chkOtros.Size = new System.Drawing.Size(56, 17);
+            this.chkOtros.TabIndex = 135;
+            this.chkOtros.Text = "Otros";
+            this.chkOtros.UseVisualStyleBackColor = true;
+            this.chkOtros.CheckStateChanged += new System.EventHandler(this.chkOtros_CheckStateChanged);
             // 
             // frmSalidaInventario
             // 
@@ -1116,5 +1129,6 @@
         private System.Windows.Forms.CheckBox chkTestCoombDirect;
         private System.Windows.Forms.RichTextBox txtOtros;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkOtros;
     }
 }

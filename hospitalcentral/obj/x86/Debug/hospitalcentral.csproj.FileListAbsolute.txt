@@ -68,3 +68,5 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintMaterialLaboratorio.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.csprojResolveAssemblyReference.cache
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintInventarioEstadisticas.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintExamenesMedicos.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmHistoriaClinica.resources

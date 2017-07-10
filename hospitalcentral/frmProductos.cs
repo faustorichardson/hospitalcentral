@@ -608,7 +608,7 @@ namespace hospitalcentral
                     oParametrosCR[0].Name = "cUsuario";
 
                     //nombre del TITULO DEL INFORME
-                    cTitulo = "LISTADO DE PRODUCTOS";
+                    cTitulo = "LISTADO DE EXISTENCIA DE PRODUCTOS LABORATORIO";
 
                     //6to Instanciamos nuestro REPORTE
                     //Reportes.ListadoDoctores oListado = new Reportes.ListadoDoctores();

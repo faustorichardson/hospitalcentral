@@ -44,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbRango = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNSS = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -54,6 +53,11 @@
             this.txtAntecedentes = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
+            this.rbHombre = new System.Windows.Forms.RadioButton();
+            this.rbMujer = new System.Windows.Forms.RadioButton();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +96,7 @@
             this.groupBox4.Controls.Add(this.btnEditar);
             this.groupBox4.Controls.Add(this.btnGrabar);
             this.groupBox4.Controls.Add(this.btnNuevo);
-            this.groupBox4.Location = new System.Drawing.Point(9, 352);
+            this.groupBox4.Location = new System.Drawing.Point(9, 403);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(795, 65);
             this.groupBox4.TabIndex = 146;
@@ -213,7 +217,7 @@
             // txtRecord
             // 
             this.txtRecord.Enabled = false;
-            this.txtRecord.Location = new System.Drawing.Point(237, 176);
+            this.txtRecord.Location = new System.Drawing.Point(237, 218);
             this.txtRecord.MaxLength = 11;
             this.txtRecord.Name = "txtRecord";
             this.txtRecord.Size = new System.Drawing.Size(122, 20);
@@ -224,7 +228,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 180);
+            this.label1.Location = new System.Drawing.Point(160, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 150;
@@ -248,20 +252,10 @@
             this.cmbRango.Size = new System.Drawing.Size(216, 21);
             this.cmbRango.TabIndex = 154;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(605, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 158;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtNSS
             // 
             this.txtNSS.Enabled = false;
-            this.txtNSS.Location = new System.Drawing.Point(236, 208);
+            this.txtNSS.Location = new System.Drawing.Point(236, 250);
             this.txtNSS.MaxLength = 25;
             this.txtNSS.Name = "txtNSS";
             this.txtNSS.Size = new System.Drawing.Size(166, 20);
@@ -271,7 +265,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(87, 210);
+            this.label5.Location = new System.Drawing.Point(87, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 15);
             this.label5.TabIndex = 160;
@@ -316,7 +310,7 @@
             // 
             // txtAntecedentes
             // 
-            this.txtAntecedentes.Location = new System.Drawing.Point(235, 244);
+            this.txtAntecedentes.Location = new System.Drawing.Point(235, 281);
             this.txtAntecedentes.Name = "txtAntecedentes";
             this.txtAntecedentes.Size = new System.Drawing.Size(557, 96);
             this.txtAntecedentes.TabIndex = 165;
@@ -326,7 +320,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 245);
+            this.label7.Location = new System.Drawing.Point(15, 282);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(214, 15);
             this.label7.TabIndex = 166;
@@ -336,17 +330,72 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(36, 260);
+            this.label8.Location = new System.Drawing.Point(36, 297);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(193, 15);
             this.label8.TabIndex = 167;
             this.label8.Text = "Y MEDICAMENTOS QUE USA";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(171, 184);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 15);
+            this.label9.TabIndex = 168;
+            this.label9.Text = "FECHA:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(605, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 187);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 158;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.Location = new System.Drawing.Point(237, 181);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(216, 20);
+            this.dtFecha.TabIndex = 169;
+            // 
+            // rbHombre
+            // 
+            this.rbHombre.AutoSize = true;
+            this.rbHombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbHombre.Location = new System.Drawing.Point(497, 145);
+            this.rbHombre.Name = "rbHombre";
+            this.rbHombre.Size = new System.Drawing.Size(97, 17);
+            this.rbHombre.TabIndex = 170;
+            this.rbHombre.TabStop = true;
+            this.rbHombre.Text = "MASCULINO";
+            this.rbHombre.UseVisualStyleBackColor = true;
+            // 
+            // rbMujer
+            // 
+            this.rbMujer.AutoSize = true;
+            this.rbMujer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMujer.Location = new System.Drawing.Point(497, 175);
+            this.rbMujer.Name = "rbMujer";
+            this.rbMujer.Size = new System.Drawing.Size(89, 17);
+            this.rbMujer.TabIndex = 171;
+            this.rbMujer.TabStop = true;
+            this.rbMujer.Text = "FEMENINO";
+            this.rbMujer.UseVisualStyleBackColor = true;
+            // 
             // frmPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 427);
+            this.ClientSize = new System.Drawing.Size(812, 478);
+            this.Controls.Add(this.rbMujer);
+            this.Controls.Add(this.rbHombre);
+            this.Controls.Add(this.dtFecha);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtAntecedentes);
@@ -385,6 +434,10 @@
             this.Controls.SetChildIndex(this.txtAntecedentes, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.dtFecha, 0);
+            this.Controls.SetChildIndex(this.rbHombre, 0);
+            this.Controls.SetChildIndex(this.rbMujer, 0);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -419,5 +472,9 @@
         private System.Windows.Forms.RichTextBox txtAntecedentes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dtFecha;
+        private System.Windows.Forms.RadioButton rbHombre;
+        private System.Windows.Forms.RadioButton rbMujer;
     }
 }
