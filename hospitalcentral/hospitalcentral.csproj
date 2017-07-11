@@ -287,6 +287,18 @@
     <Compile Include="frmPrintExamenesMedicos.Designer.cs">
       <DependentUpon>frmPrintExamenesMedicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrintHistoriaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintHistoriaClinica.Designer.cs">
+      <DependentUpon>frmPrintHistoriaClinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintHistoriaClinicaEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintHistoriaClinicaEstadisticas.Designer.cs">
+      <DependentUpon>frmPrintHistoriaClinicaEstadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrintInventarioEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +457,12 @@
       <DependentUpon>rptEstadisticasCitasMedicasPorEspecialidad.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptEstadisticasHistoriaMedica.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEstadisticasHistoriaMedica.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptEstadisticasInventario.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -485,6 +503,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptFacturaDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptListadoHistoriaClinica.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListadoHistoriaClinica.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptPacientes.cs">
@@ -583,6 +607,12 @@
     <EmbeddedResource Include="frmPrintExamenesMedicos.resx">
       <DependentUpon>frmPrintExamenesMedicos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintHistoriaClinica.resx">
+      <DependentUpon>frmPrintHistoriaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintHistoriaClinicaEstadisticas.resx">
+      <DependentUpon>frmPrintHistoriaClinicaEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrintInventarioEstadisticas.resx">
       <DependentUpon>frmPrintInventarioEstadisticas.cs</DependentUpon>
     </EmbeddedResource>
@@ -680,6 +710,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptEstadisticasCitasMedicasPorEspecialidad.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptEstadisticasHistoriaMedica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEstadisticasHistoriaMedica.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptEstadisticasInventario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptEstadisticasInventario.cs</LastGenOutput>
@@ -707,6 +741,10 @@
     <EmbeddedResource Include="rptFacturaDetalle.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptFacturaDetalle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptListadoHistoriaClinica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListadoHistoriaClinica.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptPacientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

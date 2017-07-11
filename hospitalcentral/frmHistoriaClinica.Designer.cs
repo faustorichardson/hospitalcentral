@@ -141,6 +141,9 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.rbAtencionesPreviasSi = new System.Windows.Forms.RadioButton();
             this.rbAtencionesPreviasNo = new System.Windows.Forms.RadioButton();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.rbZonaPM = new System.Windows.Forms.RadioButton();
+            this.rbZonaAM = new System.Windows.Forms.RadioButton();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -148,6 +151,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTituloForm
@@ -1001,6 +1005,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(103, 31);
             this.txtID.TabIndex = 252;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // label39
             // 
@@ -1336,11 +1341,46 @@
             this.rbAtencionesPreviasNo.Text = "NO";
             this.rbAtencionesPreviasNo.UseVisualStyleBackColor = true;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.rbZonaPM);
+            this.groupBox8.Controls.Add(this.rbZonaAM);
+            this.groupBox8.Location = new System.Drawing.Point(479, 29);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(96, 35);
+            this.groupBox8.TabIndex = 262;
+            this.groupBox8.TabStop = false;
+            // 
+            // rbZonaPM
+            // 
+            this.rbZonaPM.AutoSize = true;
+            this.rbZonaPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbZonaPM.Location = new System.Drawing.Point(51, 11);
+            this.rbZonaPM.Name = "rbZonaPM";
+            this.rbZonaPM.Size = new System.Drawing.Size(43, 17);
+            this.rbZonaPM.TabIndex = 1;
+            this.rbZonaPM.Text = "PM";
+            this.rbZonaPM.UseVisualStyleBackColor = true;
+            // 
+            // rbZonaAM
+            // 
+            this.rbZonaAM.AutoSize = true;
+            this.rbZonaAM.Checked = true;
+            this.rbZonaAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbZonaAM.Location = new System.Drawing.Point(7, 11);
+            this.rbZonaAM.Name = "rbZonaAM";
+            this.rbZonaAM.Size = new System.Drawing.Size(43, 17);
+            this.rbZonaAM.TabIndex = 0;
+            this.rbZonaAM.TabStop = true;
+            this.rbZonaAM.Text = "AM";
+            this.rbZonaAM.UseVisualStyleBackColor = true;
+            // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 955);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.btnBuscarNSS);
@@ -1515,6 +1555,7 @@
             this.Controls.SetChildIndex(this.groupBox6, 0);
             this.Controls.SetChildIndex(this.lblTituloForm, 0);
             this.Controls.SetChildIndex(this.groupBox7, 0);
+            this.Controls.SetChildIndex(this.groupBox8, 0);
             this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1528,6 +1569,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1647,5 +1690,8 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.RadioButton rbAtencionesPreviasSi;
         private System.Windows.Forms.RadioButton rbAtencionesPreviasNo;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.RadioButton rbZonaPM;
+        private System.Windows.Forms.RadioButton rbZonaAM;
     }
 }

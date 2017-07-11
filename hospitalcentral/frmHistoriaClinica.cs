@@ -80,6 +80,13 @@ namespace hospitalcentral
             chkEmergenciaOtros.Checked = false;
             chkEmergenciaReanimacion.Checked = false;
             chkEmergenciaSutura.Checked = false;
+            rbOrigenEnfGral.Checked = true;
+            rbOrigenAccidenteTrabajo.Checked = false;
+            rbOrigenAccidenteTransito.Checked = false;
+            rbOrigenMaternidad.Checked = false;
+            rbOrigenOtros.Checked = false;
+            rbZonaAM.Checked = true;
+            txtOrigenOtros.Clear();
         }
 
         private void ProximoCodigo()
@@ -180,6 +187,8 @@ namespace hospitalcentral
                     rbOrigenAccidenteTransito.Enabled = false;
                     rbOrigenOtros.Enabled = false;
                     txtOrigenOtros.Enabled = false;
+                    rbZonaAM.Enabled = false;
+                    rbZonaPM.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -245,6 +254,8 @@ namespace hospitalcentral
                     rbOrigenAccidenteTransito.Enabled = true;
                     rbOrigenOtros.Enabled = true;
                     txtOrigenOtros.Enabled = true;
+                    rbZonaAM.Enabled = true;
+                    rbZonaPM.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -310,6 +321,8 @@ namespace hospitalcentral
                     rbOrigenAccidenteTransito.Enabled = false;
                     rbOrigenOtros.Enabled = false;
                     txtOrigenOtros.Enabled = false;
+                    rbZonaAM.Enabled = false;
+                    rbZonaPM.Enabled = false;
                     break;
 
                 case "Editar":
@@ -375,6 +388,8 @@ namespace hospitalcentral
                     rbOrigenAccidenteTransito.Enabled = true;
                     rbOrigenOtros.Enabled = true;
                     txtOrigenOtros.Enabled = true;
+                    rbZonaAM.Enabled = true;
+                    rbZonaPM.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -440,6 +455,8 @@ namespace hospitalcentral
                     rbOrigenAccidenteTransito.Enabled = false;
                     rbOrigenOtros.Enabled = false;
                     txtOrigenOtros.Enabled = false;
+                    rbZonaAM.Enabled = false;
+                    rbZonaPM.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -495,6 +512,7 @@ namespace hospitalcentral
                             "nss, "+
                             "fecha, "+
                             "hora, "+
+                            "zona, "+
                             "tipoaccion," +
                             "motivoconsulta, "+
                             "antecedentespatologicos, "+
@@ -538,6 +556,7 @@ namespace hospitalcentral
                             "@nss, "+
                             "@fecha, "+
                             "@hora, "+
+                            "@zona, "+
                             "@tipoaccion," +
                             " @motivoconsulta, "+
                             "@antecedentespatologicos, "+
@@ -582,6 +601,16 @@ namespace hospitalcentral
                         myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
                         myCommand.Parameters.AddWithValue("@hora", txtHora.Text);
                         
+                        // ZONA HORARIA = AM / PM
+                        if (rbZonaAM.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@zona", "AM");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@zona", "PM");
+                        }
+
                         // TIPO ACCION = SENASA / ACCION CIVICA
                         if(rbSenasa.Checked == true)
                         {
@@ -809,44 +838,330 @@ namespace hospitalcentral
                 }
                 else
                 {
-                //    try
-                //    {
-                //        // Step 1 - Stablishing the connection
-                //        MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+                    try
+                    {
+                        // Step 1 - Stablishing the connection
+                        MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
 
-                //        // Step 2 - Crear el comando de ejecucion
-                //        MySqlCommand myCommand = MyConexion.CreateCommand();
+                        // Step 2 - Crear el comando de ejecucion
+                        MySqlCommand myCommand = MyConexion.CreateCommand();
 
-                //        // Step 3 - Comando a ejecutar
-                //        myCommand.CommandText = "UPDATE entrada SET fecha = @fecha, unidadnaval = @unidadnaval, " +
-                //            "tipo_comb = @tipocombustible, cantidad = @cantidad WHERE id = " + txtID.Text + "";
-                //        myCommand.Parameters.AddWithValue("@fecha", dtFechaRecibido.Value);
-                //        myCommand.Parameters.AddWithValue("@unidadnaval", cmbUnidadNaval.SelectedValue);
-                //        myCommand.Parameters.AddWithValue("@tipocombustible", cmbCombustible.SelectedValue);
-                //        myCommand.Parameters.AddWithValue("@cantidad", txtCantidad.Text);
+                        // Step 3 - Comando a ejecutar
+                        myCommand.CommandText = "UPDATE historiaclinica SET " +
+                            "nss = @nss, " +
+                            "fecha = @fecha, " +
+                            "hora = @hora, " +
+                            "zona = @zona, "+
+                            "tipoaccion = @tipoaccion," +
+                            "motivoconsulta = @motivoconsulta, " +
+                            "antecedentespatologicos = @antecedentespatologicos, " +
+                            "atencionesprevias = @atencionesprevias, " +
+                            "atencionesprevias_descripcion = @atencionesprevias_descripcion, " +
+                            "alergias = @alergias, " +
+                            "alergias_descripcion = @alergias_descripcion, " +
+                            "signosvitales_ta = @signosvitales_ta, " +
+                            "signosvitales_fr = @signosvitales_fr, " +
+                            "signosvitales_fc = @signosvitales_fc," +
+                            "signosvitales_pulso = @signosvitales_pulso, " +
+                            "signosvitales_temp = @signosvitales_temp, " +
+                            "examenfisico = @examenfisico, " +
+                            "pruebas_hemograma = @pruebas_hemograma, " +
+                            "pruebas_orina = @pruebas_orina," +
+                            "pruebas_glicemia = @pruebas_glicemia, " +
+                            "pruebas_embarazo = @pruebas_embarazo, " +
+                            "pruebas_otras = @pruebas_otras, " +
+                            "pruebas_otras_descripcion = @pruebas_otras_descripcion, " +
+                            "hallazgos_pruebas_positivas = @hallazgos_pruebas_positivas," +
+                            "pruebas_radiografias = @pruebas_radiografias, " +
+                            "pruebas_radiografias_descripcion = @pruebas_radiografias_descripcion, " +
+                            "pruebas_sonografias = @pruebas_sonografias, " +
+                            "pruebas_sonografias_descripcion = @pruebas_sonografias_descripcion," +
+                            "pruebas_ekg = @pruebas_ekg, " +
+                            "pruebas_ekg_descripcion = @pruebas_ekg_descripcion, " +
+                            "diagnostico = @diagnostico, " +
+                            "emergencia_sutura = @emergencia_sutura, " +
+                            "emergencia_inmovilizacion = @emergencia_inmovilizacion," +
+                            "emergencia_reanimacioncardiopulmonar = @emergencia_reanimacioncardiopulmonar, " +
+                            "emergencia_nebulizaciones = @emergencia_nebulizaciones, " +
+                            "emergencia_otros = @emergencia_otros," +
+                            "emergencia_otros_descripcion = @emergencia_otros_descripcion, " +
+                            "estatus = @estatus, " +
+                            "estatus_descripcion = @estatus_descripcion, " +
+                            "origen_enfermedad = @origen_enfermedad, " +
+                            "origen_enfermedad_descripcion = @origen_enfermedad_descripcion, " +
+                            "origen_enfermedad_especifique = @origen_enfermedad_especifique" +
+                            " WHERE id = " + txtID.Text + "";
 
-                //        // Step 4 - Opening the connection
-                //        MyConexion.Open();
+                        myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
+                        myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                        myCommand.Parameters.AddWithValue("@hora", txtHora.Text);
 
-                //        // Step 5 - Executing the query
-                //        int nFilas = myCommand.ExecuteNonQuery();
-                //        if (nFilas > 0)
-                //        {
-                //            MessageBox.Show("Informacion actualiada satisfactoriamente...");
-                //        }
-                //        else
-                //        {
-                //            MessageBox.Show("No fueron actualizadas las informaciones...");
-                //        }
+                        // ZONA HORARIA = AM / PM
+                        if (rbZonaAM.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@zona", "AM");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@zona", "PM");
+                        }
 
-                //        // Step 6 - Closing the connection
-                //        MyConexion.Close();
+                        // TIPO ACCION = SENASA / ACCION CIVICA
+                        if (rbSenasa.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@tipoaccion", "S");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@tipoaccion", "A");
+                        }
+                        myCommand.Parameters.AddWithValue("@motivoconsulta", txtMotivoConsulta.Text);
+                        myCommand.Parameters.AddWithValue("@antecedentespatologicos", txtAntecedentesPatologicos.Text);
 
-                //    }
-                //    catch (Exception MyEx)
-                //    {
-                //        MessageBox.Show(MyEx.Message);
-                //    }
+                        // ATENCIONES PREVIAS = SI / NO
+                        if (rbAtencionesPreviasNo.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@atencionesprevias", "NO");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@atencionesprevias", "SI");
+                        }
+                        myCommand.Parameters.AddWithValue("@atencionesprevias_descripcion", txtAtencionesPrevias.Text);
+
+                        // ALERGIAS = SI / NO
+                        if (rbAlergiasNo.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@alergias", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@alergias", "NO");
+                        }
+
+                        myCommand.Parameters.AddWithValue("@alergias_descripcion", txtAlergias.Text);
+                        myCommand.Parameters.AddWithValue("@signosvitales_ta", txtSignosVitales_TA.Text);
+                        myCommand.Parameters.AddWithValue("@signosvitales_fr", txtSignosVitales_FR.Text);
+                        myCommand.Parameters.AddWithValue("@signosvitales_fc", txtSignosVitales_FC.Text);
+                        myCommand.Parameters.AddWithValue("@signosvitales_pulso", txtSignosVitales_Pulso.Text);
+                        myCommand.Parameters.AddWithValue("@signosvitales_temp", txtSignosVitales_Temperatura.Text);
+                        myCommand.Parameters.AddWithValue("@examenfisico", txtHallazgosDescripcion.Text);
+
+                        // Pruebas Hemograma
+                        if (chkPruebasHemograma.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_hemograma", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_hemograma", "NO");
+                        }
+
+                        // Pruebas Orina
+                        if (chkPruebasOrina.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_orina", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_orina", "NO");
+                        }
+
+                        // Pruebas Glicemia
+                        if (chkPruebasHemograma.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_glicemia", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_glicemia", "NO");
+                        }
+
+                        // Pruebas Embarazo
+                        if (chkPruebasEmbarazo.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_embarazo", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_embarazo", "NO");
+                        }
+
+                        // Pruebas Otras
+                        if (chkPruebasOtros.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_otras", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_otras", "NO");
+                        }
+
+                        myCommand.Parameters.AddWithValue("@pruebas_otras_descripcion", txtPruebasOtrosDescripcion.Text);
+                        myCommand.Parameters.AddWithValue("@hallazgos_pruebas_positivas", txtHallazgosPruebas.Text);
+
+                        // PRUEBAS RADIOGRAFIAS = SI / NO
+                        if (chkPruebasRadiografias.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_radiografias", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_radiografias", "NO");
+                        }
+                        myCommand.Parameters.AddWithValue("@pruebas_radiografias_descripcion", txtPruebasRadiografias.Text);
+
+                        // PRUEAS SONOGRAFIAS = SI / NO
+                        if (chkPruebasSonografias.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_sonografias", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_sonografias", "NO");
+                        }
+                        myCommand.Parameters.AddWithValue("@pruebas_sonografias_descripcion", txtPruebasSonografias.Text);
+
+                        // PRUEBAS EKG = SI / NO
+                        if (chkPruebasEkg.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_ekg", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@pruebas_ekg", "NO");
+                        }
+                        myCommand.Parameters.AddWithValue("@pruebas_ekg_descripcion", txtPruebasEkg.Text);
+
+                        myCommand.Parameters.AddWithValue("@diagnostico", txtDiagnostico.Text);
+
+                        // EMERGENCIAS SUTURA = SI / NO
+                        if (chkEmergenciaSutura.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_sutura", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_sutura", "NO");
+                        }
+
+                        // EMERGENCIAS INMOVILIZACION = SI / NO
+                        if (chkEmergenciaInmovilizacion.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_inmovilizacion", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_inmovilizacion", "NO");
+                        }
+
+                        // EMERGENCIAS REANIMACION CARDIOPULMONAR = SI / NO
+                        if (chkEmergenciaReanimacion.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_reanimacioncardiopulmonar", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_reanimacioncardiopulmonar", "NO");
+                        }
+
+                        // EMERGENCIAS NEBULIZACIONES = SI / NO
+                        if (chkEmergenciaNebulizaciones.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_nebulizaciones", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_nebulizaciones", "NO");
+                        }
+
+                        // EMERGENCIAS OTROS = SI / NO
+                        if (chkEmergenciaOtros.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_otros", "SI");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@emergencia_otros", "NO");
+                        }
+                        myCommand.Parameters.AddWithValue("@emergencia_otros_descripcion", txtEmergenciaOtros.Text);
+
+                        if (rbEstatusDDA.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@estatus", "DDA");
+                            myCommand.Parameters.AddWithValue("@estatus_descripcion", "Dado de Alta");
+                        }
+                        else if (rbEstatusAAP.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@estatus", "AAP");
+                            myCommand.Parameters.AddWithValue("@estatus_descripcion", "Alta a Peticion");
+                        }
+                        else if (rbEstatusADM.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@estatus", "ADM");
+                            myCommand.Parameters.AddWithValue("@estatus_descripcion", "Admitido");
+                        }
+                        else if (rbEstatusREF.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@estatus", "REF");
+                            myCommand.Parameters.AddWithValue("@estatus_descripcion", "Referido");
+                        }
+                        else if (rbEstatusDEP.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@estatus", "EPD");
+                            myCommand.Parameters.AddWithValue("@estatus_descripcion", "Fallecido");
+                        }
+
+                        // ORIGEN DE LA ENFERMEDAD
+                        if (rbOrigenEnfGral.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad", "EG");
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad_descripcion", "Enfermedad General");
+                        }
+                        else if (rbOrigenMaternidad.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad", "MA");
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad_descripcion", "Maternidad");
+                        }
+                        else if (rbOrigenAccidenteTrabajo.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad", "AP");
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad_descripcion", "Accidente de Trabajo");
+                        }
+                        else if (rbOrigenAccidenteTransito.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad", "AT");
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad_descripcion", "Accidente de Transito");
+                        }
+                        else if (rbOrigenOtros.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad", "OT");
+                            myCommand.Parameters.AddWithValue("@origen_enfermedad_descripcion", "Otros");
+                        }
+                        myCommand.Parameters.AddWithValue("@origen_enfermedad_especifique", txtOrigenOtros.Text);
+                                
+                        // Step 4 - Opening the connection
+                        MyConexion.Open();
+
+                        // Step 5 - Executing the query
+                        int nFilas = myCommand.ExecuteNonQuery();
+                        if (nFilas > 0)
+                        {
+                            MessageBox.Show("Informacion actualiada satisfactoriamente...");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No fueron actualizadas las informaciones...");
+                        }
+
+                        // Step 6 - Closing the connection
+                        MyConexion.Close();
+
+                    }
+                    catch (Exception MyEx)
+                    {
+                        MessageBox.Show(MyEx.Message);
+                    }
 
                 }
 
@@ -864,12 +1179,288 @@ namespace hospitalcentral
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (txtID.Text == "")
+            {
+                MessageBox.Show("No se permiten busquedas vacias...");
+                txtID.Focus();
+            }
+            else
+            {
+                try
+                {
+                    // Step 1 - Conexion
+                    MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
 
+                    // Step 2 - creating the command object
+                    MySqlCommand MyCommand = MyConexion.CreateCommand();
+
+                    // Step 3 - creating the commandtext
+                    MyCommand.CommandText = "SELECT "+
+                        "nss, fecha, hora, zona, tipoaccion, motivoconsulta, antecedentespatologicos, atencionesprevias," +
+                        "atencionesprevias_descripcion, alergias, alergias_descripcion, signosvitales_ta," +
+                        "signosvitales_fr, signosvitales_fc, signosvitales_pulso, signosvitales_temp," +
+                        "examenfisico, pruebas_hemograma, pruebas_orina, pruebas_glicemia, pruebas_embarazo," +
+                        "pruebas_otras, pruebas_otras_descripcion, hallazgos_pruebas_positivas, pruebas_radiografias," +
+                        "pruebas_radiografias_descripcion, pruebas_sonografias, pruebas_sonografias_descripcion," +
+                        "pruebas_ekg, pruebas_ekg_descripcion, diagnostico, emergencia_sutura, emergencia_inmovilizacion," +
+                        "emergencia_reanimacioncardiopulmonar, emergencia_nebulizaciones, emergencia_otros, emergencia_otros_descripcion," +
+                        "estatus, estatus_descripcion, origen_enfermedad, origen_enfermedad_descripcion, origen_enfermedad_especifique" +
+                        " FROM historiaclinica WHERE id = " + txtID.Text + "";
+
+                    // Step 4 - connection open
+                    MyConexion.Open();
+
+                    // Step 5 - Creating the DataReader                    
+                    MySqlDataReader MyReader = MyCommand.ExecuteReader();
+
+                    // Step 6 - Verifying if Reader has rows
+                    if (MyReader.HasRows)
+                    {
+                        while (MyReader.Read())
+                        {
+                            txtNSS.Text = MyReader["nss"].ToString();
+                            // PARA BUSCAR LOS OTROS DATOS DEL PACIENTE
+                            this.buscarPaciente();
+                            dtFecha.Value = Convert.ToDateTime(MyReader["fecha"].ToString());
+                            txtHora.Text = MyReader["hora"].ToString();
+                            
+                            // ZONA HORARIA SI ES AM / PM
+                            if (MyReader["zona"].ToString() == "AM")
+                            {
+                                rbZonaAM.Checked = true;
+                            }
+                            else
+                            {
+                                rbZonaPM.Checked = true;
+                            }
+                            
+                            // Si es SENASA o ACCION CIVICA
+                            if (MyReader["tipoaccion"].ToString() == "S")
+                            {
+                                rbSenasa.Checked = true;
+                            }
+                            else
+                            {
+                                rbAccionCivica.Checked = true;
+                            }
+                            txtMotivoConsulta.Text = MyReader["motivoconsulta"].ToString();
+                            txtAntecedentesPatologicos.Text = MyReader["antecedentespatologicos"].ToString();
+                            // ATENCIONES PREVIAS
+                            if (MyReader["atencionesprevias"].ToString() == "SI")
+                            {
+                                rbAtencionesPreviasSi.Checked = true;
+                            }
+                            else
+                            {
+                                rbAtencionesPreviasNo.Checked = true;
+                            }
+                            txtAtencionesPrevias.Text = MyReader["atencionesprevias_descripcion"].ToString();
+                            // ALERGIAS
+                            if (MyReader["alergias"].ToString() == "SI")
+                            {
+                                rbAlergiasSi.Checked = true;
+                            }
+                            else
+                            {
+                                rbAlergiasNo.Checked = true;
+                            }
+                            txtAlergias.Text = MyReader["alergias_descripcion"].ToString();
+                            // SIGNOS VITALES
+                            txtSignosVitales_TA.Text = MyReader["signosvitales_ta"].ToString();
+                            txtSignosVitales_FR.Text = MyReader["signosvitales_fr"].ToString();
+                            txtSignosVitales_FC.Text = MyReader["signosvitales_fc"].ToString();
+                            txtSignosVitales_Pulso.Text = MyReader["signosvitales_pulso"].ToString();
+                            txtSignosVitales_Temperatura.Text = MyReader["signosvitales_temp"].ToString();
+                            // EXAMEN FISICO
+                            txtHallazgosDescripcion.Text = MyReader["examenfisico"].ToString();
+                            // PRUEBAS
+                            if (MyReader["pruebas_hemograma"].ToString() == "SI")
+                            {
+                                chkPruebasHemograma.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasHemograma.Checked = false;
+                            }
+                            if (MyReader["pruebas_orina"].ToString() == "SI")
+                            {
+                                chkPruebasOrina.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasOrina.Checked = false;
+                            }
+                            if (MyReader["pruebas_glicemia"].ToString() == "SI")
+                            {
+                                chkPruebasGlicemia.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasGlicemia.Checked = false;
+                            }
+                            if (MyReader["pruebas_embarazo"].ToString() == "SI")
+                            {
+                                chkPruebasEmbarazo.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasEmbarazo.Checked = false;
+                            }
+                            if (MyReader["pruebas_otras"].ToString() == "SI")
+                            {
+                                chkPruebasOtros.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasOtros.Checked = false;
+                            }
+                            txtPruebasOtrosDescripcion.Text = MyReader["pruebas_otras_descripcion"].ToString();
+                            txtHallazgosPruebas.Text = MyReader["hallazgos_pruebas_positivas"].ToString();
+                            if (MyReader["pruebas_radiografias"].ToString() == "SI")
+                            {
+                                chkPruebasRadiografias.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasRadiografias.Checked = false;
+                            }
+                            txtPruebasRadiografias.Text = MyReader["pruebas_radiografias_descripcion"].ToString();
+                            if (MyReader["pruebas_sonografias"].ToString() == "SI")
+                            {
+                                chkPruebasSonografias.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasSonografias.Checked = false;
+                            }
+                            txtPruebasSonografias.Text = MyReader["pruebas_sonografias_descripcion"].ToString();
+                            if (MyReader["pruebas_ekg"].ToString() == "SI")
+                            {
+                                chkPruebasEkg.Checked = true;
+                            }
+                            else
+                            {
+                                chkPruebasEkg.Checked = false;
+                            }
+                            txtPruebasEkg.Text = MyReader["pruebas_ekg_descripcion"].ToString();
+                            // DIAGNOSTICO
+                            txtDiagnostico.Text = MyReader["diagnostico"].ToString();
+                            // MANEJO Y MEDICACION EMERGENCIA
+                            if (MyReader["emergencia_sutura"].ToString() == "SI")
+                            {
+                                chkEmergenciaSutura.Checked = true;
+                            }
+                            else
+                            {
+                                chkEmergenciaSutura.Checked = false;
+                            }
+                            if (MyReader["emergencia_inmovilizacion"].ToString() == "SI")
+                            {
+                                chkEmergenciaInmovilizacion.Checked = true;
+                            }
+                            else
+                            {
+                                chkEmergenciaInmovilizacion.Checked = false;
+                            }
+                            if (MyReader["emergencia_reanimacioncardiopulmonar"].ToString() == "SI")
+                            {
+                                chkEmergenciaReanimacion.Checked = true;
+                            }
+                            else
+                            {
+                                chkEmergenciaReanimacion.Checked = false;
+                            }
+                            if (MyReader["emergencia_nebulizaciones"].ToString() == "SI")
+                            {
+                                chkEmergenciaNebulizaciones.Checked = true;
+                            }
+                            else
+                            {
+                                chkEmergenciaNebulizaciones.Checked = false;
+                            }
+                            if (MyReader["emergencia_otros"].ToString() == "SI")
+                            {
+                                chkEmergenciaOtros.Checked = true;
+                            }
+                            else
+                            {
+                                chkEmergenciaOtros.Checked = false;
+                            }
+                            txtEmergenciaOtros.Text = MyReader["emergencia_otros_descripcion"].ToString();
+                            // ESTATUS
+                            if (MyReader["estatus"].ToString() == "DDA")
+                            {
+                                rbEstatusDDA.Checked = true;
+                            }
+                            else if (MyReader["estatus"].ToString() == "AAP")
+                            {
+                                rbEstatusAAP.Checked = true;
+                            }
+                            else if (MyReader["estatus"].ToString() == "ADM")
+                            {
+                                rbEstatusADM.Checked = true;
+                            }
+                            else if (MyReader["estatus"].ToString() == "REF")
+                            {
+                                rbEstatusREF.Checked = true;
+                            }
+                            else if (MyReader["estatus"].ToString() == "EPD")
+                            {
+                                rbEstatusDEP.Checked = true;
+                            }
+                            // ORIGEN DE LA ENFERMEDAD
+                            if (MyReader["origen_enfermedad"].ToString() == "EG")
+                            {
+                                rbOrigenEnfGral.Checked = true;
+                            }
+                            else if (MyReader["origen_enfermedad"].ToString() == "MA")
+                            {
+                                rbOrigenMaternidad.Checked = true;
+                            }
+                            else if (MyReader["origen_enfermedad"].ToString() == "AP")
+                            {
+                                rbOrigenAccidenteTransito.Checked = true;
+                            }
+                            else if (MyReader["origen_enfermedad"].ToString() == "AT")
+                            {
+                                rbOrigenAccidenteTransito.Checked = true;
+                            }
+                            else if (MyReader["origen_enfermedad"].ToString() == "OT")
+                            {
+                                rbOrigenOtros.Checked = true;
+                            }
+                            txtOrigenOtros.Text = MyReader["origen_enfermedad_especifique"].ToString();
+                        }
+
+                        this.cModo = "Buscar";
+                        this.Botones();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron registros...");
+                        this.cModo = "Inicio";
+                        this.Botones();
+                        this.Limpiar();
+                        this.txtID.Focus();
+                    }
+
+                    // Step 6 - Closing all
+                    MyReader.Close();
+                    MyCommand.Dispose();
+                    MyConexion.Close();
+
+                }
+                catch (Exception MyEx)
+                {
+                    MessageBox.Show(MyEx.Message);
+                }
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            frmPrintHistoriaClinica ofrmPrintHistoriaClinica = new frmPrintHistoriaClinica();
+            ofrmPrintHistoriaClinica.ShowDialog();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -918,6 +1509,11 @@ namespace hospitalcentral
 
         private void btnBuscarNSS_Click(object sender, EventArgs e)
         {
+            this.buscarPaciente();
+        }
+
+        private void buscarPaciente()
+        {
             if (txtNSS.Text == "")
             {
                 MessageBox.Show("Debe introducir un Numero de Seguro Social...");
@@ -950,7 +1546,7 @@ namespace hospitalcentral
                         {
                             // NOMBRE PACIENTE
                             txtNombrePaciente.Text = MyReader["nombre"].ToString();
-                            
+
                             // GENERO
                             string genero = MyReader["sexo"].ToString();
                             if (genero == "M")
@@ -961,14 +1557,14 @@ namespace hospitalcentral
                             {
                                 rbMujer.Checked = true;
                             }
-                            
+
                             // CALCULO DE LA EDAD DEL PACIENTE
                             DateTime fechaNacimiento = Convert.ToDateTime(MyReader["fecha_nacimiento"].ToString());
                             DateTime fechaHoy = DateTime.Today;
                             int EdadPaciente = fechaHoy.Year - fechaNacimiento.Year;
                             // Pongo el valor en el campo texto de la edad
                             txtEdad.Text = Convert.ToString(EdadPaciente);
-                            
+
                             // ANTECEDENTES DEL PACIENTE
                             txtAntecedentesPatologicos.Text = MyReader["antecedentes"].ToString();
                         }
@@ -996,6 +1592,17 @@ namespace hospitalcentral
                     MessageBox.Show(MyEx.Message);
                 }
             }
+        }
+
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
         }
     }
 }

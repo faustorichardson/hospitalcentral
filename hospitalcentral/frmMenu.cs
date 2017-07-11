@@ -560,6 +560,18 @@ namespace hospitalcentral
             ofrmHistoriaClinica.ShowDialog();
         }
 
+        private void buttonItem11_Click_1(object sender, EventArgs e)
+        {
+            frmPrintHistoriaClinica ofrmPrintHistoriaClinica = new frmPrintHistoriaClinica();
+            ofrmPrintHistoriaClinica.ShowDialog();
+        }
+
+        private void buttonItem12_Click_1(object sender, EventArgs e)
+        {
+            frmPrintHistoriaClinicaEstadisticas ofrmPrintHistoriaClinicaEstadisticas = new frmPrintHistoriaClinicaEstadisticas();
+            ofrmPrintHistoriaClinicaEstadisticas.ShowDialog();
+        }
+
        
         
     }

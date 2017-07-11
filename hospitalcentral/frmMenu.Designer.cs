@@ -37,17 +37,12 @@
             this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem10 = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
-            this.reportes_listados = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_reportes_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_procesos_citamedica = new DevComponents.DotNetBar.ButtonItem();
             this.btn_proceso_entradainventario = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.mantenimiento_usuarios = new DevComponents.DotNetBar.RibbonBar();
             this.btn_mantenimiento_usuarios = new DevComponents.DotNetBar.ButtonItem();
@@ -56,6 +51,12 @@
             this.btn_mantenimiento_productos = new DevComponents.DotNetBar.ButtonItem();
             this.btn_mantenimiento_productoscategorias = new DevComponents.DotNetBar.ButtonItem();
             this.btn_mantenimiento_suplidores = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
+            this.reportes_listados = new DevComponents.DotNetBar.RibbonBar();
+            this.btn_reportes_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_estadisticas_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
@@ -78,12 +79,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cachedrptUsuarios1 = new hospitalcentral.CachedrptUsuarios();
             this.btn_procesos_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem11 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
-            this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel6.SuspendLayout();
             this.ribbonPanel5.SuspendLayout();
+            this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,10 +104,10 @@
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.office2007StartButton1,
@@ -216,106 +218,6 @@
             this.buttonItem10.Text = "Salir del Sistema";
             this.buttonItem10.Click += new System.EventHandler(this.buttonItem10_Click);
             // 
-            // ribbonPanel3
-            // 
-            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.reportes_listados);
-            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 53);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(1027, 99);
-            // 
-            // 
-            // 
-            this.ribbonPanel3.Style.Class = "";
-            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseDown.Class = "";
-            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseOver.Class = "";
-            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel3.TabIndex = 3;
-            this.ribbonPanel3.Visible = false;
-            // 
-            // reportes_listados
-            // 
-            this.reportes_listados.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.reportes_listados.BackgroundMouseOverStyle.Class = "";
-            this.reportes_listados.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.reportes_listados.BackgroundStyle.Class = "";
-            this.reportes_listados.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.reportes_listados.ContainerControlProcessDialogKey = true;
-            this.reportes_listados.Dock = System.Windows.Forms.DockStyle.Left;
-            this.reportes_listados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportes_listados.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btn_reportes_citasmedicas,
-            this.buttonItem2,
-            this.buttonItem1,
-            this.buttonItem5});
-            this.reportes_listados.Location = new System.Drawing.Point(3, 0);
-            this.reportes_listados.Name = "reportes_listados";
-            this.reportes_listados.Size = new System.Drawing.Size(635, 96);
-            this.reportes_listados.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.reportes_listados.TabIndex = 0;
-            // 
-            // 
-            // 
-            this.reportes_listados.TitleStyle.Class = "";
-            this.reportes_listados.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.reportes_listados.TitleStyleMouseOver.Class = "";
-            this.reportes_listados.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btn_reportes_citasmedicas
-            // 
-            this.btn_reportes_citasmedicas.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_citasmedicas.Image")));
-            this.btn_reportes_citasmedicas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_reportes_citasmedicas.Name = "btn_reportes_citasmedicas";
-            this.btn_reportes_citasmedicas.SubItemsExpandWidth = 14;
-            this.btn_reportes_citasmedicas.Text = "CITAS MEDICAS";
-            this.btn_reportes_citasmedicas.Click += new System.EventHandler(this.buttonItem4_Click);
-            // 
-            // buttonItem2
-            // 
-            this.buttonItem2.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem2.Image")));
-            this.buttonItem2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.SubItemsExpandWidth = 14;
-            this.buttonItem2.Text = "EXISTENCIA LABORATORIO";
-            this.buttonItem2.Click += new System.EventHandler(this.buttonItem2_Click_4);
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem1.Image")));
-            this.buttonItem1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.SubItemsExpandWidth = 14;
-            this.buttonItem1.Text = "MATERIAL LABORATORIO";
-            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click_2);
-            // 
-            // buttonItem5
-            // 
-            this.buttonItem5.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem5.Image")));
-            this.buttonItem5.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.SubItemsExpandWidth = 14;
-            this.buttonItem5.Text = "EXAMENES MEDICOS";
-            this.buttonItem5.Click += new System.EventHandler(this.buttonItem5_Click_2);
-            // 
             // ribbonPanel6
             // 
             this.ribbonPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -408,6 +310,16 @@
             this.buttonItem3.SubItemsExpandWidth = 14;
             this.buttonItem3.Text = "SALIDA INVENTARIO";
             this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click_2);
+            // 
+            // buttonItem6
+            // 
+            this.buttonItem6.FontBold = true;
+            this.buttonItem6.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem6.Image")));
+            this.buttonItem6.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem6.Name = "buttonItem6";
+            this.buttonItem6.SubItemsExpandWidth = 14;
+            this.buttonItem6.Text = "SALA DE EMERGENCIA";
+            this.buttonItem6.Click += new System.EventHandler(this.buttonItem6_Click);
             // 
             // ribbonPanel5
             // 
@@ -530,6 +442,107 @@
             this.btn_mantenimiento_suplidores.Text = "SUPLIDORES";
             this.btn_mantenimiento_suplidores.Click += new System.EventHandler(this.buttonItem4_Click_1);
             // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel3.Controls.Add(this.reportes_listados);
+            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1027, 99);
+            // 
+            // 
+            // 
+            this.ribbonPanel3.Style.Class = "";
+            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseDown.Class = "";
+            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseOver.Class = "";
+            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel3.TabIndex = 3;
+            this.ribbonPanel3.Visible = false;
+            // 
+            // reportes_listados
+            // 
+            this.reportes_listados.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.reportes_listados.BackgroundMouseOverStyle.Class = "";
+            this.reportes_listados.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.reportes_listados.BackgroundStyle.Class = "";
+            this.reportes_listados.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.reportes_listados.ContainerControlProcessDialogKey = true;
+            this.reportes_listados.Dock = System.Windows.Forms.DockStyle.Left;
+            this.reportes_listados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportes_listados.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btn_reportes_citasmedicas,
+            this.buttonItem2,
+            this.buttonItem1,
+            this.buttonItem5,
+            this.buttonItem11});
+            this.reportes_listados.Location = new System.Drawing.Point(3, 0);
+            this.reportes_listados.Name = "reportes_listados";
+            this.reportes_listados.Size = new System.Drawing.Size(635, 96);
+            this.reportes_listados.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.reportes_listados.TabIndex = 0;
+            // 
+            // 
+            // 
+            this.reportes_listados.TitleStyle.Class = "";
+            this.reportes_listados.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.reportes_listados.TitleStyleMouseOver.Class = "";
+            this.reportes_listados.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btn_reportes_citasmedicas
+            // 
+            this.btn_reportes_citasmedicas.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_citasmedicas.Image")));
+            this.btn_reportes_citasmedicas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_reportes_citasmedicas.Name = "btn_reportes_citasmedicas";
+            this.btn_reportes_citasmedicas.SubItemsExpandWidth = 14;
+            this.btn_reportes_citasmedicas.Text = "CITAS MEDICAS";
+            this.btn_reportes_citasmedicas.Click += new System.EventHandler(this.buttonItem4_Click);
+            // 
+            // buttonItem2
+            // 
+            this.buttonItem2.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem2.Image")));
+            this.buttonItem2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem2.Name = "buttonItem2";
+            this.buttonItem2.SubItemsExpandWidth = 14;
+            this.buttonItem2.Text = "EXISTENCIA LABORATORIO";
+            this.buttonItem2.Click += new System.EventHandler(this.buttonItem2_Click_4);
+            // 
+            // buttonItem1
+            // 
+            this.buttonItem1.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem1.Image")));
+            this.buttonItem1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.SubItemsExpandWidth = 14;
+            this.buttonItem1.Text = "MATERIAL LABORATORIO";
+            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click_2);
+            // 
+            // buttonItem5
+            // 
+            this.buttonItem5.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem5.Image")));
+            this.buttonItem5.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem5.Name = "buttonItem5";
+            this.buttonItem5.SubItemsExpandWidth = 14;
+            this.buttonItem5.Text = "EXAMENES MEDICOS";
+            this.buttonItem5.Click += new System.EventHandler(this.buttonItem5_Click_2);
+            // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -574,7 +587,8 @@
             this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btn_estadisticas_citasmedicas,
-            this.buttonItem4});
+            this.buttonItem4,
+            this.buttonItem12});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
             this.ribbonBar2.Size = new System.Drawing.Size(870, 96);
@@ -776,15 +790,24 @@
             this.btn_procesos_citasmedicas.Text = "CITAS MEDICAS";
             this.btn_procesos_citasmedicas.Click += new System.EventHandler(this.buttonItem1_Click);
             // 
-            // buttonItem6
+            // buttonItem11
             // 
-            this.buttonItem6.FontBold = true;
-            this.buttonItem6.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem6.Image")));
-            this.buttonItem6.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem6.Name = "buttonItem6";
-            this.buttonItem6.SubItemsExpandWidth = 14;
-            this.buttonItem6.Text = "SALA DE EMERGENCIA";
-            this.buttonItem6.Click += new System.EventHandler(this.buttonItem6_Click);
+            this.buttonItem11.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem11.Image")));
+            this.buttonItem11.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem11.Name = "buttonItem11";
+            this.buttonItem11.SubItemsExpandWidth = 14;
+            this.buttonItem11.Text = "HISTORIAL CLINICO";
+            this.buttonItem11.Click += new System.EventHandler(this.buttonItem11_Click_1);
+            // 
+            // buttonItem12
+            // 
+            this.buttonItem12.FontBold = true;
+            this.buttonItem12.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem12.Image")));
+            this.buttonItem12.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem12.Name = "buttonItem12";
+            this.buttonItem12.SubItemsExpandWidth = 14;
+            this.buttonItem12.Text = "HISTORIAL CLINICO";
+            this.buttonItem12.Click += new System.EventHandler(this.buttonItem12_Click_1);
             // 
             // frmMenu
             // 
@@ -804,9 +827,9 @@
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
-            this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel6.ResumeLayout(false);
             this.ribbonPanel5.ResumeLayout(false);
+            this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -866,5 +889,7 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
         private DevComponents.DotNetBar.ButtonItem buttonItem6;
+        private DevComponents.DotNetBar.ButtonItem buttonItem11;
+        private DevComponents.DotNetBar.ButtonItem buttonItem12;
     }
 }
