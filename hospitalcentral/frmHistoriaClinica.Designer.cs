@@ -38,34 +38,26 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtHora = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombrePaciente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.rbMujer = new System.Windows.Forms.RadioButton();
-            this.rbHombre = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNSS = new System.Windows.Forms.TextBox();
-            this.rbAccionCivica = new System.Windows.Forms.RadioButton();
-            this.rbSenasa = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMotivoConsulta = new System.Windows.Forms.RichTextBox();
             this.txtAntecedentesPatologicos = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.chkAtencionPreviaNo = new System.Windows.Forms.CheckBox();
-            this.chkAtencionPreviaSi = new System.Windows.Forms.CheckBox();
             this.txtAtencionesPrevias = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtAlergias = new System.Windows.Forms.RichTextBox();
-            this.chkAlergiasSi = new System.Windows.Forms.CheckBox();
-            this.chkAlergiasNo = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -90,12 +82,12 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.chkPruebasHemograma = new System.Windows.Forms.CheckBox();
-            this.chkPruebaOrina = new System.Windows.Forms.CheckBox();
+            this.chkPruebasOrina = new System.Windows.Forms.CheckBox();
             this.chkPruebasGlicemia = new System.Windows.Forms.CheckBox();
             this.chkPruebasEmbarazo = new System.Windows.Forms.CheckBox();
             this.chkPruebasOtros = new System.Windows.Forms.CheckBox();
             this.txtPruebasOtrosDescripcion = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtHallazgosPruebas = new System.Windows.Forms.RichTextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.chkPruebasRadiografias = new System.Windows.Forms.CheckBox();
@@ -119,26 +111,43 @@
             this.chkEmergenciaOtros = new System.Windows.Forms.CheckBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbEmergenciaDEP = new System.Windows.Forms.RadioButton();
-            this.rbEmergenciaREF = new System.Windows.Forms.RadioButton();
+            this.rbEstatusDEP = new System.Windows.Forms.RadioButton();
+            this.rbEstatusREF = new System.Windows.Forms.RadioButton();
             this.rbEstatusADM = new System.Windows.Forms.RadioButton();
             this.rbEstatusAAP = new System.Windows.Forms.RadioButton();
             this.rbEstatusDDA = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.txtOrigenOtros = new System.Windows.Forms.TextBox();
+            this.rbOrigenOtros = new System.Windows.Forms.RadioButton();
+            this.rbOrigenEnfGral = new System.Windows.Forms.RadioButton();
+            this.rbOrigenAccidenteTransito = new System.Windows.Forms.RadioButton();
+            this.rbOrigenMaternidad = new System.Windows.Forms.RadioButton();
+            this.rbOrigenAccidenteTrabajo = new System.Windows.Forms.RadioButton();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbMujer = new System.Windows.Forms.RadioButton();
+            this.rbHombre = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rbAccionCivica = new System.Windows.Forms.RadioButton();
+            this.rbSenasa = new System.Windows.Forms.RadioButton();
+            this.btnBuscarNSS = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rbAlergiasSi = new System.Windows.Forms.RadioButton();
+            this.rbAlergiasNo = new System.Windows.Forms.RadioButton();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.rbAtencionesPreviasSi = new System.Windows.Forms.RadioButton();
+            this.rbAtencionesPreviasNo = new System.Windows.Forms.RadioButton();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTituloForm
@@ -274,12 +283,12 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // dateTimePicker1
+            // dtFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(165, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 71;
+            this.dtFecha.Location = new System.Drawing.Point(165, 42);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtFecha.TabIndex = 71;
             // 
             // label1
             // 
@@ -301,14 +310,14 @@
             this.label2.TabIndex = 73;
             this.label2.Text = "HORA:";
             // 
-            // maskedTextBox1
+            // txtHora
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(430, 41);
-            this.maskedTextBox1.Mask = "90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(45, 20);
-            this.maskedTextBox1.TabIndex = 74;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.txtHora.Location = new System.Drawing.Point(430, 41);
+            this.txtHora.Mask = "90:00";
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(45, 20);
+            this.txtHora.TabIndex = 74;
+            this.txtHora.ValidatingType = typeof(System.DateTime);
             // 
             // label3
             // 
@@ -338,35 +347,11 @@
             this.label4.TabIndex = 77;
             this.label4.Text = "GENERO:";
             // 
-            // rbMujer
-            // 
-            this.rbMujer.AutoSize = true;
-            this.rbMujer.Enabled = false;
-            this.rbMujer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMujer.Location = new System.Drawing.Point(262, 94);
-            this.rbMujer.Name = "rbMujer";
-            this.rbMujer.Size = new System.Drawing.Size(89, 17);
-            this.rbMujer.TabIndex = 173;
-            this.rbMujer.Text = "FEMENINO";
-            this.rbMujer.UseVisualStyleBackColor = true;
-            // 
-            // rbHombre
-            // 
-            this.rbHombre.AutoSize = true;
-            this.rbHombre.Enabled = false;
-            this.rbHombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbHombre.Location = new System.Drawing.Point(165, 94);
-            this.rbHombre.Name = "rbHombre";
-            this.rbHombre.Size = new System.Drawing.Size(97, 17);
-            this.rbHombre.TabIndex = 172;
-            this.rbHombre.Text = "MASCULINO";
-            this.rbHombre.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(358, 96);
+            this.label5.Location = new System.Drawing.Point(371, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 174;
@@ -375,7 +360,7 @@
             // txtEdad
             // 
             this.txtEdad.Enabled = false;
-            this.txtEdad.Location = new System.Drawing.Point(409, 91);
+            this.txtEdad.Location = new System.Drawing.Point(422, 91);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(68, 20);
             this.txtEdad.TabIndex = 175;
@@ -384,7 +369,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 121);
+            this.label6.Location = new System.Drawing.Point(24, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 13);
             this.label6.TabIndex = 176;
@@ -393,40 +378,18 @@
             // txtNSS
             // 
             this.txtNSS.Enabled = false;
-            this.txtNSS.Location = new System.Drawing.Point(165, 117);
+            this.txtNSS.Location = new System.Drawing.Point(165, 120);
+            this.txtNSS.MaxLength = 25;
             this.txtNSS.Name = "txtNSS";
             this.txtNSS.Size = new System.Drawing.Size(152, 20);
             this.txtNSS.TabIndex = 177;
-            // 
-            // rbAccionCivica
-            // 
-            this.rbAccionCivica.AutoSize = true;
-            this.rbAccionCivica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAccionCivica.Location = new System.Drawing.Point(659, 89);
-            this.rbAccionCivica.Name = "rbAccionCivica";
-            this.rbAccionCivica.Size = new System.Drawing.Size(115, 17);
-            this.rbAccionCivica.TabIndex = 179;
-            this.rbAccionCivica.Text = "ACCION CIVICA";
-            this.rbAccionCivica.UseVisualStyleBackColor = true;
-            // 
-            // rbSenasa
-            // 
-            this.rbSenasa.AutoSize = true;
-            this.rbSenasa.Checked = true;
-            this.rbSenasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSenasa.Location = new System.Drawing.Point(658, 66);
-            this.rbSenasa.Name = "rbSenasa";
-            this.rbSenasa.Size = new System.Drawing.Size(74, 17);
-            this.rbSenasa.TabIndex = 178;
-            this.rbSenasa.TabStop = true;
-            this.rbSenasa.Text = "SENASA";
-            this.rbSenasa.UseVisualStyleBackColor = true;
+            this.txtNSS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNSS_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(165, 201);
+            this.label7.Location = new System.Drawing.Point(165, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(266, 13);
             this.label7.TabIndex = 180;
@@ -434,17 +397,17 @@
             // 
             // txtMotivoConsulta
             // 
-            this.txtMotivoConsulta.Location = new System.Drawing.Point(166, 217);
+            this.txtMotivoConsulta.Location = new System.Drawing.Point(166, 213);
             this.txtMotivoConsulta.Name = "txtMotivoConsulta";
-            this.txtMotivoConsulta.Size = new System.Drawing.Size(599, 40);
+            this.txtMotivoConsulta.Size = new System.Drawing.Size(599, 35);
             this.txtMotivoConsulta.TabIndex = 181;
             this.txtMotivoConsulta.Text = "";
             // 
             // txtAntecedentesPatologicos
             // 
-            this.txtAntecedentesPatologicos.Location = new System.Drawing.Point(165, 157);
+            this.txtAntecedentesPatologicos.Location = new System.Drawing.Point(165, 160);
             this.txtAntecedentesPatologicos.Name = "txtAntecedentesPatologicos";
-            this.txtAntecedentesPatologicos.Size = new System.Drawing.Size(599, 40);
+            this.txtAntecedentesPatologicos.Size = new System.Drawing.Size(599, 35);
             this.txtAntecedentesPatologicos.TabIndex = 183;
             this.txtAntecedentesPatologicos.Text = "";
             // 
@@ -452,7 +415,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(165, 141);
+            this.label8.Location = new System.Drawing.Point(165, 144);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(371, 13);
             this.label8.TabIndex = 182;
@@ -462,39 +425,17 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 260);
+            this.label9.Location = new System.Drawing.Point(12, 262);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 13);
             this.label9.TabIndex = 184;
             this.label9.Text = "ATENCIONES PREVIAS:";
             // 
-            // chkAtencionPreviaNo
-            // 
-            this.chkAtencionPreviaNo.AutoSize = true;
-            this.chkAtencionPreviaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAtencionPreviaNo.Location = new System.Drawing.Point(168, 260);
-            this.chkAtencionPreviaNo.Name = "chkAtencionPreviaNo";
-            this.chkAtencionPreviaNo.Size = new System.Drawing.Size(44, 17);
-            this.chkAtencionPreviaNo.TabIndex = 185;
-            this.chkAtencionPreviaNo.Text = "NO";
-            this.chkAtencionPreviaNo.UseVisualStyleBackColor = true;
-            // 
-            // chkAtencionPreviaSi
-            // 
-            this.chkAtencionPreviaSi.AutoSize = true;
-            this.chkAtencionPreviaSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAtencionPreviaSi.Location = new System.Drawing.Point(212, 260);
-            this.chkAtencionPreviaSi.Name = "chkAtencionPreviaSi";
-            this.chkAtencionPreviaSi.Size = new System.Drawing.Size(38, 17);
-            this.chkAtencionPreviaSi.TabIndex = 186;
-            this.chkAtencionPreviaSi.Text = "SI";
-            this.chkAtencionPreviaSi.UseVisualStyleBackColor = true;
-            // 
             // txtAtencionesPrevias
             // 
             this.txtAtencionesPrevias.Location = new System.Drawing.Point(168, 279);
             this.txtAtencionesPrevias.Name = "txtAtencionesPrevias";
-            this.txtAtencionesPrevias.Size = new System.Drawing.Size(597, 40);
+            this.txtAtencionesPrevias.Size = new System.Drawing.Size(597, 35);
             this.txtAtencionesPrevias.TabIndex = 187;
             this.txtAtencionesPrevias.Text = "";
             // 
@@ -502,7 +443,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(104, 278);
+            this.label10.Location = new System.Drawing.Point(104, 280);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 188;
@@ -512,41 +453,19 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(104, 352);
+            this.label11.Location = new System.Drawing.Point(96, 357);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.Size = new System.Drawing.Size(63, 13);
             this.label11.TabIndex = 193;
-            this.label11.Text = "DONDE:";
+            this.label11.Text = "INDIQUE:";
             // 
             // txtAlergias
             // 
-            this.txtAlergias.Location = new System.Drawing.Point(168, 347);
+            this.txtAlergias.Location = new System.Drawing.Point(168, 354);
             this.txtAlergias.Name = "txtAlergias";
-            this.txtAlergias.Size = new System.Drawing.Size(597, 40);
+            this.txtAlergias.Size = new System.Drawing.Size(597, 35);
             this.txtAlergias.TabIndex = 192;
             this.txtAlergias.Text = "";
-            // 
-            // chkAlergiasSi
-            // 
-            this.chkAlergiasSi.AutoSize = true;
-            this.chkAlergiasSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAlergiasSi.Location = new System.Drawing.Point(212, 327);
-            this.chkAlergiasSi.Name = "chkAlergiasSi";
-            this.chkAlergiasSi.Size = new System.Drawing.Size(38, 17);
-            this.chkAlergiasSi.TabIndex = 191;
-            this.chkAlergiasSi.Text = "SI";
-            this.chkAlergiasSi.UseVisualStyleBackColor = true;
-            // 
-            // chkAlergiasNo
-            // 
-            this.chkAlergiasNo.AutoSize = true;
-            this.chkAlergiasNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAlergiasNo.Location = new System.Drawing.Point(168, 327);
-            this.chkAlergiasNo.Name = "chkAlergiasNo";
-            this.chkAlergiasNo.Size = new System.Drawing.Size(44, 17);
-            this.chkAlergiasNo.TabIndex = 190;
-            this.chkAlergiasNo.Text = "NO";
-            this.chkAlergiasNo.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -778,16 +697,16 @@
             this.chkPruebasHemograma.Text = "Hemograma";
             this.chkPruebasHemograma.UseVisualStyleBackColor = true;
             // 
-            // chkPruebaOrina
+            // chkPruebasOrina
             // 
-            this.chkPruebaOrina.AutoSize = true;
-            this.chkPruebaOrina.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPruebaOrina.Location = new System.Drawing.Point(265, 514);
-            this.chkPruebaOrina.Name = "chkPruebaOrina";
-            this.chkPruebaOrina.Size = new System.Drawing.Size(56, 17);
-            this.chkPruebaOrina.TabIndex = 217;
-            this.chkPruebaOrina.Text = "Orina";
-            this.chkPruebaOrina.UseVisualStyleBackColor = true;
+            this.chkPruebasOrina.AutoSize = true;
+            this.chkPruebasOrina.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPruebasOrina.Location = new System.Drawing.Point(265, 514);
+            this.chkPruebasOrina.Name = "chkPruebasOrina";
+            this.chkPruebasOrina.Size = new System.Drawing.Size(56, 17);
+            this.chkPruebasOrina.TabIndex = 217;
+            this.chkPruebasOrina.Text = "Orina";
+            this.chkPruebasOrina.UseVisualStyleBackColor = true;
             // 
             // chkPruebasGlicemia
             // 
@@ -831,14 +750,14 @@
             this.txtPruebasOtrosDescripcion.TabIndex = 221;
             this.txtPruebasOtrosDescripcion.Text = "";
             // 
-            // richTextBox1
+            // txtHallazgosPruebas
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(165, 575);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(599, 35);
-            this.richTextBox1.TabIndex = 223;
-            this.richTextBox1.Text = "";
+            this.txtHallazgosPruebas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHallazgosPruebas.Location = new System.Drawing.Point(165, 575);
+            this.txtHallazgosPruebas.Name = "txtHallazgosPruebas";
+            this.txtHallazgosPruebas.Size = new System.Drawing.Size(599, 35);
+            this.txtHallazgosPruebas.TabIndex = 223;
+            this.txtHallazgosPruebas.Text = "";
             // 
             // label29
             // 
@@ -1074,14 +993,14 @@
             this.label38.TabIndex = 250;
             this.label38.Text = "ENFERMEDAD";
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(659, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 31);
-            this.textBox1.TabIndex = 252;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(659, 23);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(103, 31);
+            this.txtID.TabIndex = 252;
             // 
             // label39
             // 
@@ -1095,8 +1014,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbEmergenciaDEP);
-            this.groupBox1.Controls.Add(this.rbEmergenciaREF);
+            this.groupBox1.Controls.Add(this.rbEstatusDEP);
+            this.groupBox1.Controls.Add(this.rbEstatusREF);
             this.groupBox1.Controls.Add(this.rbEstatusADM);
             this.groupBox1.Controls.Add(this.rbEstatusAAP);
             this.groupBox1.Controls.Add(this.rbEstatusDDA);
@@ -1106,29 +1025,29 @@
             this.groupBox1.TabIndex = 253;
             this.groupBox1.TabStop = false;
             // 
-            // rbEmergenciaDEP
+            // rbEstatusDEP
             // 
-            this.rbEmergenciaDEP.AutoSize = true;
-            this.rbEmergenciaDEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbEmergenciaDEP.Location = new System.Drawing.Point(368, 12);
-            this.rbEmergenciaDEP.Name = "rbEmergenciaDEP";
-            this.rbEmergenciaDEP.Size = new System.Drawing.Size(76, 17);
-            this.rbEmergenciaDEP.TabIndex = 253;
-            this.rbEmergenciaDEP.TabStop = true;
-            this.rbEmergenciaDEP.Text = "Fallecido";
-            this.rbEmergenciaDEP.UseVisualStyleBackColor = true;
+            this.rbEstatusDEP.AutoSize = true;
+            this.rbEstatusDEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEstatusDEP.Location = new System.Drawing.Point(368, 12);
+            this.rbEstatusDEP.Name = "rbEstatusDEP";
+            this.rbEstatusDEP.Size = new System.Drawing.Size(76, 17);
+            this.rbEstatusDEP.TabIndex = 253;
+            this.rbEstatusDEP.TabStop = true;
+            this.rbEstatusDEP.Text = "Fallecido";
+            this.rbEstatusDEP.UseVisualStyleBackColor = true;
             // 
-            // rbEmergenciaREF
+            // rbEstatusREF
             // 
-            this.rbEmergenciaREF.AutoSize = true;
-            this.rbEmergenciaREF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbEmergenciaREF.Location = new System.Drawing.Point(294, 12);
-            this.rbEmergenciaREF.Name = "rbEmergenciaREF";
-            this.rbEmergenciaREF.Size = new System.Drawing.Size(73, 17);
-            this.rbEmergenciaREF.TabIndex = 252;
-            this.rbEmergenciaREF.TabStop = true;
-            this.rbEmergenciaREF.Text = "Referido";
-            this.rbEmergenciaREF.UseVisualStyleBackColor = true;
+            this.rbEstatusREF.AutoSize = true;
+            this.rbEstatusREF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEstatusREF.Location = new System.Drawing.Point(294, 12);
+            this.rbEstatusREF.Name = "rbEstatusREF";
+            this.rbEstatusREF.Size = new System.Drawing.Size(73, 17);
+            this.rbEstatusREF.TabIndex = 252;
+            this.rbEstatusREF.TabStop = true;
+            this.rbEstatusREF.Text = "Referido";
+            this.rbEstatusREF.UseVisualStyleBackColor = true;
             // 
             // rbEstatusADM
             // 
@@ -1168,77 +1087,87 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.radioButton5);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.txtOrigenOtros);
+            this.groupBox2.Controls.Add(this.rbOrigenOtros);
+            this.groupBox2.Controls.Add(this.rbOrigenEnfGral);
+            this.groupBox2.Controls.Add(this.rbOrigenAccidenteTransito);
+            this.groupBox2.Controls.Add(this.rbOrigenMaternidad);
+            this.groupBox2.Controls.Add(this.rbOrigenAccidenteTrabajo);
             this.groupBox2.Location = new System.Drawing.Point(165, 829);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(600, 55);
             this.groupBox2.TabIndex = 254;
             this.groupBox2.TabStop = false;
             // 
-            // radioButton1
+            // txtOrigenOtros
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(4, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 17);
-            this.radioButton1.TabIndex = 259;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Otros";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.txtOrigenOtros.Enabled = false;
+            this.txtOrigenOtros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrigenOtros.Location = new System.Drawing.Point(66, 27);
+            this.txtOrigenOtros.MaxLength = 175;
+            this.txtOrigenOtros.Name = "txtOrigenOtros";
+            this.txtOrigenOtros.Size = new System.Drawing.Size(501, 20);
+            this.txtOrigenOtros.TabIndex = 257;
             // 
-            // radioButton2
+            // rbOrigenOtros
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(344, 10);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(150, 17);
-            this.radioButton2.TabIndex = 258;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Accidente de Transito";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbOrigenOtros.AutoSize = true;
+            this.rbOrigenOtros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOrigenOtros.Location = new System.Drawing.Point(4, 29);
+            this.rbOrigenOtros.Name = "rbOrigenOtros";
+            this.rbOrigenOtros.Size = new System.Drawing.Size(55, 17);
+            this.rbOrigenOtros.TabIndex = 259;
+            this.rbOrigenOtros.TabStop = true;
+            this.rbOrigenOtros.Text = "Otros";
+            this.rbOrigenOtros.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbOrigenEnfGral
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(214, 11);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(129, 17);
-            this.radioButton3.TabIndex = 257;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Accidente Trabajo";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbOrigenEnfGral.AutoSize = true;
+            this.rbOrigenEnfGral.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOrigenEnfGral.Location = new System.Drawing.Point(4, 11);
+            this.rbOrigenEnfGral.Name = "rbOrigenEnfGral";
+            this.rbOrigenEnfGral.Size = new System.Drawing.Size(123, 17);
+            this.rbOrigenEnfGral.TabIndex = 255;
+            this.rbOrigenEnfGral.TabStop = true;
+            this.rbOrigenEnfGral.Text = "Enfermedad Gral.";
+            this.rbOrigenEnfGral.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbOrigenAccidenteTransito
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(126, 11);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(88, 17);
-            this.radioButton4.TabIndex = 256;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Maternidad";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbOrigenAccidenteTransito.AutoSize = true;
+            this.rbOrigenAccidenteTransito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOrigenAccidenteTransito.Location = new System.Drawing.Point(344, 10);
+            this.rbOrigenAccidenteTransito.Name = "rbOrigenAccidenteTransito";
+            this.rbOrigenAccidenteTransito.Size = new System.Drawing.Size(150, 17);
+            this.rbOrigenAccidenteTransito.TabIndex = 258;
+            this.rbOrigenAccidenteTransito.TabStop = true;
+            this.rbOrigenAccidenteTransito.Text = "Accidente de Transito";
+            this.rbOrigenAccidenteTransito.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rbOrigenMaternidad
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.Location = new System.Drawing.Point(4, 11);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(123, 17);
-            this.radioButton5.TabIndex = 255;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Enfermedad Gral.";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbOrigenMaternidad.AutoSize = true;
+            this.rbOrigenMaternidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOrigenMaternidad.Location = new System.Drawing.Point(126, 11);
+            this.rbOrigenMaternidad.Name = "rbOrigenMaternidad";
+            this.rbOrigenMaternidad.Size = new System.Drawing.Size(88, 17);
+            this.rbOrigenMaternidad.TabIndex = 256;
+            this.rbOrigenMaternidad.TabStop = true;
+            this.rbOrigenMaternidad.Text = "Maternidad";
+            this.rbOrigenMaternidad.UseVisualStyleBackColor = true;
+            // 
+            // rbOrigenAccidenteTrabajo
+            // 
+            this.rbOrigenAccidenteTrabajo.AutoSize = true;
+            this.rbOrigenAccidenteTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOrigenAccidenteTrabajo.Location = new System.Drawing.Point(214, 11);
+            this.rbOrigenAccidenteTrabajo.Name = "rbOrigenAccidenteTrabajo";
+            this.rbOrigenAccidenteTrabajo.Size = new System.Drawing.Size(129, 17);
+            this.rbOrigenAccidenteTrabajo.TabIndex = 257;
+            this.rbOrigenAccidenteTrabajo.TabStop = true;
+            this.rbOrigenAccidenteTrabajo.Text = "Accidente Trabajo";
+            this.rbOrigenAccidenteTrabajo.UseVisualStyleBackColor = true;
             // 
             // label40
             // 
@@ -1260,26 +1189,168 @@
             this.label41.TabIndex = 256;
             this.label41.Text = "POSITIVAS";
             // 
-            // textBox2
+            // groupBox3
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(66, 27);
-            this.textBox2.MaxLength = 175;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(501, 20);
-            this.textBox2.TabIndex = 257;
+            this.groupBox3.Controls.Add(this.rbMujer);
+            this.groupBox3.Controls.Add(this.rbHombre);
+            this.groupBox3.Location = new System.Drawing.Point(165, 87);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 27);
+            this.groupBox3.TabIndex = 257;
+            this.groupBox3.TabStop = false;
+            // 
+            // rbMujer
+            // 
+            this.rbMujer.AutoSize = true;
+            this.rbMujer.Enabled = false;
+            this.rbMujer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMujer.Location = new System.Drawing.Point(104, 8);
+            this.rbMujer.Name = "rbMujer";
+            this.rbMujer.Size = new System.Drawing.Size(89, 17);
+            this.rbMujer.TabIndex = 175;
+            this.rbMujer.Text = "FEMENINO";
+            this.rbMujer.UseVisualStyleBackColor = true;
+            // 
+            // rbHombre
+            // 
+            this.rbHombre.AutoSize = true;
+            this.rbHombre.Enabled = false;
+            this.rbHombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbHombre.Location = new System.Drawing.Point(7, 8);
+            this.rbHombre.Name = "rbHombre";
+            this.rbHombre.Size = new System.Drawing.Size(97, 17);
+            this.rbHombre.TabIndex = 174;
+            this.rbHombre.Text = "MASCULINO";
+            this.rbHombre.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.rbAccionCivica);
+            this.groupBox5.Controls.Add(this.rbSenasa);
+            this.groupBox5.Location = new System.Drawing.Point(637, 75);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(125, 58);
+            this.groupBox5.TabIndex = 258;
+            this.groupBox5.TabStop = false;
+            // 
+            // rbAccionCivica
+            // 
+            this.rbAccionCivica.AutoSize = true;
+            this.rbAccionCivica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAccionCivica.Location = new System.Drawing.Point(6, 36);
+            this.rbAccionCivica.Name = "rbAccionCivica";
+            this.rbAccionCivica.Size = new System.Drawing.Size(115, 17);
+            this.rbAccionCivica.TabIndex = 181;
+            this.rbAccionCivica.Text = "ACCION CIVICA";
+            this.rbAccionCivica.UseVisualStyleBackColor = true;
+            // 
+            // rbSenasa
+            // 
+            this.rbSenasa.AutoSize = true;
+            this.rbSenasa.Checked = true;
+            this.rbSenasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSenasa.Location = new System.Drawing.Point(5, 13);
+            this.rbSenasa.Name = "rbSenasa";
+            this.rbSenasa.Size = new System.Drawing.Size(74, 17);
+            this.rbSenasa.TabIndex = 180;
+            this.rbSenasa.TabStop = true;
+            this.rbSenasa.Text = "SENASA";
+            this.rbSenasa.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarNSS
+            // 
+            this.btnBuscarNSS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarNSS.Location = new System.Drawing.Point(324, 119);
+            this.btnBuscarNSS.Name = "btnBuscarNSS";
+            this.btnBuscarNSS.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarNSS.TabIndex = 259;
+            this.btnBuscarNSS.Text = "BUSCAR";
+            this.btnBuscarNSS.UseVisualStyleBackColor = true;
+            this.btnBuscarNSS.Click += new System.EventHandler(this.btnBuscarNSS_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.rbAlergiasSi);
+            this.groupBox6.Controls.Add(this.rbAlergiasNo);
+            this.groupBox6.Location = new System.Drawing.Point(168, 317);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(94, 30);
+            this.groupBox6.TabIndex = 260;
+            this.groupBox6.TabStop = false;
+            // 
+            // rbAlergiasSi
+            // 
+            this.rbAlergiasSi.AutoSize = true;
+            this.rbAlergiasSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAlergiasSi.Location = new System.Drawing.Point(54, 10);
+            this.rbAlergiasSi.Name = "rbAlergiasSi";
+            this.rbAlergiasSi.Size = new System.Drawing.Size(37, 17);
+            this.rbAlergiasSi.TabIndex = 263;
+            this.rbAlergiasSi.TabStop = true;
+            this.rbAlergiasSi.Text = "SI";
+            this.rbAlergiasSi.UseVisualStyleBackColor = true;
+            // 
+            // rbAlergiasNo
+            // 
+            this.rbAlergiasNo.AutoSize = true;
+            this.rbAlergiasNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAlergiasNo.Location = new System.Drawing.Point(5, 10);
+            this.rbAlergiasNo.Name = "rbAlergiasNo";
+            this.rbAlergiasNo.Size = new System.Drawing.Size(43, 17);
+            this.rbAlergiasNo.TabIndex = 262;
+            this.rbAlergiasNo.TabStop = true;
+            this.rbAlergiasNo.Text = "NO";
+            this.rbAlergiasNo.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.rbAtencionesPreviasSi);
+            this.groupBox7.Controls.Add(this.rbAtencionesPreviasNo);
+            this.groupBox7.Location = new System.Drawing.Point(168, 247);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(94, 30);
+            this.groupBox7.TabIndex = 261;
+            this.groupBox7.TabStop = false;
+            // 
+            // rbAtencionesPreviasSi
+            // 
+            this.rbAtencionesPreviasSi.AutoSize = true;
+            this.rbAtencionesPreviasSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAtencionesPreviasSi.Location = new System.Drawing.Point(54, 10);
+            this.rbAtencionesPreviasSi.Name = "rbAtencionesPreviasSi";
+            this.rbAtencionesPreviasSi.Size = new System.Drawing.Size(37, 17);
+            this.rbAtencionesPreviasSi.TabIndex = 263;
+            this.rbAtencionesPreviasSi.TabStop = true;
+            this.rbAtencionesPreviasSi.Text = "SI";
+            this.rbAtencionesPreviasSi.UseVisualStyleBackColor = true;
+            // 
+            // rbAtencionesPreviasNo
+            // 
+            this.rbAtencionesPreviasNo.AutoSize = true;
+            this.rbAtencionesPreviasNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAtencionesPreviasNo.Location = new System.Drawing.Point(5, 10);
+            this.rbAtencionesPreviasNo.Name = "rbAtencionesPreviasNo";
+            this.rbAtencionesPreviasNo.Size = new System.Drawing.Size(43, 17);
+            this.rbAtencionesPreviasNo.TabIndex = 262;
+            this.rbAtencionesPreviasNo.TabStop = true;
+            this.rbAtencionesPreviasNo.Text = "NO";
+            this.rbAtencionesPreviasNo.UseVisualStyleBackColor = true;
             // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 955);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.btnBuscarNSS);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label39);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label37);
@@ -1303,13 +1374,13 @@
             this.Controls.Add(this.txtPruebasRadiografias);
             this.Controls.Add(this.chkPruebasRadiografias);
             this.Controls.Add(this.label30);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtHallazgosPruebas);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.txtPruebasOtrosDescripcion);
             this.Controls.Add(this.chkPruebasOtros);
             this.Controls.Add(this.chkPruebasEmbarazo);
             this.Controls.Add(this.chkPruebasGlicemia);
-            this.Controls.Add(this.chkPruebaOrina);
+            this.Controls.Add(this.chkPruebasOrina);
             this.Controls.Add(this.chkPruebasHemograma);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label26);
@@ -1335,66 +1406,49 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtAlergias);
-            this.Controls.Add(this.chkAlergiasSi);
-            this.Controls.Add(this.chkAlergiasNo);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtAtencionesPrevias);
-            this.Controls.Add(this.chkAtencionPreviaSi);
-            this.Controls.Add(this.chkAtencionPreviaNo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtAntecedentesPatologicos);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMotivoConsulta);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.rbAccionCivica);
-            this.Controls.Add(this.rbSenasa);
             this.Controls.Add(this.txtNSS);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.rbMujer);
-            this.Controls.Add(this.rbHombre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNombrePaciente);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtHora);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.groupBox4);
             this.Name = "frmHistoriaClinica";
             this.Text = "frmHistoriaClinica";
             this.Load += new System.EventHandler(this.frmHistoriaClinica_Load);
             this.Controls.SetChildIndex(this.groupBox4, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.Controls.SetChildIndex(this.dtFecha, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.maskedTextBox1, 0);
+            this.Controls.SetChildIndex(this.txtHora, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.txtNombrePaciente, 0);
             this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.rbHombre, 0);
-            this.Controls.SetChildIndex(this.rbMujer, 0);
-            this.Controls.SetChildIndex(this.lblTituloForm, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.txtEdad, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.txtNSS, 0);
-            this.Controls.SetChildIndex(this.rbSenasa, 0);
-            this.Controls.SetChildIndex(this.rbAccionCivica, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.txtMotivoConsulta, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.txtAntecedentesPatologicos, 0);
             this.Controls.SetChildIndex(this.label9, 0);
-            this.Controls.SetChildIndex(this.chkAtencionPreviaNo, 0);
-            this.Controls.SetChildIndex(this.chkAtencionPreviaSi, 0);
             this.Controls.SetChildIndex(this.txtAtencionesPrevias, 0);
             this.Controls.SetChildIndex(this.label10, 0);
             this.Controls.SetChildIndex(this.label12, 0);
-            this.Controls.SetChildIndex(this.chkAlergiasNo, 0);
-            this.Controls.SetChildIndex(this.chkAlergiasSi, 0);
             this.Controls.SetChildIndex(this.txtAlergias, 0);
             this.Controls.SetChildIndex(this.label11, 0);
             this.Controls.SetChildIndex(this.label13, 0);
@@ -1420,13 +1474,13 @@
             this.Controls.SetChildIndex(this.label26, 0);
             this.Controls.SetChildIndex(this.label28, 0);
             this.Controls.SetChildIndex(this.chkPruebasHemograma, 0);
-            this.Controls.SetChildIndex(this.chkPruebaOrina, 0);
+            this.Controls.SetChildIndex(this.chkPruebasOrina, 0);
             this.Controls.SetChildIndex(this.chkPruebasGlicemia, 0);
             this.Controls.SetChildIndex(this.chkPruebasEmbarazo, 0);
             this.Controls.SetChildIndex(this.chkPruebasOtros, 0);
             this.Controls.SetChildIndex(this.txtPruebasOtrosDescripcion, 0);
             this.Controls.SetChildIndex(this.label29, 0);
-            this.Controls.SetChildIndex(this.richTextBox1, 0);
+            this.Controls.SetChildIndex(this.txtHallazgosPruebas, 0);
             this.Controls.SetChildIndex(this.label30, 0);
             this.Controls.SetChildIndex(this.chkPruebasRadiografias, 0);
             this.Controls.SetChildIndex(this.txtPruebasRadiografias, 0);
@@ -1450,16 +1504,30 @@
             this.Controls.SetChildIndex(this.label37, 0);
             this.Controls.SetChildIndex(this.label38, 0);
             this.Controls.SetChildIndex(this.label39, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.txtID, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.label40, 0);
             this.Controls.SetChildIndex(this.label41, 0);
+            this.Controls.SetChildIndex(this.groupBox3, 0);
+            this.Controls.SetChildIndex(this.groupBox5, 0);
+            this.Controls.SetChildIndex(this.btnBuscarNSS, 0);
+            this.Controls.SetChildIndex(this.groupBox6, 0);
+            this.Controls.SetChildIndex(this.lblTituloForm, 0);
+            this.Controls.SetChildIndex(this.groupBox7, 0);
             this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1476,34 +1544,26 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtHora;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombrePaciente;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton rbMujer;
-        private System.Windows.Forms.RadioButton rbHombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNSS;
-        private System.Windows.Forms.RadioButton rbAccionCivica;
-        private System.Windows.Forms.RadioButton rbSenasa;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox txtMotivoConsulta;
         private System.Windows.Forms.RichTextBox txtAntecedentesPatologicos;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox chkAtencionPreviaNo;
-        private System.Windows.Forms.CheckBox chkAtencionPreviaSi;
         private System.Windows.Forms.RichTextBox txtAtencionesPrevias;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox txtAlergias;
-        private System.Windows.Forms.CheckBox chkAlergiasSi;
-        private System.Windows.Forms.CheckBox chkAlergiasNo;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -1528,12 +1588,12 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.CheckBox chkPruebasHemograma;
-        private System.Windows.Forms.CheckBox chkPruebaOrina;
+        private System.Windows.Forms.CheckBox chkPruebasOrina;
         private System.Windows.Forms.CheckBox chkPruebasGlicemia;
         private System.Windows.Forms.CheckBox chkPruebasEmbarazo;
         private System.Windows.Forms.CheckBox chkPruebasOtros;
         private System.Windows.Forms.RichTextBox txtPruebasOtrosDescripcion;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtHallazgosPruebas;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.CheckBox chkPruebasRadiografias;
@@ -1557,22 +1617,35 @@
         private System.Windows.Forms.CheckBox chkEmergenciaOtros;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbEmergenciaDEP;
-        private System.Windows.Forms.RadioButton rbEmergenciaREF;
+        private System.Windows.Forms.RadioButton rbEstatusDEP;
+        private System.Windows.Forms.RadioButton rbEstatusREF;
         private System.Windows.Forms.RadioButton rbEstatusADM;
         private System.Windows.Forms.RadioButton rbEstatusAAP;
         private System.Windows.Forms.RadioButton rbEstatusDDA;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbOrigenOtros;
+        private System.Windows.Forms.RadioButton rbOrigenEnfGral;
+        private System.Windows.Forms.RadioButton rbOrigenAccidenteTransito;
+        private System.Windows.Forms.RadioButton rbOrigenMaternidad;
+        private System.Windows.Forms.RadioButton rbOrigenAccidenteTrabajo;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtOrigenOtros;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rbMujer;
+        private System.Windows.Forms.RadioButton rbHombre;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton rbAccionCivica;
+        private System.Windows.Forms.RadioButton rbSenasa;
+        private System.Windows.Forms.Button btnBuscarNSS;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton rbAlergiasSi;
+        private System.Windows.Forms.RadioButton rbAlergiasNo;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RadioButton rbAtencionesPreviasSi;
+        private System.Windows.Forms.RadioButton rbAtencionesPreviasNo;
     }
 }

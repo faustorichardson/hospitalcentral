@@ -429,7 +429,7 @@ namespace hospitalcentral
                             txtRecord.Text = MyReader["record"].ToString();
                             txtNSS.Text = MyReader["nss"].ToString();
                             txtAntecedentes.Text = MyReader["antecedentes"].ToString();
-                            dtFecha.Value = Convert.ToDateTime(MyReader["fecha"].ToString());
+                            dtFecha.Value = Convert.ToDateTime(MyReader["fecha_nacimiento"].ToString());
                             string sexo = MyReader["sexo"].ToString();
                             if (sexo == "M")
                             {
