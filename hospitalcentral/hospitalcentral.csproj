@@ -281,6 +281,18 @@
     <Compile Include="frmHistoriaClinica.Designer.cs">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHojaIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHojaIngreso.Designer.cs">
+      <DependentUpon>frmHojaIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLicenciaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLicenciaMedica.Designer.cs">
+      <DependentUpon>frmLicenciaMedica.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrintExamenesMedicos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -603,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistoriaClinica.resx">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLicenciaMedica.resx">
+      <DependentUpon>frmLicenciaMedica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintExamenesMedicos.resx">
       <DependentUpon>frmPrintExamenesMedicos.cs</DependentUpon>

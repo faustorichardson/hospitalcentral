@@ -72,10 +72,10 @@ namespace hospitalcentral
                     cWhere = cWhere + " AND salida_inventario.tipoaccion = 'A'";
                 }
             }
-            else
-            {
-                MessageBox.Show("Estas opciones solo aplican a salidas del inventario...");                
-            }
+            //else
+            //{
+            //    MessageBox.Show("Estas opciones solo aplican a salidas del inventario...");                
+            //}
 
             try
             {

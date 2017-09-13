@@ -572,6 +572,12 @@ namespace hospitalcentral
             ofrmPrintHistoriaClinicaEstadisticas.ShowDialog();
         }
 
+        private void buttonItem13_Click(object sender, EventArgs e)
+        {
+            frmLicenciaMedica ofrmLicenciaMedica = new frmLicenciaMedica();
+            ofrmLicenciaMedica.ShowDialog();
+        }
+
        
         
     }

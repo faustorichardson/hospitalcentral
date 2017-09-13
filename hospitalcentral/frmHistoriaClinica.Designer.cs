@@ -1038,7 +1038,6 @@
             this.rbEstatusDEP.Name = "rbEstatusDEP";
             this.rbEstatusDEP.Size = new System.Drawing.Size(76, 17);
             this.rbEstatusDEP.TabIndex = 253;
-            this.rbEstatusDEP.TabStop = true;
             this.rbEstatusDEP.Text = "Fallecido";
             this.rbEstatusDEP.UseVisualStyleBackColor = true;
             // 
@@ -1050,7 +1049,6 @@
             this.rbEstatusREF.Name = "rbEstatusREF";
             this.rbEstatusREF.Size = new System.Drawing.Size(73, 17);
             this.rbEstatusREF.TabIndex = 252;
-            this.rbEstatusREF.TabStop = true;
             this.rbEstatusREF.Text = "Referido";
             this.rbEstatusREF.UseVisualStyleBackColor = true;
             // 
@@ -1062,7 +1060,6 @@
             this.rbEstatusADM.Name = "rbEstatusADM";
             this.rbEstatusADM.Size = new System.Drawing.Size(73, 17);
             this.rbEstatusADM.TabIndex = 251;
-            this.rbEstatusADM.TabStop = true;
             this.rbEstatusADM.Text = "Admitido";
             this.rbEstatusADM.UseVisualStyleBackColor = true;
             // 
@@ -1074,13 +1071,13 @@
             this.rbEstatusAAP.Name = "rbEstatusAAP";
             this.rbEstatusAAP.Size = new System.Drawing.Size(108, 17);
             this.rbEstatusAAP.TabIndex = 250;
-            this.rbEstatusAAP.TabStop = true;
             this.rbEstatusAAP.Text = "Alta a Peticion";
             this.rbEstatusAAP.UseVisualStyleBackColor = true;
             // 
             // rbEstatusDDA
             // 
             this.rbEstatusDDA.AutoSize = true;
+            this.rbEstatusDDA.Checked = true;
             this.rbEstatusDDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbEstatusDDA.Location = new System.Drawing.Point(4, 12);
             this.rbEstatusDDA.Name = "rbEstatusDDA";
