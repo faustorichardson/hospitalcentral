@@ -23,6 +23,7 @@ namespace hospitalcentral
     {
         public string UsuarioActual;        
         //public string cUsuarioActual = frmLogin.cUsuarioActual;        
+        // PERMISO DE MANTENIMIENTOS
         string permiso_mantenimiento = "0";        
         string permiso_mantenimiento_doctores = "0";
         string permiso_mantenimiento_pacientes = "0";
@@ -30,13 +31,25 @@ namespace hospitalcentral
         string permiso_mantenimiento_productoscategorias = "0";
         string permiso_mantenimiento_usuarios = "0";
         string permiso_mantenimiento_suplidores = "0";
+        // PERMISO DE PROCESOS
         string permiso_proceso = "0";
         string permiso_proceso_citasmedicas = "0";
         string permiso_proceso_entradainventario = "0";
+        string permiso_proceso_salidainventario = "0";
+        string permiso_proceso_salaemergencia = "0";
+        string permiso_proceso_licenciasmedicas = "0";
+        // PERMISO DE REPORTES
         string permiso_reporte = "0";
         string permiso_reporte_citasmedicas = "0";
+        string permiso_reportes_existencialaboratorio = "0";
+        string permiso_reportes_materiallaboratorio = "0";
+        string permiso_reportes_examenesmedicos = "0";
+        string permiso_reportes_historialclinico = "0";
+        // PERMISO DE ESTADISTICAS
         string permiso_estadistica = "0";
         string permiso_estadistica_citasmedicas = "0";
+        string permiso_estadisticas_materiallaboratorio = "0";
+        string permiso_estadisticas_historialclinico = "0";
         
         
         public frmMenu(string cUsuarioActual)
@@ -80,11 +93,20 @@ namespace hospitalcentral
                     " permiso_mantenimiento_suplidores,"+
                     " permiso_proceso, " +
                     " permiso_proceso_citasmedicas," +
+                    " permiso_proceso_salidainventario," +
+                    " permiso_proceso_salaemergencia," +
                     " permiso_proceso_entradainventario,"+
+                    " permiso_proceso_licenciasmedicas,"+
                     " permiso_reporte, " +
                     " permiso_reporte_citasmedicas," +
+                    " permiso_reportes_existencialaboratorio,"+
+                    " permiso_reportes_materiallaboratorio,"+
+                    " permiso_reportes_examenesmedicos,"+
+                    " permiso_reportes_historialclinico,"+
                     " permiso_estadistica, " +
-                    " permiso_estadistica_citasmedicas"+
+                    " permiso_estadistica_citasmedicas,"+
+                    " permiso_estadistica_materiallaboratorio,"+
+                    " permiso_estadistica_historialclinico"+
                     " FROM usuarios WHERE usuario = '" + UsuarioActual + "'";
 
                 // Step 4 - connection open
@@ -98,6 +120,7 @@ namespace hospitalcentral
                 {
                     while (MyReader.Read())
                     {                                            
+                        // MANTENIMIENTOS
                         permiso_mantenimiento = MyReader["permiso_mantenimiento"].ToString();
                         permiso_mantenimiento_doctores = MyReader["permiso_mantenimiento_doctores"].ToString();
                         permiso_mantenimiento_pacientes = MyReader["permiso_mantenimiento_pacientes"].ToString();
@@ -105,13 +128,24 @@ namespace hospitalcentral
                         permiso_mantenimiento_productoscategorias = MyReader["permiso_mantenimiento_productoscategorias"].ToString();
                         permiso_mantenimiento_usuarios = MyReader["permiso_mantenimiento_usuario"].ToString();
                         permiso_mantenimiento_suplidores = MyReader["permiso_mantenimiento_suplidores"].ToString();
+                        // PROCESOS
                         permiso_proceso = MyReader["permiso_proceso"].ToString();
                         permiso_proceso_citasmedicas = MyReader["permiso_proceso_citasmedicas"].ToString();
                         permiso_proceso_entradainventario = MyReader["permiso_proceso_entradainventario"].ToString();
+                        permiso_proceso_salidainventario = MyReader["permiso_proceso_salidainventario"].ToString();
+                        permiso_proceso_salaemergencia = MyReader["permiso_proceso_salaemergencia"].ToString();
+                        permiso_proceso_licenciasmedicas = MyReader["permiso_proceso_licenciasmedicas"].ToString();
+                        // REPORTES
                         permiso_reporte = MyReader["permiso_reporte"].ToString();
                         permiso_reporte_citasmedicas = MyReader["permiso_reporte_citasmedicas"].ToString();
+                        permiso_reportes_existencialaboratorio = MyReader["permiso_reportes_existencialaboratorio"].ToString();
+                        permiso_reportes_examenesmedicos = MyReader["permiso_reportes_examenesmedicos"].ToString();
+                        permiso_reportes_historialclinico = MyReader["permiso_reportes_historialclinico"].ToString();
+                        // ESTADISTICAS
                         permiso_estadistica = MyReader["permiso_estadistica"].ToString();
                         permiso_estadistica_citasmedicas = MyReader["permiso_estadistica_citasmedicas"].ToString();
+                        permiso_estadisticas_materiallaboratorio = MyReader["permiso_estadistica_materiallaboratorio"].ToString();
+                        permiso_estadisticas_historialclinico = MyReader["permiso_estadistica_historialclinico"].ToString();
                     }
                 }
                 else
@@ -231,6 +265,33 @@ namespace hospitalcentral
             {
                 this.btn_proceso_entradainventario.Enabled = false;
             }
+            /////
+            if (permiso_proceso_licenciasmedicas == "1")
+            {
+                this.btn_proceso_licenciasmedicas.Enabled = true;
+            }
+            else
+            {
+                this.btn_proceso_licenciasmedicas.Enabled = false;
+            }
+            /////
+            if (permiso_proceso_salidainventario == "1")
+            {
+                this.btn_proceso_salidainventario.Enabled = true;
+            }
+            else
+            {
+                this.btn_proceso_salidainventario.Enabled = true;
+            }
+            /////
+            if (permiso_proceso_salaemergencia == "1")
+            {
+                this.btn_proceso_salaemergencias.Enabled = true;
+            }
+            else
+            {
+                this.btn_proceso_salaemergencias.Enabled = false;
+            }
 
             // VERIFICANDO LOS PERMISOS DE REPORTES
             if (permiso_reporte == "1")
@@ -250,6 +311,42 @@ namespace hospitalcentral
             {
                 this.btn_reportes_citasmedicas.Enabled = false;
             }
+            /////
+            if (permiso_reportes_existencialaboratorio == "1")
+            {
+                this.btn_reportes_existencialaboratorio.Enabled = true;
+            }
+            else
+            {
+                this.btn_reportes_existencialaboratorio.Enabled = false;
+            }
+            /////
+            if (permiso_reportes_materiallaboratorio == "1")
+            {
+                this.btn_reportes_materiallaboratorio.Enabled = true;
+            }
+            else
+            {
+                this.btn_reportes_materiallaboratorio.Enabled = false;
+            }
+            /////
+            if (permiso_reportes_examenesmedicos == "1")
+            {
+                this.btn_reportes_examenesmedicos.Enabled = true;
+            }
+            else
+            {
+                this.btn_reportes_examenesmedicos.Enabled = false;
+            }
+            /////
+            if (permiso_reportes_historialclinico == "1")
+            {
+                this.btn_reportes_historialclinico.Enabled = true;
+            }
+            else
+            {
+                this.btn_reportes_historialclinico.Enabled = false;
+            }
 
             // VERIFICANDO LOS PERMISOS DE ESTADISTICAS
             if (permiso_estadistica == "1")
@@ -268,6 +365,24 @@ namespace hospitalcentral
             else
             {
                 this.btn_estadisticas_citasmedicas.Enabled = false;
+            }
+            /////
+            if (permiso_estadisticas_historialclinico == "1")
+            {
+                this.btn_estadisticas_historialclinico.Enabled = true;
+            }
+            else
+            {
+                this.btn_estadisticas_historialclinico.Enabled = false;
+            }
+            /////
+            if (permiso_estadisticas_materiallaboratorio == "1")
+            {
+                this.btn_estadisticas_materiallaboratorio.Enabled = true;
+            }
+            else
+            {
+                this.btn_estadisticas_materiallaboratorio.Enabled = false;
             }
 
         }
@@ -576,6 +691,11 @@ namespace hospitalcentral
         {
             frmLicenciaMedica ofrmLicenciaMedica = new frmLicenciaMedica();
             ofrmLicenciaMedica.ShowDialog();
+        }
+
+        private void ribbonPanel1_Click(object sender, EventArgs e)
+        {
+
         }
 
        

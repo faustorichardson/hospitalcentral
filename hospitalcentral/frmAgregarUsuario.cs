@@ -50,10 +50,14 @@ namespace hospitalcentral
             this.chkProcesos.Checked = false;
             this.chkPCitasMedicas.Checked = false;
             this.chkPEntradaInventario.Checked = false;
+            this.chkPLicenciaMedica.Checked = false;
             this.chkReportes.Checked = false;
             this.chkRCitasMedicas.Checked = false;
             this.chkEstadisticas.Checked = false;
             this.chkECitasMedicas.Checked = false;
+            this.chkPSalaEmergencia.Checked = false;
+            this.chkPSalidaInventario.Checked = false;
+            this.chkPLicenciaMedica.Checked = false;
         }
 
         private void Botones()
@@ -86,8 +90,12 @@ namespace hospitalcentral
                     this.chkMCategoriasProductos.Enabled = false;
                     this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
+                    this.chkPSalidaInventario.Enabled = false;
+                    this.chkPSalaEmergencia.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -116,8 +124,12 @@ namespace hospitalcentral
                     this.chkMSuplidores.Enabled = true;
                     this.chkPCitasMedicas.Enabled = true;
                     this.chkPEntradaInventario.Enabled = true;
+                    this.chkPLicenciaMedica.Enabled = true;
                     this.chkRCitasMedicas.Enabled = true;
                     this.chkECitasMedicas.Enabled = true;
+                    this.chkPSalidaInventario.Enabled = true;
+                    this.chkPSalaEmergencia.Enabled = true;
+                    this.chkPLicenciaMedica.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -146,8 +158,12 @@ namespace hospitalcentral
                     this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkPEntradaInventario.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
+                    this.chkPSalidaInventario.Enabled = false;
+                    this.chkPSalaEmergencia.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     break;
 
                 case "Editar":
@@ -176,8 +192,12 @@ namespace hospitalcentral
                     this.chkMSuplidores.Enabled = true;
                     this.chkPCitasMedicas.Enabled = true;
                     this.chkPEntradaInventario.Enabled = true;
+                    this.chkPLicenciaMedica.Enabled = true;
                     this.chkRCitasMedicas.Enabled = true;
                     this.chkECitasMedicas.Enabled = true;
+                    this.chkPSalidaInventario.Enabled = true;
+                    this.chkPSalaEmergencia.Enabled = true;
+                    this.chkPLicenciaMedica.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -206,8 +226,12 @@ namespace hospitalcentral
                     this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkPEntradaInventario.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
+                    this.chkPSalidaInventario.Enabled = false;
+                    this.chkPSalaEmergencia.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -239,8 +263,12 @@ namespace hospitalcentral
                     this.chkMSuplidores.Enabled = false;
                     this.chkPCitasMedicas.Enabled = false;
                     this.chkPEntradaInventario.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     this.chkRCitasMedicas.Enabled = false;
                     this.chkECitasMedicas.Enabled = false;
+                    this.chkPSalidaInventario.Enabled = false;
+                    this.chkPSalaEmergencia.Enabled = false;
+                    this.chkPLicenciaMedica.Enabled = false;
                     break;
 
                 default:
@@ -327,6 +355,9 @@ namespace hospitalcentral
                             " permiso_proceso," +
                             " permiso_proceso_citasmedicas,"+
                             " permiso_proceso_entradainventario," +
+                            " permiso_proceso_licenciasmedicas,"+
+                            " permiso_proceso_salidainventario,"+
+                            " permiso_proceso_salaemergencia,"+                            
                             // Permisos Reportes
                             " permiso_reporte," +
                             " permiso_reporte_citasmedicas,"+
@@ -347,6 +378,9 @@ namespace hospitalcentral
                             " @permiso_proceso,"+
                             " @permiso_proceso_citasmedicas,"+
                             " @permiso_proceso_entradainventario,"+
+                            " @permiso_proceso_licenciasmedicas," +
+                            " @permiso_proceso_salidainventario," +
+                            " @permiso_proceso_salaemergencia," +
                             // Valores permisos reportes
                             " @permiso_reporte,"+
                             " @permiso_reporte_citasmedicas,"+
@@ -451,6 +485,31 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@permiso_proceso_entradainventario", 0);
                         }
+                        if (chkPLicenciaMedica.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_licenciasmedicas", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_licenciasmedicas", 0);
+                        }
+                        if (chkPSalidaInventario.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salidainventario", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salidainventario", 0);
+                        }
+                        if (chkPSalaEmergencia.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salaemergencia", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salaemergencia", 0);
+                        }
+
                         // Verificando el estatus de los permisos REPORTES
                         if (chkReportes.Checked == true)
                         {
@@ -532,6 +591,9 @@ namespace hospitalcentral
                             " permiso_proceso = @permiso_proceso," +
                             " permiso_proceso_citasmedicas = @permiso_proceso_citasmedicas," +
                             " permiso_proceso_entradainventario = @permiso_proceso_entradainventario,"+
+                            " permiso_proceso_salaemergencia = @permiso_proceso_salaemergencia,"+
+                            " permiso_proceso_salidainventario = @permiso_proceso_salidainventario,"+
+                            " permiso_proceso_licenciasmedicas = @permiso_proceso_licenciasmedicas,"+
                             // Permisos Reportes
                             " permiso_reporte = @permiso_reporte," +
                             " permiso_reporte_citasmedicas = @permiso_reporte_citasmedicas," +
@@ -642,6 +704,31 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@permiso_proceso_entradainventario", 0);
                         }
+                        if (chkPSalidaInventario.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salidainventario", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salidainventario", 0);
+                        }
+                        if (chkPSalaEmergencia.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salaemergencia", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_salaemergencia", 0);
+                        }
+                        if (chkPLicenciaMedica.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_licenciasmedicas", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_licenciasmedicas", 0);
+                        }
+
                         // Verificando el estatus de los permisos REPORTES
                         if (chkReportes.Checked == true)
                         {
@@ -850,7 +937,34 @@ namespace hospitalcentral
                                 chkPEntradaInventario.Checked = false;
                             }
                             /////
-
+                            if (MyReader["permiso_proceso_salidainventario"].ToString() == "1")
+                            {
+                                chkPSalidaInventario.Checked = true;
+                            }
+                            else
+                            {
+                                chkPSalidaInventario.Checked = false;
+                            }
+                            /////
+                            if (MyReader["permiso_proceso_salaemergencia"].ToString() == "1")
+                            {
+                                chkPSalaEmergencia.Checked = true;
+                            }
+                            else
+                            {
+                                chkPSalaEmergencia.Checked = false;
+                            }
+                            /////
+                            if (MyReader["permiso_proceso_licenciasmedicas"].ToString() == "1")
+                            {
+                                chkPLicenciaMedica.Checked = true;
+                            }
+                            else
+                            {
+                                chkPLicenciaMedica.Checked = false;
+                            }
+                            /////
+                            
                             // PERMISOS REPORTES
                             if (MyReader["permiso_reporte"].ToString() == "1")
                             {

@@ -41,21 +41,21 @@
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_procesos_citamedica = new DevComponents.DotNetBar.ButtonItem();
             this.btn_proceso_entradainventario = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_salidainventario = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_salaemergencias = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_licenciasmedicas = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_estadisticas_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_estadisticas_materiallaboratorio = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_estadisticas_historialclinico = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.reportes_listados = new DevComponents.DotNetBar.RibbonBar();
             this.btn_reportes_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem11 = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_reportes_existencialaboratorio = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_reportes_materiallaboratorio = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_reportes_examenesmedicos = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_reportes_historialclinico = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.mantenimiento_usuarios = new DevComponents.DotNetBar.RibbonBar();
             this.btn_mantenimiento_usuarios = new DevComponents.DotNetBar.ButtonItem();
@@ -105,9 +105,9 @@
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -155,6 +155,7 @@
             this.ribbonPanel1.StyleMouseOver.Class = "";
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Click += new System.EventHandler(this.ribbonPanel1_Click);
             // 
             // ribbonBar1
             // 
@@ -264,9 +265,9 @@
             this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btn_procesos_citamedica,
             this.btn_proceso_entradainventario,
-            this.buttonItem3,
-            this.buttonItem6,
-            this.buttonItem13});
+            this.btn_proceso_salidainventario,
+            this.btn_proceso_salaemergencias,
+            this.btn_proceso_licenciasmedicas});
             this.ribbonBar3.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar3.Name = "ribbonBar3";
             this.ribbonBar3.Size = new System.Drawing.Size(764, 96);
@@ -303,35 +304,35 @@
             this.btn_proceso_entradainventario.Text = "ENTRADA INVENTARIO";
             this.btn_proceso_entradainventario.Click += new System.EventHandler(this.buttonItem2_Click_2);
             // 
-            // buttonItem3
+            // btn_proceso_salidainventario
             // 
-            this.buttonItem3.FontBold = true;
-            this.buttonItem3.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem3.Image")));
-            this.buttonItem3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.SubItemsExpandWidth = 14;
-            this.buttonItem3.Text = "SALIDA INVENTARIO";
-            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click_2);
+            this.btn_proceso_salidainventario.FontBold = true;
+            this.btn_proceso_salidainventario.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_salidainventario.Image")));
+            this.btn_proceso_salidainventario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_salidainventario.Name = "btn_proceso_salidainventario";
+            this.btn_proceso_salidainventario.SubItemsExpandWidth = 14;
+            this.btn_proceso_salidainventario.Text = "SALIDA INVENTARIO";
+            this.btn_proceso_salidainventario.Click += new System.EventHandler(this.buttonItem3_Click_2);
             // 
-            // buttonItem6
+            // btn_proceso_salaemergencias
             // 
-            this.buttonItem6.FontBold = true;
-            this.buttonItem6.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem6.Image")));
-            this.buttonItem6.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem6.Name = "buttonItem6";
-            this.buttonItem6.SubItemsExpandWidth = 14;
-            this.buttonItem6.Text = "SALA DE EMERGENCIA";
-            this.buttonItem6.Click += new System.EventHandler(this.buttonItem6_Click);
+            this.btn_proceso_salaemergencias.FontBold = true;
+            this.btn_proceso_salaemergencias.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_salaemergencias.Image")));
+            this.btn_proceso_salaemergencias.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_salaemergencias.Name = "btn_proceso_salaemergencias";
+            this.btn_proceso_salaemergencias.SubItemsExpandWidth = 14;
+            this.btn_proceso_salaemergencias.Text = "SALA DE EMERGENCIA";
+            this.btn_proceso_salaemergencias.Click += new System.EventHandler(this.buttonItem6_Click);
             // 
-            // buttonItem13
+            // btn_proceso_licenciasmedicas
             // 
-            this.buttonItem13.FontBold = true;
-            this.buttonItem13.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem13.Image")));
-            this.buttonItem13.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem13.Name = "buttonItem13";
-            this.buttonItem13.SubItemsExpandWidth = 14;
-            this.buttonItem13.Text = "LICENCIA MEDICA";
-            this.buttonItem13.Click += new System.EventHandler(this.buttonItem13_Click);
+            this.btn_proceso_licenciasmedicas.FontBold = true;
+            this.btn_proceso_licenciasmedicas.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_licenciasmedicas.Image")));
+            this.btn_proceso_licenciasmedicas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_licenciasmedicas.Name = "btn_proceso_licenciasmedicas";
+            this.btn_proceso_licenciasmedicas.SubItemsExpandWidth = 14;
+            this.btn_proceso_licenciasmedicas.Text = "LICENCIA MEDICA";
+            this.btn_proceso_licenciasmedicas.Click += new System.EventHandler(this.buttonItem13_Click);
             // 
             // ribbonPanel4
             // 
@@ -377,8 +378,8 @@
             this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btn_estadisticas_citasmedicas,
-            this.buttonItem4,
-            this.buttonItem12});
+            this.btn_estadisticas_materiallaboratorio,
+            this.btn_estadisticas_historialclinico});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
             this.ribbonBar2.Size = new System.Drawing.Size(870, 96);
@@ -406,27 +407,27 @@
             this.btn_estadisticas_citasmedicas.Text = "CITAS MEDICAS";
             this.btn_estadisticas_citasmedicas.Click += new System.EventHandler(this.buttonItem5_Click);
             // 
-            // buttonItem4
+            // btn_estadisticas_materiallaboratorio
             // 
-            this.buttonItem4.FontBold = true;
-            this.buttonItem4.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem4.Image")));
-            this.buttonItem4.ImagePaddingHorizontal = 6;
-            this.buttonItem4.ImagePaddingVertical = 4;
-            this.buttonItem4.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.SubItemsExpandWidth = 14;
-            this.buttonItem4.Text = "MATERIAL DE LABORATORIO";
-            this.buttonItem4.Click += new System.EventHandler(this.buttonItem4_Click_2);
+            this.btn_estadisticas_materiallaboratorio.FontBold = true;
+            this.btn_estadisticas_materiallaboratorio.Image = ((System.Drawing.Image)(resources.GetObject("btn_estadisticas_materiallaboratorio.Image")));
+            this.btn_estadisticas_materiallaboratorio.ImagePaddingHorizontal = 6;
+            this.btn_estadisticas_materiallaboratorio.ImagePaddingVertical = 4;
+            this.btn_estadisticas_materiallaboratorio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_estadisticas_materiallaboratorio.Name = "btn_estadisticas_materiallaboratorio";
+            this.btn_estadisticas_materiallaboratorio.SubItemsExpandWidth = 14;
+            this.btn_estadisticas_materiallaboratorio.Text = "MATERIAL DE LABORATORIO";
+            this.btn_estadisticas_materiallaboratorio.Click += new System.EventHandler(this.buttonItem4_Click_2);
             // 
-            // buttonItem12
+            // btn_estadisticas_historialclinico
             // 
-            this.buttonItem12.FontBold = true;
-            this.buttonItem12.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem12.Image")));
-            this.buttonItem12.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem12.Name = "buttonItem12";
-            this.buttonItem12.SubItemsExpandWidth = 14;
-            this.buttonItem12.Text = "HISTORIAL CLINICO";
-            this.buttonItem12.Click += new System.EventHandler(this.buttonItem12_Click_1);
+            this.btn_estadisticas_historialclinico.FontBold = true;
+            this.btn_estadisticas_historialclinico.Image = ((System.Drawing.Image)(resources.GetObject("btn_estadisticas_historialclinico.Image")));
+            this.btn_estadisticas_historialclinico.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_estadisticas_historialclinico.Name = "btn_estadisticas_historialclinico";
+            this.btn_estadisticas_historialclinico.SubItemsExpandWidth = 14;
+            this.btn_estadisticas_historialclinico.Text = "HISTORIAL CLINICO";
+            this.btn_estadisticas_historialclinico.Click += new System.EventHandler(this.buttonItem12_Click_1);
             // 
             // ribbonPanel3
             // 
@@ -473,10 +474,10 @@
             this.reportes_listados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportes_listados.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btn_reportes_citasmedicas,
-            this.buttonItem2,
-            this.buttonItem1,
-            this.buttonItem5,
-            this.buttonItem11});
+            this.btn_reportes_existencialaboratorio,
+            this.btn_reportes_materiallaboratorio,
+            this.btn_reportes_examenesmedicos,
+            this.btn_reportes_historialclinico});
             this.reportes_listados.Location = new System.Drawing.Point(3, 0);
             this.reportes_listados.Name = "reportes_listados";
             this.reportes_listados.Size = new System.Drawing.Size(635, 96);
@@ -502,41 +503,41 @@
             this.btn_reportes_citasmedicas.Text = "CITAS MEDICAS";
             this.btn_reportes_citasmedicas.Click += new System.EventHandler(this.buttonItem4_Click);
             // 
-            // buttonItem2
+            // btn_reportes_existencialaboratorio
             // 
-            this.buttonItem2.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem2.Image")));
-            this.buttonItem2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.SubItemsExpandWidth = 14;
-            this.buttonItem2.Text = "EXISTENCIA LABORATORIO";
-            this.buttonItem2.Click += new System.EventHandler(this.buttonItem2_Click_4);
+            this.btn_reportes_existencialaboratorio.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_existencialaboratorio.Image")));
+            this.btn_reportes_existencialaboratorio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_reportes_existencialaboratorio.Name = "btn_reportes_existencialaboratorio";
+            this.btn_reportes_existencialaboratorio.SubItemsExpandWidth = 14;
+            this.btn_reportes_existencialaboratorio.Text = "EXISTENCIA LABORATORIO";
+            this.btn_reportes_existencialaboratorio.Click += new System.EventHandler(this.buttonItem2_Click_4);
             // 
-            // buttonItem1
+            // btn_reportes_materiallaboratorio
             // 
-            this.buttonItem1.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem1.Image")));
-            this.buttonItem1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.SubItemsExpandWidth = 14;
-            this.buttonItem1.Text = "MATERIAL LABORATORIO";
-            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click_2);
+            this.btn_reportes_materiallaboratorio.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_materiallaboratorio.Image")));
+            this.btn_reportes_materiallaboratorio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_reportes_materiallaboratorio.Name = "btn_reportes_materiallaboratorio";
+            this.btn_reportes_materiallaboratorio.SubItemsExpandWidth = 14;
+            this.btn_reportes_materiallaboratorio.Text = "MATERIAL LABORATORIO";
+            this.btn_reportes_materiallaboratorio.Click += new System.EventHandler(this.buttonItem1_Click_2);
             // 
-            // buttonItem5
+            // btn_reportes_examenesmedicos
             // 
-            this.buttonItem5.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem5.Image")));
-            this.buttonItem5.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.SubItemsExpandWidth = 14;
-            this.buttonItem5.Text = "EXAMENES MEDICOS";
-            this.buttonItem5.Click += new System.EventHandler(this.buttonItem5_Click_2);
+            this.btn_reportes_examenesmedicos.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_examenesmedicos.Image")));
+            this.btn_reportes_examenesmedicos.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_reportes_examenesmedicos.Name = "btn_reportes_examenesmedicos";
+            this.btn_reportes_examenesmedicos.SubItemsExpandWidth = 14;
+            this.btn_reportes_examenesmedicos.Text = "EXAMENES MEDICOS";
+            this.btn_reportes_examenesmedicos.Click += new System.EventHandler(this.buttonItem5_Click_2);
             // 
-            // buttonItem11
+            // btn_reportes_historialclinico
             // 
-            this.buttonItem11.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem11.Image")));
-            this.buttonItem11.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem11.Name = "buttonItem11";
-            this.buttonItem11.SubItemsExpandWidth = 14;
-            this.buttonItem11.Text = "HISTORIAL CLINICO";
-            this.buttonItem11.Click += new System.EventHandler(this.buttonItem11_Click_1);
+            this.btn_reportes_historialclinico.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes_historialclinico.Image")));
+            this.btn_reportes_historialclinico.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_reportes_historialclinico.Name = "btn_reportes_historialclinico";
+            this.btn_reportes_historialclinico.SubItemsExpandWidth = 14;
+            this.btn_reportes_historialclinico.Text = "HISTORIAL CLINICO";
+            this.btn_reportes_historialclinico.Click += new System.EventHandler(this.buttonItem11_Click_1);
             // 
             // ribbonPanel5
             // 
@@ -893,16 +894,16 @@
         private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_productos;
         private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_productoscategorias;
         private DevComponents.DotNetBar.ButtonItem btn_proceso_entradainventario;
-        private DevComponents.DotNetBar.ButtonItem buttonItem3;
+        private DevComponents.DotNetBar.ButtonItem btn_proceso_salidainventario;
         private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_suplidores;
-        private DevComponents.DotNetBar.ButtonItem buttonItem1;
+        private DevComponents.DotNetBar.ButtonItem btn_reportes_materiallaboratorio;
         private CachedrptUsuarios cachedrptUsuarios1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem4;
-        private DevComponents.DotNetBar.ButtonItem buttonItem2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem5;
-        private DevComponents.DotNetBar.ButtonItem buttonItem6;
-        private DevComponents.DotNetBar.ButtonItem buttonItem11;
-        private DevComponents.DotNetBar.ButtonItem buttonItem12;
-        private DevComponents.DotNetBar.ButtonItem buttonItem13;
+        private DevComponents.DotNetBar.ButtonItem btn_estadisticas_materiallaboratorio;
+        private DevComponents.DotNetBar.ButtonItem btn_reportes_existencialaboratorio;
+        private DevComponents.DotNetBar.ButtonItem btn_reportes_examenesmedicos;
+        private DevComponents.DotNetBar.ButtonItem btn_proceso_salaemergencias;
+        private DevComponents.DotNetBar.ButtonItem btn_reportes_historialclinico;
+        private DevComponents.DotNetBar.ButtonItem btn_estadisticas_historialclinico;
+        private DevComponents.DotNetBar.ButtonItem btn_proceso_licenciasmedicas;
     }
 }

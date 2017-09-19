@@ -49,6 +49,7 @@
             this.statusB = new System.Windows.Forms.RadioButton();
             this.statusA = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkMSuplidores = new System.Windows.Forms.CheckBox();
             this.chkMCategoriasProductos = new System.Windows.Forms.CheckBox();
             this.chkMProductos = new System.Windows.Forms.CheckBox();
             this.chkMPacientes = new System.Windows.Forms.CheckBox();
@@ -65,7 +66,9 @@
             this.chkProcesos = new System.Windows.Forms.CheckBox();
             this.chkReportes = new System.Windows.Forms.CheckBox();
             this.chkEstadisticas = new System.Windows.Forms.CheckBox();
-            this.chkMSuplidores = new System.Windows.Forms.CheckBox();
+            this.chkPSalidaInventario = new System.Windows.Forms.CheckBox();
+            this.chkPSalaEmergencia = new System.Windows.Forms.CheckBox();
+            this.chkPLicenciaMedica = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -322,6 +325,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "MANTENIMIENTOS";
             // 
+            // chkMSuplidores
+            // 
+            this.chkMSuplidores.AutoSize = true;
+            this.chkMSuplidores.Location = new System.Drawing.Point(177, 42);
+            this.chkMSuplidores.Name = "chkMSuplidores";
+            this.chkMSuplidores.Size = new System.Drawing.Size(85, 17);
+            this.chkMSuplidores.TabIndex = 5;
+            this.chkMSuplidores.Text = "Suplidores";
+            this.chkMSuplidores.UseVisualStyleBackColor = true;
+            // 
             // chkMCategoriasProductos
             // 
             this.chkMCategoriasProductos.AutoSize = true;
@@ -374,6 +387,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkPLicenciaMedica);
+            this.groupBox3.Controls.Add(this.chkPSalaEmergencia);
+            this.groupBox3.Controls.Add(this.chkPSalidaInventario);
             this.groupBox3.Controls.Add(this.chkPEntradaInventario);
             this.groupBox3.Controls.Add(this.chkPCitasMedicas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -490,15 +506,35 @@
             this.chkEstadisticas.Text = "Estadisticas";
             this.chkEstadisticas.UseVisualStyleBackColor = true;
             // 
-            // chkMSuplidores
+            // chkPSalidaInventario
             // 
-            this.chkMSuplidores.AutoSize = true;
-            this.chkMSuplidores.Location = new System.Drawing.Point(177, 42);
-            this.chkMSuplidores.Name = "chkMSuplidores";
-            this.chkMSuplidores.Size = new System.Drawing.Size(85, 17);
-            this.chkMSuplidores.TabIndex = 5;
-            this.chkMSuplidores.Text = "Suplidores";
-            this.chkMSuplidores.UseVisualStyleBackColor = true;
+            this.chkPSalidaInventario.AutoSize = true;
+            this.chkPSalidaInventario.Location = new System.Drawing.Point(143, 19);
+            this.chkPSalidaInventario.Name = "chkPSalidaInventario";
+            this.chkPSalidaInventario.Size = new System.Drawing.Size(122, 17);
+            this.chkPSalidaInventario.TabIndex = 3;
+            this.chkPSalidaInventario.Text = "Salida Inventario";
+            this.chkPSalidaInventario.UseVisualStyleBackColor = true;
+            // 
+            // chkPSalaEmergencia
+            // 
+            this.chkPSalaEmergencia.AutoSize = true;
+            this.chkPSalaEmergencia.Location = new System.Drawing.Point(143, 42);
+            this.chkPSalaEmergencia.Name = "chkPSalaEmergencia";
+            this.chkPSalaEmergencia.Size = new System.Drawing.Size(139, 17);
+            this.chkPSalaEmergencia.TabIndex = 4;
+            this.chkPSalaEmergencia.Text = "Sala de Emergencia";
+            this.chkPSalaEmergencia.UseVisualStyleBackColor = true;
+            // 
+            // chkPLicenciaMedica
+            // 
+            this.chkPLicenciaMedica.AutoSize = true;
+            this.chkPLicenciaMedica.Location = new System.Drawing.Point(285, 19);
+            this.chkPLicenciaMedica.Name = "chkPLicenciaMedica";
+            this.chkPLicenciaMedica.Size = new System.Drawing.Size(119, 17);
+            this.chkPLicenciaMedica.TabIndex = 5;
+            this.chkPLicenciaMedica.Text = "Licencia Medica";
+            this.chkPLicenciaMedica.UseVisualStyleBackColor = true;
             // 
             // frmAgregarUsuario
             // 
@@ -599,5 +635,8 @@
         private System.Windows.Forms.CheckBox chkMCategoriasProductos;
         private System.Windows.Forms.CheckBox chkPEntradaInventario;
         private System.Windows.Forms.CheckBox chkMSuplidores;
+        private System.Windows.Forms.CheckBox chkPSalidaInventario;
+        private System.Windows.Forms.CheckBox chkPLicenciaMedica;
+        private System.Windows.Forms.CheckBox chkPSalaEmergencia;
     }
 }
