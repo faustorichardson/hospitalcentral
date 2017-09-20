@@ -35,6 +35,10 @@
             this.dtDesde = new System.Windows.Forms.DateTimePicker();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.rbPorFecha = new System.Windows.Forms.RadioButton();
+            this.rbPorPersona = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblTituloForm
@@ -46,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 115);
+            this.label1.Location = new System.Drawing.Point(37, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 15);
             this.label1.TabIndex = 156;
@@ -56,7 +60,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 64);
+            this.label3.Location = new System.Drawing.Point(33, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 15);
             this.label3.TabIndex = 155;
@@ -64,14 +68,14 @@
             // 
             // dtHasta
             // 
-            this.dtHasta.Location = new System.Drawing.Point(77, 112);
+            this.dtHasta.Location = new System.Drawing.Point(97, 123);
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Size = new System.Drawing.Size(200, 20);
             this.dtHasta.TabIndex = 154;
             // 
             // dtDesde
             // 
-            this.dtDesde.Location = new System.Drawing.Point(77, 61);
+            this.dtDesde.Location = new System.Drawing.Point(97, 85);
             this.dtDesde.Name = "dtDesde";
             this.dtDesde.Size = new System.Drawing.Size(200, 20);
             this.dtDesde.TabIndex = 153;
@@ -104,11 +108,59 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // rbPorFecha
+            // 
+            this.rbPorFecha.AutoSize = true;
+            this.rbPorFecha.Checked = true;
+            this.rbPorFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPorFecha.Location = new System.Drawing.Point(40, 48);
+            this.rbPorFecha.Name = "rbPorFecha";
+            this.rbPorFecha.Size = new System.Drawing.Size(97, 20);
+            this.rbPorFecha.TabIndex = 157;
+            this.rbPorFecha.TabStop = true;
+            this.rbPorFecha.Text = "Por Fecha";
+            this.rbPorFecha.UseVisualStyleBackColor = true;
+            this.rbPorFecha.CheckedChanged += new System.EventHandler(this.rbPorFecha_CheckedChanged);
+            // 
+            // rbPorPersona
+            // 
+            this.rbPorPersona.AutoSize = true;
+            this.rbPorPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPorPersona.Location = new System.Drawing.Point(163, 48);
+            this.rbPorPersona.Name = "rbPorPersona";
+            this.rbPorPersona.Size = new System.Drawing.Size(112, 20);
+            this.rbPorPersona.TabIndex = 158;
+            this.rbPorPersona.Text = "Por Persona";
+            this.rbPorPersona.UseVisualStyleBackColor = true;
+            this.rbPorPersona.CheckedChanged += new System.EventHandler(this.rbPorPersona_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(26, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 15);
+            this.label2.TabIndex = 159;
+            this.label2.Text = "CEDULA:";
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(98, 167);
+            this.txtCedula.Mask = "999-9999999-9";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(89, 20);
+            this.txtCedula.TabIndex = 160;
+            // 
             // frmPrintLicenciaMedica_Listado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 180);
+            this.ClientSize = new System.Drawing.Size(434, 217);
+            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.rbPorPersona);
+            this.Controls.Add(this.rbPorFecha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtHasta);
@@ -125,6 +177,10 @@
             this.Controls.SetChildIndex(this.dtHasta, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.rbPorFecha, 0);
+            this.Controls.SetChildIndex(this.rbPorPersona, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.txtCedula, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +194,9 @@
         private System.Windows.Forms.DateTimePicker dtDesde;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.RadioButton rbPorFecha;
+        private System.Windows.Forms.RadioButton rbPorPersona;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
     }
 }

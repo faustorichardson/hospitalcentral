@@ -28,7 +28,23 @@ namespace hospitalcentral
 
         private void frmPrintLicenciaMedica_Listado_Load(object sender, EventArgs e)
         {
+            verificaSeleccion();
+        }
 
+        private void verificaSeleccion()
+        {
+            if (rbPorFecha.Checked == true)
+            {
+                this.dtDesde.Enabled = true;
+                this.dtHasta.Enabled = true;
+                this.txtCedula.Enabled = false;
+            }
+            else
+            {
+                this.dtDesde.Enabled = false;
+                this.dtHasta.Enabled = false;
+                this.txtCedula.Enabled = true;
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -43,9 +59,11 @@ namespace hospitalcentral
             // Creando el String Builder
             StringBuilder sbQuery = new StringBuilder();
             // Otras variables del entorno
-            string cWhere = " WHERE 1 = 1";
+            string cWhere = " WHERE 1 = 1 ";
             string cUsuario = "";
             string cTitulo = "";
+            string fechadesde = dtDesde.Value.ToString("yyyy-MM-dd");
+            string fechahasta = dtHasta.Value.ToString("yyyy-MM-dd");
 
             try
             {
@@ -56,30 +74,36 @@ namespace hospitalcentral
                 // Adhiero el comando a la conexion
                 myCommand.Connection = myConexion;
                 // Filtros de la busqueda
-                //if (rbTodos.Checked)
-                //{
-                    string fechadesde = dtDesde.Value.ToString("yyyy-MM-dd");
-                    string fechahasta = dtHasta.Value.ToString("yyyy-MM-dd");
-                    cWhere = cWhere + " AND licenciamedica.fecha >= " + "'" + fechadesde + "'" + " AND licenciamedica.fecha <= " + "'" + fechahasta + "'" + "";
-                    sbQuery.Clear();
-                    sbQuery.Append(" SELECT");
-	                sbQuery.Append(" licenciamedica.id, ");
-	                sbQuery.Append(" licenciamedica.cedula, ");
-	                sbQuery.Append(" licenciamedica.nombre, ");
-	                sbQuery.Append(" licenciamedica.apellido, ");
-	                //sbQuery.Append(" licenciamedica.rango, ");
-	                sbQuery.Append(" licenciamedica.tiempolicencia, ");
-	                sbQuery.Append(" licenciamedica.tiempotipo, ");
-	                sbQuery.Append(" licenciamedica.fecha, ");
-	                sbQuery.Append(" licenciamedica.diagnostico, ");
-	                sbQuery.Append(" organizacion.organizacion, ");
-	                sbQuery.Append(" rangosmilitares.rango as rango, ");
-	                sbQuery.Append(" rangosmilitares.orden ");
-                    sbQuery.Append(" FROM licenciamedica ");
-                    sbQuery.Append(" INNER JOIN organizacion ON organizacion.id = licenciamedica.organizacion ");
-                    sbQuery.Append(" INNER JOIN rangosmilitares ON rangosmilitares.idrango = licenciamedica.rango ");
-                    sbQuery.Append(" ORDER BY rangosmilitares.orden");
-                //}               
+                
+                if (rbPorFecha.Checked == true)
+                {                    
+                    cWhere = cWhere + " AND licenciamedica.fecha >= " + "'" + fechadesde + "'" + " AND licenciamedica.fecha <= " + "'" + fechahasta + "'" + "";                    
+                }
+                else if (rbPorPersona.Checked == true)
+                {                    
+                    cWhere = cWhere + " AND cedula = " + "'" + txtCedula.Text + "'" + "";
+                    //MessageBox.Show(txtCedula.Text);
+                }
+
+                sbQuery.Clear();
+                sbQuery.Append(" SELECT");
+                sbQuery.Append(" licenciamedica.id, ");
+                sbQuery.Append(" licenciamedica.cedula, ");
+                sbQuery.Append(" licenciamedica.nombre, ");
+                sbQuery.Append(" licenciamedica.apellido, ");
+                //sbQuery.Append(" licenciamedica.rango, ");
+                sbQuery.Append(" licenciamedica.tiempolicencia, ");
+                sbQuery.Append(" licenciamedica.tiempotipo, ");
+                sbQuery.Append(" licenciamedica.fecha, ");
+                sbQuery.Append(" licenciamedica.diagnostico, ");
+                sbQuery.Append(" organizacion.organizacion, ");
+                sbQuery.Append(" rangosmilitares.rango as rango, ");
+                sbQuery.Append(" rangosmilitares.orden ");
+                sbQuery.Append(" FROM licenciamedica ");
+                sbQuery.Append(" INNER JOIN organizacion ON organizacion.id = licenciamedica.organizacion ");
+                sbQuery.Append(" INNER JOIN rangosmilitares ON rangosmilitares.idrango = licenciamedica.rango ");
+                sbQuery.Append(cWhere);
+                sbQuery.Append(" ORDER BY rangosmilitares.orden");                
 
                 // Paso los valores de sbQuery al CommandText
                 myCommand.CommandText = sbQuery.ToString();
@@ -180,6 +204,27 @@ namespace hospitalcentral
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rbPorFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPorFecha.Checked == true)
+            {
+                this.dtDesde.Enabled = true;
+                this.dtHasta.Enabled = true;
+                this.txtCedula.Enabled = false;
+            }            
+        }
+
+        private void rbPorPersona_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPorPersona.Checked == true)
+            {
+                this.dtDesde.Enabled = false;
+                this.dtHasta.Enabled = false;
+                this.txtCedula.Enabled = true;
+                this.txtCedula.Focus();
+            }            
         }
     }
 }
