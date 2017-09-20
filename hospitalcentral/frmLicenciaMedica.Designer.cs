@@ -228,7 +228,7 @@
             this.txtCarnetMilitar.MaxLength = 15;
             this.txtCarnetMilitar.Name = "txtCarnetMilitar";
             this.txtCarnetMilitar.Size = new System.Drawing.Size(100, 20);
-            this.txtCarnetMilitar.TabIndex = 70;
+            this.txtCarnetMilitar.TabIndex = 2;
             // 
             // label2
             // 
@@ -246,7 +246,7 @@
             this.txtNombres.MaxLength = 50;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(285, 20);
-            this.txtNombres.TabIndex = 72;
+            this.txtNombres.TabIndex = 3;
             // 
             // label3
             // 
@@ -264,7 +264,7 @@
             this.txtApellidos.MaxLength = 50;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(285, 20);
-            this.txtApellidos.TabIndex = 74;
+            this.txtApellidos.TabIndex = 4;
             // 
             // label4
             // 
@@ -292,7 +292,7 @@
             this.txtCedula.Mask = "999-9999999-9";
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 79;
+            this.txtCedula.TabIndex = 1;
             // 
             // cmbRango
             // 
@@ -301,7 +301,7 @@
             this.cmbRango.Location = new System.Drawing.Point(172, 235);
             this.cmbRango.Name = "cmbRango";
             this.cmbRango.Size = new System.Drawing.Size(272, 21);
-            this.cmbRango.TabIndex = 80;
+            this.cmbRango.TabIndex = 6;
             // 
             // label6
             // 
@@ -325,7 +325,7 @@
             this.cmbOrganizacion.Location = new System.Drawing.Point(172, 198);
             this.cmbOrganizacion.Name = "cmbOrganizacion";
             this.cmbOrganizacion.Size = new System.Drawing.Size(285, 21);
-            this.cmbOrganizacion.TabIndex = 84;
+            this.cmbOrganizacion.TabIndex = 5;
             // 
             // label7
             // 
@@ -343,7 +343,7 @@
             this.txtCia.MaxLength = 100;
             this.txtCia.Name = "txtCia";
             this.txtCia.Size = new System.Drawing.Size(355, 20);
-            this.txtCia.TabIndex = 86;
+            this.txtCia.TabIndex = 8;
             // 
             // label8
             // 
@@ -361,12 +361,13 @@
             this.txtCantidad.MaxLength = 5;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(65, 20);
-            this.txtCantidad.TabIndex = 88;
+            this.txtCantidad.TabIndex = 9;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // rbDias
             // 
             this.rbDias.AutoSize = true;
+            this.rbDias.Checked = true;
             this.rbDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDias.Location = new System.Drawing.Point(243, 340);
             this.rbDias.Name = "rbDias";
@@ -384,7 +385,6 @@
             this.rbMes.Name = "rbMes";
             this.rbMes.Size = new System.Drawing.Size(51, 17);
             this.rbMes.TabIndex = 90;
-            this.rbMes.TabStop = true;
             this.rbMes.Text = "MES";
             this.rbMes.UseVisualStyleBackColor = true;
             // 
@@ -394,7 +394,7 @@
             this.txtLugar.MaxLength = 150;
             this.txtLugar.Name = "txtLugar";
             this.txtLugar.Size = new System.Drawing.Size(525, 20);
-            this.txtLugar.TabIndex = 92;
+            this.txtLugar.TabIndex = 10;
             // 
             // label9
             // 
@@ -412,7 +412,7 @@
             this.txtDiagnostico.MaxLength = 150;
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.Size = new System.Drawing.Size(525, 20);
-            this.txtDiagnostico.TabIndex = 94;
+            this.txtDiagnostico.TabIndex = 11;
             // 
             // label10
             // 
@@ -451,7 +451,7 @@
             this.cmbDepartamento.Location = new System.Drawing.Point(172, 447);
             this.cmbDepartamento.Name = "cmbDepartamento";
             this.cmbDepartamento.Size = new System.Drawing.Size(285, 21);
-            this.cmbDepartamento.TabIndex = 97;
+            this.cmbDepartamento.TabIndex = 12;
             // 
             // txtRecord
             // 
@@ -459,7 +459,7 @@
             this.txtRecord.MaxLength = 15;
             this.txtRecord.Name = "txtRecord";
             this.txtRecord.Size = new System.Drawing.Size(100, 20);
-            this.txtRecord.TabIndex = 99;
+            this.txtRecord.TabIndex = 13;
             // 
             // label12
             // 
@@ -477,7 +477,7 @@
             this.txtDoctor.MaxLength = 150;
             this.txtDoctor.Name = "txtDoctor";
             this.txtDoctor.Size = new System.Drawing.Size(400, 20);
-            this.txtDoctor.TabIndex = 101;
+            this.txtDoctor.TabIndex = 14;
             // 
             // label13
             // 
@@ -495,7 +495,7 @@
             this.txtExequatur.MaxLength = 25;
             this.txtExequatur.Name = "txtExequatur";
             this.txtExequatur.Size = new System.Drawing.Size(163, 20);
-            this.txtExequatur.TabIndex = 103;
+            this.txtExequatur.TabIndex = 15;
             // 
             // label14
             // 
@@ -513,7 +513,7 @@
             this.txtTelContacto.Mask = "(999) 000-0000";
             this.txtTelContacto.Name = "txtTelContacto";
             this.txtTelContacto.Size = new System.Drawing.Size(100, 20);
-            this.txtTelContacto.TabIndex = 105;
+            this.txtTelContacto.TabIndex = 7;
             // 
             // label15
             // 

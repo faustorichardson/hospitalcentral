@@ -73,3 +73,4 @@ C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hosp
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintHistoriaClinica.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintHistoriaClinicaEstadisticas.resources
 C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmLicenciaMedica.resources
+C:\Users\daemon\Desktop\mygit\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmPrintLicenciaMedica_Listado.resources

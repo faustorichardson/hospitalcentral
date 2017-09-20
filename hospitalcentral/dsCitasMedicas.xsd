@@ -28,6 +28,27 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dtLicenciasMedicas" msprop:Generator_TableClassName="dtLicenciasMedicasDataTable" msprop:Generator_TableVarName="tabledtLicenciasMedicas" msprop:Generator_RowChangedName="dtLicenciasMedicasRowChanged" msprop:Generator_TablePropName="dtLicenciasMedicas" msprop:Generator_RowDeletingName="dtLicenciasMedicasRowDeleting" msprop:Generator_RowChangingName="dtLicenciasMedicasRowChanging" msprop:Generator_RowEvHandlerName="dtLicenciasMedicasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtLicenciasMedicasRowDeleted" msprop:Generator_RowClassName="dtLicenciasMedicasRow" msprop:Generator_UserTableName="dtLicenciasMedicas" msprop:Generator_RowEvArgName="dtLicenciasMedicasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="cedula" msprop:Generator_ColumnVarNameInTable="columncedula" msprop:Generator_ColumnPropNameInRow="cedula" msprop:Generator_ColumnPropNameInTable="cedulaColumn" msprop:Generator_UserColumnName="cedula" type="xs:string" minOccurs="0" />
+              <xs:element name="carnet" msprop:Generator_ColumnVarNameInTable="columncarnet" msprop:Generator_ColumnPropNameInRow="carnet" msprop:Generator_ColumnPropNameInTable="carnetColumn" msprop:Generator_UserColumnName="carnet" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" type="xs:string" minOccurs="0" />
+              <xs:element name="organizacion" msprop:Generator_ColumnVarNameInTable="columnorganizacion" msprop:Generator_ColumnPropNameInRow="organizacion" msprop:Generator_ColumnPropNameInTable="organizacionColumn" msprop:Generator_UserColumnName="organizacion" type="xs:string" minOccurs="0" />
+              <xs:element name="rango" msprop:Generator_ColumnVarNameInTable="columnrango" msprop:Generator_ColumnPropNameInRow="rango" msprop:Generator_ColumnPropNameInTable="rangoColumn" msprop:Generator_UserColumnName="rango" type="xs:string" minOccurs="0" />
+              <xs:element name="tiempolicencia" msprop:Generator_ColumnVarNameInTable="columntiempolicencia" msprop:Generator_ColumnPropNameInRow="tiempolicencia" msprop:Generator_ColumnPropNameInTable="tiempolicenciaColumn" msprop:Generator_UserColumnName="tiempolicencia" type="xs:int" minOccurs="0" />
+              <xs:element name="tiempotipo" msprop:Generator_ColumnVarNameInTable="columntiempotipo" msprop:Generator_ColumnPropNameInRow="tiempotipo" msprop:Generator_ColumnPropNameInTable="tiempotipoColumn" msprop:Generator_UserColumnName="tiempotipo" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="doctor" msprop:Generator_ColumnVarNameInTable="columndoctor" msprop:Generator_ColumnPropNameInRow="doctor" msprop:Generator_ColumnPropNameInTable="doctorColumn" msprop:Generator_UserColumnName="doctor" type="xs:string" minOccurs="0" />
+              <xs:element name="exequatur" msprop:Generator_ColumnVarNameInTable="columnexequatur" msprop:Generator_ColumnPropNameInRow="exequatur" msprop:Generator_ColumnPropNameInTable="exequaturColumn" msprop:Generator_UserColumnName="exequatur" type="xs:string" minOccurs="0" />
+              <xs:element name="diagnostico" msprop:Generator_ColumnVarNameInTable="columndiagnostico" msprop:Generator_ColumnPropNameInRow="diagnostico" msprop:Generator_ColumnPropNameInTable="diagnosticoColumn" msprop:Generator_UserColumnName="diagnostico" type="xs:string" minOccurs="0" />
+              <xs:element name="departamento" msprop:Generator_ColumnVarNameInTable="columndepartamento" msprop:Generator_ColumnPropNameInRow="departamento" msprop:Generator_ColumnPropNameInTable="departamentoColumn" msprop:Generator_UserColumnName="departamento" type="xs:string" minOccurs="0" />
+              <xs:element name="orden" msprop:Generator_ColumnVarNameInTable="columnorden" msprop:Generator_ColumnPropNameInRow="orden" msprop:Generator_ColumnPropNameInTable="ordenColumn" msprop:Generator_UserColumnName="orden" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

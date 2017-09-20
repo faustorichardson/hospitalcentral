@@ -215,6 +215,7 @@ namespace hospitalcentral
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;
                     //
+                    this.txtID.Enabled = true;
                     this.txtCedula.Enabled = false;
                     this.txtCarnetMilitar.Enabled = false;
                     this.dtFecha.Enabled = false;
@@ -245,6 +246,7 @@ namespace hospitalcentral
                     this.btnCancelar.Enabled = true;
                     this.btnSalir.Enabled = true;
                     //
+                    this.txtID.Enabled = false;
                     this.txtCedula.Enabled = true;
                     this.txtCarnetMilitar.Enabled = true;
                     this.dtFecha.Enabled = true;
@@ -275,6 +277,7 @@ namespace hospitalcentral
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;
                     //
+                    this.txtID.Enabled = true;
                     this.txtCedula.Enabled = false;
                     this.txtCarnetMilitar.Enabled = false;
                     this.dtFecha.Enabled = false;
@@ -305,6 +308,7 @@ namespace hospitalcentral
                     this.btnCancelar.Enabled = true;
                     this.btnSalir.Enabled = true;
                     //
+                    this.txtID.Enabled = false;
                     this.txtCedula.Enabled = true;
                     this.txtCarnetMilitar.Enabled = true;
                     this.dtFecha.Enabled = true;
@@ -335,6 +339,7 @@ namespace hospitalcentral
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;
                     //
+                    this.txtID.Enabled = true;
                     this.txtCedula.Enabled = false;
                     this.txtCarnetMilitar.Enabled = false;
                     this.dtFecha.Enabled = false;
@@ -377,10 +382,11 @@ namespace hospitalcentral
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            this.cModo = "Nuevo";
             this.Limpiar();
+            this.cModo = "Nuevo";            
             this.Botones();
-            this.ProximoCodigo();            
+            this.ProximoCodigo();
+            this.txtID.Focus();
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -555,9 +561,9 @@ namespace hospitalcentral
                     MySqlCommand MyCommand = MyConexion.CreateCommand();
 
                     // Step 3 - creating the commandtext
-                    MyCommand.CommandText = "SELECT licenciamedica(cedula, carnet, nombre, apellido, organizacion," +
-                        "rango, telcontacto, compania, tiempolicencia, tiempotipo, lugardescanso, diagnostico, departamento," +
-                        "record, doctor, exequatur, fecha " +
+                    MyCommand.CommandText = "SELECT cedula, carnet, nombre, apellido, organizacion," +
+                        "rango, telcontacto, compania, tiempolicencia, tiempotipo, lugardescanso, "+
+                        " diagnostico, departamento, record, doctor, exequatur, fecha " +
                         "FROM licenciamedica WHERE id = " + txtID.Text + "";
 
                     // Step 4 - connection open
@@ -624,7 +630,8 @@ namespace hospitalcentral
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            frmPrintLicenciaMedica_Listado ofrmPrintLicenciaMedica_Listado = new frmPrintLicenciaMedica_Listado();
+            ofrmPrintLicenciaMedica_Listado.ShowDialog();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -675,11 +682,11 @@ namespace hospitalcentral
 
             // LEAVE //
 
-            if (txtCantidad.Text == "")
-            {
-                MessageBox.Show("No puede dejar la cantidad sin valor...");
-                txtCantidad.Focus();
-            }            
+            //if (txtCantidad.Text == "")
+            //{
+            //    MessageBox.Show("No puede dejar la cantidad sin valor...");
+            //    txtCantidad.Focus();
+            //}            
         }
     }
 }

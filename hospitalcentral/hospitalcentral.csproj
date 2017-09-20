@@ -293,6 +293,12 @@
     <Compile Include="frmLicenciaMedica.Designer.cs">
       <DependentUpon>frmLicenciaMedica.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrintLicenciaMedica_Listado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintLicenciaMedica_Listado.Designer.cs">
+      <DependentUpon>frmPrintLicenciaMedica_Listado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrintExamenesMedicos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,6 +529,12 @@
       <DependentUpon>rptListadoHistoriaClinica.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptListadoLicenciasMedicas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListadoLicenciasMedicas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptPacientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -630,6 +642,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintInventarioEstadisticas.resx">
       <DependentUpon>frmPrintInventarioEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintLicenciaMedica_Listado.resx">
+      <DependentUpon>frmPrintLicenciaMedica_Listado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintMaterialLaboratorio.resx">
       <DependentUpon>frmPrintMaterialLaboratorio.cs</DependentUpon>
@@ -760,6 +775,10 @@
     <EmbeddedResource Include="rptListadoHistoriaClinica.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListadoHistoriaClinica.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptListadoLicenciasMedicas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListadoLicenciasMedicas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptPacientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
