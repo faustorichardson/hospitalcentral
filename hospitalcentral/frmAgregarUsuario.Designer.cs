@@ -56,6 +56,9 @@
             this.chkMDoctores = new System.Windows.Forms.CheckBox();
             this.chkMUsuarios = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkPLicenciaMedica = new System.Windows.Forms.CheckBox();
+            this.chkPSalaEmergencia = new System.Windows.Forms.CheckBox();
+            this.chkPSalidaInventario = new System.Windows.Forms.CheckBox();
             this.chkPEntradaInventario = new System.Windows.Forms.CheckBox();
             this.chkPCitasMedicas = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -66,9 +69,7 @@
             this.chkProcesos = new System.Windows.Forms.CheckBox();
             this.chkReportes = new System.Windows.Forms.CheckBox();
             this.chkEstadisticas = new System.Windows.Forms.CheckBox();
-            this.chkPSalidaInventario = new System.Windows.Forms.CheckBox();
-            this.chkPSalaEmergencia = new System.Windows.Forms.CheckBox();
-            this.chkPLicenciaMedica = new System.Windows.Forms.CheckBox();
+            this.chkELicenciasMedicas = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -400,6 +401,36 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PROCESOS";
             // 
+            // chkPLicenciaMedica
+            // 
+            this.chkPLicenciaMedica.AutoSize = true;
+            this.chkPLicenciaMedica.Location = new System.Drawing.Point(285, 19);
+            this.chkPLicenciaMedica.Name = "chkPLicenciaMedica";
+            this.chkPLicenciaMedica.Size = new System.Drawing.Size(131, 17);
+            this.chkPLicenciaMedica.TabIndex = 5;
+            this.chkPLicenciaMedica.Text = "Licencias Medicas";
+            this.chkPLicenciaMedica.UseVisualStyleBackColor = true;
+            // 
+            // chkPSalaEmergencia
+            // 
+            this.chkPSalaEmergencia.AutoSize = true;
+            this.chkPSalaEmergencia.Location = new System.Drawing.Point(143, 42);
+            this.chkPSalaEmergencia.Name = "chkPSalaEmergencia";
+            this.chkPSalaEmergencia.Size = new System.Drawing.Size(139, 17);
+            this.chkPSalaEmergencia.TabIndex = 4;
+            this.chkPSalaEmergencia.Text = "Sala de Emergencia";
+            this.chkPSalaEmergencia.UseVisualStyleBackColor = true;
+            // 
+            // chkPSalidaInventario
+            // 
+            this.chkPSalidaInventario.AutoSize = true;
+            this.chkPSalidaInventario.Location = new System.Drawing.Point(143, 19);
+            this.chkPSalidaInventario.Name = "chkPSalidaInventario";
+            this.chkPSalidaInventario.Size = new System.Drawing.Size(122, 17);
+            this.chkPSalidaInventario.TabIndex = 3;
+            this.chkPSalidaInventario.Text = "Salida Inventario";
+            this.chkPSalidaInventario.UseVisualStyleBackColor = true;
+            // 
             // chkPEntradaInventario
             // 
             this.chkPEntradaInventario.AutoSize = true;
@@ -443,6 +474,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.chkELicenciasMedicas);
             this.groupBox6.Controls.Add(this.chkECitasMedicas);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(280, 307);
@@ -506,35 +538,15 @@
             this.chkEstadisticas.Text = "Estadisticas";
             this.chkEstadisticas.UseVisualStyleBackColor = true;
             // 
-            // chkPSalidaInventario
+            // chkELicenciasMedicas
             // 
-            this.chkPSalidaInventario.AutoSize = true;
-            this.chkPSalidaInventario.Location = new System.Drawing.Point(143, 19);
-            this.chkPSalidaInventario.Name = "chkPSalidaInventario";
-            this.chkPSalidaInventario.Size = new System.Drawing.Size(122, 17);
-            this.chkPSalidaInventario.TabIndex = 3;
-            this.chkPSalidaInventario.Text = "Salida Inventario";
-            this.chkPSalidaInventario.UseVisualStyleBackColor = true;
-            // 
-            // chkPSalaEmergencia
-            // 
-            this.chkPSalaEmergencia.AutoSize = true;
-            this.chkPSalaEmergencia.Location = new System.Drawing.Point(143, 42);
-            this.chkPSalaEmergencia.Name = "chkPSalaEmergencia";
-            this.chkPSalaEmergencia.Size = new System.Drawing.Size(139, 17);
-            this.chkPSalaEmergencia.TabIndex = 4;
-            this.chkPSalaEmergencia.Text = "Sala de Emergencia";
-            this.chkPSalaEmergencia.UseVisualStyleBackColor = true;
-            // 
-            // chkPLicenciaMedica
-            // 
-            this.chkPLicenciaMedica.AutoSize = true;
-            this.chkPLicenciaMedica.Location = new System.Drawing.Point(285, 19);
-            this.chkPLicenciaMedica.Name = "chkPLicenciaMedica";
-            this.chkPLicenciaMedica.Size = new System.Drawing.Size(119, 17);
-            this.chkPLicenciaMedica.TabIndex = 5;
-            this.chkPLicenciaMedica.Text = "Licencia Medica";
-            this.chkPLicenciaMedica.UseVisualStyleBackColor = true;
+            this.chkELicenciasMedicas.AutoSize = true;
+            this.chkELicenciasMedicas.Location = new System.Drawing.Point(7, 42);
+            this.chkELicenciasMedicas.Name = "chkELicenciasMedicas";
+            this.chkELicenciasMedicas.Size = new System.Drawing.Size(131, 17);
+            this.chkELicenciasMedicas.TabIndex = 2;
+            this.chkELicenciasMedicas.Text = "Licencias Medicas";
+            this.chkELicenciasMedicas.UseVisualStyleBackColor = true;
             // 
             // frmAgregarUsuario
             // 
@@ -638,5 +650,6 @@
         private System.Windows.Forms.CheckBox chkPSalidaInventario;
         private System.Windows.Forms.CheckBox chkPLicenciaMedica;
         private System.Windows.Forms.CheckBox chkPSalaEmergencia;
+        private System.Windows.Forms.CheckBox chkELicenciasMedicas;
     }
 }

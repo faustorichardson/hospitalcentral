@@ -717,6 +717,8 @@ namespace hospitalcentral {
             
             private global::System.Data.DataColumn columnorden;
             
+            private global::System.Data.DataColumn columncantidad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtLicenciasMedicasDataTable() {
@@ -872,6 +874,14 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -907,7 +917,23 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtLicenciasMedicasRow AdddtLicenciasMedicasRow(string id, string cedula, string carnet, string nombre, string apellido, string organizacion, string rango, int tiempolicencia, string tiempotipo, System.DateTime fecha, string doctor, string exequatur, string diagnostico, string departamento, int orden) {
+            public dtLicenciasMedicasRow AdddtLicenciasMedicasRow(
+                        string id, 
+                        string cedula, 
+                        string carnet, 
+                        string nombre, 
+                        string apellido, 
+                        string organizacion, 
+                        string rango, 
+                        int tiempolicencia, 
+                        string tiempotipo, 
+                        System.DateTime fecha, 
+                        string doctor, 
+                        string exequatur, 
+                        string diagnostico, 
+                        string departamento, 
+                        int orden, 
+                        int cantidad) {
                 dtLicenciasMedicasRow rowdtLicenciasMedicasRow = ((dtLicenciasMedicasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -924,7 +950,8 @@ namespace hospitalcentral {
                         exequatur,
                         diagnostico,
                         departamento,
-                        orden};
+                        orden,
+                        cantidad};
                 rowdtLicenciasMedicasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtLicenciasMedicasRow);
                 return rowdtLicenciasMedicasRow;
@@ -962,6 +989,7 @@ namespace hospitalcentral {
                 this.columndiagnostico = base.Columns["diagnostico"];
                 this.columndepartamento = base.Columns["departamento"];
                 this.columnorden = base.Columns["orden"];
+                this.columncantidad = base.Columns["cantidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -997,6 +1025,8 @@ namespace hospitalcentral {
                 base.Columns.Add(this.columndepartamento);
                 this.columnorden = new global::System.Data.DataColumn("orden", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnorden);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1674,6 +1704,22 @@ namespace hospitalcentral {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtLicenciasMedicas.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'dtLicenciasMedicas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtLicenciasMedicas.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabledtLicenciasMedicas.idColumn);
             }
@@ -1850,6 +1896,18 @@ namespace hospitalcentral {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetordenNull() {
                 this[this.tabledtLicenciasMedicas.ordenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tabledtLicenciasMedicas.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tabledtLicenciasMedicas.cantidadColumn] = global::System.Convert.DBNull;
             }
         }
         

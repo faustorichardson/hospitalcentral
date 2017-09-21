@@ -323,6 +323,12 @@
     <Compile Include="frmPrintInventarioEstadisticas.Designer.cs">
       <DependentUpon>frmPrintInventarioEstadisticas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrintLicenciasMedicas_Estadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintLicenciasMedicas_Estadisticas.Designer.cs">
+      <DependentUpon>frmPrintLicenciasMedicas_Estadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrintMaterialLaboratorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,6 +529,12 @@
       <DependentUpon>rptFacturaDetalle.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptLicenciasMedicas_Estadisticas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLicenciasMedicas_Estadisticas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptListadoHistoriaClinica.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -645,6 +657,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintLicenciaMedica_Listado.resx">
       <DependentUpon>frmPrintLicenciaMedica_Listado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintLicenciasMedicas_Estadisticas.resx">
+      <DependentUpon>frmPrintLicenciasMedicas_Estadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintMaterialLaboratorio.resx">
       <DependentUpon>frmPrintMaterialLaboratorio.cs</DependentUpon>
@@ -771,6 +786,10 @@
     <EmbeddedResource Include="rptFacturaDetalle.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptFacturaDetalle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptLicenciasMedicas_Estadisticas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLicenciasMedicas_Estadisticas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptListadoHistoriaClinica.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

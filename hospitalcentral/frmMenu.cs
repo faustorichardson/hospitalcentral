@@ -50,6 +50,7 @@ namespace hospitalcentral
         string permiso_estadistica_citasmedicas = "0";
         string permiso_estadisticas_materiallaboratorio = "0";
         string permiso_estadisticas_historialclinico = "0";
+        string permiso_estadisticas_licenciasmedicas = "0";
         
         
         public frmMenu(string cUsuarioActual)
@@ -106,7 +107,8 @@ namespace hospitalcentral
                     " permiso_estadistica, " +
                     " permiso_estadistica_citasmedicas,"+
                     " permiso_estadistica_materiallaboratorio,"+
-                    " permiso_estadistica_historialclinico"+
+                    " permiso_estadistica_historialclinico,"+
+                    " permiso_estadistica_licenciasmedicas"+
                     " FROM usuarios WHERE usuario = '" + UsuarioActual + "'";
 
                 // Step 4 - connection open
@@ -146,6 +148,7 @@ namespace hospitalcentral
                         permiso_estadistica_citasmedicas = MyReader["permiso_estadistica_citasmedicas"].ToString();
                         permiso_estadisticas_materiallaboratorio = MyReader["permiso_estadistica_materiallaboratorio"].ToString();
                         permiso_estadisticas_historialclinico = MyReader["permiso_estadistica_historialclinico"].ToString();
+                        permiso_estadisticas_licenciasmedicas = MyReader["permiso_estadistica_licenciasmedicas"].ToString();
                     }
                 }
                 else
@@ -383,6 +386,15 @@ namespace hospitalcentral
             else
             {
                 this.btn_estadisticas_materiallaboratorio.Enabled = false;
+            }
+            /////
+            if (permiso_estadisticas_licenciasmedicas == "1")
+            {
+                this.btn_estadisticas_licenciasmedicas.Enabled = true;
+            }
+            else
+            {
+                this.btn_estadisticas_licenciasmedicas.Enabled = false;
             }
 
         }
@@ -696,6 +708,12 @@ namespace hospitalcentral
         private void ribbonPanel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonItem1_Click_3(object sender, EventArgs e)
+        {
+            frmPrintLicenciasMedicas_Estadisticas ofrmPrintLicenciasMedicas_Estadisticas = new frmPrintLicenciasMedicas_Estadisticas();
+            ofrmPrintLicenciasMedicas_Estadisticas.ShowDialog();
         }
 
        

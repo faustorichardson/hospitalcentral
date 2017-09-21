@@ -58,6 +58,7 @@ namespace hospitalcentral
             this.chkPSalaEmergencia.Checked = false;
             this.chkPSalidaInventario.Checked = false;
             this.chkPLicenciaMedica.Checked = false;
+            this.chkELicenciasMedicas.Checked = false;
         }
 
         private void Botones()
@@ -96,6 +97,7 @@ namespace hospitalcentral
                     this.chkPSalidaInventario.Enabled = false;
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
+                    this.chkELicenciasMedicas.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -130,6 +132,7 @@ namespace hospitalcentral
                     this.chkPSalidaInventario.Enabled = true;
                     this.chkPSalaEmergencia.Enabled = true;
                     this.chkPLicenciaMedica.Enabled = true;
+                    this.chkELicenciasMedicas.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -164,6 +167,7 @@ namespace hospitalcentral
                     this.chkPSalidaInventario.Enabled = false;
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
+                    this.chkELicenciasMedicas.Enabled = false;
                     break;
 
                 case "Editar":
@@ -198,6 +202,7 @@ namespace hospitalcentral
                     this.chkPSalidaInventario.Enabled = true;
                     this.chkPSalaEmergencia.Enabled = true;
                     this.chkPLicenciaMedica.Enabled = true;
+                    this.chkELicenciasMedicas.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -232,6 +237,7 @@ namespace hospitalcentral
                     this.chkPSalidaInventario.Enabled = false;
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
+                    this.chkELicenciasMedicas.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -269,6 +275,7 @@ namespace hospitalcentral
                     this.chkPSalidaInventario.Enabled = false;
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
+                    this.chkELicenciasMedicas.Enabled = false;
                     break;
 
                 default:
@@ -363,7 +370,8 @@ namespace hospitalcentral
                             " permiso_reporte_citasmedicas,"+
                             // Permisos Estadisticas
                             " permiso_estadistica,"+
-                            " permiso_estadistica_citasmedicas"+
+                            " permiso_estadistica_citasmedicas,"+
+                            " permiso_estadistica_licenciasmedicas"+
                             // VALORES DE LOS PERMISOS
                             ") values(@usuario, @clave, @status, " +
                             // Valores permisos mantenimientos
@@ -386,7 +394,8 @@ namespace hospitalcentral
                             " @permiso_reporte_citasmedicas,"+
                             // Valores permisos estadisticas
                             " @permiso_estadistica,"+
-                            " @permiso_estadistica_citasmedicas"+
+                            " @permiso_estadistica_citasmedicas,"+
+                            " @permiso_estadistica_licenciasmedicas"+
                             // Fin de los valores
                             ")";
                         myCommand.Parameters.AddWithValue("@usuario", txtUsuario.Text);
@@ -547,7 +556,16 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@permiso_estadistica_citasmedicas", 0);
                         }
-                        
+
+                        if (chkELicenciasMedicas.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_estadistica_licenciasmedicas", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_estadistica_licenciasmedicas", 0);
+                        }
+
                         // Fin de los valores
                         
                         // Step 4 - Opening the connection
@@ -599,7 +617,8 @@ namespace hospitalcentral
                             " permiso_reporte_citasmedicas = @permiso_reporte_citasmedicas," +
                             // Permisos Estadisticas
                             " permiso_estadistica = @permiso_estadistica," +
-                            " permiso_estadistica_citasmedicas = @permiso_estadistica_citasmedicas" +
+                            " permiso_estadistica_citasmedicas = @permiso_estadistica_citasmedicas," +
+                            " permiso_estadistica_licenciasmedicas = @permiso_estadistica_licenciasmedicas"+
                             // Condicion
                             " WHERE idusuarios = " + txtID.Text + "";
 
@@ -765,6 +784,15 @@ namespace hospitalcentral
                         else
                         {
                             myCommand.Parameters.AddWithValue("@permiso_estadistica_citasmedicas", 0);
+                        }
+
+                        if (chkELicenciasMedicas.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_estadistica_licenciasmedicas", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_estadistica_licenciasmedicas", 0);
                         }
 
                         // Fin de los valores
@@ -1004,7 +1032,15 @@ namespace hospitalcentral
                                 chkECitasMedicas.Checked = false;
                             }
                             /////
-
+                            if (MyReader["permiso_estadistica_licenciasmedicas"].ToString() == "1")
+                            {
+                                chkELicenciasMedicas.Checked = true;
+                            }
+                            else
+                            {
+                                chkELicenciasMedicas.Checked = false;
+                            }
+                            /////
                         }
 
                         this.cModo = "Buscar";

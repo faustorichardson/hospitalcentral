@@ -12,7 +12,7 @@
   <xs:element name="dsCitasMedicas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCitasMedicas" msprop:Generator_UserDSName="dsCitasMedicas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dtCitasMedicas" msprop:Generator_TableClassName="dtCitasMedicasDataTable" msprop:Generator_TableVarName="tabledtCitasMedicas" msprop:Generator_TablePropName="dtCitasMedicas" msprop:Generator_RowDeletingName="dtCitasMedicasRowDeleting" msprop:Generator_RowChangingName="dtCitasMedicasRowChanging" msprop:Generator_RowEvHandlerName="dtCitasMedicasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCitasMedicasRowDeleted" msprop:Generator_UserTableName="dtCitasMedicas" msprop:Generator_RowChangedName="dtCitasMedicasRowChanged" msprop:Generator_RowEvArgName="dtCitasMedicasRowChangeEvent" msprop:Generator_RowClassName="dtCitasMedicasRow">
+        <xs:element name="dtCitasMedicas" msprop:Generator_TableClassName="dtCitasMedicasDataTable" msprop:Generator_TableVarName="tabledtCitasMedicas" msprop:Generator_RowChangedName="dtCitasMedicasRowChanged" msprop:Generator_TablePropName="dtCitasMedicas" msprop:Generator_RowDeletingName="dtCitasMedicasRowDeleting" msprop:Generator_RowChangingName="dtCitasMedicasRowChanging" msprop:Generator_RowEvHandlerName="dtCitasMedicasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCitasMedicasRowDeleted" msprop:Generator_RowClassName="dtCitasMedicasRow" msprop:Generator_UserTableName="dtCitasMedicas" msprop:Generator_RowEvArgName="dtCitasMedicasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idcitasmedicas" msprop:Generator_ColumnVarNameInTable="columnidcitasmedicas" msprop:Generator_ColumnPropNameInRow="idcitasmedicas" msprop:Generator_ColumnPropNameInTable="idcitasmedicasColumn" msprop:Generator_UserColumnName="idcitasmedicas" type="xs:int" minOccurs="0" />
@@ -28,7 +28,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtLicenciasMedicas" msprop:Generator_TableClassName="dtLicenciasMedicasDataTable" msprop:Generator_TableVarName="tabledtLicenciasMedicas" msprop:Generator_RowChangedName="dtLicenciasMedicasRowChanged" msprop:Generator_TablePropName="dtLicenciasMedicas" msprop:Generator_RowDeletingName="dtLicenciasMedicasRowDeleting" msprop:Generator_RowChangingName="dtLicenciasMedicasRowChanging" msprop:Generator_RowEvHandlerName="dtLicenciasMedicasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtLicenciasMedicasRowDeleted" msprop:Generator_RowClassName="dtLicenciasMedicasRow" msprop:Generator_UserTableName="dtLicenciasMedicas" msprop:Generator_RowEvArgName="dtLicenciasMedicasRowChangeEvent">
+        <xs:element name="dtLicenciasMedicas" msprop:Generator_TableClassName="dtLicenciasMedicasDataTable" msprop:Generator_TableVarName="tabledtLicenciasMedicas" msprop:Generator_TablePropName="dtLicenciasMedicas" msprop:Generator_RowDeletingName="dtLicenciasMedicasRowDeleting" msprop:Generator_RowChangingName="dtLicenciasMedicasRowChanging" msprop:Generator_RowEvHandlerName="dtLicenciasMedicasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtLicenciasMedicasRowDeleted" msprop:Generator_UserTableName="dtLicenciasMedicas" msprop:Generator_RowChangedName="dtLicenciasMedicasRowChanged" msprop:Generator_RowEvArgName="dtLicenciasMedicasRowChangeEvent" msprop:Generator_RowClassName="dtLicenciasMedicasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -46,6 +46,7 @@
               <xs:element name="diagnostico" msprop:Generator_ColumnVarNameInTable="columndiagnostico" msprop:Generator_ColumnPropNameInRow="diagnostico" msprop:Generator_ColumnPropNameInTable="diagnosticoColumn" msprop:Generator_UserColumnName="diagnostico" type="xs:string" minOccurs="0" />
               <xs:element name="departamento" msprop:Generator_ColumnVarNameInTable="columndepartamento" msprop:Generator_ColumnPropNameInRow="departamento" msprop:Generator_ColumnPropNameInTable="departamentoColumn" msprop:Generator_UserColumnName="departamento" type="xs:string" minOccurs="0" />
               <xs:element name="orden" msprop:Generator_ColumnVarNameInTable="columnorden" msprop:Generator_ColumnPropNameInRow="orden" msprop:Generator_ColumnPropNameInTable="ordenColumn" msprop:Generator_UserColumnName="orden" type="xs:int" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
