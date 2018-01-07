@@ -171,6 +171,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSuplidores.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsTarifas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTarifas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsUsuarios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -601,6 +606,12 @@
       <DependentUpon>rptSuplidores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptTarifasServicios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTarifasServicios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -850,6 +861,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSuplidores.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptTarifasServicios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTarifasServicios.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptUsuarios.cs</LastGenOutput>
@@ -944,6 +959,17 @@
     </None>
     <None Include="dsSuplidores.xss">
       <DependentUpon>dsSuplidores.xsd</DependentUpon>
+    </None>
+    <None Include="dsTarifas.xsc">
+      <DependentUpon>dsTarifas.xsd</DependentUpon>
+    </None>
+    <None Include="dsTarifas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTarifas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsTarifas.xss">
+      <DependentUpon>dsTarifas.xsd</DependentUpon>
     </None>
     <None Include="dsUsuarios.xsc">
       <DependentUpon>dsUsuarios.xsd</DependentUpon>

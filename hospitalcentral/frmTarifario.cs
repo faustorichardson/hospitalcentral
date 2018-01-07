@@ -139,7 +139,7 @@ namespace hospitalcentral
                     this.btnGrabar.Enabled = false;
                     this.btnEditar.Enabled = false;
                     this.btnBuscar.Enabled = true;
-                    this.btnImprimir.Enabled = false;
+                    this.btnImprimir.Enabled = true;
                     this.btnEliminar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;
@@ -219,7 +219,7 @@ namespace hospitalcentral
                     this.btnGrabar.Enabled = false;
                     this.btnEditar.Enabled = true;
                     this.btnBuscar.Enabled = true;
-                    this.btnImprimir.Enabled = false;
+                    this.btnImprimir.Enabled = true;
                     this.btnEliminar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;
@@ -339,27 +339,50 @@ namespace hospitalcentral
                 {
                     try
                     {
-                        //// Step 1 - Stablishing the connection
-                        //MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+                        // Step 1 - Stablishing the connection
+                        MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
 
-                        //// Step 2 - Crear el comando de ejecucion
-                        //MySqlCommand myCommand = MyConexion.CreateCommand();
+                        // Step 2 - Crear el comando de ejecucion
+                        MySqlCommand myCommand = MyConexion.CreateCommand();
 
-                        //// Step 3 - Comando a ejecutar
-                        //myCommand.CommandText = "UPDATE tarifa_tipocobertura SET tipocobertura = @tipocobertura " +
-                        //    " WHERE id = " + txtID.Text + "";
-                        //myCommand.Parameters.AddWithValue("@tipocobertura", txtTipoCobertura.Text);
+                        // Step 3 - Comando a ejecutar
+                        myCommand.CommandText = "UPDATE tarifas SET tipocobertura = @tipocobertura, "+
+                            " simon = @simon, cups = @cups, descripcionservicio = @descripcionservicio, "+ 
+                            " fecha_vigencia = @fecha_vigencia, monto_subsidiado = @monto_subsidiado, "+
+                            " monto_contributivo = @monto_contributivo " +
+                            " WHERE id = " + txtID.Text + "";
+                        myCommand.Parameters.AddWithValue("@tipocobertura", cmbTipoCobertura.SelectedValue);
+                        myCommand.Parameters.AddWithValue("@simon", txtSimon.Text);
+                        myCommand.Parameters.AddWithValue("@cups", txtCups.Text);
+                        myCommand.Parameters.AddWithValue("@descripcionservicio", txtDescripcionServicio.Text);
+                        myCommand.Parameters.AddWithValue("@fecha_vigencia", dtFecha.Value);
+                        // CONVIRTIENDO LOS VALORES DECIMALES DE LOS MONTOS
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* //
+                        // Convierto el campo monto en texto
+                        txtMontoSubsidiado.Text = Convert.ToString(txtMontoSubsidiado.Text);
+                        // Cambio el valor del textbox a decimal
+                        string myValueSubsidiado = Convert.ToString(txtMontoSubsidiado.Text);
+                        decimal myValueMontoSubsidiado = clsFunctions.ParseCurrencyFormat(myValueSubsidiado);
+                        myCommand.Parameters.AddWithValue("@monto_subsidiado", myValueMontoSubsidiado);
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* //
+                        // Convierto el campo monto en texto
+                        txtMontoContributivo.Text = Convert.ToString(txtMontoContributivo.Text);
+                        // Cambio el valor del textbox a decimal
+                        string myValueContributivo = Convert.ToString(txtMontoContributivo.Text);
+                        decimal myValueMontoContributivo = clsFunctions.ParseCurrencyFormat(myValueContributivo);
+                        //
+                        myCommand.Parameters.AddWithValue("@monto_contributivo", myValueMontoContributivo);
 
-                        //// Step 4 - Opening the connection
-                        //MyConexion.Open();
+                        // Step 4 - Opening the connection
+                        MyConexion.Open();
 
-                        //// Step 5 - Executing the query
-                        //myCommand.ExecuteNonQuery();
+                        // Step 5 - Executing the query
+                        myCommand.ExecuteNonQuery();
 
-                        //// Step 6 - Closing the connection
-                        //MyConexion.Close();
+                        // Step 6 - Closing the connection
+                        MyConexion.Close();
 
-                        //MessageBox.Show("Informacion actualizada satisfactoriamente...");
+                        MessageBox.Show("Informacion actualizada satisfactoriamente...");
                     }
                     catch (Exception MyEx)
                     {
@@ -382,12 +405,198 @@ namespace hospitalcentral
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (txtID.Text == "")
+            {
+                MessageBox.Show("No se permiten busquedas sin argumentos...");
+                txtID.Focus();
+            }
+            else
+            {
+                try
+                {
+                    // Step 1 - Conexion
+                    MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
 
+                    // Step 2 - creating the command object
+                    MySqlCommand MyCommand = MyConexion.CreateCommand();
+
+                    // Step 3 - creating the commandtext
+                    MyCommand.CommandText = "SELECT tipocobertura, simon, cups, descripcionservicio, fecha_vigencia, "+
+                        " monto_subsidiado, monto_contributivo " +
+                        " FROM tarifas WHERE id = " + txtID.Text + "";
+
+                    // Step 4 - connection open
+                    MyConexion.Open();
+
+                    // Step 5 - Creating the DataReader                    
+                    MySqlDataReader MyReader = MyCommand.ExecuteReader();
+
+                    // Step 6 - Verifying if Reader has rows
+                    if (MyReader.HasRows)
+                    {
+                        while (MyReader.Read())
+                        {
+                            cmbTipoCobertura.SelectedValue = MyReader["tipocobertura"].ToString();
+                            txtSimon.Text = MyReader["simon"].ToString();
+                            txtCups.Text = MyReader["cups"].ToString();
+                            txtDescripcionServicio.Text = MyReader["descripcionservicio"].ToString();
+                            //
+                            // Llamo la funcion para formatear el campo MONTO SUBSIDIADO.-
+                            txtMontoSubsidiado.Text = MyReader["monto_subsidiado"].ToString();
+                            decimal montoSubsidiado = Convert.ToDecimal(txtMontoSubsidiado.Text);
+                            txtMontoSubsidiado.Text = clsFunctions.GetCurrencyFormat(montoSubsidiado);
+                            //
+                            // Llamo la funcion para formatear el campo MONTO CONTRIBUTIVO.-
+                            txtMontoContributivo.Text = MyReader["monto_contributivo"].ToString();
+                            decimal montoContributivo = Convert.ToDecimal(txtMontoContributivo.Text);
+                            txtMontoContributivo.Text = clsFunctions.GetCurrencyFormat(montoContributivo);
+                            //
+                            dtFecha.Value = Convert.ToDateTime(MyReader["fecha_vigencia"].ToString());
+                            
+                        }
+
+                        this.cModo = "Buscar";
+                        this.Botones();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron registros...");
+                        this.cModo = "Inicio";
+                        this.Botones();
+                        this.Limpiar();
+                        txtID.Focus();
+                    }
+
+                    // Step 6 - Closing all
+                    MyReader.Close();
+                    MyCommand.Dispose();
+                    MyConexion.Close();
+
+                }
+                catch (Exception MyEx)
+                {
+                    MessageBox.Show(MyEx.Message);
+                }
+
+
+
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            //Conexion a la base de datos
+            MySqlConnection myConexion = new MySqlConnection(clsConexion.ConectionString);
+            // Creando el command que ejecutare
+            MySqlCommand myCommand = new MySqlCommand();
+            // Creando el Data Adapter
+            MySqlDataAdapter myAdapter = new MySqlDataAdapter();
+            // Creando el String Builder
+            StringBuilder sbQuery = new StringBuilder();
+            // Otras variables del entorno
+            string cWhere = " WHERE 1 = 1";
+            string cUsuario = "";
+            string cTitulo = "";
 
+            try
+            {
+                // Abro conexion
+                myConexion.Open();
+                // Creo comando
+                myCommand = myConexion.CreateCommand();
+                // Adhiero el comando a la conexion
+                myCommand.Connection = myConexion;
+                // Filtros de la busqueda
+                //string fechadesde = fechaDesde.Value.ToString("yyyy-MM-dd");
+                //string fechahasta = fechaHasta.Value.ToString("yyyy-MM-dd");
+                //cWhere = cWhere + " AND fechacita >= " + "'" + fechadesde + "'" + " AND fechacita <= " + "'" + fechahasta + "'" + "";
+                sbQuery.Clear();
+                sbQuery.Append("SELECT ");
+                sbQuery.Append(" tarifas.id, tarifas.simon, tarifas.cups, tarifas.descripcionservicio,");
+                sbQuery.Append(" tarifas.fecha_vigencia, tarifas.monto_contributivo, tarifas.monto_subsidiado,");
+                sbQuery.Append(" tarifas_tipocobertura.tipocobertura");                
+                sbQuery.Append(" FROM tarifas ");
+                sbQuery.Append(" INNER JOIN tarifas_tipocobertura ON tarifas_tipocobertura.id = tarifas.tipocobertura");
+                sbQuery.Append(cWhere);
+                sbQuery.Append(" ORDER BY tarifas.descripcionservicio ASC");
+
+                // Paso los valores de sbQuery al CommandText
+                myCommand.CommandText = sbQuery.ToString();
+                // Creo el objeto Data Adapter y ejecuto el command en el
+                myAdapter = new MySqlDataAdapter(myCommand);
+                // Creo el objeto Data Table
+                DataTable dtTarifas = new DataTable();
+                // Lleno el data adapter
+                myAdapter.Fill(dtTarifas);
+                // Cierro el objeto conexion
+                myConexion.Close();
+
+                // Verifico cantidad de datos encontrados
+                int nRegistro = dtTarifas.Rows.Count;
+                if (nRegistro == 0)
+                {
+                    MessageBox.Show("No Hay Datos Para Mostrar, Favor Verificar", "Sistema de Gestion de Hospital", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    //1ero.HACEMOS LA COLECCION DE PARAMETROS
+                    //los campos de parametros contiene un objeto para cada campo de parametro en el informe
+                    ParameterFields oParametrosCR = new ParameterFields();
+                    //Proporciona propiedades para la recuperacion y configuracion del tipo de los parametros
+                    ParameterValues oParametrosValuesCR = new ParameterValues();
+
+                    //2do.CREAMOS LOS PARAMETROS
+                    ParameterField oUsuario = new ParameterField();
+                    //parametervaluetype especifica el TIPO de valor de parametro
+                    //ParameterValueKind especifica el tipo de valor de parametro en la PARAMETERVALUETYPE de la Clase PARAMETERFIELD
+                    oUsuario.ParameterValueType = ParameterValueKind.StringParameter;
+
+                    //3ero.VALORES PARA LOS PARAMETROS
+                    //ParameterDiscreteValue proporciona propiedades para la recuperacion y configuracion de 
+                    //parametros de valores discretos
+                    ParameterDiscreteValue oUsuarioDValue = new ParameterDiscreteValue();
+                    oUsuarioDValue.Value = cUsuario;
+
+                    //4to. AGREGAMOS LOS VALORES A LOS PARAMETROS
+                    oUsuario.CurrentValues.Add(oUsuarioDValue);
+
+
+                    //5to. AGREGAMOS LOS PARAMETROS A LA COLECCION 
+                    oParametrosCR.Add(oUsuario);
+
+                    //nombre del parametro en CR (Crystal Reports)
+                    oParametrosCR[0].Name = "cUsuario";
+
+                    //nombre del TITULO DEL INFORME
+                    cTitulo = "ACUERDO DE TARIFAS ENTRE SEGURIDAD NACIONAL DE SALUD (SENASA)";
+
+                    //6to Instanciamos nuestro REPORTE
+                    //Reportes.ListadoDoctores oListado = new Reportes.ListadoDoctores();
+                    rptTarifasServicios orptTarifasServicios = new rptTarifasServicios();
+
+                    //pasamos el nombre del TITULO del Listado
+                    //SumaryInfo es un objeto que se utiliza para leer,crear y actualizar las propiedades del reporte
+                    // oListado.SummaryInfo.ReportTitle = cTitulo;
+                    orptTarifasServicios.SummaryInfo.ReportTitle = cTitulo;
+
+                    //7mo. instanciamos nuestro el FORMULARIO donde esta nuestro ReportViewer
+                    frmPrinter ofrmPrinter = new frmPrinter(dtTarifas, orptTarifasServicios, cTitulo);
+
+                    //ParameterFieldInfo Obtiene o establece la colección de campos de parámetros.
+                    ofrmPrinter.CrystalReportViewer1.ParameterFieldInfo = oParametrosCR;
+                    ofrmPrinter.ShowDialog();
+                }
+
+
+            }
+            catch (Exception myEx)
+            {
+                MessageBox.Show("Error : " + myEx.Message, "Mostrando Reporte", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                //ExceptionLog.LogError(myEx, false);
+                return;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

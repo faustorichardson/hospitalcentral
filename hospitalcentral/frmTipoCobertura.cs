@@ -51,7 +51,7 @@ namespace hospitalcentral
                     this.btnGrabar.Enabled = false;
                     this.btnEditar.Enabled = false;
                     this.btnBuscar.Enabled = true;
-                    this.btnImprimir.Enabled = false;
+                    this.btnImprimir.Enabled = true;
                     this.btnEliminar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;
@@ -107,7 +107,7 @@ namespace hospitalcentral
                     this.btnGrabar.Enabled = false;
                     this.btnEditar.Enabled = true;
                     this.btnBuscar.Enabled = true;
-                    this.btnImprimir.Enabled = false;
+                    this.btnImprimir.Enabled = true;
                     this.btnEliminar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.btnSalir.Enabled = true;

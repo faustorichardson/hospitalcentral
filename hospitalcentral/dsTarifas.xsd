@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTarifas" targetNamespace="http://tempuri.org/dsTarifas.xsd" xmlns:mstns="http://tempuri.org/dsTarifas.xsd" xmlns="http://tempuri.org/dsTarifas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTarifas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTarifas" msprop:Generator_UserDSName="dsTarifas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtTarifas" msprop:Generator_TableClassName="dtTarifasDataTable" msprop:Generator_TableVarName="tabledtTarifas" msprop:Generator_TablePropName="dtTarifas" msprop:Generator_RowDeletingName="dtTarifasRowDeleting" msprop:Generator_UserTableName="dtTarifas" msprop:Generator_RowChangingName="dtTarifasRowChanging" msprop:Generator_RowEvHandlerName="dtTarifasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtTarifasRowDeleted" msprop:Generator_RowEvArgName="dtTarifasRowChangeEvent" msprop:Generator_RowChangedName="dtTarifasRowChanged" msprop:Generator_RowClassName="dtTarifasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="tipocobertura" msprop:Generator_ColumnVarNameInTable="columntipocobertura" msprop:Generator_ColumnPropNameInRow="tipocobertura" msprop:Generator_ColumnPropNameInTable="tipocoberturaColumn" msprop:Generator_UserColumnName="tipocobertura" type="xs:string" minOccurs="0" />
+              <xs:element name="simon" msprop:Generator_ColumnVarNameInTable="columnsimon" msprop:Generator_ColumnPropNameInRow="simon" msprop:Generator_ColumnPropNameInTable="simonColumn" msprop:Generator_UserColumnName="simon" type="xs:string" minOccurs="0" />
+              <xs:element name="cups" msprop:Generator_ColumnVarNameInTable="columncups" msprop:Generator_ColumnPropNameInRow="cups" msprop:Generator_ColumnPropNameInTable="cupsColumn" msprop:Generator_UserColumnName="cups" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcionservicio" msprop:Generator_ColumnVarNameInTable="columndescripcionservicio" msprop:Generator_ColumnPropNameInRow="descripcionservicio" msprop:Generator_ColumnPropNameInTable="descripcionservicioColumn" msprop:Generator_UserColumnName="descripcionservicio" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_vigencia" msprop:Generator_ColumnVarNameInTable="columnfecha_vigencia" msprop:Generator_ColumnPropNameInRow="fecha_vigencia" msprop:Generator_ColumnPropNameInTable="fecha_vigenciaColumn" msprop:Generator_UserColumnName="fecha_vigencia" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="monto_subsidiado" msprop:Generator_ColumnVarNameInTable="columnmonto_subsidiado" msprop:Generator_ColumnPropNameInRow="monto_subsidiado" msprop:Generator_ColumnPropNameInTable="monto_subsidiadoColumn" msprop:Generator_UserColumnName="monto_subsidiado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="monto_contributivo" msprop:Generator_ColumnVarNameInTable="columnmonto_contributivo" msprop:Generator_ColumnPropNameInRow="monto_contributivo" msprop:Generator_ColumnPropNameInTable="monto_contributivoColumn" msprop:Generator_UserColumnName="monto_contributivo" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
