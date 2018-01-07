@@ -275,6 +275,12 @@
     <Compile Include="frmEstadisticasCitasMedicas.Designer.cs">
       <DependentUpon>frmEstadisticasCitasMedicas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFacturacionServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturacionServicio.Designer.cs">
+      <DependentUpon>frmFacturacionServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -424,6 +430,18 @@
     </Compile>
     <Compile Include="frmSuplidores.Designer.cs">
       <DependentUpon>frmSuplidores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTarifario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTarifario.Designer.cs">
+      <DependentUpon>frmTarifario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoCobertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoCobertura.Designer.cs">
+      <DependentUpon>frmTipoCobertura.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -637,6 +655,9 @@
     <EmbeddedResource Include="frmEstadisticasCitasMedicas.resx">
       <DependentUpon>frmEstadisticasCitasMedicas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturacionServicio.resx">
+      <DependentUpon>frmFacturacionServicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHistoriaClinica.resx">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
@@ -708,6 +729,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuplidores.resx">
       <DependentUpon>frmSuplidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTarifario.resx">
+      <DependentUpon>frmTarifario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoCobertura.resx">
+      <DependentUpon>frmTipoCobertura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

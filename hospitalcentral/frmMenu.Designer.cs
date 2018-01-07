@@ -45,6 +45,16 @@
             this.btn_mantenimiento_productos = new DevComponents.DotNetBar.ButtonItem();
             this.btn_mantenimiento_productoscategorias = new DevComponents.DotNetBar.ButtonItem();
             this.btn_mantenimiento_suplidores = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_mantenimiento_tipocobertura = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_mantenimiento_tarifas = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
+            this.btn_procesos_citamedica = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_entradainventario = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_salidainventario = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_salaemergencias = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_licenciasmedicas = new DevComponents.DotNetBar.ButtonItem();
+            this.btn_proceso_facturacionservicio = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_estadisticas_citasmedicas = new DevComponents.DotNetBar.ButtonItem();
@@ -58,13 +68,6 @@
             this.btn_reportes_materiallaboratorio = new DevComponents.DotNetBar.ButtonItem();
             this.btn_reportes_examenesmedicos = new DevComponents.DotNetBar.ButtonItem();
             this.btn_reportes_historialclinico = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_procesos_citamedica = new DevComponents.DotNetBar.ButtonItem();
-            this.btn_proceso_entradainventario = new DevComponents.DotNetBar.ButtonItem();
-            this.btn_proceso_salidainventario = new DevComponents.DotNetBar.ButtonItem();
-            this.btn_proceso_salaemergencias = new DevComponents.DotNetBar.ButtonItem();
-            this.btn_proceso_licenciasmedicas = new DevComponents.DotNetBar.ButtonItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -86,9 +89,9 @@
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel5.SuspendLayout();
+            this.ribbonPanel6.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
-            this.ribbonPanel6.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -106,10 +109,10 @@
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.office2007StartButton1,
@@ -270,7 +273,9 @@
             this.btn_mantenimiento_pacientes,
             this.btn_mantenimiento_productos,
             this.btn_mantenimiento_productoscategorias,
-            this.btn_mantenimiento_suplidores});
+            this.btn_mantenimiento_suplidores,
+            this.btn_mantenimiento_tipocobertura,
+            this.btn_mantenimiento_tarifas});
             this.mantenimiento_usuarios.Location = new System.Drawing.Point(3, 0);
             this.mantenimiento_usuarios.Name = "mantenimiento_usuarios";
             this.mantenimiento_usuarios.Size = new System.Drawing.Size(826, 96);
@@ -341,6 +346,149 @@
             this.btn_mantenimiento_suplidores.SubItemsExpandWidth = 14;
             this.btn_mantenimiento_suplidores.Text = "SUPLIDORES";
             this.btn_mantenimiento_suplidores.Click += new System.EventHandler(this.buttonItem4_Click_1);
+            // 
+            // btn_mantenimiento_tipocobertura
+            // 
+            this.btn_mantenimiento_tipocobertura.Image = ((System.Drawing.Image)(resources.GetObject("btn_mantenimiento_tipocobertura.Image")));
+            this.btn_mantenimiento_tipocobertura.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_mantenimiento_tipocobertura.Name = "btn_mantenimiento_tipocobertura";
+            this.btn_mantenimiento_tipocobertura.SubItemsExpandWidth = 14;
+            this.btn_mantenimiento_tipocobertura.Text = "TIPO COBERTURA";
+            this.btn_mantenimiento_tipocobertura.Click += new System.EventHandler(this.btn_mantenimiento_tipocobertura_Click);
+            // 
+            // btn_mantenimiento_tarifas
+            // 
+            this.btn_mantenimiento_tarifas.Image = ((System.Drawing.Image)(resources.GetObject("btn_mantenimiento_tarifas.Image")));
+            this.btn_mantenimiento_tarifas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_mantenimiento_tarifas.Name = "btn_mantenimiento_tarifas";
+            this.btn_mantenimiento_tarifas.SubItemsExpandWidth = 14;
+            this.btn_mantenimiento_tarifas.Text = "TARIFAS";
+            this.btn_mantenimiento_tarifas.Click += new System.EventHandler(this.btn_mantenimiento_tarifas_Click);
+            // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel6.Controls.Add(this.ribbonBar3);
+            this.ribbonPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel6.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel6.Name = "ribbonPanel6";
+            this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel6.Size = new System.Drawing.Size(1027, 99);
+            // 
+            // 
+            // 
+            this.ribbonPanel6.Style.Class = "";
+            this.ribbonPanel6.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel6.StyleMouseDown.Class = "";
+            this.ribbonPanel6.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel6.StyleMouseOver.Class = "";
+            this.ribbonPanel6.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel6.TabIndex = 7;
+            this.ribbonPanel6.Visible = false;
+            // 
+            // ribbonBar3
+            // 
+            this.ribbonBar3.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar3.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar3.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar3.BackgroundStyle.Class = "";
+            this.ribbonBar3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar3.ContainerControlProcessDialogKey = true;
+            this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btn_procesos_citamedica,
+            this.btn_proceso_entradainventario,
+            this.btn_proceso_salidainventario,
+            this.btn_proceso_salaemergencias,
+            this.btn_proceso_licenciasmedicas,
+            this.btn_proceso_facturacionservicio});
+            this.ribbonBar3.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar3.Name = "ribbonBar3";
+            this.ribbonBar3.Size = new System.Drawing.Size(764, 96);
+            this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar3.TabIndex = 0;
+            // 
+            // 
+            // 
+            this.ribbonBar3.TitleStyle.Class = "";
+            this.ribbonBar3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar3.TitleStyleMouseOver.Class = "";
+            this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btn_procesos_citamedica
+            // 
+            this.btn_procesos_citamedica.FontBold = true;
+            this.btn_procesos_citamedica.Image = ((System.Drawing.Image)(resources.GetObject("btn_procesos_citamedica.Image")));
+            this.btn_procesos_citamedica.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_procesos_citamedica.Name = "btn_procesos_citamedica";
+            this.btn_procesos_citamedica.SubItemsExpandWidth = 14;
+            this.btn_procesos_citamedica.Text = "CITAS MEDICAS";
+            this.btn_procesos_citamedica.Click += new System.EventHandler(this.buttonItem1_Click_1);
+            // 
+            // btn_proceso_entradainventario
+            // 
+            this.btn_proceso_entradainventario.FontBold = true;
+            this.btn_proceso_entradainventario.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_entradainventario.Image")));
+            this.btn_proceso_entradainventario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_entradainventario.Name = "btn_proceso_entradainventario";
+            this.btn_proceso_entradainventario.SubItemsExpandWidth = 14;
+            this.btn_proceso_entradainventario.Text = "ENTRADA INVENTARIO";
+            this.btn_proceso_entradainventario.Click += new System.EventHandler(this.buttonItem2_Click_2);
+            // 
+            // btn_proceso_salidainventario
+            // 
+            this.btn_proceso_salidainventario.FontBold = true;
+            this.btn_proceso_salidainventario.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_salidainventario.Image")));
+            this.btn_proceso_salidainventario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_salidainventario.Name = "btn_proceso_salidainventario";
+            this.btn_proceso_salidainventario.SubItemsExpandWidth = 14;
+            this.btn_proceso_salidainventario.Text = "SALIDA INVENTARIO";
+            this.btn_proceso_salidainventario.Click += new System.EventHandler(this.buttonItem3_Click_2);
+            // 
+            // btn_proceso_salaemergencias
+            // 
+            this.btn_proceso_salaemergencias.FontBold = true;
+            this.btn_proceso_salaemergencias.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_salaemergencias.Image")));
+            this.btn_proceso_salaemergencias.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_salaemergencias.Name = "btn_proceso_salaemergencias";
+            this.btn_proceso_salaemergencias.SubItemsExpandWidth = 14;
+            this.btn_proceso_salaemergencias.Text = "SALA DE EMERGENCIA";
+            this.btn_proceso_salaemergencias.Click += new System.EventHandler(this.buttonItem6_Click);
+            // 
+            // btn_proceso_licenciasmedicas
+            // 
+            this.btn_proceso_licenciasmedicas.FontBold = true;
+            this.btn_proceso_licenciasmedicas.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_licenciasmedicas.Image")));
+            this.btn_proceso_licenciasmedicas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_licenciasmedicas.Name = "btn_proceso_licenciasmedicas";
+            this.btn_proceso_licenciasmedicas.SubItemsExpandWidth = 14;
+            this.btn_proceso_licenciasmedicas.Text = "LICENCIA MEDICA";
+            this.btn_proceso_licenciasmedicas.Click += new System.EventHandler(this.buttonItem13_Click);
+            // 
+            // btn_proceso_facturacionservicio
+            // 
+            this.btn_proceso_facturacionservicio.FontBold = true;
+            this.btn_proceso_facturacionservicio.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_facturacionservicio.Image")));
+            this.btn_proceso_facturacionservicio.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btn_proceso_facturacionservicio.Name = "btn_proceso_facturacionservicio";
+            this.btn_proceso_facturacionservicio.SubItemsExpandWidth = 14;
+            this.btn_proceso_facturacionservicio.Text = "FACTURACION DE SERVICIO";
+            this.btn_proceso_facturacionservicio.Click += new System.EventHandler(this.btn_proceso_facturacionservicio_Click);
             // 
             // ribbonPanel4
             // 
@@ -558,120 +706,6 @@
             this.btn_reportes_historialclinico.Text = "HISTORIAL CLINICO";
             this.btn_reportes_historialclinico.Click += new System.EventHandler(this.buttonItem11_Click_1);
             // 
-            // ribbonPanel6
-            // 
-            this.ribbonPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel6.Controls.Add(this.ribbonBar3);
-            this.ribbonPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel6.Location = new System.Drawing.Point(0, 53);
-            this.ribbonPanel6.Name = "ribbonPanel6";
-            this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel6.Size = new System.Drawing.Size(1027, 99);
-            // 
-            // 
-            // 
-            this.ribbonPanel6.Style.Class = "";
-            this.ribbonPanel6.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel6.StyleMouseDown.Class = "";
-            this.ribbonPanel6.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel6.StyleMouseOver.Class = "";
-            this.ribbonPanel6.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel6.TabIndex = 7;
-            this.ribbonPanel6.Visible = false;
-            // 
-            // ribbonBar3
-            // 
-            this.ribbonBar3.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar3.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar3.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar3.BackgroundStyle.Class = "";
-            this.ribbonBar3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar3.ContainerControlProcessDialogKey = true;
-            this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btn_procesos_citamedica,
-            this.btn_proceso_entradainventario,
-            this.btn_proceso_salidainventario,
-            this.btn_proceso_salaemergencias,
-            this.btn_proceso_licenciasmedicas});
-            this.ribbonBar3.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar3.Name = "ribbonBar3";
-            this.ribbonBar3.Size = new System.Drawing.Size(764, 96);
-            this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar3.TabIndex = 0;
-            // 
-            // 
-            // 
-            this.ribbonBar3.TitleStyle.Class = "";
-            this.ribbonBar3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar3.TitleStyleMouseOver.Class = "";
-            this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btn_procesos_citamedica
-            // 
-            this.btn_procesos_citamedica.FontBold = true;
-            this.btn_procesos_citamedica.Image = ((System.Drawing.Image)(resources.GetObject("btn_procesos_citamedica.Image")));
-            this.btn_procesos_citamedica.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_procesos_citamedica.Name = "btn_procesos_citamedica";
-            this.btn_procesos_citamedica.SubItemsExpandWidth = 14;
-            this.btn_procesos_citamedica.Text = "CITAS MEDICAS";
-            this.btn_procesos_citamedica.Click += new System.EventHandler(this.buttonItem1_Click_1);
-            // 
-            // btn_proceso_entradainventario
-            // 
-            this.btn_proceso_entradainventario.FontBold = true;
-            this.btn_proceso_entradainventario.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_entradainventario.Image")));
-            this.btn_proceso_entradainventario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_proceso_entradainventario.Name = "btn_proceso_entradainventario";
-            this.btn_proceso_entradainventario.SubItemsExpandWidth = 14;
-            this.btn_proceso_entradainventario.Text = "ENTRADA INVENTARIO";
-            this.btn_proceso_entradainventario.Click += new System.EventHandler(this.buttonItem2_Click_2);
-            // 
-            // btn_proceso_salidainventario
-            // 
-            this.btn_proceso_salidainventario.FontBold = true;
-            this.btn_proceso_salidainventario.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_salidainventario.Image")));
-            this.btn_proceso_salidainventario.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_proceso_salidainventario.Name = "btn_proceso_salidainventario";
-            this.btn_proceso_salidainventario.SubItemsExpandWidth = 14;
-            this.btn_proceso_salidainventario.Text = "SALIDA INVENTARIO";
-            this.btn_proceso_salidainventario.Click += new System.EventHandler(this.buttonItem3_Click_2);
-            // 
-            // btn_proceso_salaemergencias
-            // 
-            this.btn_proceso_salaemergencias.FontBold = true;
-            this.btn_proceso_salaemergencias.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_salaemergencias.Image")));
-            this.btn_proceso_salaemergencias.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_proceso_salaemergencias.Name = "btn_proceso_salaemergencias";
-            this.btn_proceso_salaemergencias.SubItemsExpandWidth = 14;
-            this.btn_proceso_salaemergencias.Text = "SALA DE EMERGENCIA";
-            this.btn_proceso_salaemergencias.Click += new System.EventHandler(this.buttonItem6_Click);
-            // 
-            // btn_proceso_licenciasmedicas
-            // 
-            this.btn_proceso_licenciasmedicas.FontBold = true;
-            this.btn_proceso_licenciasmedicas.Image = ((System.Drawing.Image)(resources.GetObject("btn_proceso_licenciasmedicas.Image")));
-            this.btn_proceso_licenciasmedicas.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btn_proceso_licenciasmedicas.Name = "btn_proceso_licenciasmedicas";
-            this.btn_proceso_licenciasmedicas.SubItemsExpandWidth = 14;
-            this.btn_proceso_licenciasmedicas.Text = "LICENCIA MEDICA";
-            this.btn_proceso_licenciasmedicas.Click += new System.EventHandler(this.buttonItem13_Click);
-            // 
             // office2007StartButton1
             // 
             this.office2007StartButton1.AutoExpandOnClick = true;
@@ -853,9 +887,9 @@
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
             this.ribbonPanel5.ResumeLayout(false);
+            this.ribbonPanel6.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
-            this.ribbonPanel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -918,5 +952,8 @@
         private DevComponents.DotNetBar.ButtonItem btn_estadisticas_historialclinico;
         private DevComponents.DotNetBar.ButtonItem btn_proceso_licenciasmedicas;
         private DevComponents.DotNetBar.ButtonItem btn_estadisticas_licenciasmedicas;
+        private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_tipocobertura;
+        private DevComponents.DotNetBar.ButtonItem btn_mantenimiento_tarifas;
+        private DevComponents.DotNetBar.ButtonItem btn_proceso_facturacionservicio;
     }
 }

@@ -465,6 +465,9 @@ namespace hospitalcentral
                         btnGrabar_Click(sender, e);
                         break;
                 }
+
+                this.cModo = "Inicio";
+                this.Botones();
             }
 
         }

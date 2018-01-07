@@ -58,8 +58,12 @@
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.rbHombre = new System.Windows.Forms.RadioButton();
             this.rbMujer = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_Contributivo = new System.Windows.Forms.RadioButton();
+            this.rb_Subsidiado = new System.Windows.Forms.RadioButton();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTituloForm
@@ -367,11 +371,10 @@
             // 
             this.rbHombre.AutoSize = true;
             this.rbHombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbHombre.Location = new System.Drawing.Point(497, 145);
+            this.rbHombre.Location = new System.Drawing.Point(475, 118);
             this.rbHombre.Name = "rbHombre";
             this.rbHombre.Size = new System.Drawing.Size(97, 17);
             this.rbHombre.TabIndex = 170;
-            this.rbHombre.TabStop = true;
             this.rbHombre.Text = "MASCULINO";
             this.rbHombre.UseVisualStyleBackColor = true;
             // 
@@ -379,13 +382,45 @@
             // 
             this.rbMujer.AutoSize = true;
             this.rbMujer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMujer.Location = new System.Drawing.Point(497, 175);
+            this.rbMujer.Location = new System.Drawing.Point(475, 148);
             this.rbMujer.Name = "rbMujer";
             this.rbMujer.Size = new System.Drawing.Size(89, 17);
             this.rbMujer.TabIndex = 171;
-            this.rbMujer.TabStop = true;
             this.rbMujer.Text = "FEMENINO";
             this.rbMujer.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rb_Contributivo);
+            this.groupBox1.Controls.Add(this.rb_Subsidiado);
+            this.groupBox1.Location = new System.Drawing.Point(459, 214);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(129, 59);
+            this.groupBox1.TabIndex = 172;
+            this.groupBox1.TabStop = false;
+            // 
+            // rb_Contributivo
+            // 
+            this.rb_Contributivo.AutoSize = true;
+            this.rb_Contributivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_Contributivo.Location = new System.Drawing.Point(7, 37);
+            this.rb_Contributivo.Name = "rb_Contributivo";
+            this.rb_Contributivo.Size = new System.Drawing.Size(118, 17);
+            this.rb_Contributivo.TabIndex = 175;
+            this.rb_Contributivo.Text = "CONTRIBUTIVO";
+            this.rb_Contributivo.UseVisualStyleBackColor = true;
+            // 
+            // rb_Subsidiado
+            // 
+            this.rb_Subsidiado.AutoSize = true;
+            this.rb_Subsidiado.Checked = true;
+            this.rb_Subsidiado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_Subsidiado.Location = new System.Drawing.Point(7, 14);
+            this.rb_Subsidiado.Name = "rb_Subsidiado";
+            this.rb_Subsidiado.Size = new System.Drawing.Size(101, 17);
+            this.rb_Subsidiado.TabIndex = 174;
+            this.rb_Subsidiado.Text = "SUBSIDIADO";
+            this.rb_Subsidiado.UseVisualStyleBackColor = true;
             // 
             // frmPacientes
             // 
@@ -393,8 +428,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 478);
             this.Controls.Add(this.rbMujer);
-            this.Controls.Add(this.rbHombre);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtFecha);
+            this.Controls.Add(this.rbHombre);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -416,7 +452,6 @@
             this.Name = "frmPacientes";
             this.Text = "frmPacientes";
             this.Load += new System.EventHandler(this.frmPacientes_Load);
-            this.Controls.SetChildIndex(this.lblTituloForm, 0);
             this.Controls.SetChildIndex(this.groupBox4, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.txtID, 0);
@@ -435,11 +470,15 @@
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.label9, 0);
-            this.Controls.SetChildIndex(this.dtFecha, 0);
             this.Controls.SetChildIndex(this.rbHombre, 0);
+            this.Controls.SetChildIndex(this.dtFecha, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.rbMujer, 0);
+            this.Controls.SetChildIndex(this.lblTituloForm, 0);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,5 +515,8 @@
         private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.RadioButton rbHombre;
         private System.Windows.Forms.RadioButton rbMujer;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rb_Contributivo;
+        private System.Windows.Forms.RadioButton rb_Subsidiado;
     }
 }

@@ -76,6 +76,7 @@ namespace hospitalcentral
 
         private void Limpiar()
         {
+            
             this.txtID.Clear();
             this.txtRecord.Clear();
             this.txtCedula.Clear();
@@ -280,8 +281,8 @@ namespace hospitalcentral
                         MySqlCommand myCommand = MyConexion.CreateCommand();
 
                         // Step 3 - Comando a ejecutar
-                        myCommand.CommandText = "INSERT INTO pacientes(record, cedula, nombre, rango, nss, antecedentes, fecha_nacimiento, sexo)" +
-                            " values(@record, @cedula, @nombre, @rango, @nss, @antecedentes, @fecha, @sexo)";
+                        myCommand.CommandText = "INSERT INTO pacientes(record, cedula, nombre, rango, nss, antecedentes, fecha_nacimiento, sexo, regimen)" +
+                            " values(@record, @cedula, @nombre, @rango, @nss, @antecedentes, @fecha, @sexo, @regimen)";
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
                         myCommand.Parameters.AddWithValue("@cedula", txtCedula.Text);
                         myCommand.Parameters.AddWithValue("@nombre", txtNombre.Text);
@@ -296,6 +297,14 @@ namespace hospitalcentral
                         else
                         {
                             myCommand.Parameters.AddWithValue("@sexo", "F");
+                        }
+                        if (rb_Subsidiado.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@regimen", "S");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@regimen", "C");
                         }
 
                         // Step 4 - Opening the connection
@@ -333,8 +342,8 @@ namespace hospitalcentral
 
                         // Step 3 - Comando a ejecutar
                         myCommand.CommandText = "UPDATE pacientes SET record = @record, cedula = @cedula, " +
-                            "nombre = @nombre, rango = @rango, nss = @nss, antecedentes = @antecedentes, fecha = @fecha, " +
-                            " sexo = @sexo "+
+                            "nombre = @nombre, rango = @rango, nss = @nss, antecedentes = @antecedentes, fecha_nacimiento = @fecha, " +
+                            " sexo = @sexo, regimen = @regimen "+
                             " WHERE idpacientes = " + txtID.Text + "";
                         myCommand.Parameters.AddWithValue("@record", txtRecord.Text);
                         myCommand.Parameters.AddWithValue("@cedula", txtCedula.Text);
@@ -343,6 +352,7 @@ namespace hospitalcentral
                         myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
                         myCommand.Parameters.AddWithValue("@antecedentes", txtAntecedentes.Text);
                         myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                        
                         if (rbHombre.Checked == true)
                         {
                             myCommand.Parameters.AddWithValue("@sexo", "M");
@@ -351,6 +361,16 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@sexo", "F");
                         }
+
+                        if (rb_Subsidiado.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@regimen", "S");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@regimen", "C");
+                        }
+
                         // Step 4 - Opening the connection
                         MyConexion.Open();
 
@@ -438,6 +458,15 @@ namespace hospitalcentral
                             else
                             {
                                 rbHombre.Checked = true;
+                            }
+                            string regimen = MyReader["regimen"].ToString();
+                            if (regimen == "S")
+                            {
+                                rb_Subsidiado.Checked = true;
+                            }
+                            else
+                            {
+                                rb_Contributivo.Checked = true;
                             }
                         }
                         this.cModo = "Buscar";
@@ -599,8 +628,12 @@ namespace hospitalcentral
                         btnGrabar_Click(sender, e);
                         break;
                 }
+
+                this.cModo = "Inicio";
+                this.Botones();
             }
 
+            this.Limpiar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -64,12 +64,15 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chkRCitasMedicas = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.chkELicenciasMedicas = new System.Windows.Forms.CheckBox();
             this.chkECitasMedicas = new System.Windows.Forms.CheckBox();
             this.chkMantenimientos = new System.Windows.Forms.CheckBox();
             this.chkProcesos = new System.Windows.Forms.CheckBox();
             this.chkReportes = new System.Windows.Forms.CheckBox();
             this.chkEstadisticas = new System.Windows.Forms.CheckBox();
-            this.chkELicenciasMedicas = new System.Windows.Forms.CheckBox();
+            this.chkMTarifario = new System.Windows.Forms.CheckBox();
+            this.chkMTipoCobertura = new System.Windows.Forms.CheckBox();
+            this.chkPFacturacionServicio = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -312,6 +315,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkMTipoCobertura);
+            this.groupBox2.Controls.Add(this.chkMTarifario);
             this.groupBox2.Controls.Add(this.chkMSuplidores);
             this.groupBox2.Controls.Add(this.chkMCategoriasProductos);
             this.groupBox2.Controls.Add(this.chkMProductos);
@@ -388,6 +393,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkPFacturacionServicio);
             this.groupBox3.Controls.Add(this.chkPLicenciaMedica);
             this.groupBox3.Controls.Add(this.chkPSalaEmergencia);
             this.groupBox3.Controls.Add(this.chkPSalidaInventario);
@@ -484,6 +490,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ESTADISTICAS";
             // 
+            // chkELicenciasMedicas
+            // 
+            this.chkELicenciasMedicas.AutoSize = true;
+            this.chkELicenciasMedicas.Location = new System.Drawing.Point(7, 42);
+            this.chkELicenciasMedicas.Name = "chkELicenciasMedicas";
+            this.chkELicenciasMedicas.Size = new System.Drawing.Size(131, 17);
+            this.chkELicenciasMedicas.TabIndex = 2;
+            this.chkELicenciasMedicas.Text = "Licencias Medicas";
+            this.chkELicenciasMedicas.UseVisualStyleBackColor = true;
+            // 
             // chkECitasMedicas
             // 
             this.chkECitasMedicas.AutoSize = true;
@@ -538,15 +554,35 @@
             this.chkEstadisticas.Text = "Estadisticas";
             this.chkEstadisticas.UseVisualStyleBackColor = true;
             // 
-            // chkELicenciasMedicas
+            // chkMTarifario
             // 
-            this.chkELicenciasMedicas.AutoSize = true;
-            this.chkELicenciasMedicas.Location = new System.Drawing.Point(7, 42);
-            this.chkELicenciasMedicas.Name = "chkELicenciasMedicas";
-            this.chkELicenciasMedicas.Size = new System.Drawing.Size(131, 17);
-            this.chkELicenciasMedicas.TabIndex = 2;
-            this.chkELicenciasMedicas.Text = "Licencias Medicas";
-            this.chkELicenciasMedicas.UseVisualStyleBackColor = true;
+            this.chkMTarifario.AutoSize = true;
+            this.chkMTarifario.Location = new System.Drawing.Point(324, 42);
+            this.chkMTarifario.Name = "chkMTarifario";
+            this.chkMTarifario.Size = new System.Drawing.Size(73, 17);
+            this.chkMTarifario.TabIndex = 6;
+            this.chkMTarifario.Text = "Tarifario";
+            this.chkMTarifario.UseVisualStyleBackColor = true;
+            // 
+            // chkMTipoCobertura
+            // 
+            this.chkMTipoCobertura.AutoSize = true;
+            this.chkMTipoCobertura.Location = new System.Drawing.Point(324, 20);
+            this.chkMTipoCobertura.Name = "chkMTipoCobertura";
+            this.chkMTipoCobertura.Size = new System.Drawing.Size(134, 17);
+            this.chkMTipoCobertura.TabIndex = 7;
+            this.chkMTipoCobertura.Text = "Tipo de Coberturas";
+            this.chkMTipoCobertura.UseVisualStyleBackColor = true;
+            // 
+            // chkPFacturacionServicio
+            // 
+            this.chkPFacturacionServicio.AutoSize = true;
+            this.chkPFacturacionServicio.Location = new System.Drawing.Point(285, 42);
+            this.chkPFacturacionServicio.Name = "chkPFacturacionServicio";
+            this.chkPFacturacionServicio.Size = new System.Drawing.Size(143, 17);
+            this.chkPFacturacionServicio.TabIndex = 6;
+            this.chkPFacturacionServicio.Text = "Facturacion Servicio";
+            this.chkPFacturacionServicio.UseVisualStyleBackColor = true;
             // 
             // frmAgregarUsuario
             // 
@@ -651,5 +687,8 @@
         private System.Windows.Forms.CheckBox chkPLicenciaMedica;
         private System.Windows.Forms.CheckBox chkPSalaEmergencia;
         private System.Windows.Forms.CheckBox chkELicenciasMedicas;
+        private System.Windows.Forms.CheckBox chkMTipoCobertura;
+        private System.Windows.Forms.CheckBox chkMTarifario;
+        private System.Windows.Forms.CheckBox chkPFacturacionServicio;
     }
 }

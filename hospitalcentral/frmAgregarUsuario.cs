@@ -59,6 +59,9 @@ namespace hospitalcentral
             this.chkPSalidaInventario.Checked = false;
             this.chkPLicenciaMedica.Checked = false;
             this.chkELicenciasMedicas.Checked = false;
+            this.chkMTarifario.Checked = false;
+            this.chkMTipoCobertura.Checked = false;
+            this.chkPFacturacionServicio.Checked = false;
         }
 
         private void Botones()
@@ -98,6 +101,9 @@ namespace hospitalcentral
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
                     this.chkELicenciasMedicas.Enabled = false;
+                    this.chkMTarifario.Enabled = false;
+                    this.chkMTipoCobertura.Enabled = false;
+                    this.chkPFacturacionServicio.Enabled = false;
                     break;
 
                 case "Nuevo":
@@ -133,6 +139,9 @@ namespace hospitalcentral
                     this.chkPSalaEmergencia.Enabled = true;
                     this.chkPLicenciaMedica.Enabled = true;
                     this.chkELicenciasMedicas.Enabled = true;
+                    this.chkMTarifario.Enabled = true;
+                    this.chkMTipoCobertura.Enabled = true;
+                    this.chkPFacturacionServicio.Enabled = true;
                     break;
 
                 case "Grabar":
@@ -168,6 +177,9 @@ namespace hospitalcentral
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
                     this.chkELicenciasMedicas.Enabled = false;
+                    this.chkMTarifario.Enabled = false;
+                    this.chkMTipoCobertura.Enabled = false;
+                    this.chkPFacturacionServicio.Enabled = false;
                     break;
 
                 case "Editar":
@@ -203,6 +215,9 @@ namespace hospitalcentral
                     this.chkPSalaEmergencia.Enabled = true;
                     this.chkPLicenciaMedica.Enabled = true;
                     this.chkELicenciasMedicas.Enabled = true;
+                    this.chkMTarifario.Enabled = true;
+                    this.chkMTipoCobertura.Enabled = true;
+                    this.chkPFacturacionServicio.Enabled = true;
                     break;
 
                 case "Buscar":
@@ -238,6 +253,9 @@ namespace hospitalcentral
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
                     this.chkELicenciasMedicas.Enabled = false;
+                    this.chkMTarifario.Enabled = false;
+                    this.chkMTipoCobertura.Enabled = false;
+                    this.chkPFacturacionServicio.Enabled = false;
                     break;
 
                 case "Eliminar":
@@ -276,6 +294,9 @@ namespace hospitalcentral
                     this.chkPSalaEmergencia.Enabled = false;
                     this.chkPLicenciaMedica.Enabled = false;
                     this.chkELicenciasMedicas.Enabled = false;
+                    this.chkMTarifario.Enabled = false;
+                    this.chkMTipoCobertura.Enabled = false;
+                    this.chkPFacturacionServicio.Enabled = false;
                     break;
 
                 default:
@@ -358,13 +379,16 @@ namespace hospitalcentral
                             " permiso_mantenimiento_productos,"+
                             " permiso_mantenimiento_productoscategorias,"+
                             " permiso_mantenimiento_suplidores,"+
+                            " permiso_mantenimiento_tarifas," +
+                            " permiso_mantenimiento_tipocobertura," +
                             // Permisos Procesos
                             " permiso_proceso," +
                             " permiso_proceso_citasmedicas,"+
                             " permiso_proceso_entradainventario," +
                             " permiso_proceso_licenciasmedicas,"+
                             " permiso_proceso_salidainventario,"+
-                            " permiso_proceso_salaemergencia,"+                            
+                            " permiso_proceso_salaemergencia,"+
+                            " permiso_proceso_facturacionservicio," +
                             // Permisos Reportes
                             " permiso_reporte," +
                             " permiso_reporte_citasmedicas,"+
@@ -382,6 +406,8 @@ namespace hospitalcentral
                             " @permiso_mantenimiento_productos,"+
                             " @permiso_mantenimiento_productoscategorias,"+
                             " @permiso_mantenimiento_suplidores,"+
+                            " @permiso_mantenimiento_tarifas," +
+                            " @permiso_mantenimiento_tipocobertura," +
                             // Valores permisos procesos
                             " @permiso_proceso,"+
                             " @permiso_proceso_citasmedicas,"+
@@ -389,6 +415,7 @@ namespace hospitalcentral
                             " @permiso_proceso_licenciasmedicas," +
                             " @permiso_proceso_salidainventario," +
                             " @permiso_proceso_salaemergencia," +
+                            " @permiso_proceso_facturacionservicio," +
                             // Valores permisos reportes
                             " @permiso_reporte,"+
                             " @permiso_reporte_citasmedicas,"+
@@ -466,6 +493,23 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@permiso_mantenimiento_suplidores", 0);
                         }
+                        if (chkMTarifario.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tarifas", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tarifas", 0);
+                        }
+
+                        if (chkMTipoCobertura.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tipocobertura", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tipocobertura", 0);
+                        }
 
                         // Verificando el estatus de los permisos PROCESOS
                         if (chkProcesos.Checked == true)
@@ -517,6 +561,14 @@ namespace hospitalcentral
                         else
                         {
                             myCommand.Parameters.AddWithValue("@permiso_proceso_salaemergencia", 0);
+                        }
+                        if (chkPFacturacionServicio.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_facturacionservicio", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_facturacionservicio", 0);
                         }
 
                         // Verificando el estatus de los permisos REPORTES
@@ -605,6 +657,8 @@ namespace hospitalcentral
                             " permiso_mantenimiento_productos = @permiso_mantenimiento_productos,"+
                             " permiso_mantenimiento_productoscategorias = @permiso_mantenimiento_productoscategorias,"+
                             " permiso_mantenimiento_suplidores = @permiso_mantenimiento_suplidores,"+
+                            " permiso_mantenimiento_tarifas = @permiso_mantenimiento_tarifas,"+
+                            " permiso_mantenimiento_tipocobertura = @permiso_mantenimiento_tipocobertura," +
                             // Permisos Procesos
                             " permiso_proceso = @permiso_proceso," +
                             " permiso_proceso_citasmedicas = @permiso_proceso_citasmedicas," +
@@ -612,6 +666,7 @@ namespace hospitalcentral
                             " permiso_proceso_salaemergencia = @permiso_proceso_salaemergencia,"+
                             " permiso_proceso_salidainventario = @permiso_proceso_salidainventario,"+
                             " permiso_proceso_licenciasmedicas = @permiso_proceso_licenciasmedicas,"+
+                            " permiso_proceso_facturacionservicio = @permiso_proceso_facturacionservicio," +
                             // Permisos Reportes
                             " permiso_reporte = @permiso_reporte," +
                             " permiso_reporte_citasmedicas = @permiso_reporte_citasmedicas," +
@@ -695,6 +750,22 @@ namespace hospitalcentral
                         {
                             myCommand.Parameters.AddWithValue("@permiso_mantenimiento_suplidores", 0);
                         }
+                        if (chkMTarifario.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tarifas", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tarifas", 0);
+                        }
+                        if (chkMTipoCobertura.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tipocobertura", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_mantenimiento_tipocobertura", 0);
+                        }
 
                         // Verificando el estatus de los permisos PROCESOS
                         if (chkProcesos.Checked == true)
@@ -746,6 +817,14 @@ namespace hospitalcentral
                         else
                         {
                             myCommand.Parameters.AddWithValue("@permiso_proceso_licenciasmedicas", 0);
+                        }
+                        if (chkPFacturacionServicio.Checked == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_facturacionservicio", 1);
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@permiso_proceso_facturacionservicio", 0);
                         }
 
                         // Verificando el estatus de los permisos REPORTES
