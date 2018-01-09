@@ -207,3 +207,4 @@ C:\Users\JohnDoe\Desktop\APPZ\sisgeshospital\hospitalcentral\hospitalcentral\obj
 C:\Users\JohnDoe\Desktop\APPZ\sisgeshospital\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.Properties.Resources.resources
 C:\Users\JohnDoe\Desktop\APPZ\sisgeshospital\hospitalcentral\hospitalcentral\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\JohnDoe\Desktop\APPZ\sisgeshospital\hospitalcentral\hospitalcentral\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\JohnDoe\Desktop\APPZ\sisgeshospital\hospitalcentral\hospitalcentral\obj\x86\Debug\hospitalcentral.frmBuscarServicio.resources
