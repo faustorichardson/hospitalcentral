@@ -226,7 +226,134 @@ namespace hospitalcentral
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            if (txtID.Text == "" || txtIDCliente.Text == "" || countFilas <= 0)
+            {
+                MessageBox.Show("No se permiten campos vacios...");
+                this.btnBuscarProducto.Focus();
+            }
+            else
+            {
+                if (cModo == "Nuevo")
+                {
+                    // Verifico nuevamente el siguiente codigo antes de guardar
+                    this.ProximoCodigo();
 
+                    try
+                    {
+                        // Step 1 - Stablishing the connection
+                        MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+
+                        // Step 2 - Crear el comando de ejecucion
+                        MySqlCommand myCommand = MyConexion.CreateCommand();
+
+                        // Step 3 - Comando a ejecutar
+                        myCommand.CommandText = "INSERT INTO facturacionservicio(nss, regimen, fecha, montototal)" +
+                            " values(@nss, @regimen, @fecha, @monto)";
+                        myCommand.Parameters.AddWithValue("@nss", txtNSS.Text);
+                        // VERIFICANDO EL REGIMEN
+                        if (rbSubsidiado.Enabled == true)
+                        {
+                            myCommand.Parameters.AddWithValue("@regimen", "S");
+                        }
+                        else
+                        {
+                            myCommand.Parameters.AddWithValue("@regimen", "C");
+                        }
+
+                        myCommand.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                        // Convierto el campo monto en texto
+                        lblMontoFacturado.Text = Convert.ToString(lblMontoFacturado.Text);
+                        // Cambio el valor del textbox a decimal
+                        string myValue = Convert.ToString(lblMontoFacturado.Text);
+                        decimal myValueMonto = clsFunctions.ParseCurrencyFormat(myValue);
+                        myCommand.Parameters.AddWithValue("@monto", myValueMonto);
+
+                        // Step 4 - Opening the connection
+                        MyConexion.Open();
+
+                        // Step 5 - Executing the query
+                        int nFilas = myCommand.ExecuteNonQuery();
+                        if (nFilas > 0)
+                        {
+                            MessageBox.Show("Informacion guardada satisfactoriamente...");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No fueron guardadas las informaciones...");
+                        }
+
+                        // Step 6 - Closing the connection
+                        MyConexion.Close();
+                    }
+                    catch (Exception MyEx)
+                    {
+                        MessageBox.Show(MyEx.Message);
+                    }
+
+                    // Llamo funcion que guarda data del grid
+                    this.saveGrid();
+
+                }
+
+                // llamo la funcion para imprimir entrada.-
+                // this.ImprimeSolicitud();
+
+                // cuando termino de imprimir
+                this.Limpiar();
+                this.LimpiarTxtGrid();
+                this.cModo = "Inicio";
+                this.Botones();
+            }
+        }
+
+        private void saveGrid()
+        {
+            try
+            {
+                // Configuro la conexion
+                MySqlConnection MyConexion = new MySqlConnection(clsConexion.ConectionString);
+
+                // Abro conexion
+                MyConexion.Open();
+
+                // Creo bucle de guardar informacion del grid
+                for (int row = 0; row < countFilas; row++)
+                {
+                    MySqlCommand myCommand = new MySqlCommand("INSERT INTO facturacionservicio_desglose("+
+                        "id_factura, id_servicio, simon, descripcionservicio, monto)" +
+                        " values (@idfactura, @idservicio, @simon, @descripcionservicio, @monto)", MyConexion);
+                    myCommand.Parameters.AddWithValue("@idfactura", gCodigo);
+                    myCommand.Parameters.AddWithValue("@idservicio", dtgFacturacionServicios.Rows[row].Cells[0].Value);
+                    myCommand.Parameters.AddWithValue("@simon", dtgFacturacionServicios.Rows[row].Cells[1].Value);
+                    myCommand.Parameters.AddWithValue("@descripcionservicio", dtgFacturacionServicios.Rows[row].Cells[2].Value);
+                    //myCommand.Parameters.AddWithValue("@monto", dtgFacturacionServicios.Rows[row].Cells[3].Value);
+                    //myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[4].Value);
+                    //myCommand.Parameters.AddWithValue("@subtotal", dtgEntradaInventario.Rows[row].Cells[5].Value);
+
+                    // Cambio el valor del grid a decimal
+                    string myValue_precio = Convert.ToString(dtgFacturacionServicios.Rows[row].Cells[3].Value);
+                    decimal myValueMonto_precio = clsFunctions.ParseCurrencyFormat(myValue_precio);
+                    myCommand.Parameters.AddWithValue("@monto", myValueMonto_precio);
+                    //myCommand.Parameters.AddWithValue("@precio", dtgEntradaInventario.Rows[row].Cells[3].Value);
+                    //myCommand.Parameters.AddWithValue("@cantidad", dtgEntradaInventario.Rows[row].Cells[4].Value);
+
+                    //string myValue_subtotal = Convert.ToString(dtgEntradaInventario.Rows[row].Cells[5].Value);
+                    //decimal myValueMonto_subtotal = clsFunctions.ParseCurrencyFormat(myValue_subtotal);
+                    //myCommand.Parameters.AddWithValue("@subtotal", myValueMonto_subtotal);
+
+                    // EJECUTO EL COMANDO
+                    myCommand.ExecuteNonQuery();
+                }
+
+                // Limpio el grid de facturacion
+                dtgFacturacionServicios.Rows.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
