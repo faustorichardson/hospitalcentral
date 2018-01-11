@@ -61,9 +61,22 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rb_Contributivo = new System.Windows.Forms.RadioButton();
             this.rb_Subsidiado = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbEstado_S = new System.Windows.Forms.RadioButton();
+            this.rbEstado_C = new System.Windows.Forms.RadioButton();
+            this.rbEstado_D = new System.Windows.Forms.RadioButton();
+            this.rbEstado_V = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTituloForm
@@ -100,7 +113,7 @@
             this.groupBox4.Controls.Add(this.btnEditar);
             this.groupBox4.Controls.Add(this.btnGrabar);
             this.groupBox4.Controls.Add(this.btnNuevo);
-            this.groupBox4.Location = new System.Drawing.Point(9, 403);
+            this.groupBox4.Location = new System.Drawing.Point(9, 598);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(795, 65);
             this.groupBox4.TabIndex = 146;
@@ -314,7 +327,7 @@
             // 
             // txtAntecedentes
             // 
-            this.txtAntecedentes.Location = new System.Drawing.Point(235, 281);
+            this.txtAntecedentes.Location = new System.Drawing.Point(235, 479);
             this.txtAntecedentes.Name = "txtAntecedentes";
             this.txtAntecedentes.Size = new System.Drawing.Size(557, 96);
             this.txtAntecedentes.TabIndex = 165;
@@ -324,7 +337,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 282);
+            this.label7.Location = new System.Drawing.Point(15, 478);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(214, 15);
             this.label7.TabIndex = 166;
@@ -334,7 +347,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(36, 297);
+            this.label8.Location = new System.Drawing.Point(36, 495);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(193, 15);
             this.label8.TabIndex = 167;
@@ -353,7 +366,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(605, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(605, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(183, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -419,14 +432,145 @@
             this.rb_Subsidiado.Name = "rb_Subsidiado";
             this.rb_Subsidiado.Size = new System.Drawing.Size(101, 17);
             this.rb_Subsidiado.TabIndex = 174;
+            this.rb_Subsidiado.TabStop = true;
             this.rb_Subsidiado.Text = "SUBSIDIADO";
             this.rb_Subsidiado.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbEstado_V);
+            this.groupBox2.Controls.Add(this.rbEstado_D);
+            this.groupBox2.Controls.Add(this.rbEstado_S);
+            this.groupBox2.Controls.Add(this.rbEstado_C);
+            this.groupBox2.Location = new System.Drawing.Point(237, 281);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(150, 40);
+            this.groupBox2.TabIndex = 173;
+            this.groupBox2.TabStop = false;
+            // 
+            // rbEstado_S
+            // 
+            this.rbEstado_S.AutoSize = true;
+            this.rbEstado_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEstado_S.Location = new System.Drawing.Point(40, 14);
+            this.rbEstado_S.Name = "rbEstado_S";
+            this.rbEstado_S.Size = new System.Drawing.Size(33, 17);
+            this.rbEstado_S.TabIndex = 175;
+            this.rbEstado_S.Text = "S";
+            this.rbEstado_S.UseVisualStyleBackColor = true;
+            // 
+            // rbEstado_C
+            // 
+            this.rbEstado_C.AutoSize = true;
+            this.rbEstado_C.Checked = true;
+            this.rbEstado_C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEstado_C.Location = new System.Drawing.Point(7, 14);
+            this.rbEstado_C.Name = "rbEstado_C";
+            this.rbEstado_C.Size = new System.Drawing.Size(33, 17);
+            this.rbEstado_C.TabIndex = 174;
+            this.rbEstado_C.TabStop = true;
+            this.rbEstado_C.Text = "C";
+            this.rbEstado_C.UseVisualStyleBackColor = true;
+            // 
+            // rbEstado_D
+            // 
+            this.rbEstado_D.AutoSize = true;
+            this.rbEstado_D.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEstado_D.Location = new System.Drawing.Point(73, 14);
+            this.rbEstado_D.Name = "rbEstado_D";
+            this.rbEstado_D.Size = new System.Drawing.Size(34, 17);
+            this.rbEstado_D.TabIndex = 176;
+            this.rbEstado_D.Text = "D";
+            this.rbEstado_D.UseVisualStyleBackColor = true;
+            // 
+            // rbEstado_V
+            // 
+            this.rbEstado_V.AutoSize = true;
+            this.rbEstado_V.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEstado_V.Location = new System.Drawing.Point(113, 14);
+            this.rbEstado_V.Name = "rbEstado_V";
+            this.rbEstado_V.Size = new System.Drawing.Size(33, 17);
+            this.rbEstado_V.TabIndex = 177;
+            this.rbEstado_V.Text = "V";
+            this.rbEstado_V.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(126, 296);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(102, 15);
+            this.label10.TabIndex = 174;
+            this.label10.Text = "ESTADO CIVIL:";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(237, 333);
+            this.maskedTextBox1.Mask = "000-000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(81, 20);
+            this.maskedTextBox1.TabIndex = 175;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(143, 335);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 15);
+            this.label11.TabIndex = 176;
+            this.label11.Text = "TELEFONO:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(140, 367);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 15);
+            this.label12.TabIndex = 177;
+            this.label12.Text = "DIRECCION:";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(236, 364);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(556, 58);
+            this.richTextBox1.TabIndex = 178;
+            this.richTextBox1.Text = "";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(236, 439);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(254, 21);
+            this.comboBox1.TabIndex = 179;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(147, 440);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 15);
+            this.label13.TabIndex = 180;
+            this.label13.Text = "PROVINCIA:";
             // 
             // frmPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 478);
+            this.ClientSize = new System.Drawing.Size(812, 676);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.rbMujer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtFecha);
@@ -475,10 +619,20 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.rbMujer, 0);
             this.Controls.SetChildIndex(this.lblTituloForm, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
+            this.Controls.SetChildIndex(this.maskedTextBox1, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
+            this.Controls.SetChildIndex(this.richTextBox1, 0);
+            this.Controls.SetChildIndex(this.label13, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,5 +672,17 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rb_Contributivo;
         private System.Windows.Forms.RadioButton rb_Subsidiado;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbEstado_V;
+        private System.Windows.Forms.RadioButton rbEstado_D;
+        private System.Windows.Forms.RadioButton rbEstado_S;
+        private System.Windows.Forms.RadioButton rbEstado_C;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label13;
     }
 }

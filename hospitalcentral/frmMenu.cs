@@ -772,6 +772,12 @@ namespace hospitalcentral
             ofrmTarifario.ShowDialog();
         }
 
+        private void btn_proceso_hojaingreso_Click(object sender, EventArgs e)
+        {
+            frmHojaIngreso ofrmHojaIngreso = new frmHojaIngreso();
+            ofrmHojaIngreso.ShowDialog();
+        }
+
        
         
     }

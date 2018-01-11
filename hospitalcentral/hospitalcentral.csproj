@@ -681,6 +681,9 @@
     <EmbeddedResource Include="frmHistoriaClinica.resx">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHojaIngreso.resx">
+      <DependentUpon>frmHojaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLicenciaMedica.resx">
       <DependentUpon>frmLicenciaMedica.cs</DependentUpon>
     </EmbeddedResource>

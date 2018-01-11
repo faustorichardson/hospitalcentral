@@ -1,0 +1,16 @@
+
+2018 01 11
+
+1) Actualizar pantalla (frmPacientes) con nuevos campos
+- Estado Civil
+- Telefono
+- Direccion
+- Provincia
+
+2) He agregado (cantidad) al frmFacturacionServicio
+- Cantidad *Incluirlo en los calculos matematicos de total y subtotal
+
+
+3) Agregar funcionalidad de botones al (frmHojaIngreso)
+- Agregar funcionalidad de los botones
+- Agregar los permisos

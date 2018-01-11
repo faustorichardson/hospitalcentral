@@ -93,9 +93,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(366, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 20);
+            this.label2.Size = new System.Drawing.Size(268, 20);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Sistema de Gestión Médica";
+            this.label2.Text = "Sistema de Gestión Hospitalaria";
             // 
             // label7
             // 
