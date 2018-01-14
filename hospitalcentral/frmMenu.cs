@@ -778,6 +778,18 @@ namespace hospitalcentral
             ofrmHojaIngreso.ShowDialog();
         }
 
+        private void buttonItem1_Click_4(object sender, EventArgs e)
+        {
+            frmHabitacionesCamas ofrmHabitacionesCamas = new frmHabitacionesCamas();
+            ofrmHabitacionesCamas.ShowDialog();
+        }
+
+        private void buttonItem2_Click_5(object sender, EventArgs e)
+        {
+            frmARL ofrmARL = new frmARL();
+            ofrmARL.ShowDialog();
+        }
+
        
         
     }

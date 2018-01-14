@@ -208,6 +208,12 @@
     <Compile Include="frmAnularFacturacion.Designer.cs">
       <DependentUpon>frmAnularFacturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmARL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmARL.Designer.cs">
+      <DependentUpon>frmARL.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,12 @@
     </Compile>
     <Compile Include="frmFacturacionServicio.Designer.cs">
       <DependentUpon>frmFacturacionServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHabitacionesCamas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHabitacionesCamas.Designer.cs">
+      <DependentUpon>frmHabitacionesCamas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHistoriaClinica.cs">
       <SubType>Form</SubType>
@@ -636,6 +648,9 @@
     <EmbeddedResource Include="frmAnularFacturacion.resx">
       <DependentUpon>frmAnularFacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmARL.resx">
+      <DependentUpon>frmARL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -677,6 +692,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacionServicio.resx">
       <DependentUpon>frmFacturacionServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHabitacionesCamas.resx">
+      <DependentUpon>frmHabitacionesCamas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistoriaClinica.resx">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
